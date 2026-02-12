@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://cnlxtar1mv8c2"]
+
+[ext_resource type="Script" uid="uid://dm12tnjrxm74b" path="res://scenes/characters/player_robot/player.gd" id="1_x5c0s"]
+[ext_resource type="Texture2D" uid="uid://c6brhhoy8ljnd" path="res://assets/img/animated_char/char1_walk.png" id="2_jfxak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1v3d"]
+size = Vector2(60, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2at3"]
+atlas = ExtResource("2_jfxak")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy8uj"]
+atlas = ExtResource("2_jfxak")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufulf"]
+atlas = ExtResource("2_jfxak")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l25o4"]
+atlas = ExtResource("2_jfxak")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfhbf"]
+atlas = ExtResource("2_jfxak")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03hob"]
+atlas = ExtResource("2_jfxak")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03ww4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2at3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy8uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufulf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l25o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfhbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03hob")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5c0s"]
+size = Vector2(59, 148)
+
+[node name="player_robot" type="CharacterBody2D"]
+script = ExtResource("1_x5c0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -75)
+shape = SubResource("RectangleShape2D_w1v3d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -128)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_03ww4")
+animation = &"walk"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -122)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5.5, 47)
+shape = SubResource("RectangleShape2D_x5c0s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -360)
