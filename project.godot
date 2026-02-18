@@ -8,6 +8,10 @@
 
 config_version=5
 
+[Godot_DragonBones]
+
+auto_generate_dbfactory=true
+
 [application]
 
 config/name="demo"
