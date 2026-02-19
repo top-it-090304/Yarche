@@ -1,7 +1,7 @@
 extends CharacterBody2D
 #move
 var direction = Vector2.RIGHT
-var speed = 100
+var speed = 250
 
 #shooting
 @onready var shoot_timer: Timer = $Timer
@@ -11,7 +11,7 @@ const bullet_scene = preload("res://scenes/objects/shot.tscn")
 var bullet_speed = speed*4
 var current_bullet = null
 var index = 0
-
+signal hit
 
 func _ready():
 	shoot_timer.wait_time = cooldown
@@ -27,15 +27,22 @@ func on_shoot_timer_timeout():
 		index +=1
 		if index >= points.size():
 			index = 0
+
 func spawn_bullet(spawn_point):
 	if bullet_scene:
 		var bullet = bullet_scene.instantiate()
+		
 		bullet.global_position = spawn_point.global_position
 		bullet.set_speed(bullet_speed)
 		bullet.set_direction(direction)
 		get_tree().current_scene.add_child(bullet)
+		bullet.fired.connect(_on_bullet_fired)
 		return bullet
 	return null
+	
+func _on_bullet_fired():
+	emit_signal("hit")
+	current_bullet.queue_free()
 func _process(delta):
 		
 	velocity = direction*speed
