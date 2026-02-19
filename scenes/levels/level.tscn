@@ -94,9 +94,9 @@ position = Vector2(643, 568)
 
 [node name="AgressiveTheme2" type="AudioStreamPlayer" parent="Gameworld"]
 stream = ExtResource("12_xfk5q")
-autoplay = true
 
 [node name="Control" type="Control" parent="."]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0

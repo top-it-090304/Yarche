@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://bei47libdkj3t"]
+
+[ext_resource type="Texture2D" uid="uid://b8tsjc1d28fkv" path="res://assets/animated_objects/shot/Water Arrow_Frame_01.png" id="1_hagwn"]
+[ext_resource type="Script" uid="uid://cmla8l0uptarc" path="res://scenes/objects/shot.gd" id="1_u71f2"]
+[ext_resource type="Texture2D" uid="uid://c7x6auh7gr1j8" path="res://assets/animated_objects/shot/Water Arrow_Frame_02.png" id="2_u71f2"]
+[ext_resource type="Texture2D" uid="uid://cvcwby7gm7mkn" path="res://assets/animated_objects/shot/Water Arrow_Frame_03.png" id="3_upb0h"]
+[ext_resource type="Texture2D" uid="uid://bcg7gk00aggkv" path="res://assets/animated_objects/shot/Water Arrow_Frame_04.png" id="4_8ntoh"]
+[ext_resource type="Texture2D" uid="uid://dgjc2ee5ljygl" path="res://assets/animated_objects/shot/Water Arrow_Frame_05.png" id="5_2ubk6"]
+[ext_resource type="Texture2D" uid="uid://bnd4828d4mnpt" path="res://assets/animated_objects/shot/Water Arrow_Frame_06.png" id="6_0hoi1"]
+[ext_resource type="Texture2D" uid="uid://6d6boa2y3433" path="res://assets/animated_objects/shot/Water Arrow_Frame_07.png" id="7_ywxhj"]
+[ext_resource type="Texture2D" uid="uid://blqmyiir4so0d" path="res://assets/animated_objects/shot/Water Arrow_Frame_08.png" id="8_bmb1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc8dj"]
+size = Vector2(15.2263, 22.2759)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ik36c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hagwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u71f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_upb0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8ntoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ubk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0hoi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ywxhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bmb1l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.359999, 0.359999)
+script = ExtResource("1_u71f2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25.1183, -2)
+scale = Vector2(10.5237, 4.39938)
+shape = SubResource("RectangleShape2D_hc8dj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_ik36c")
