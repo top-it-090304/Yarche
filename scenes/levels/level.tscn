@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c13g7jj1q06pu"]
+[gd_scene load_steps=15 format=3 uid="uid://c13g7jj1q06pu"]
 
 [ext_resource type="Script" uid="uid://quwjx4n0fgwe" path="res://scenes/levels/level1.gd" id="1_urvlt"]
 [ext_resource type="PackedScene" uid="uid://cnlxtar1mv8c2" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.tscn" id="2_urvlt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bsumd20rbsh3u" path="res://assets/img/bg/futuristic_city/city_0000_8.png" id="10_b8j7q"]
 [ext_resource type="PackedScene" uid="uid://c3rrjgyq7n74o" path="res://scenes/characters/green_player/green_player.tscn" id="11_7pb6i"]
 [ext_resource type="AudioStream" uid="uid://bu1df51xgsdlp" path="res://assets/music/agressive_theme2.ogg" id="12_xfk5q"]
+[ext_resource type="Script" uid="uid://cvqdykemvn8gx" path="res://scenes/levels/control.gd" id="13_qogh7"]
 
 [sub_resource type="Theme" id="Theme_d4w6o"]
 default_font_size = 80
@@ -102,6 +103,7 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
+script = ExtResource("13_qogh7")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0

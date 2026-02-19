@@ -22,8 +22,8 @@ func hide_ui():
 	tween.tween_callback(unpause)
 	
 func unpause():
-	ui.visible = false
 	get_tree().paused = false
 	music.play()
+	ui.process_mode = PROCESS_MODE_INHERIT
 func _on_timer_timeout():
 	hide_ui()
