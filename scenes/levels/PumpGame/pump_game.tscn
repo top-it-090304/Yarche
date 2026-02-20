@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cegtn6fdvktct"]
 
 [ext_resource type="PackedScene" uid="uid://ckoyw13tiflae" path="res://scenes/objects/pump/pump.tscn" id="1_iikc0"]
-[ext_resource type="Script" uid="uid://c036euaw5xccf" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
+[ext_resource type="Script" uid="uid://cs0jqxmgf7idy" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
 [ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
 
 [node name="PumpGame" type="Node2D"]
