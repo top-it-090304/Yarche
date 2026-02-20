@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cegtn6fdvktct"]
+
+[ext_resource type="PackedScene" uid="uid://ckoyw13tiflae" path="res://scenes/objects/pump/pump.tscn" id="1_iikc0"]
+[ext_resource type="Script" uid="uid://c036euaw5xccf" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
+[ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
+
+[node name="PumpGame" type="Node2D"]
+script = ExtResource("1_xdxwj")
+
+[node name="Pump" parent="." instance=ExtResource("1_iikc0")]
+position = Vector2(669, 572)
+
+[node name="Manometr" parent="." instance=ExtResource("2_xdxwj")]
+position = Vector2(236, 312)
+
+[node name="TimerBar" type="ProgressBar" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 1280.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+show_percentage = false
+
+[node name="GameTimer" type="Timer" parent="."]

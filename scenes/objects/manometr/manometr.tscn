@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://q4pvir07mj8s"]
+
+[ext_resource type="Texture2D" uid="uid://dskbftoeo7qxe" path="res://assets/img/PullGame/Manometr.png" id="1_1hehv"]
+[ext_resource type="Script" uid="uid://d2a0s8csyahn2" path="res://scenes/objects/manometr/manometr.gd" id="1_xp2vv"]
+[ext_resource type="Texture2D" uid="uid://d3hoty4112ai2" path="res://assets/img/PullGame/Strelka.png" id="2_xp2vv"]
+
+[node name="Manometr" type="Node2D"]
+script = ExtResource("1_xp2vv")
+
+[node name="Body" type="Sprite2D" parent="."]
+scale = Vector2(0.633459, 0.633459)
+texture = ExtResource("1_1hehv")
+
+[node name="Strelka" type="Sprite2D" parent="."]
+scale = Vector2(0.315492, 0.315492)
+texture = ExtResource("2_xp2vv")
+centered = false
+offset = Vector2(-512, -512)
