@@ -16,4 +16,4 @@ func _input(event: InputEvent) -> void:
 		decrease_scale()
 		
 func _process(delta):
-	play("burning")
+	play("burning")	

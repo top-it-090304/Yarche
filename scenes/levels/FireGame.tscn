@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxdlt22piaqb"]
+
+[ext_resource type="Texture2D" uid="uid://6hh1fw3reuil" path="res://assets/img/bg/forests/forest.png" id="1_bcwcv"]
+[ext_resource type="PackedScene" uid="uid://df5nwlw7x1qyb" path="res://scenes/objects/fire/flame.tscn" id="2_7wour"]
+
+[node name="FireGame" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_bcwcv")
+
+[node name="Flame" parent="." instance=ExtResource("2_7wour")]
+position = Vector2(650, 369)
+scale = Vector2(0.879999, 0.879999)
