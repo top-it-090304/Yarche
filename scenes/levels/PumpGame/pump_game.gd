@@ -10,10 +10,9 @@ var current_pressure = 0.0
 var game_active = true
 var game_time = 20.0  # секунд
 
-# Для свайпов
-var start_pos = Vector2.ZERO
-var last_swipe_was_up = false
-var min_swipe_length = 50
+# Для отслеживания касания ручки
+var touching_pump = false
+var pump_touch_index = -1  # ID касания
 
 func _ready():
 	# Настройка таймера
@@ -38,44 +37,42 @@ func _process(delta):
 func _input(event):
 	if not game_active:
 		return
-		
+	
 	if event is InputEventScreenTouch:
-		if event.pressed:
-			start_pos = event.position
-		else:
-			check_swipe(event.position)
+		handle_touch_event(event)
+	
+	elif event is InputEventScreenDrag and touching_pump and event.index == pump_touch_index:
+		# Обрабатываем движение пальца только если это касание ручки
+		handle_drag_event(event)
 
-func check_swipe(end_pos):
-	var vector = end_pos - start_pos
-	
-	# Проверка длины свайпа
-	if vector.length() < min_swipe_length:
-		return
-	
-	# Вертикальный свайп
-	if vector.y < -min_swipe_length:  # ВВЕРХ
-		pump.swipe_up()
-		last_swipe_was_up = true
-		
-	elif vector.y > min_swipe_length:  # ВНИЗ
-		if last_swipe_was_up:
-			pump.swipe_down()
-			add_pressure(0.1)
-			last_swipe_was_up = false
-		else:
-			# Можно просто игнорировать или предупредить
-			print("Сначала подними шток!")
-	
-	# Возврат ручки
-	pump.swipe_end()
+func handle_touch_event(event: InputEventScreenTouch):
+	if event.pressed:
+		# Проверяем, коснулся ли игрок ручки насоса
+		if is_point_on_pump(event.position):
+			touching_pump = true
+			pump_touch_index = event.index
+			pump.start_touch(event.position)
+	else:
+		# Если палец отпущен и это было касание ручки
+		if event.index == pump_touch_index:
+			touching_pump = false
+			pump_touch_index = -1
+			pump.end_touch()
+
+func handle_drag_event(event: InputEventScreenDrag):
+	# Передаем позицию драга в насос
+	pump.update_touch_position(event.position)
+
+func is_point_on_pump(point: Vector2) -> bool:
+	# Вместо использования get_pump_size, вызываем метод is_point_on_handle напрямую
+	return pump.is_point_on_handle(point)
 
 func add_pressure(amount):
 	current_pressure += amount
 	manometr.update_strelka(current_pressure)
 	
 	# Проверка на взрыв
-	if current_pressure >= 3.9:
-		game_over("БДЫЩ! Перекачал до взрыва!")
+	
 
 func _on_game_timer_timeout():
 	if not game_active:

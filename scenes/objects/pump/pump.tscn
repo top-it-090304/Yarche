@@ -1,27 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckoyw13tiflae"]
+[gd_scene load_steps=4 format=3 uid="uid://ckoyw13tiflae"]
 
-[ext_resource type="Texture2D" uid="uid://coras3dp8rrmn" path="res://assets/img/PullGame/Pump_Corpus.png" id="1_k8vp0"]
-[ext_resource type="Script" uid="uid://c0xgxunqhwogw" path="res://scenes/objects/pump/pump.gd" id="1_kdubi"]
-[ext_resource type="Texture2D" uid="uid://ip2pjmnqi85u" path="res://assets/img/PullGame/Pump_Handle.png" id="2_ljphf"]
-[ext_resource type="Texture2D" uid="uid://cfm3y0vg56lmq" path="res://assets/img/PullGame/Pump_Corpus_Mask.png" id="2_qjumx"]
+[ext_resource type="Script" path="res://scenes/objects/pump/pump.gd" id="1_kdubi"]
+[ext_resource type="Texture2D" uid="uid://kcw24ho8j7r7" path="res://assets/img/PullGame/Frame 1 (1).png" id="3_kdubi"]
+[ext_resource type="Texture2D" uid="uid://dg0rrucwqw4d7" path="res://assets/img/PullGame/Frame 2 (1).png" id="3_qjumx"]
 
 [node name="Pump" type="Node2D"]
 clip_children = 1
 script = ExtResource("1_kdubi")
 
+[node name="RodHandle" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(0.804248, 0.753685)
+texture = ExtResource("3_qjumx")
+
 [node name="Body" type="Sprite2D" parent="."]
+position = Vector2(0, 92)
 scale = Vector2(0.777778, 1)
-texture = ExtResource("1_k8vp0")
-
-[node name="RodContainer" type="Node2D" parent="."]
-
-[node name="RodHandle" type="Sprite2D" parent="RodContainer"]
-position = Vector2(0, -50)
-scale = Vector2(0.546875, 0.753685)
-texture = ExtResource("2_ljphf")
-
-[node name="Mask" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -56)
-scale = Vector2(1, 1.01301)
-texture = ExtResource("2_qjumx")
+texture = ExtResource("3_kdubi")

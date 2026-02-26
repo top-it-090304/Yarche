@@ -1,6 +1,5 @@
 res://scenes/levels/tap-game/tap_game.tscn
-res://scenes/objects/fire/fire_scene.tscn
 res://scenes/levels/PumpGame/pump_game.tscn
-res://scenes/objects/fire/flame.tscn
-res://scenes/objects/fire/fire_script.gd
-res://scenes/levels/FireGame.tscn
+res://scenes/objects/pump/pump.gd
+res://scenes/levels/PumpGame/pump_game.gd
+res://scenes/objects/pump/pump.tscn
