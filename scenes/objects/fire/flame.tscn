@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://df5nwlw7x1qyb"]
+
+[ext_resource type="PackedScene" uid="uid://cj7bqqby5w2ws" path="res://scenes/objects/fire/fire_scene.tscn" id="1_sit8m"]
+[ext_resource type="Texture2D" uid="uid://bdupqcn6ro34b" path="res://assets/animated_objects/fire/Untitled.png" id="2_ew31w"]
+
+[node name="Flame" type="Node2D"]
+position = Vector2(667, 299)
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("1_sit8m")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 295)
+texture = ExtResource("2_ew31w")

@@ -73,5 +73,5 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_jch82")
 animation = &"burning"
-frame_progress = 0.0839649
+frame_progress = 0.8431
 script = ExtResource("16_vhhpj")
