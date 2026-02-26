@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxdlt22piaqb"]
+
+[ext_resource type="Script" uid="uid://bk8gy2t6wk7ds" path="res://scenes/levels/FireGame/fire_game.gd" id="1_40y1c"]
+[ext_resource type="Texture2D" uid="uid://6hh1fw3reuil" path="res://assets/img/bg/forests/forest.png" id="1_fwkff"]
+[ext_resource type="PackedScene" uid="uid://df5nwlw7x1qyb" path="res://scenes/objects/fire/flame.tscn" id="2_40y1c"]
+[ext_resource type="Script" uid="uid://fxpyy2yeb4fa" path="res://scenes/levels/FireGame/audio_stream_player.gd" id="3_sbfpj"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_fwkff"]
+
+[node name="FireGame" type="Node2D"]
+script = ExtResource("1_40y1c")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_fwkff")
+
+[node name="Flame" parent="." instance=ExtResource("2_40y1c")]
+position = Vector2(650, 369)
+scale = Vector2(0.879999, 0.879999)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_fwkff")
+autoplay = true
+bus = &"Record"
+script = ExtResource("3_sbfpj")
+
+[node name="buffer_timer" type="Timer" parent="."]

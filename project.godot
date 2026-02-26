@@ -19,6 +19,10 @@ run/main_scene="uid://c13g7jj1q06pu"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/enable_input=true
+
 [display]
 
 window/size/viewport_width=1280

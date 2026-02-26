@@ -1,4 +1,5 @@
-AudioStreamPlayer2D
+Timer
+AudioStreamPlayer
 Sprite2D
 PointLight2D
 CollisionShape2D
