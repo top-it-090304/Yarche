@@ -3,3 +3,4 @@ res://scenes/levels/PumpGame/pump_game.tscn
 res://scenes/objects/pump/pump.gd
 res://scenes/levels/PumpGame/pump_game.gd
 res://scenes/objects/pump/pump.tscn
+res://scenes/objects/manometr/manometr.gd
