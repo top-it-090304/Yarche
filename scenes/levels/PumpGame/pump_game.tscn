@@ -4,22 +4,39 @@
 [ext_resource type="Script" uid="uid://cs0jqxmgf7idy" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
 [ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
 
-[node name="PumpGame" type="Node2D"]
-script = ExtResource("1_xdxwj")
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Pump" parent="." instance=ExtResource("1_iikc0")]
-position = Vector2(669, 572)
-
-[node name="Manometr" parent="." instance=ExtResource("2_xdxwj")]
-position = Vector2(236, 312)
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.250899, 0.342151, 0.377385, 1)
 
 [node name="TimerBar" type="ProgressBar" parent="."]
+layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_right = 1280.0
-offset_bottom = 27.0
+offset_bottom = 23.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 show_percentage = false
 
-[node name="GameTimer" type="Timer" parent="."]
+[node name="PumpGame" type="Node2D" parent="."]
+script = ExtResource("1_xdxwj")
+
+[node name="Pump" parent="PumpGame" instance=ExtResource("1_iikc0")]
+position = Vector2(669, 572)
+
+[node name="Manometr" parent="PumpGame" instance=ExtResource("2_xdxwj")]
+position = Vector2(236, 312)
+
+[node name="GameTimer" type="Timer" parent="PumpGame"]

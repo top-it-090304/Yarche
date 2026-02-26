@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var pump = $Pump
 @onready var manometr = $Manometr
-@onready var timer_bar = $TimerBar
+@onready var timer_bar = $"../TimerBar"
 @onready var game_timer = $GameTimer
 
 # Параметры игры
@@ -50,11 +50,6 @@ func check_swipe(end_pos):
 	
 	# Проверка длины свайпа
 	if vector.length() < min_swipe_length:
-		return
-	
-	# Определяем направление
-	if abs(vector.x) > abs(vector.y):
-		game_over("Горизонтальный свайп! Насос сломан!")
 		return
 	
 	# Вертикальный свайп

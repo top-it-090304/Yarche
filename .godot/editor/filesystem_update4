@@ -1,0 +1,4 @@
+res://scenes/levels/PumpGame/pump_game.tscn
+res://scenes/levels/PumpGame/pump_game.gd
+res://scenes/levels/tap-game/tap_game.tscn
+res://scenes/objects/pump/pump.tscn
