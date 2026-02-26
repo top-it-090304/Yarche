@@ -4,6 +4,7 @@ extends Node2D
 @onready var manometr = $Manometr
 @onready var timer_bar = $"../TimerBar"
 @onready var game_timer = $GameTimer
+@onready var pump_sound = $PumpSound  # Добавляем звук насоса
 
 var current_pressure
 var game_active = true
@@ -66,6 +67,12 @@ func add_pressure(amount):
 	
 	manometr.update_strelka(current_pressure)
 	
+	# Звук накачки - проигрываем каждый раз при добавлении давления
+	if pump_sound and amount > 0:
+		# Немного меняем высоту тона для разнообразия
+		pump_sound.pitch_scale = 0.9 + randf() * 0.2
+		pump_sound.play()
+	
 	# Проверка на красную зону
 	if current_pressure >= 3.0:
 		print("Осторожно! Высокое давление!")
@@ -83,10 +90,6 @@ func release_pressure(amount):
 	current_pressure = max(current_pressure, manometr.min_pressure)
 
 	manometr.update_strelka(current_pressure)
-	
-	# Можно добавить звук шипения если давление падает
-	if amount > 0.01:
-		print("Ш-ш-ш... давление падает: ", current_pressure)
 
 func _on_game_timer_timeout():
 	if not game_active:
