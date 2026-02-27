@@ -8,7 +8,7 @@ extends Node2D
 @onready var hiss_sound = $HissSound
 
 var current_pressure
-var game_active = true
+var game_active = false
 var game_time = 15.0
 
 var touching_pump = false
@@ -16,6 +16,7 @@ var pump_touch_index = -1
 var hiss_playing = false
 
 func _ready():
+	show_tutorial()
 	game_timer.wait_time = game_time
 	game_timer.one_shot = true
 	game_timer.timeout.connect(_on_game_timer_timeout)
@@ -30,11 +31,22 @@ func _ready():
 	if hiss_sound:
 		hiss_sound.finished.connect(_on_hiss_finished)
 
+func show_tutorial():
+	var tutorial = preload("res://scenes/levels/PumpGame/pump_tutorial.tscn").instantiate()
+	add_child(tutorial)
+	tutorial.tutorial_finished.connect(_start_game)
+
+func _start_game():
+	game_active = true
+	game_timer.start()
+
 func _on_hiss_finished():
 	if hiss_playing and game_active and current_pressure > 0:
 		hiss_sound.play()
 
 func _process(delta):
+	if not game_active:
+		return
 	if game_active:
 		timer_bar.value = game_timer.time_left
 

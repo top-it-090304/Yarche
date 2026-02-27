@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cegtn6fdvktct"]
+[gd_scene load_steps=7 format=3 uid="uid://cegtn6fdvktct"]
 
 [ext_resource type="PackedScene" uid="uid://ckoyw13tiflae" path="res://scenes/objects/pump/pump.tscn" id="1_iikc0"]
-[ext_resource type="Script" path="res://scenes/levels/pump_game.gd" id="1_xdxwj"]
+[ext_resource type="Script" uid="uid://cyp87noyvm74j" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
 [ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
-[ext_resource type="AudioStream" path="res://assets/music/PumpGameSounds/Насосом накачивают колесо (online-video-cutter.com) (1).mp3" id="4_6w67o"]
+[ext_resource type="AudioStream" uid="uid://b0soeww2gdh2d" path="res://assets/music/PumpGameSounds/PumpSound.mp3" id="4_u1ppj"]
 [ext_resource type="AudioStream" uid="uid://c6x8cfueem0iv" path="res://assets/music/PumpGameSounds/HissSound.mp3" id="5_u1ppj"]
+[ext_resource type="PackedScene" uid="uid://mxu874h1y6w7" path="res://scenes/levels/PumpGame/pump_tutorial.tscn" id="6_x4kep"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -44,8 +45,10 @@ position = Vector2(236, 312)
 [node name="GameTimer" type="Timer" parent="PumpGame"]
 
 [node name="PumpSound" type="AudioStreamPlayer2D" parent="PumpGame"]
-stream = ExtResource("4_6w67o")
+stream = ExtResource("4_u1ppj")
 
 [node name="HissSound" type="AudioStreamPlayer2D" parent="PumpGame"]
 stream = ExtResource("5_u1ppj")
 volume_db = -10.57
+
+[node name="PumpTutorial" parent="PumpGame" instance=ExtResource("6_x4kep")]
