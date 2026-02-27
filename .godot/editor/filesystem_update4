@@ -1,5 +1,5 @@
 res://default_bus_layout.tres
-res://scenes/levels/PumpGame/pump_game.tscn
-res://scenes/levels/PumpGame/pump_game.gd
 res://scenes/levels/FireGame/FireGame.tscn
-res://scenes/objects/pump/pump.gd
+res://scenes/levels/PumpGame/pump_game.tscn
+res://scenes/levels/PumpGame/pump_tutorial.tscn
+res://scenes/objects/pump/pump.tscn

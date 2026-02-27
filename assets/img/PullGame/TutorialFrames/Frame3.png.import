@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kcw24ho8j7r7"
-path="res://.godot/imported/Frame 1 (1).png-39d5dc25c16e949441957cb23066f03b.ctex"
+uid="uid://dgp6ntpamxgkh"
+path="res://.godot/imported/Frame3.png-4261d530f8d13a55c7b56a385309d7b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/PullGame/Frame 1 (1).png"
-dest_files=["res://.godot/imported/Frame 1 (1).png-39d5dc25c16e949441957cb23066f03b.ctex"]
+source_file="res://assets/img/PullGame/TutorialFrames/Frame3.png"
+dest_files=["res://.godot/imported/Frame3.png-4261d530f8d13a55c7b56a385309d7b6.ctex"]
 
 [params]
 

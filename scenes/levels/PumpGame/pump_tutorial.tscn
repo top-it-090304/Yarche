@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://mxu874h1y6w7"]
+
+[ext_resource type="Texture2D" uid="uid://cwtc4ydrr848f" path="res://assets/img/PullGame/TutorialFrames/Frame1.png" id="1_bdl2l"]
+[ext_resource type="Texture2D" uid="uid://dvms2s2c4m7r3" path="res://assets/img/PullGame/TutorialFrames/Frame2.png" id="2_5yq5q"]
+[ext_resource type="Texture2D" uid="uid://dgp6ntpamxgkh" path="res://assets/img/PullGame/TutorialFrames/Frame3.png" id="3_528be"]
+[ext_resource type="Texture2D" uid="uid://dbxjn45uixcv4" path="res://assets/img/PullGame/TutorialFrames/Frame4.png" id="4_dt3t1"]
+[ext_resource type="Texture2D" uid="uid://dgfo7xpy44n44" path="res://assets/img/PullGame/TutorialFrames/Frame5.png" id="5_1nlvf"]
+[ext_resource type="Texture2D" uid="uid://c3uwq16epcgxe" path="res://assets/img/PullGame/TutorialFrames/Frame6.png" id="6_w8meb"]
+[ext_resource type="Texture2D" uid="uid://uqwwjclklbyy" path="res://assets/img/PullGame/TutorialFrames/Frame7.png" id="7_1jyct"]
+[ext_resource type="Texture2D" uid="uid://dccgrgjcy43np" path="res://assets/img/PullGame/TutorialFrames/Frame8.png" id="8_nnyrs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wf6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bdl2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5yq5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_528be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dt3t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1nlvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w8meb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1jyct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nnyrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="PumpTutorial" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.008, 0.008, 0.008, 0.7)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.0
+offset_top = 67.0
+offset_right = 203.0
+offset_bottom = 122.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+text = "Как делать кач-кач?"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -257.5
+offset_top = -140.0
+offset_right = 257.5
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "Двигай ручку вниз-вверх"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(639, 299)
+scale = Vector2(0.820209, 0.820209)
+sprite_frames = SubResource("SpriteFrames_1wf6j")

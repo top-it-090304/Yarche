@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ckoyw13tiflae" path="res://scenes/objects/pump/pump.tscn" id="1_iikc0"]
 [ext_resource type="Script" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
 [ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
-[ext_resource type="AudioStream" uid="uid://bapesrvnwfkek" path="res://assets/music/PumpGameSounds/Насосом накачивают колесо (online-video-cutter.com) (1).mp3" id="4_6w67o"]
-[ext_resource type="AudioStream" uid="uid://cu1ixbvr2lp8r" path="res://assets/music/PumpGameSounds/Спускается колесо (online-video-cutter.com).mp3" id="5_u1ppj"]
+[ext_resource type="AudioStream" path="res://assets/music/PumpGameSounds/Насосом накачивают колесо (online-video-cutter.com) (1).mp3" id="4_6w67o"]
+[ext_resource type="AudioStream" uid="uid://c6x8cfueem0iv" path="res://assets/music/PumpGameSounds/HissSound.mp3" id="5_u1ppj"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
