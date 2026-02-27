@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var ui: Control = $Control
+@onready var ui: Control = $TapGameControl
 @onready var timer: Timer = $Timer
 @onready var music: AudioStreamPlayer = $Gameworld/AgressiveTheme2
 @onready var win_screen: Control = $UI/win
