@@ -4,10 +4,13 @@ var acceleration = 15.0
 var direction = Vector2.RIGHT
 var MIN_SPEED = 150.0
 var MAX_SPEED  = 1000.0
-@onready var control: Control = $"../../Control"
 
+func set_min_speed(new_min_speed):
+	MIN_SPEED = new_min_speed
 func _ready():
-	control.tapped.connect(_on_control_tapped)
+	if has_node("../../TapGameControl"):
+		var control: Control = $"../../TapGameControl"
+		control.tapped.connect(_on_control_tapped)
 	
 func _on_control_tapped():
 	if speed <MAX_SPEED:
