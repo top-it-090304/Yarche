@@ -4,7 +4,8 @@ extends Node2D
 @onready var manometr = $Manometr
 @onready var timer_bar = $"../TimerBar"
 @onready var game_timer = $GameTimer
-@onready var pump_sound = $PumpSound  # Добавляем звук насоса
+@onready var pump_sound = $PumpSound
+@onready var hiss_sound = $HissSound
 
 var current_pressure
 var game_active = true
@@ -12,6 +13,7 @@ var game_time = 15.0
 
 var touching_pump = false
 var pump_touch_index = -1
+var hiss_playing = false
 
 func _ready():
 	game_timer.wait_time = game_time
@@ -24,6 +26,13 @@ func _ready():
 
 	current_pressure = 0.0
 	manometr.update_strelka(current_pressure)
+	
+	if hiss_sound:
+		hiss_sound.finished.connect(_on_hiss_finished)
+
+func _on_hiss_finished():
+	if hiss_playing and game_active and current_pressure > 0:
+		hiss_sound.play()
 
 func _process(delta):
 	if game_active:
@@ -67,17 +76,12 @@ func add_pressure(amount):
 	
 	manometr.update_strelka(current_pressure)
 	
-	# Звук накачки - проигрываем каждый раз при добавлении давления
 	if pump_sound and amount > 0:
-		# Немного меняем высоту тона для разнообразия
 		pump_sound.pitch_scale = 0.9 + randf() * 0.2
 		pump_sound.play()
+		
+		stop_hiss_sound()
 	
-	# Проверка на красную зону
-	if current_pressure >= 3.0:
-		print("Осторожно! Высокое давление!")
-	
-	# Проверка на взрыв
 	if current_pressure >= max_pressure:
 		game_over("ВЗРЫВ! Слишком большое давление!")
 
@@ -85,27 +89,45 @@ func release_pressure(amount):
 	if not game_active:
 		return
 	
+	var old_pressure = current_pressure
 	current_pressure -= amount
 	
 	current_pressure = max(current_pressure, manometr.min_pressure)
 
 	manometr.update_strelka(current_pressure)
+	if current_pressure > 0.1:
+		start_hiss_sound()
+	else:
+		stop_hiss_sound()
+
+func start_hiss_sound():
+	if not hiss_playing and hiss_sound and game_active:
+		hiss_sound.play()
+		hiss_playing = true
+
+func stop_hiss_sound():
+	if hiss_sound and hiss_playing:
+		hiss_sound.stop()
+		hiss_playing = false
 
 func _on_game_timer_timeout():
 	if not game_active:
 		return
+	stop_hiss_sound()
 	
 	if current_pressure >= 2.0 and current_pressure <= 2.6:
 		win_game("Победа! Норм накачал!")
-	elif current_pressure > 2.8:
+	elif current_pressure > 2.6:
 		game_over("Перекачал! Красная зона!")
 	else:
 		game_over("Недокачал... Так и поедешь?")
 
 func game_over(message):
 	game_active = false
+	stop_hiss_sound()
 	print("GAME OVER: ", message)
 
 func win_game(message):
 	game_active = false
+	stop_hiss_sound()
 	print("WIN: ", message)

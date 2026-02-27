@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cegtn6fdvktct"]
+[gd_scene load_steps=6 format=3 uid="uid://cegtn6fdvktct"]
 
 [ext_resource type="PackedScene" uid="uid://ckoyw13tiflae" path="res://scenes/objects/pump/pump.tscn" id="1_iikc0"]
 [ext_resource type="Script" path="res://scenes/levels/pump_game.gd" id="1_xdxwj"]
 [ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
 [ext_resource type="AudioStream" uid="uid://bapesrvnwfkek" path="res://assets/music/PumpGameSounds/Насосом накачивают колесо (online-video-cutter.com) (1).mp3" id="4_6w67o"]
+[ext_resource type="AudioStream" uid="uid://cu1ixbvr2lp8r" path="res://assets/music/PumpGameSounds/Спускается колесо (online-video-cutter.com).mp3" id="5_u1ppj"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -44,3 +45,7 @@ position = Vector2(236, 312)
 
 [node name="PumpSound" type="AudioStreamPlayer2D" parent="PumpGame"]
 stream = ExtResource("4_6w67o")
+
+[node name="HissSound" type="AudioStreamPlayer2D" parent="PumpGame"]
+stream = ExtResource("5_u1ppj")
+volume_db = -10.57
