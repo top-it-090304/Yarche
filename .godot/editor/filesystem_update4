@@ -1,12 +1,5 @@
-res://scenes/levels/tap-game/tap_game.tscn
-res://scenes/levels/PumpGame/pump_game.tscn
-res://scenes/objects/pump/pump.tscn
-res://scenes/levels/FireGame.tscn
-res://scenes/levels/FireGame/FireGame.tscn
-res://scenes/levels/FireGame/audio_stream_player.gd
 res://default_bus_layout.tres
-res://scenes/objects/fire/flame.tscn
-res://scenes/levels/FireGame/fire_game.gd
-res://scenes/objects/fire/fire_script.gd
-res://scenes/objects/fire/flame.gd
-res://scenes/objects/fire/fire_scene.tscn
+res://scenes/levels/PumpGame/pump_game.tscn
+res://scenes/levels/PumpGame/pump_game.gd
+res://scenes/levels/FireGame/FireGame.tscn
+res://scenes/objects/pump/pump.gd
