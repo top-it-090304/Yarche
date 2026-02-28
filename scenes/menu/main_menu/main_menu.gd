@@ -1,12 +1,31 @@
-extends Node2D
-@onready var computer_enemy: CharacterBody2D = $back_world/computer_enemy
-@onready var green_player: CharacterBody2D = $back_world/CharacterBody2D
-
+extends CanvasLayer
+const LEVEL_MENU = preload("res://scenes/menu/level_menu/level_menu.tscn")
+@onready var main_menu_ui: Control = $MainMenuUi
+var flag = false
 func _ready():
-	green_player.set_min_speed(computer_enemy.speed)
-	green_player.speed = green_player.MIN_SPEED
-func _process(delta):
-	if computer_enemy.global_position.x > 1500:
-		computer_enemy.global_position.x = -150
-	if green_player.global_position.x > 1500:
-		green_player.global_position.x = -150
+	main_menu_ui.play_button_pressed.connect(_show_level_menu)
+	
+func _show_level_menu():
+	var level_menu = LEVEL_MENU.instantiate()
+	level_menu.position = Vector2(0, -get_viewport().get_visible_rect().size.y)
+	
+	level_menu.modulate = Color(1,1,1,0)
+	add_child(level_menu)
+	
+	_close_main_menu()
+	_show_level_menu_with_dissolve(level_menu)
+	
+func _close_main_menu():
+	var tween_close_main_menu_ui = create_tween()
+	tween_close_main_menu_ui.tween_property(main_menu_ui, "modulate", Color(1,1,1,0), 0.5)
+	tween_close_main_menu_ui.tween_callback(_delete_ui)
+
+func _show_level_menu_with_dissolve(level_menu):
+	print(level_menu.position.y)
+	var tween_show_level_menu = create_tween().set_parallel(true)
+	tween_show_level_menu.tween_property(level_menu, "modulate", Color(1,1,1,1), 0.5)
+	tween_show_level_menu.tween_property(level_menu, "position", Vector2(0,0), 0.5)
+	print(level_menu.position.y)
+	
+func _delete_ui():
+	main_menu_ui.queue_free()

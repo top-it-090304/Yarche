@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0sw070f34n05"]
+
+[ext_resource type="Script" uid="uid://diham5r1sgip5" path="res://scenes/menu/level_menu/level_menu.gd" id="1_adek3"]
+
+[node name="LevelMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_adek3")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+columns = 5
