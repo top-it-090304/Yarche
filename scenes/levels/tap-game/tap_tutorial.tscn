@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://ff85073hyakn"]
+
+[ext_resource type="Script" path="res://scenes/levels/PumpGame/pump_tutorial.gd" id="1_lde7q"]
+[ext_resource type="Texture2D" uid="uid://6js5psqo84j4" path="res://assets/img/TapGame/TutorialFrames/Frame 1.png" id="2_kk6ub"]
+[ext_resource type="Texture2D" uid="uid://dib1fjb37tslr" path="res://assets/img/TapGame/TutorialFrames/Frame 2.png" id="3_n4dl2"]
+[ext_resource type="Texture2D" uid="uid://b67wxck6eikif" path="res://assets/img/TapGame/TutorialFrames/Frame 3.png" id="4_b0r1e"]
+[ext_resource type="Texture2D" uid="uid://cwxn0rjdnwr1s" path="res://assets/img/TapGame/TutorialFrames/Frame 4.png" id="5_77q3r"]
+[ext_resource type="Texture2D" uid="uid://dbwhl366fij07" path="res://assets/img/TapGame/TutorialFrames/Frame 5.png" id="6_55ajt"]
+[ext_resource type="Texture2D" uid="uid://bwbcgg6ipc1od" path="res://assets/img/TapGame/TutorialFrames/Frame 6.png" id="7_wq66w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wf6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kk6ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n4dl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b0r1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_77q3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_55ajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wq66w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="PumpTutorial" type="CanvasLayer"]
+script = ExtResource("1_lde7q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.008, 0.008, 0.008, 0.7)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.0
+offset_top = 67.0
+offset_right = 203.0
+offset_bottom = 122.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+text = "Как делать кач-кач?"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -257.5
+offset_top = -140.0
+offset_right = 257.5
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "Двигай ручку вниз-вверх"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(648, 356)
+scale = Vector2(0.591133, 0.591133)
+sprite_frames = SubResource("SpriteFrames_1wf6j")
+autoplay = "default"
+frame_progress = 0.461976
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
