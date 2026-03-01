@@ -7,4 +7,3 @@ func _ready():
 		var button = LEVEL_BUTTON.instantiate()
 		button.level_number = i
 		grid_container.add_child(button)
-	emit_signal("rendered")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c520wdi4qn8fx"]
+[gd_scene load_steps=7 format=3 uid="uid://c520wdi4qn8fx"]
 
 [ext_resource type="Texture2D" uid="uid://67hqx543cimr" path="res://assets/img/ui/buttons/play button.png" id="1_fgphg"]
 [ext_resource type="Script" uid="uid://dkey4qni7kv72" path="res://scenes/menu/main_menu/main_menu_ui.gd" id="1_ickgj"]
 [ext_resource type="Texture2D" uid="uid://dwbmdhysl87po" path="res://assets/img/ui/buttons/play button PressedAndHover.png" id="2_ickgj"]
 [ext_resource type="Texture2D" uid="uid://bxijdh0dasing" path="res://assets/img/ui/buttons/exit button.png" id="3_27dav"]
 [ext_resource type="Texture2D" uid="uid://c6mbvwgqwxvhm" path="res://assets/img/ui/buttons/exit button PressedAndHover.png" id="4_fmtl4"]
+[ext_resource type="Texture2D" uid="uid://blc62ku34dti4" path="res://assets/img/ui/ui_img/main_menu_logo.png" id="6_27dav"]
 
 [node name="MainMenuUi" type="Control"]
 layout_mode = 3
@@ -36,3 +37,7 @@ offset_bottom = 528.0
 texture_normal = ExtResource("3_27dav")
 texture_pressed = ExtResource("4_fmtl4")
 texture_hover = ExtResource("4_fmtl4")
+
+[node name="logo" type="Sprite2D" parent="."]
+position = Vector2(640, 224)
+texture = ExtResource("6_27dav")

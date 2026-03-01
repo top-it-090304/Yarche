@@ -14,14 +14,18 @@ func _ready():
 func setup_microphone():
 	var idx = AudioServer.get_bus_index("Record")
 	effect = AudioServer.get_bus_effect(idx, 0)
+	if effect and idx:
+		print("fdjfjddk")
 
 func on_timer_timeout():
 	effect.set_recording_active(false)
 	recording = effect.get_recording()
 	if recording != null:
-		if (get_avg_rms_volume(recording) < 80):
+		if (get_avg_rms_volume(recording) < 100):
 			emit_signal("over_threshold")
 			print("Задуваем")
+		else:
+			print("Сейчас такой средний уровень шума: ", get_avg_rms_volume(recording))
 	effect.set_recording_active(true)
 
 func get_avg_rms_volume(recording):

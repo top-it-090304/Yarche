@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://su3x58oj8rgl" path="res://assets/sounds/music/main_menu_theme.ogg" id="1_dk276"]
 [ext_resource type="Script" uid="uid://cpttygmh08ow6" path="res://scenes/menu/main_menu/main_menu.gd" id="1_ww8d4"]
 [ext_resource type="PackedScene" uid="uid://c520wdi4qn8fx" path="res://scenes/menu/main_menu/main_menu_ui.tscn" id="2_3tda0"]
-[ext_resource type="Texture2D" uid="uid://cgo2myr5nknc5" path="res://assets/img/bg/main_menu/main_menu_bg.png" id="2_ww8d4"]
+[ext_resource type="Texture2D" uid="uid://dyb11f20b807r" path="res://assets/img/bg/main_menu/main_menu_bg.png" id="2_ww8d4"]
 [ext_resource type="Script" uid="uid://dyunvbrxf65y1" path="res://scenes/menu/main_menu/back_world.gd" id="3_pqpva"]
 [ext_resource type="PackedScene" uid="uid://cnlxtar1mv8c2" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.tscn" id="3_wd51l"]
 [ext_resource type="PackedScene" uid="uid://c3rrjgyq7n74o" path="res://scenes/characters/green_player/green_player.tscn" id="4_3tda0"]
