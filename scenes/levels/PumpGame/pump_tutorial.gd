@@ -15,13 +15,12 @@ func _ready():
 
 func _on_tutorial_timeout():
 	emit_signal("tutorial_finished")
-	
 	queue_free()
-
-func _input(event):
-	if event is InputEventScreenTouch and event.pressed:
-		skip_tutorial()
 
 func skip_tutorial():
 	timer.stop()
 	_on_tutorial_timeout()
+
+func _input(event):
+	if event is InputEventScreenTouch and event.pressed:
+		skip_tutorial()
