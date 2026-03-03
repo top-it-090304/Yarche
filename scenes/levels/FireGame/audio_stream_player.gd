@@ -1,11 +1,16 @@
 extends AudioStreamPlayer
 var effect
 var recording
-@onready var timer: Timer = $"../buffer_timer"
-signal over_threshold
 
+@onready var timer: Timer = $buffer_timer
+@onready var flame: Node2D = $"../Flame"
+
+signal over_threshold
 func _ready():
 	setup_microphone()
+	
+	flame.win.connect(_end_of_recording)
+	
 	timer.wait_time = 0.5
 	timer.timeout.connect(on_timer_timeout)
 	effect.set_recording_active(true)
@@ -21,7 +26,7 @@ func on_timer_timeout():
 	effect.set_recording_active(false)
 	recording = effect.get_recording()
 	if recording != null:
-		if (get_avg_rms_volume(recording) < 100):
+		if (get_avg_rms_volume(recording) < 130):
 			emit_signal("over_threshold")
 			print("Задуваем")
 		else:
@@ -40,3 +45,6 @@ func get_avg_rms_volume(recording):
 			sum += sample*sample
 			cnt +=1
 	return sqrt(sum/cnt)
+
+func _end_of_recording():
+	queue_free()
