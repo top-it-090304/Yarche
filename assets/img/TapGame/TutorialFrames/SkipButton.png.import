@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcxjxe7vgrjdh"
-path="res://.godot/imported/SkipButton.png-f7276dc43c2b92d9419a8da6f19ab324.ctex"
+path="res://.godot/imported/SkipButton.png-26895adeef802db679aef42d59e5ba86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/PullGame/TutorialFrames/SkipButton.png"
-dest_files=["res://.godot/imported/SkipButton.png-f7276dc43c2b92d9419a8da6f19ab324.ctex"]
+source_file="res://assets/img/TapGame/TutorialFrames/SkipButton.png"
+dest_files=["res://.godot/imported/SkipButton.png-26895adeef802db679aef42d59e5ba86.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ff85073hyakn"]
 
-[ext_resource type="Script" path="res://scenes/levels/PumpGame/pump_tutorial.gd" id="1_lde7q"]
+[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scenes/levels/PumpGame/pump_tutorial.gd" id="1_lde7q"]
 [ext_resource type="Texture2D" uid="uid://6js5psqo84j4" path="res://assets/img/TapGame/TutorialFrames/Frame 1.png" id="2_kk6ub"]
 [ext_resource type="Texture2D" uid="uid://dib1fjb37tslr" path="res://assets/img/TapGame/TutorialFrames/Frame 2.png" id="3_n4dl2"]
 [ext_resource type="Texture2D" uid="uid://b67wxck6eikif" path="res://assets/img/TapGame/TutorialFrames/Frame 3.png" id="4_b0r1e"]
@@ -66,25 +66,7 @@ offset_bottom = 122.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
-text = "Как делать кач-кач?"
-
-[node name="Label2" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -257.5
-offset_top = -140.0
-offset_right = 257.5
-offset_bottom = -85.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 40
-text = "Двигай ручку вниз-вверх"
+text = "НА"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
 position = Vector2(648, 356)
