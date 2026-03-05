@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://cohbcpor8k1vw"]
+
+[ext_resource type="Texture2D" uid="uid://dt41vd0co47e4" path="res://assets/img/PullGame/Wheel/Frame 1.png" id="1_7xeoi"]
+[ext_resource type="Texture2D" uid="uid://c26q0dw14jeqo" path="res://assets/img/PullGame/Wheel/Frame 2.png" id="2_x5wc2"]
+[ext_resource type="Texture2D" uid="uid://b7vt5ri2qj8uc" path="res://assets/img/PullGame/Wheel/Frame 3.png" id="3_jlr4o"]
+[ext_resource type="Texture2D" uid="uid://dtfbcpuve0p78" path="res://assets/img/PullGame/Wheel/Frame 4.png" id="4_4tr7p"]
+[ext_resource type="Texture2D" uid="uid://deow0r1accxn8" path="res://assets/img/PullGame/Wheel/Frame 5.png" id="5_yerp6"]
+[ext_resource type="Texture2D" uid="uid://dwj6o52s1dlyp" path="res://assets/img/PullGame/Wheel/Frame 6.png" id="6_ldrde"]
+[ext_resource type="Script" uid="uid://b3bikiqtwundw" path="res://scenes/levels/PumpGame/wheel.gd" id="7_x5wc2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jf3bd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7xeoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x5wc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jlr4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4tr7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yerp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ldrde")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Wheel" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jf3bd")
+script = ExtResource("7_x5wc2")

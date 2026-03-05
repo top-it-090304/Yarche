@@ -6,6 +6,7 @@ extends Node2D
 @onready var game_timer = $GameTimer
 @onready var pump_sound = $PumpSound
 @onready var hiss_sound = $HissSound
+@onready var wheel = $Wheel
 
 var current_pressure
 var game_active = false
@@ -87,6 +88,7 @@ func add_pressure(amount):
 	current_pressure = clamp(current_pressure, min_pressure, max_pressure)
 	
 	manometr.update_strelka(current_pressure)
+	wheel.update_frame(current_pressure)
 	
 	if pump_sound and amount > 0:
 		pump_sound.pitch_scale = 0.9 + randf() * 0.2
@@ -107,6 +109,8 @@ func release_pressure(amount):
 	current_pressure = max(current_pressure, manometr.min_pressure)
 
 	manometr.update_strelka(current_pressure)
+	wheel.update_frame(current_pressure)
+	
 	if current_pressure > 0.1:
 		start_hiss_sound()
 	else:
