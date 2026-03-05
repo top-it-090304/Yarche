@@ -46,7 +46,7 @@ func _on_hiss_finished():
 	if hiss_playing and game_active and current_pressure > 0:
 		hiss_sound.play()
 
-func _process(delta):
+func _process(_delta):
 	if not game_active:
 		return
 	if game_active:
@@ -104,7 +104,6 @@ func release_pressure(amount):
 	if not game_active:
 		return
 	
-	var old_pressure = current_pressure
 	current_pressure -= amount
 	
 	current_pressure = max(current_pressure, manometr.min_pressure)
@@ -146,5 +145,6 @@ func game_over():
 
 func win_game():
 	game_active = false
-	
+	var win_screen = preload("res://scenes/menu/win_scene/win-scene.tscn").instantiate()
+	add_child(win_screen)
 	stop_hiss_sound()
