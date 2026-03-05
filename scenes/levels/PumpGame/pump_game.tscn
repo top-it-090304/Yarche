@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cegtn6fdvktct"]
+[gd_scene load_steps=8 format=3 uid="uid://cegtn6fdvktct"]
 
 [ext_resource type="PackedScene" uid="uid://ckoyw13tiflae" path="res://scenes/objects/pump/pump.tscn" id="1_iikc0"]
 [ext_resource type="Script" uid="uid://cyp87noyvm74j" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
 [ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
 [ext_resource type="AudioStream" uid="uid://b0soeww2gdh2d" path="res://assets/sounds/PumpGameSounds/PumpSound.mp3" id="4_u1ppj"]
 [ext_resource type="AudioStream" uid="uid://c6x8cfueem0iv" path="res://assets/sounds/PumpGameSounds/HissSound.mp3" id="5_u1ppj"]
+[ext_resource type="AudioStream" uid="uid://ctv4dk1bd82om" path="res://assets/sounds/PumpGameSounds/PumpGameMusic.ogg" id="6_wkel7"]
 [ext_resource type="PackedScene" uid="uid://cohbcpor8k1vw" path="res://scenes/levels/PumpGame/wheel.tscn" id="6_x4kep"]
 
 [node name="Control" type="Control"]
@@ -50,6 +51,10 @@ stream = ExtResource("4_u1ppj")
 [node name="HissSound" type="AudioStreamPlayer2D" parent="PumpGame"]
 stream = ExtResource("5_u1ppj")
 volume_db = -10.57
+
+[node name="Music" type="AudioStreamPlayer2D" parent="PumpGame"]
+stream = ExtResource("6_wkel7")
+autoplay = true
 
 [node name="Wheel" parent="PumpGame" instance=ExtResource("6_x4kep")]
 position = Vector2(1049, 346)

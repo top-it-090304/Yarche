@@ -5,6 +5,7 @@ extends Node2D
 @onready var timer_bar = $"../TimerBar"
 @onready var game_timer = $GameTimer
 @onready var pump_sound = $PumpSound
+@onready var music = $Music
 @onready var hiss_sound = $HissSound
 @onready var wheel = $Wheel
 
@@ -97,7 +98,7 @@ func add_pressure(amount):
 		stop_hiss_sound()
 	
 	if current_pressure >= max_pressure:
-		game_over("ВЗРЫВ! Слишком большое давление!")
+		game_over()
 
 func release_pressure(amount):
 	if not game_active:
@@ -130,20 +131,20 @@ func _on_game_timer_timeout():
 	if not game_active:
 		return
 	stop_hiss_sound()
+	music.stop()
 	
 	if current_pressure >= 2.0 and current_pressure <= 2.6:
-		win_game("Победа! Норм накачал!")
+		win_game()
 	elif current_pressure > 2.6:
-		game_over("Перекачал! Красная зона!")
+		game_over()
 	else:
-		game_over("Недокачал... Так и поедешь?")
+		game_over()
 
-func game_over(message):
+func game_over():
 	game_active = false
 	stop_hiss_sound()
-	print("GAME OVER: ", message)
 
-func win_game(message):
+func win_game():
 	game_active = false
+	
 	stop_hiss_sound()
-	print("WIN: ", message)
