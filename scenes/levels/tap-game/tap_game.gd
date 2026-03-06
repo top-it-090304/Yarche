@@ -7,8 +7,11 @@ extends Node2D
 @onready var computer_enemy: CharacterBody2D = $Gameworld/computer_enemy
 @onready var lose_screen: Control = $UI/Lose
 
+@export var timer_time = 1
+signal end
+
 func _ready():
-	show_controls()  # исправил опечатку
+	show_controls() 
 	get_tree().paused = true
 	
 	computer_enemy.hit.connect(_show_lose_screen)
@@ -36,8 +39,9 @@ func start_game():
 	timer.process_mode = PROCESS_MODE_INHERIT
 	timer.timeout.disconnect(_on_controls_timeout)
 	timer.timeout.connect(_show_win_screen)
-	print("по новой")
-	timer.start(5.0)
+
+	timer.wait_time = timer_time
+	timer.start()
 
 func _on_controls_timeout():
 	hide_ui()
@@ -52,6 +56,7 @@ func _show_win_screen():
 	var tween = get_tree().create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(win_screen, "modulate", Color(1,1,1,1), 0.5)
+	tween.tween_callback(_end_game)
 
 func _show_lose_screen():
 	get_tree().paused = true
@@ -62,3 +67,7 @@ func _show_lose_screen():
 	var tween = get_tree().create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(lose_screen, "modulate", Color(1,1,1,1), 0.5)
+	tween.tween_callback(_end_game)
+	
+func _end_game():
+	end.emit()

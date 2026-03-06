@@ -25,3 +25,5 @@ bus = &"Record"
 script = ExtResource("3_sbfpj")
 
 [node name="buffer_timer" type="Timer" parent="AudioStreamPlayer"]
+
+[node name="Timer" type="Timer" parent="."]
