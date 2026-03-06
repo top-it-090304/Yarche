@@ -35,5 +35,6 @@ animations = [{
 }]
 
 [node name="Wheel" type="AnimatedSprite2D"]
+texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_jf3bd")
 script = ExtResource("7_x5wc2")

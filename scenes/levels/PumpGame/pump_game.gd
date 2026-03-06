@@ -11,7 +11,7 @@ extends Node2D
 
 var current_pressure
 var game_active = false
-var game_time = 15.0
+var game_time = 7.0
 
 var touching_pump = false
 var pump_touch_index = -1

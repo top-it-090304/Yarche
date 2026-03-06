@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://os06fxuxrrpm"]
+
+[ext_resource type="Script" uid="uid://cyp87noyvm74j" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_fwg5s"]
+
+[node name="WiresGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.416276, 0.299566, 0.166654, 1)
+
+[node name="TimerBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+show_percentage = false
+
+[node name="Game" type="Node2D" parent="."]
+script = ExtResource("1_fwg5s")
+
+[node name="GameTimer" type="Timer" parent="Game"]
