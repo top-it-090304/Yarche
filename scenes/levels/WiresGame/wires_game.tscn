@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://os06fxuxrrpm"]
-
-[ext_resource type="Script" uid="uid://cyp87noyvm74j" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_fwg5s"]
+[gd_scene format=3 uid="uid://os06fxuxrrpm"]
 
 [node name="WiresGame" type="Control"]
 layout_mode = 3
@@ -29,6 +27,5 @@ size_flags_horizontal = 4
 show_percentage = false
 
 [node name="Game" type="Node2D" parent="."]
-script = ExtResource("1_fwg5s")
 
 [node name="GameTimer" type="Timer" parent="Game"]
