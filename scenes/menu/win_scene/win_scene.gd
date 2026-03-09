@@ -8,4 +8,4 @@ func _ready():
 	continue_button.continue_button_pressed.connect(_continue_game)
 	
 func _continue_game():
-	print("ТЫК")
+	continue_game.emit()
