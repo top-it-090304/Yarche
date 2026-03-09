@@ -14,6 +14,7 @@ font = ExtResource("4_7dncv")
 font_size = 61
 
 [node name="Win-scene" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_yke5g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

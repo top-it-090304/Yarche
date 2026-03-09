@@ -35,6 +35,7 @@ animations = [{
 }]
 
 [node name="PumpTutorial" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_lde7q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -66,7 +67,7 @@ offset_bottom = 122.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
-text = "НА"
+text = "НАЖИМАЙ!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
 position = Vector2(648, 356)

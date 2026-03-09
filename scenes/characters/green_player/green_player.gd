@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var speed = 150.0
-var acceleration = 15.0
+var acceleration = 30.0
 var direction = Vector2.RIGHT
 var MIN_SPEED = 150.0
 var MAX_SPEED  = 1000.0
