@@ -19,12 +19,14 @@ func _load_current_game():
 		game = load(path).instantiate()
 		game.timer_time = times[time_index]
 		
-		game.end.connect(_on_game_ended)
+		game.continue_game.connect(_on_game_continued)
+		game.restart.connect(_on_level_restarted)
+		game.back_to_menu.connect(_back_to_menu)
 		add_child(game)
 	else:
 		_show_end_scene()
 	
-func _on_game_ended():
+func _on_game_continued():
 	game.queue_free()
 	
 	game_path_id += 1
@@ -32,6 +34,18 @@ func _on_game_ended():
 	
 	_load_current_game()
 	
+func _on_level_restarted():
+	get_tree().tree_changed.connect(_play_again)
+	get_tree().reload_current_scene()
+	
+func _back_to_menu():
+	get_tree().tree_changed.connect(_play_again)
+	get_tree().change_scene_to_file("res://scenes/menu/main_menu/main_menu.tscn")
+	
+
+func _play_again():
+	get_tree().paused = false
+	get_tree().tree_changed.disconnect(_play_again)
 func _show_end_scene():
 	print("Все игры пройдены!")
 	

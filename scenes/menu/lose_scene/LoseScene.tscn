@@ -15,6 +15,7 @@ font = ExtResource("3_po7i8")
 font_size = 61
 
 [node name="LoseScene" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_d5qy3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
