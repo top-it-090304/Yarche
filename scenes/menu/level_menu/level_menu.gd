@@ -6,4 +6,6 @@ func _ready():
 	for i in range(1,15):
 		var button = LEVEL_BUTTON.instantiate()
 		button.level_number = i
+		button.pressed.connect(func():
+				get_tree().change_scene_to_file("res://scenes/levels/base_level/base_level.tscn"))
 		grid_container.add_child(button)

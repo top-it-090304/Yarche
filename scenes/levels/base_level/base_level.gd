@@ -24,7 +24,7 @@ func _load_current_game():
 		game.back_to_menu.connect(_back_to_menu)
 		add_child(game)
 	else:
-		_show_end_scene()
+		_back_to_menu()
 	
 func _on_game_continued():
 	game.queue_free()
