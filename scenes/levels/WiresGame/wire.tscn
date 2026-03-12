@@ -8,7 +8,6 @@ radius = 72.0069
 
 [node name="Wire" type="Node2D"]
 position = Vector2(495, 398)
-rotation = 3.14159
 
 [node name="Plug" type="Node2D" parent="."]
 

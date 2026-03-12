@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cssw1nkimjp7l"]
+
+[node name="Socket" type="Node2D"]
+
+[node name="Socket" type="Sprite2D" parent="."]
