@@ -8,6 +8,7 @@
 radius = 90.0056
 
 [node name="Plug" type="Area2D"]
+disable_mode = 2
 script = ExtResource("1_ex487")
 
 [node name="PlugCorpus" type="Sprite2D" parent="."]
