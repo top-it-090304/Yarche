@@ -19,6 +19,7 @@ position = Vector2(650, 369)
 scale = Vector2(0.879999, 0.879999)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = SubResource("AudioStreamMicrophone_fwkff")
 autoplay = true
 bus = &"Record"

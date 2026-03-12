@@ -17,6 +17,7 @@ func show_tutorial():
 	add_child(tutorial)
 	tutorial.tutorial_finished.connect(_start_game)
 	
+
 func _start_game():
 	get_tree().paused = false
 	_connect_game_logics()
@@ -31,9 +32,7 @@ func _connect_game_logics():
 
 func _win_ending():
 	timer.queue_free()
-	get_tree().paused = true
 	win.emit()
 
 func _lose_ending():
-	get_tree().paused = true
 	lose.emit()
