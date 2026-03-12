@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://os06fxuxrrpm"]
+[gd_scene load_steps=3 format=3 uid="uid://os06fxuxrrpm"]
 
 [ext_resource type="PackedScene" uid="uid://cssw1nkimjp7l" path="res://scenes/objects/WiresGame/socket.tscn" id="1_fwg5s"]
+[ext_resource type="PackedScene" uid="uid://cl2njyrwnde0d" path="res://scenes/levels/WiresGame/wire.tscn" id="2_fi330"]
 
 [node name="WiresGame" type="Control"]
 layout_mode = 3
@@ -35,18 +36,33 @@ show_percentage = false
 [node name="Sockets" type="Node2D" parent="Game"]
 
 [node name="SocketRed" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
-position = Vector2(245, 488)
+position = Vector2(206, 208)
 
 [node name="SocketBlue" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
-position = Vector2(1090, 523)
+position = Vector2(1106, 206)
 color_type = "blue"
 
 [node name="SocketGreen" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
-position = Vector2(841, 519)
+position = Vector2(796, 211)
 color_type = "green"
 
 [node name="SocketYellow" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
-position = Vector2(535, 480)
+position = Vector2(495, 211)
 color_type = "yellow"
 
 [node name="Plugs" type="Node2D" parent="Game"]
+
+[node name="PlugRed" parent="Game/Plugs" instance=ExtResource("2_fi330")]
+position = Vector2(215, 570)
+
+[node name="PlugBlue" parent="Game/Plugs" instance=ExtResource("2_fi330")]
+position = Vector2(1115, 580)
+color_type = "blue"
+
+[node name="PlugGreen" parent="Game/Plugs" instance=ExtResource("2_fi330")]
+position = Vector2(790, 575)
+color_type = "green"
+
+[node name="PlugYellow" parent="Game/Plugs" instance=ExtResource("2_fi330")]
+position = Vector2(490, 573)
+color_type = "yellow"

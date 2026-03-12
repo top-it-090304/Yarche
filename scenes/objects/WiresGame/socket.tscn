@@ -10,7 +10,6 @@ radius = 79.2275
 script = ExtResource("1_udl2o")
 
 [node name="Socket" type="Sprite2D" parent="."]
-modulate = Color(1, 0.312601, 0.343934, 1)
 scale = Vector2(0.235352, 0.235352)
 texture = ExtResource("1_wefoq")
 

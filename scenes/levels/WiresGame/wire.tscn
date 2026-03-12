@@ -10,15 +10,15 @@ radius = 90.0056
 [node name="Plug" type="Area2D"]
 script = ExtResource("1_ex487")
 
-[node name="Vilks" type="Sprite2D" parent="."]
-position = Vector2(0.44003, -76.56)
-scale = Vector2(0.12, 0.12)
-texture = ExtResource("2_ex487")
-
 [node name="PlugCorpus" type="Sprite2D" parent="."]
 position = Vector2(0.44003, -1.11996)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_q0ons")
+
+[node name="Vilks" type="Sprite2D" parent="."]
+position = Vector2(0.44003, -76.56)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_ex487")
 
 [node name="TouchArea" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_n1ytp")
