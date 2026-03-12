@@ -7,24 +7,28 @@
 radius = 72.0069
 
 [node name="Wire" type="Node2D"]
+position = Vector2(495, 398)
+rotation = 3.14159
 
 [node name="Plug" type="Node2D" parent="."]
 
 [node name="PlugCorpus" type="Sprite2D" parent="Plug"]
-position = Vector2(329.44, 281.44)
+position = Vector2(6.44003, 9.88004)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_q0ons")
 
 [node name="Vilks" type="Sprite2D" parent="Plug"]
-position = Vector2(329.44, 206)
+position = Vector2(6.44003, -65.56)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_ex487")
 
 [node name="Line" type="Line2D" parent="."]
+position = Vector2(-323, -271.56)
 points = PackedVector2Array(329, 564, 331, 333)
 
 [node name="TouchArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
-position = Vector2(329, 276)
+position = Vector2(6, 4.44)
 shape = SubResource("CircleShape2D_n1ytp")
