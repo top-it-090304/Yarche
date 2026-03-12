@@ -29,11 +29,13 @@ func _load_current_game():
 		_back_to_menu()
 	
 func _win_ending():
+	game.process_mode = Node.PROCESS_MODE_DISABLED
 	current_result_scene = win_scene_preload.instantiate()
 	current_result_scene.continue_game.connect(_on_game_continued)
 	add_child(current_result_scene)
 	
 func _lose_ending():
+	game.process_mode = Node.PROCESS_MODE_DISABLED
 	current_result_scene = lose_scene_preload.instantiate()
 	current_result_scene.restart_level.connect(_on_level_restarted)
 	current_result_scene.back_to_main_menu.connect(_back_to_menu)
@@ -53,7 +55,6 @@ func _on_game_continued():
 	_load_current_game()
 	
 func _on_level_restarted():
-	get_tree().tree_changed.connect(_play_again)
 	if current_result_scene:
 		current_result_scene.queue_free()
 		current_result_scene = null
@@ -61,10 +62,7 @@ func _on_level_restarted():
 
 	get_tree().reload_current_scene()
 
-func _play_again():
-	get_tree().paused = false
-	get_tree().tree_changed.disconnect(_play_again)
+
 
 func _back_to_menu():
-	get_tree().tree_changed.connect(_play_again)
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu/main_menu.tscn")
