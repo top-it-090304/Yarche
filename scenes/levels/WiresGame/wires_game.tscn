@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://os06fxuxrrpm"]
+[gd_scene load_steps=2 format=3 uid="uid://os06fxuxrrpm"]
+
+[ext_resource type="PackedScene" uid="uid://cssw1nkimjp7l" path="res://scenes/objects/WiresGame/socket.tscn" id="1_fwg5s"]
 
 [node name="WiresGame" type="Control"]
 layout_mode = 3
@@ -29,3 +31,22 @@ show_percentage = false
 [node name="Game" type="Node2D" parent="."]
 
 [node name="GameTimer" type="Timer" parent="Game"]
+
+[node name="Sockets" type="Node2D" parent="Game"]
+
+[node name="SocketRed" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
+position = Vector2(245, 488)
+
+[node name="SocketBlue" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
+position = Vector2(1090, 523)
+color_type = "blue"
+
+[node name="SocketGreen" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
+position = Vector2(841, 519)
+color_type = "green"
+
+[node name="SocketYellow" parent="Game/Sockets" groups=["sockets"] instance=ExtResource("1_fwg5s")]
+position = Vector2(535, 480)
+color_type = "yellow"
+
+[node name="Plugs" type="Node2D" parent="Game"]

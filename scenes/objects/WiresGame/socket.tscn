@@ -6,10 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wefoq"]
 radius = 79.2275
 
-[node name="Area2D" type="Area2D"]
+[node name="Socket" type="Area2D"]
 script = ExtResource("1_udl2o")
 
-[node name="Socket2" type="Sprite2D" parent="."]
+[node name="Socket" type="Sprite2D" parent="."]
+modulate = Color(1, 0.312601, 0.343934, 1)
 scale = Vector2(0.235352, 0.235352)
 texture = ExtResource("1_wefoq")
 
