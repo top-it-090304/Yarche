@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cssw1nkimjp7l"]
+[gd_scene load_steps=4 format=3 uid="uid://cssw1nkimjp7l"]
 
+[ext_resource type="Script" uid="uid://mskhwypkwo5w" path="res://scenes/objects/WiresGame/socket.gd" id="1_udl2o"]
 [ext_resource type="Texture2D" uid="uid://l2b1c8ggbjof" path="res://assets/img/WiresGame/Empty_Socket.png" id="1_wefoq"]
 
-[node name="Socket" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_wefoq"]
+radius = 79.2275
 
-[node name="Socket" type="Sprite2D" parent="."]
-position = Vector2(484, 346)
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_udl2o")
+
+[node name="Socket2" type="Sprite2D" parent="."]
 scale = Vector2(0.235352, 0.235352)
 texture = ExtResource("1_wefoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wefoq")
