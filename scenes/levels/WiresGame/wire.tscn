@@ -1,33 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl2njyrwnde0d"]
+[gd_scene load_steps=5 format=3 uid="uid://cl2njyrwnde0d"]
 
+[ext_resource type="Script" uid="uid://bpwo530c33056" path="res://scenes/levels/WiresGame/wire.gd" id="1_ex487"]
 [ext_resource type="Texture2D" uid="uid://ck0lrb40hedsq" path="res://assets/img/WiresGame/Plug.png" id="1_q0ons"]
 [ext_resource type="Texture2D" uid="uid://dkjujq3ux8uvk" path="res://assets/img/WiresGame/Vilks.png" id="2_ex487"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1ytp"]
-radius = 72.0069
+radius = 90.0056
 
-[node name="Wire" type="Node2D"]
-position = Vector2(495, 398)
+[node name="Plug" type="Area2D"]
+script = ExtResource("1_ex487")
 
-[node name="Plug" type="Node2D" parent="."]
-
-[node name="PlugCorpus" type="Sprite2D" parent="Plug"]
-position = Vector2(6.44003, 9.88004)
-scale = Vector2(0.12, 0.12)
-texture = ExtResource("1_q0ons")
-
-[node name="Vilks" type="Sprite2D" parent="Plug"]
-position = Vector2(6.44003, -65.56)
+[node name="Vilks" type="Sprite2D" parent="."]
+position = Vector2(0.44003, -76.56)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_ex487")
 
-[node name="Line" type="Line2D" parent="."]
-position = Vector2(-323, -271.56)
-points = PackedVector2Array(329, 564, 331, 333)
+[node name="PlugCorpus" type="Sprite2D" parent="."]
+position = Vector2(0.44003, -1.11996)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_q0ons")
 
-[node name="TouchArea" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
-position = Vector2(6, 4.44)
+[node name="TouchArea" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_n1ytp")
+
+[node name="Wire" type="Node2D" parent="."]
+position = Vector2(-6, -3)
+
+[node name="Line" type="Line2D" parent="Wire"]
+position = Vector2(-324, -284)
+points = PackedVector2Array(330, 570.56, 329, 335.56)

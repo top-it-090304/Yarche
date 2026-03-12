@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://cssw1nkimjp7l"]
+[gd_scene load_steps=2 format=3 uid="uid://cssw1nkimjp7l"]
+
+[ext_resource type="Texture2D" uid="uid://l2b1c8ggbjof" path="res://assets/img/WiresGame/Empty_Socket.png" id="1_wefoq"]
 
 [node name="Socket" type="Node2D"]
 
 [node name="Socket" type="Sprite2D" parent="."]
+position = Vector2(484, 346)
+scale = Vector2(0.235352, 0.235352)
+texture = ExtResource("1_wefoq")
