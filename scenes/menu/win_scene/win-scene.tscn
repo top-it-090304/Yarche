@@ -19,51 +19,58 @@ script = ExtResource("1_yke5g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 modulate = Color(1, 1, 1, 0.5)
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
-[node name="charactee" type="Node" parent="CanvasLayer"]
+[node name="charactee" type="Node" parent="CanvasLayer/Control"]
 
-[node name="body" type="Sprite2D" parent="CanvasLayer/charactee"]
+[node name="body" type="Sprite2D" parent="CanvasLayer/Control/charactee"]
 position = Vector2(639, 270)
 scale = Vector2(0.595642, 0.595642)
 texture = ExtResource("1_cxn42")
 
-[node name="hand" type="Sprite2D" parent="CanvasLayer/charactee"]
+[node name="hand" type="Sprite2D" parent="CanvasLayer/Control/charactee"]
 position = Vector2(443, 306)
 texture = ExtResource("2_5u8p6")
 script = ExtResource("3_5u8p6")
 
-[node name="DOWN_BORDER" type="Marker2D" parent="CanvasLayer/charactee/hand"]
+[node name="DOWN_BORDER" type="Marker2D" parent="CanvasLayer/Control/charactee/hand"]
 position = Vector2(21, -46)
 
-[node name="UPPER_BORDER2" type="Marker2D" parent="CanvasLayer/charactee/hand"]
+[node name="UPPER_BORDER2" type="Marker2D" parent="CanvasLayer/Control/charactee/hand"]
 position = Vector2(21, 62)
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -137.0
-offset_top = 17.0
-offset_right = 137.0
-offset_bottom = 92.0
+offset_left = 484.0
+offset_top = 16.0
+offset_right = 758.0
+offset_bottom = 91.0
 grow_horizontal = 2
 text = "YOU WIN!"
 label_settings = SubResource("LabelSettings_6emfu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Continue" type="TextureButton" parent="CanvasLayer/Control"]
+[node name="Continue" type="TextureButton" parent="CanvasLayer/Control/Control"]
 layout_mode = 0
 offset_left = 412.0
 offset_top = 512.0

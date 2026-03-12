@@ -15,9 +15,6 @@ func _show_level_menu():
 	_show_level_menu_with_dissolve(level_menu)
 
 func _close_main_menu():
-	print("Main menu initial position: ", main_menu_ui.position)
-	print("Main menu initial offset_top: ", main_menu_ui.offset_top)
-	print("Screen height: ", get_viewport().get_visible_rect().size.y)
 	main_menu_ui.position = Vector2(0,0)
 	var tween_close_main_menu_ui = create_tween().set_parallel(true)
 	tween_close_main_menu_ui.tween_property(main_menu_ui, "modulate", Color(1,1,1,0), 0.5)
