@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://df5nwlw7x1qyb"]
+[gd_scene load_steps=5 format=3 uid="uid://df5nwlw7x1qyb"]
 
 [ext_resource type="Script" uid="uid://bjqueqqvfcy0r" path="res://scenes/objects/fire/flame.gd" id="1_ew31w"]
 [ext_resource type="PackedScene" uid="uid://cj7bqqby5w2ws" path="res://scenes/objects/fire/fire_scene.tscn" id="1_sit8m"]
 [ext_resource type="Texture2D" uid="uid://bdupqcn6ro34b" path="res://assets/animated_objects/fire/Untitled.png" id="2_ew31w"]
+[ext_resource type="AudioStream" uid="uid://mrjj1h1n816" path="res://assets/sounds/FireGameSounds/fire_sound.mp3" id="4_pe3jq"]
 
 [node name="Flame" type="Node2D"]
 position = Vector2(667, 299)
@@ -13,3 +14,7 @@ script = ExtResource("1_ew31w")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, 295)
 texture = ExtResource("2_ew31w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pe3jq")
+autoplay = true

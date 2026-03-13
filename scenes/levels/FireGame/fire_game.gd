@@ -32,6 +32,8 @@ func _start_game():
 	
 func on_sound():
 	flame.decrease_scale()
+	flame.lower_volume()
+
 func _win_ending():
 	win.emit()
 
