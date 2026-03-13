@@ -6,7 +6,9 @@ extends Area2D
 @onready var plug_corpus = $PlugCorpus
 @onready var line = $Wire/Line
 @onready var touch_area = $TouchArea
+
 @onready var start_position = global_position
+var wire_start_position = Vector2()
 
 signal plug_connected
 
@@ -18,8 +20,8 @@ var touch_index = -1
 func _ready():
 	match color_type:
 		"red":
-			line.default_color = Color.RED
-			plug_corpus.modulate = Color.RED
+			line.default_color = Color(0.9, 0.2, 0.15)
+			plug_corpus.modulate = Color(0.9, 0.2, 0.15)
 		"blue":
 			line.default_color = Color.BLUE
 			plug_corpus.modulate = Color.BLUE
@@ -30,7 +32,13 @@ func _ready():
 			line.default_color = Color.YELLOW
 			plug_corpus.modulate = Color.YELLOW
 	
-	line.width = 10
+	line.width = 15
+
+	await get_tree().process_frame
+	
+	var screen_size = get_viewport().get_visible_rect().size
+	wire_start_position = Vector2(global_position.x, screen_size.y + 50)
+	
 	_update_line()
 
 func _input(event):
@@ -48,12 +56,14 @@ func _input(event):
 			if event.index == touch_index:
 				is_dragging = false
 				touch_index = -1
-				_try_connect()
+				if not is_connected:
+					_return_to_start()
 	
 	if event is InputEventScreenDrag:
 		if event.index == touch_index and is_dragging:
 			global_position = event.position + drag_offset
 			_update_line()
+			_try_connect_while_dragging()
 
 func _is_point_inside_plug(point):
 	var local_point = to_local(point)
@@ -61,25 +71,43 @@ func _is_point_inside_plug(point):
 	var distance = local_point.length()
 	return distance <= circle_shape.radius
 
-func _try_connect():
+func _try_connect_while_dragging():
 	var overlapping_areas = get_overlapping_areas()
 	
 	for area in overlapping_areas:
 		if area.is_in_group("sockets"):
 			var socket = area
 			if socket.color_type == color_type:
-				global_position = socket.global_position
-				is_connected = true
-				plug_corpus.texture = connected_sprite
-				_update_line()
-				plug_connected.emit()
+				_connect_to_socket(socket)
 				return
+
+func _connect_to_socket(socket):
+	global_position = socket.global_position
+	is_connected = true
+	plug_corpus.texture = connected_sprite
+	_update_line()
 	
+	is_dragging = false
+	touch_index = -1
+	
+	plug_connected.emit()
+
+func _return_to_start():
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", start_position, 0.2)
 	tween.tween_callback(_update_line)
 
 func _update_line():
-	var screen_size = get_viewport().get_visible_rect().size
-	var bottom = to_local(Vector2(global_position.x, screen_size.y))
-	line.points = [Vector2(0, 0), bottom]
+	var start_point = to_local(wire_start_position)
+	var end_point = Vector2.ZERO
+	
+	line.clear_points()
+	
+	var steps = 15
+	for i in range(steps + 1):
+		var t = i / float(steps)
+		var point = start_point.lerp(end_point, t)
+		var sag = (t - t*t) * 4 * 80 
+		point.y += sag
+		
+		line.add_point(point)

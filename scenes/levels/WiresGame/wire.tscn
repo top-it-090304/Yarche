@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://dkjujq3ux8uvk" path="res://assets/img/WiresGame/Vilks.png" id="2_ex487"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1ytp"]
-radius = 90.0056
+radius = 65.0
 
 [node name="Plug" type="Area2D"]
 disable_mode = 2
 script = ExtResource("1_ex487")
 
 [node name="PlugCorpus" type="Sprite2D" parent="."]
+modulate = Color(0.9, 0.207, 0.146, 1)
 position = Vector2(0.44003, -1.11996)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_q0ons")
@@ -22,11 +23,11 @@ scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_ex487")
 
 [node name="TouchArea" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -2)
 shape = SubResource("CircleShape2D_n1ytp")
 
 [node name="Wire" type="Node2D" parent="."]
-position = Vector2(-6, -3)
+position = Vector2(0, 41)
 
 [node name="Line" type="Line2D" parent="Wire"]
-position = Vector2(-324, -284)
-points = PackedVector2Array(330, 570.56, 329, 335.56)
