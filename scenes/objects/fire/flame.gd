@@ -1,5 +1,7 @@
 extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var texture_height  = 512
 var scaling = 0.8
 var playing_flag = true
@@ -24,3 +26,6 @@ func _win():
 	win.emit()
 	playing_flag = false
 	print("Игра окончена, победа")
+	
+func lower_volume():
+	audio_stream_player_2d.volume_db -= 5
