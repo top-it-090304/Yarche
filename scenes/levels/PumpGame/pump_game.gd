@@ -3,7 +3,6 @@ extends Node2D
 
 @onready var pump = $Pump
 @onready var manometr = $Manometr
-@onready var timer_bar = $"../TimerBar"
 @onready var game_timer = $GameTimer
 @onready var pump_sound = $PumpSound
 @onready var music = $Music
@@ -12,21 +11,22 @@ extends Node2D
 
 var current_pressure
 var game_active = false
-var game_time = 7.0
-
 var touching_pump = false
 var pump_touch_index = -1
 var hiss_playing = false
 
+@export var timer_time: float
+signal win
+signal lose
+
 func _ready():
 	show_tutorial()
-	game_timer.wait_time = game_time
+	get_tree().paused = true
+	game_timer.wait_time = timer_time
 	game_timer.one_shot = true
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	game_timer.start()
 	
-	timer_bar.max_value = game_time
-	timer_bar.value = game_time
 
 	current_pressure = 0.0
 	manometr.update_strelka(current_pressure)
@@ -40,6 +40,7 @@ func show_tutorial():
 	tutorial.tutorial_finished.connect(_start_game)
 
 func _start_game():
+	get_tree().paused = false
 	game_active = true
 	game_timer.start()
 
@@ -50,8 +51,6 @@ func _on_hiss_finished():
 func _process(_delta):
 	if not game_active:
 		return
-	if game_active:
-		timer_bar.value = game_timer.time_left
 
 func _input(event):
 	if not game_active:
@@ -143,9 +142,9 @@ func _on_game_timer_timeout():
 func game_over():
 	game_active = false
 	stop_hiss_sound()
+	lose.emit()
 
 func win_game():
 	game_active = false
-	var win_screen = preload("res://scenes/menu/win_scene/win-scene.tscn").instantiate()
-	add_child(win_screen)
 	stop_hiss_sound()
+	win.emit()
