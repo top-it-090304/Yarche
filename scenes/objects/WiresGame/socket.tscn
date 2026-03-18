@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://l2b1c8ggbjof" path="res://assets/img/WiresGame/Empty_Socket.png" id="1_wefoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wefoq"]
-radius = 60.0333
+radius = 56.0089
 
 [node name="Socket" type="Area2D"]
 script = ExtResource("1_udl2o")
 
 [node name="Socket" type="Sprite2D" parent="."]
-scale = Vector2(0.235352, 0.235352)
+scale = Vector2(0.213135, 0.213135)
 texture = ExtResource("1_wefoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

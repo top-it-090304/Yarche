@@ -6,6 +6,7 @@ extends Area2D
 @onready var plug_corpus = $PlugCorpus
 @onready var line = $Wire/Line
 @onready var touch_area = $TouchArea
+@onready var vilks = $Vilks
 
 @onready var start_position = global_position
 var wire_start_position = Vector2()
@@ -37,7 +38,7 @@ func _ready():
 	await get_tree().process_frame
 	
 	var screen_size = get_viewport().get_visible_rect().size
-	wire_start_position = Vector2(global_position.x, screen_size.y + 50)
+	wire_start_position = Vector2(global_position.x, screen_size.y)
 	
 	_update_line()
 
@@ -85,6 +86,7 @@ func _connect_to_socket(socket):
 	global_position = socket.global_position
 	is_connected = true
 	plug_corpus.texture = connected_sprite
+	vilks.visible = false
 	_update_line()
 	
 	is_dragging = false
@@ -100,6 +102,7 @@ func _return_to_start():
 func _update_line():
 	var start_point = to_local(wire_start_position)
 	var end_point = Vector2.ZERO
+	if is_connected: end_point = Vector2(0, -50)
 	
 	line.clear_points()
 	
