@@ -15,7 +15,7 @@ auto_generate_dbfactory=true
 [application]
 
 config/name="demo"
-run/main_scene="uid://c13g7jj1q06pu"
+run/main_scene="uid://cuhro4nbykcsd"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

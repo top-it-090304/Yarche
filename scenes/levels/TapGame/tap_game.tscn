@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c13g7jj1q06pu"]
 
-[ext_resource type="Script" uid="uid://quwjx4n0fgwe" path="res://scenes/levels/tap-game/tap_game.gd" id="1_tpkqk"]
+[ext_resource type="Script" uid="uid://quwjx4n0fgwe" path="res://scenes/levels/TapGame/tap_game.gd" id="1_tpkqk"]
 [ext_resource type="Texture2D" uid="uid://c170vg30ignmo" path="res://assets/img/bg/futuristic_city/city_0007_1.png" id="2_cpvjp"]
 [ext_resource type="Texture2D" uid="uid://dbafp3oytl07w" path="res://assets/img/bg/futuristic_city/city_0006_2.png" id="3_tfmx7"]
 [ext_resource type="Texture2D" uid="uid://b21i83gwmwl7d" path="res://assets/img/bg/futuristic_city/city_0005_3.png" id="4_1e5at"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cnlxtar1mv8c2" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.tscn" id="10_otrse"]
 [ext_resource type="PackedScene" uid="uid://c3rrjgyq7n74o" path="res://scenes/characters/green_player/green_player.tscn" id="11_i604k"]
 [ext_resource type="AudioStream" uid="uid://bu1df51xgsdlp" path="res://assets/sounds/music/agressive_theme2.ogg" id="12_eav6w"]
-[ext_resource type="Script" uid="uid://cvqdykemvn8gx" path="res://scenes/levels/tap-game/control.gd" id="13_i3v37"]
+[ext_resource type="Script" uid="uid://cvqdykemvn8gx" path="res://scenes/levels/TapGame/control.gd" id="13_i3v37"]
 
 [sub_resource type="Theme" id="Theme_d4w6o"]
 default_font_size = 80

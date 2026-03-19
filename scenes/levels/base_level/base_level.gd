@@ -6,7 +6,7 @@ var win_scene_preload = preload("res://scenes/menu/win_scene/win-scene.tscn")
 var lose_scene_preload = preload("res://scenes/menu/lose_scene/LoseScene.tscn")
 var times = [10, 7, 5]
 var game_paths = [	
-	"res://scenes/levels/tap-game/tap_game.tscn",
+	"res://scenes/levels/TapGame/tap_game.tscn",
 	"res://scenes/levels/PumpGame/pump_game.tscn",
 	"res://scenes/levels/FireGame/FireGame.tscn", 
 	

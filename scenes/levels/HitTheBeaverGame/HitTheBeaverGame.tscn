@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp0wnpqsqehnd"]
+
+[ext_resource type="Script" uid="uid://b7n4k7x37dxki" path="res://scenes/levels/HitTheBeaverGame/hit_the_beaver_game.gd" id="1_vrv7t"]
+[ext_resource type="Texture2D" uid="uid://bxjvu8aobpg7t" path="res://assets/img/HitTheBEaverGame/background.png" id="2_8a6jh"]
+
+[node name="HitTheBeaverGame" type="Node2D"]
+script = ExtResource("1_vrv7t")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node"]
+position = Vector2(640, 360)
+texture = ExtResource("2_8a6jh")
+
+[node name="SpawnPoint1" type="Marker2D" parent="Node"]
+position = Vector2(224, 552)
+
+[node name="SpawnPoint2" type="Marker2D" parent="Node"]
+position = Vector2(640, 552)
+
+[node name="SpawnPoint3" type="Marker2D" parent="Node"]
+position = Vector2(1040, 552)

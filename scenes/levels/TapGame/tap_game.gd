@@ -13,7 +13,7 @@ func _ready():
 	show_tutorial()
 	
 func show_tutorial():
-	var tutorial = preload("res://scenes/levels/tap-game/tap_tutorial.tscn").instantiate()
+	var tutorial = preload("res://scenes/levels/TapGame/tap_tutorial.tscn").instantiate()
 	add_child(tutorial)
 	tutorial.tutorial_finished.connect(_start_game)
 	
