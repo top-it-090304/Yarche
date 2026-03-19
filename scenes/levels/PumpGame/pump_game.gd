@@ -1,4 +1,3 @@
-
 extends Node2D
 
 @onready var pump = $Pump
@@ -8,6 +7,7 @@ extends Node2D
 @onready var music = $Music
 @onready var hiss_sound = $HissSound
 @onready var wheel = $Wheel
+@onready var timer_bar = $"../TimerBar"
 
 var current_pressure
 var game_active = false
@@ -26,7 +26,8 @@ func _ready():
 	game_timer.one_shot = true
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	game_timer.start()
-	
+	timer_bar.max_value = game_timer.time_left
+	timer_bar.value = game_timer.time_left
 
 	current_pressure = 0.0
 	manometr.update_strelka(current_pressure)
@@ -49,6 +50,7 @@ func _on_hiss_finished():
 		hiss_sound.play()
 
 func _process(_delta):
+	timer_bar.value = game_timer.time_left
 	if not game_active:
 		return
 

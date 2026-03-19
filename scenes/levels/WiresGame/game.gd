@@ -16,7 +16,6 @@ func _ready():
 	timer_bar.max_value = game_time
 	timer_bar.value = game_time
 	
-	# Находим все вилки и подключаем их сигналы
 	var plugs = get_tree().get_nodes_in_group("plugs")
 	print("Найдено вилок: ", plugs.size())
 	for plug in plugs:
