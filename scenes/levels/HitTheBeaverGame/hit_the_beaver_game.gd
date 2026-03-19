@@ -3,3 +3,4 @@ extends Node2D
 
 signal win
 signal lose
+var score = 0
