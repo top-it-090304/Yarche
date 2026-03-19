@@ -30,7 +30,7 @@ func show_tutorial():
 func _start_game():
 	get_tree().paused = false
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_plug_connected():

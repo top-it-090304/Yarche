@@ -24,8 +24,8 @@ func _ready():
 			line.default_color = Color(0.9, 0.2, 0.15)
 			plug_corpus.modulate = Color(0.9, 0.2, 0.15)
 		"blue":
-			line.default_color = Color.BLUE
-			plug_corpus.modulate = Color.BLUE
+			line.default_color = Color(0.0, 0.4, 1)
+			plug_corpus.modulate = Color(0.0, 0.4, 1)
 		"green":
 			line.default_color = Color.GREEN
 			plug_corpus.modulate = Color.GREEN
