@@ -28,15 +28,23 @@ color = Color(1, 1, 1, 0)
 [node name="SpawnPoint2Marker" type="Marker2D" parent="game_world"]
 position = Vector2(640, 552)
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="game_world/SpawnPoint2Marker"]
-position = Vector2(-32, -152)
-rect = Rect2(-80.765, -100, 219.4, 254.615)
+[node name="Mask" type="ColorRect" parent="game_world/SpawnPoint2Marker"]
+clip_contents = true
+offset_left = -120.0
+offset_top = -280.0
+offset_right = 120.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
 
 [node name="SpawnPoint3Marker" type="Marker2D" parent="game_world"]
 position = Vector2(1040, 552)
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="game_world/SpawnPoint3Marker"]
-position = Vector2(-32, -152)
-rect = Rect2(-80.765, -100, 219.4, 254.615)
+[node name="Mask" type="ColorRect" parent="game_world/SpawnPoint3Marker"]
+clip_contents = true
+offset_left = -128.0
+offset_top = -280.0
+offset_right = 112.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Timer" type="Timer" parent="game_world"]
