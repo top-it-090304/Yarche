@@ -2,7 +2,8 @@ extends Area2D
 
 signal hited
 signal hided
-
+signal hide_end
+@onready var life_timer: Timer = $LifeTimer
 @export var x_pos: float
 @export var y_pos: float
 
@@ -26,8 +27,16 @@ func _ready() -> void:
 	var show_tween = create_tween()
 	show_tween.tween_property(self,"global_position",upper_position, 0.5)
 	
+	life_timer.wait_time = 1
+	life_timer.one_shot = true
+	life_timer.timeout.connect(func():
+		hided.emit()
+		_hide()
+		)
+	life_timer.start()
+	
 func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventScreenTouch:
+	if event is InputEventScreenTouch and event.pressed:
 		hited.emit()
 		_hide()
 
@@ -35,7 +44,5 @@ func _hide():
 	var end_position = Vector2(x_pos, lower_y_position)
 	var hide_tween = create_tween()
 	hide_tween.tween_property(self, "global_position", end_position, 0.3)
-	hide_tween.finished.connect(_on_hided)
+	hide_tween.tween_callback(func(): hide_end.emit())
 	
-func _on_hided():
-	hided.emit()
