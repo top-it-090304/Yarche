@@ -1,69 +1,53 @@
-[gd_scene load_steps=11 format=3 uid="uid://mxu874h1y6w7"]
+[gd_scene load_steps=13 format=3 uid="uid://mxu874h1y6w7"]
 
 [ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scenes/levels/PumpGame/pump_tutorial.gd" id="1_5yq5q"]
-[ext_resource type="Texture2D" uid="uid://cwtc4ydrr848f" path="res://assets/img/PullGame/TutorialFrames/Frame1.png" id="1_bdl2l"]
-[ext_resource type="Texture2D" uid="uid://dvms2s2c4m7r3" path="res://assets/img/PullGame/TutorialFrames/Frame2.png" id="2_5yq5q"]
-[ext_resource type="Texture2D" uid="uid://dgp6ntpamxgkh" path="res://assets/img/PullGame/TutorialFrames/Frame3.png" id="3_528be"]
-[ext_resource type="Texture2D" uid="uid://dbxjn45uixcv4" path="res://assets/img/PullGame/TutorialFrames/Frame4.png" id="4_dt3t1"]
-[ext_resource type="Texture2D" uid="uid://dgfo7xpy44n44" path="res://assets/img/PullGame/TutorialFrames/Frame5.png" id="5_1nlvf"]
-[ext_resource type="Texture2D" uid="uid://c3uwq16epcgxe" path="res://assets/img/PullGame/TutorialFrames/Frame6.png" id="6_w8meb"]
-[ext_resource type="Texture2D" uid="uid://uqwwjclklbyy" path="res://assets/img/PullGame/TutorialFrames/Frame7.png" id="7_1jyct"]
-[ext_resource type="Texture2D" uid="uid://dccgrgjcy43np" path="res://assets/img/PullGame/TutorialFrames/Frame8.png" id="8_nnyrs"]
+[ext_resource type="Texture2D" uid="uid://cewjjj68bs1al" path="res://assets/img/WiresGame/TutorialFrames/Frame1.png" id="2_dt3t1"]
+[ext_resource type="Texture2D" uid="uid://bji1t547ogrmo" path="res://assets/img/WiresGame/TutorialFrames/Frame2.png" id="3_1nlvf"]
+[ext_resource type="Texture2D" uid="uid://6f2lljm262w" path="res://assets/img/WiresGame/TutorialFrames/Frame3.png" id="4_w8meb"]
+[ext_resource type="Texture2D" uid="uid://b024gqwwxjby2" path="res://assets/img/WiresGame/TutorialFrames/Frame4.png" id="5_1jyct"]
+[ext_resource type="Texture2D" uid="uid://d20ga86qu8uga" path="res://assets/img/WiresGame/TutorialFrames/Frame5.png" id="6_nnyrs"]
+[ext_resource type="Texture2D" uid="uid://bfsmkor8j0ea7" path="res://assets/img/WiresGame/TutorialFrames/Frame6.png" id="7_n2m8e"]
+[ext_resource type="Texture2D" uid="uid://da2peiufcnyvv" path="res://assets/img/WiresGame/TutorialFrames/Frame7.png" id="8_tkxk2"]
+[ext_resource type="Texture2D" uid="uid://cn1enrkwqj1ra" path="res://assets/img/WiresGame/TutorialFrames/Frame8.png" id="9_m2c2h"]
+[ext_resource type="Texture2D" uid="uid://dm7pge4e2a7ih" path="res://assets/img/WiresGame/TutorialFrames/Frame9.png" id="10_8jgfp"]
+[ext_resource type="Texture2D" uid="uid://cnxy1dh2bckmd" path="res://assets/img/WiresGame/TutorialFrames/Frame10.png" id="11_touln"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wf6j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bdl2l")
+"texture": ExtResource("2_dt3t1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_5yq5q")
+"texture": ExtResource("3_1nlvf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_528be")
+"texture": ExtResource("4_w8meb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_dt3t1")
+"texture": ExtResource("5_1jyct")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_1nlvf")
+"texture": ExtResource("6_nnyrs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_w8meb")
+"texture": ExtResource("7_n2m8e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_1jyct")
+"texture": ExtResource("8_tkxk2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_nnyrs")
+"texture": ExtResource("9_m2c2h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_nnyrs")
+"texture": ExtResource("10_8jgfp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_1jyct")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_w8meb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_1nlvf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_dt3t1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_528be")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_5yq5q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_bdl2l")
+"texture": ExtResource("11_touln")
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 11.0
 }]
 
 [node name="PumpTutorial" type="CanvasLayer"]

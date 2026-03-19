@@ -23,7 +23,7 @@ func _ready():
 		plug.plug_connected.connect(_on_plug_connected)
 
 func show_tutorial():
-	var tutorial = preload("res://scenes/levels/PumpGame/pump_tutorial.tscn").instantiate()
+	var tutorial = preload("res://scenes/levels/WiresGame/wires_tutorial.tscn").instantiate()
 	add_child(tutorial)
 	tutorial.tutorial_finished.connect(_start_game)
 
