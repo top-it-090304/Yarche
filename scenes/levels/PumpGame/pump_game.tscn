@@ -8,7 +8,33 @@
 [ext_resource type="AudioStream" uid="uid://ctv4dk1bd82om" path="res://assets/sounds/PumpGameSounds/PumpGameMusic.ogg" id="6_wkel7"]
 [ext_resource type="PackedScene" uid="uid://cohbcpor8k1vw" path="res://scenes/levels/PumpGame/wheel.tscn" id="6_x4kep"]
 
-[node name="Control" type="Control"]
+[node name="PumpGame" type="Node2D"]
+script = ExtResource("1_xdxwj")
+
+[node name="Pump" parent="." instance=ExtResource("1_iikc0")]
+position = Vector2(669, 572)
+
+[node name="Manometr" parent="." instance=ExtResource("2_xdxwj")]
+position = Vector2(269, 312)
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[node name="PumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_u1ppj")
+
+[node name="HissSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_u1ppj")
+volume_db = -10.57
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_wkel7")
+autoplay = true
+
+[node name="Wheel" parent="." instance=ExtResource("6_x4kep")]
+position = Vector2(1049, 346)
+scale = Vector2(1.89381, 1.89381)
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +42,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,40 +50,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.250899, 0.342151, 0.377385, 1)
-
-[node name="TimerBar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-max_value = 1.0
-show_percentage = false
-
-[node name="PumpGame" type="Node2D" parent="."]
-script = ExtResource("1_xdxwj")
-timer_time = 15.0
-
-[node name="Pump" parent="PumpGame" instance=ExtResource("1_iikc0")]
-position = Vector2(669, 572)
-
-[node name="Manometr" parent="PumpGame" instance=ExtResource("2_xdxwj")]
-position = Vector2(269, 312)
-
-[node name="GameTimer" type="Timer" parent="PumpGame"]
-
-[node name="PumpSound" type="AudioStreamPlayer2D" parent="PumpGame"]
-stream = ExtResource("4_u1ppj")
-
-[node name="HissSound" type="AudioStreamPlayer2D" parent="PumpGame"]
-stream = ExtResource("5_u1ppj")
-volume_db = -10.57
-
-[node name="Music" type="AudioStreamPlayer2D" parent="PumpGame"]
-stream = ExtResource("6_wkel7")
-autoplay = true
-
-[node name="Wheel" parent="PumpGame" instance=ExtResource("6_x4kep")]
-position = Vector2(1049, 346)
-scale = Vector2(1.89381, 1.89381)
