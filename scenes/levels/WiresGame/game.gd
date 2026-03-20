@@ -7,9 +7,12 @@ extends Node2D
 signal win
 signal lose
 
+var available_x_cord = [197, 489, 787, 1087]
 var connected_plugs_count = 0
 
 func _ready():
+	randomize()
+	create_random_level()
 	get_tree().paused = true
 	show_tutorial()
 	
@@ -17,8 +20,18 @@ func _ready():
 	game_timer.one_shot = true
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	game_timer.start()
-	
+
+func create_random_level():
 	var plugs = get_tree().get_nodes_in_group("plugs")
+	var sockets = get_tree().get_nodes_in_group("sockets")
+	
+	available_x_cord.shuffle()
+	
+	var i = 0
+	for socket in sockets:
+		socket.position.x = available_x_cord[i]
+		i += 1
+	
 	for plug in plugs:
 		plug.plug_connected.connect(_on_plug_connected)
 

@@ -47,21 +47,21 @@ color_type = "yellow"
 [node name="Plugs" type="Node2D" parent="."]
 
 [node name="PlugRed" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(481, 625)
+position = Vector2(489, 625)
 connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugBlue" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(193, 625)
+position = Vector2(197, 625)
 color_type = "blue"
 connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugGreen" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(780, 625)
+position = Vector2(787, 625)
 color_type = "green"
 connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugYellow" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(1079, 625)
+position = Vector2(1087, 625)
 color_type = "yellow"
 connected_sprite = ExtResource("4_64svp")
 
