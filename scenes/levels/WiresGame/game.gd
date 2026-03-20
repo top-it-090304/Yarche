@@ -1,7 +1,7 @@
 extends Node2D
 
+@onready var plug_connected = $PlugConnected
 @onready var game_timer = $GameTimer
-var game_active = true
 
 @export var timer_time: float
 signal win
@@ -35,6 +35,7 @@ func _process(_delta):
 
 func _on_plug_connected():
 	connected_plugs_count += 1
+	plug_connected.play()
 	if connected_plugs_count == 4:
 		win.emit()
 	
