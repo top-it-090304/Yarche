@@ -3,6 +3,7 @@ extends Area2D
 signal hited
 signal hided
 signal hide_end
+
 @onready var life_timer: Timer = $LifeTimer
 @export var x_pos: float
 @export var y_pos: float

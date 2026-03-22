@@ -15,35 +15,38 @@ position = Vector2(640, 360)
 texture = ExtResource("2_8a6jh")
 
 [node name="SpawnPoint1Marker" type="Marker2D" parent="game_world"]
-position = Vector2(224, 552)
+position = Vector2(243, 489)
 
 [node name="Mask" type="ColorRect" parent="game_world/SpawnPoint1Marker"]
 clip_contents = true
-offset_left = -104.0
-offset_top = -280.0
-offset_right = 136.0
+offset_left = -131.0
+offset_top = -228.0
+offset_right = 125.0
+offset_bottom = 87.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="SpawnPoint2Marker" type="Marker2D" parent="game_world"]
-position = Vector2(640, 552)
+position = Vector2(640, 488)
 
 [node name="Mask" type="ColorRect" parent="game_world/SpawnPoint2Marker"]
 clip_contents = true
-offset_left = -120.0
-offset_top = -280.0
-offset_right = 120.0
+offset_left = -128.0
+offset_top = -184.0
+offset_right = 128.0
+offset_bottom = 88.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="SpawnPoint3Marker" type="Marker2D" parent="game_world"]
-position = Vector2(1040, 552)
+position = Vector2(1042.18, 488)
 
 [node name="Mask" type="ColorRect" parent="game_world/SpawnPoint3Marker"]
 clip_contents = true
-offset_left = -128.0
-offset_top = -280.0
-offset_right = 112.0
+offset_left = -136.0
+offset_top = -208.0
+offset_right = 120.0
+offset_bottom = 88.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 

@@ -21,6 +21,7 @@ signal score_overed
 
 @onready var timer: Timer = $Timer
 var beaver_scene = preload("res://scenes/characters/Beaver/Beaver.tscn")
+var hummer_scene = preload("res://scenes/objects/hummer/hummer.tscn")
 var score = 0
 func _ready():
 	timer.wait_time = 1
@@ -42,18 +43,18 @@ func _spawn_beaver(data: Dictionary):
 		data.occupied = false
 		beaver.queue_free()
 		)
-	
+	beaver.hited.connect(func():
+		var hummer = hummer_scene.instantiate()
+		hummer.global_position = beaver.global_position
+		add_child(hummer)
+	)
 	data.mask.add_child(beaver)
 	data.occupied = true
-	print("инстанциировал")
 
 func spawn_new_beaver():
-	print("таймер проиграл")
 	var free_spots = []
 	for spot in spawn_data:
-		print("прошелся")
 		if not spot.occupied:
-			print("добавил")
 			free_spots.append(spot)
 	
 	if free_spots.is_empty():
