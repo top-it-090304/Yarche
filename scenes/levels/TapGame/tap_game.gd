@@ -21,6 +21,7 @@ func show_tutorial():
 func _start_game():
 	get_tree().paused = false
 	_connect_game_logics()
+	$Gameworld/AgressiveTheme2.play()
 	
 func _connect_game_logics():
 	computer_enemy.hit.connect(_lose_ending)

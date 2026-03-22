@@ -98,7 +98,6 @@ position = Vector2(2, -211)
 
 [node name="AgressiveTheme2" type="AudioStreamPlayer" parent="Gameworld"]
 stream = ExtResource("12_eav6w")
-autoplay = true
 
 [node name="TapGameControl" type="Control" parent="."]
 visible = false

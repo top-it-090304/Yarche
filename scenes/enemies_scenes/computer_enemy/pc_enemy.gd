@@ -1,9 +1,9 @@
 extends CharacterBody2D
-#move
+
 var direction = Vector2.RIGHT
 var speed = 250
 
-#shooting
+
 @onready var shoot_timer: Timer = $Timer
 @onready var spawn_points: Node2D = $spawn_points
 var cooldown = 0.5

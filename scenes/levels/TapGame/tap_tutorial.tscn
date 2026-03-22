@@ -61,13 +61,14 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -203.0
-offset_top = 67.0
+offset_top = 79.0
 offset_right = 203.0
-offset_bottom = 122.0
+offset_bottom = 134.0
 grow_horizontal = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 40
-text = "НАЖИМАЙ!"
+theme_override_font_sizes/font_size = 46
+text = "Жми"
+horizontal_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
 position = Vector2(648, 356)

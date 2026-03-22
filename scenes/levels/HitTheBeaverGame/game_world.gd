@@ -33,15 +33,16 @@ func _spawn_beaver(data: Dictionary):
 	beaver.x_pos = data.point.global_position.x
 	beaver.y_pos = data.point.global_position.y
 	beaver.hided.connect(func():
-		score -= 1
+		if score >0:
+			score -= 1
 	)
 	beaver.hited.connect(func():
 		score += 1
-		score_check()
 		)
 	beaver.hide_end.connect(func():
 		data.occupied = false
 		beaver.queue_free()
+		score_check()
 		)
 	beaver.hited.connect(func():
 		var hummer = hummer_scene.instantiate()
