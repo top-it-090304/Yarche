@@ -20,4 +20,4 @@ offset_bottom = 720.0
 script = ExtResource("1_v1gfb")
 
 [node name="Fish" parent="gameworld/Control" instance=ExtResource("2_j5wik")]
-position = Vector2(640, 360)
+position = Vector2(640, 500)

@@ -3,6 +3,10 @@ extends Control
 
 var is_dragging: bool = false
 var drag_offset: Vector2
+var texture_offset = 20
+var fish_size
+func _ready() -> void:
+	fish_size = fish.get_node("ControlShape").shape.size
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -21,7 +25,6 @@ func finger_cover_fish(finger_position: Vector2) -> bool:
 	var collision_shape = fish.get_node("ControlShape")
 	var shape = collision_shape.shape
 	
-	# Получаем глобальную позицию центра
 	var global_center = collision_shape.global_transform * Vector2.ZERO
 	var half_size = shape.size / 2
 	
@@ -36,10 +39,11 @@ func finger_cover_fish(finger_position: Vector2) -> bool:
 func start_drag(finger_position):
 	is_dragging = true
 	drag_offset = fish.global_position - finger_position
+	
 func update_drag(finger_position):
 	var new_x_fish_position = finger_position.x + drag_offset.x
-	
-	fish.global_position.x = new_x_fish_position
+	if 0 < new_x_fish_position - fish_size.x/2 + texture_offset and new_x_fish_position + fish_size.x/2 - texture_offset < get_viewport().size.x:
+		fish.global_position.x = new_x_fish_position
 
 func stop_drag():
 	is_dragging = false
