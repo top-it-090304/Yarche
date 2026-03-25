@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var direction = Vector2.RIGHT
-var speed = 250
-
+var speed = 250.0
+var MAX_SPEED = 500.0
 
 @onready var shoot_timer: Timer = $Timer
 @onready var spawn_points: Node2D = $spawn_points
@@ -27,6 +27,9 @@ func on_shoot_timer_timeout():
 		index +=1
 		if index >= points.size():
 			index = 0
+			
+func set_max_speed(new_max_speed):
+	MAX_SPEED = new_max_speed
 
 func spawn_bullet(spawn_point):
 	if bullet_scene:
@@ -43,6 +46,12 @@ func spawn_bullet(spawn_point):
 func _on_bullet_fired():
 	emit_signal("hit")
 	current_bullet.queue_free()
+	
+func accelerate(acceleration = 20):
+	if speed < MAX_SPEED:
+		var current_speed = max(speed, 0.1)
+		speed += acceleration * (1 / (current_speed / MAX_SPEED))
+	
 func _process(delta):
 		
 	velocity = direction*speed

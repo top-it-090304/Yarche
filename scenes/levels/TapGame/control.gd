@@ -3,6 +3,7 @@ signal tapped
 func _ready():
 	size = get_viewport().size
 	mouse_filter = Control.MOUSE_FILTER_STOP
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and event.pressed:
 			handle_tap()

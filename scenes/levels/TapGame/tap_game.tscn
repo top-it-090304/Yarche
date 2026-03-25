@@ -90,10 +90,10 @@ centered = false
 [node name="computer_enemy" parent="Gameworld" instance=ExtResource("10_otrse")]
 position = Vector2(141, 599)
 
-[node name="CharacterBody2D" parent="Gameworld" instance=ExtResource("11_i604k")]
+[node name="green_player" parent="Gameworld" instance=ExtResource("11_i604k")]
 position = Vector2(643, 568)
 
-[node name="Camera2D2" type="Camera2D" parent="Gameworld/CharacterBody2D"]
+[node name="Camera2D2" type="Camera2D" parent="Gameworld/green_player"]
 position = Vector2(2, -211)
 
 [node name="AgressiveTheme2" type="AudioStreamPlayer" parent="Gameworld"]
