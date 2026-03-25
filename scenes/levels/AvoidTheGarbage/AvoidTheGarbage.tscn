@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://csfxk1wjt1nna"]
+
+[ext_resource type="Script" uid="uid://dejrp42s6eqhx" path="res://scenes/levels/AvoidTheGarbage/fish_control.gd" id="1_v1gfb"]
+[ext_resource type="PackedScene" uid="uid://bejxnvjnl7j7o" path="res://scenes/characters/Fish/fish.tscn" id="2_j5wik"]
+
+[node name="AvoidTheGarbage" type="Node2D"]
+
+[node name="gameworld" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="gameworld"]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.203922, 0.196078, 1, 1)
+
+[node name="Control" type="Control" parent="gameworld"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_v1gfb")
+
+[node name="Fish" parent="gameworld/Control" instance=ExtResource("2_j5wik")]
+position = Vector2(640, 360)

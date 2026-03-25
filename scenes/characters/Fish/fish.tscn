@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bejxnvjnl7j7o"]
+
+[ext_resource type="Script" uid="uid://dwxen33x2sk4l" path="res://scenes/characters/Fish/fish.gd" id="1_he842"]
+[ext_resource type="DragonBonesFactory" uid="uid://d1adn3cc436xk" path="res://assets/animated_char/players/fish/fish_ske.dbfactory" id="2_kb48t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_utjv6"]
+radius = 64.0
+height = 224.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he842"]
+size = Vector2(144, 232)
+
+[node name="fish" type="CharacterBody2D"]
+script = ExtResource("1_he842")
+
+[node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]
+factory = ExtResource("2_kb48t")
+armature_settings = {
+&"current_animation": "animtion0",
+"sub_armatures": {}
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_utjv6")
+
+[node name="ControlShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_he842")
