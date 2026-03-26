@@ -26,3 +26,4 @@ func flap():
 
 func die():
 	is_game_active = false
+	print("Game Over!")
