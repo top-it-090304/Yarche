@@ -11,11 +11,6 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	move_and_slide()
 	
-	#for i in range(get_slide_collision_count()):
-		#var collision = get_slide_collision(i)
-		#if collision.get_collider().is_in_group("clouds"):
-			#die()
-	
 	if position.y < 0 or position.y > get_viewport_rect().size.y:
 		die()
 
@@ -28,8 +23,6 @@ func _input(event):
 
 func flap():
 	velocity.y = flap_force
-	print("Flap!")
 
 func die():
 	is_game_active = false
-	print("Game Over")

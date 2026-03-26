@@ -3,14 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://dkjujq3ux8uvk" path="res://assets/img/WiresGame/Vilks.png" id="1_gbuxy"]
 [ext_resource type="Script" uid="uid://bhkwrexycl685" path="res://scenes/characters/Plane/plane.gd" id="1_x7wlc"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7wlc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7wlc"]
+size = Vector2(42, 119)
 
 [node name="Plane" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_x7wlc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_x7wlc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.105957, 0.105957)
 texture = ExtResource("1_gbuxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_x7wlc")

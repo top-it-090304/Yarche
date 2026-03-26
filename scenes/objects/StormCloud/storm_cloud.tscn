@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp6n5cjxmaxdd"]
+
+[ext_resource type="Script" uid="uid://cvvh4cyohcwaw" path="res://storm_cloud.gd" id="1_688fc"]
+[ext_resource type="Texture2D" uid="uid://ck0lrb40hedsq" path="res://assets/img/WiresGame/Plug.png" id="2_0aisq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aisq"]
+size = Vector2(82, 195)
+
+[node name="StormCloud" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_688fc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.141602, 0.141602)
+texture = ExtResource("2_0aisq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0aisq")
