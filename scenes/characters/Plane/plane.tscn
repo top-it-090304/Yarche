@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cba7kjatbwvpp"]
+
+[ext_resource type="Texture2D" uid="uid://dkjujq3ux8uvk" path="res://assets/img/WiresGame/Vilks.png" id="1_gbuxy"]
+[ext_resource type="Script" uid="uid://bhkwrexycl685" path="res://scenes/characters/Plane/plane.gd" id="1_x7wlc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7wlc"]
+
+[node name="Plane" type="CharacterBody2D"]
+script = ExtResource("1_x7wlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_x7wlc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.105957, 0.105957)
+texture = ExtResource("1_gbuxy")

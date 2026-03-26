@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cst5d0rkvaldf"]
+[gd_scene load_steps=2 format=3 uid="uid://cst5d0rkvaldf"]
+
+[ext_resource type="PackedScene" uid="uid://cba7kjatbwvpp" path="res://scenes/characters/Plane/plane.tscn" id="1_vgxqp"]
 
 [node name="FlappyPlaneGame" type="Node2D"]
 
@@ -20,3 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.170778, 0.543065, 0.760468, 1)
+
+[node name="Plane" parent="." instance=ExtResource("1_vgxqp")]
+position = Vector2(159, 370)
