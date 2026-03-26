@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3on65l00wlct"]
+
+[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scenes/levels/PumpGame/pump_tutorial.gd" id="1_q47if"]
+[ext_resource type="Texture2D" uid="uid://cb0xj5jc4aqjd" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 1.png" id="2_v7cms"]
+[ext_resource type="Texture2D" uid="uid://bvb1ypvp26amx" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 2.png" id="3_7f3ch"]
+[ext_resource type="Texture2D" uid="uid://c4f26hmtpid0" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 3.png" id="4_t2g6k"]
+[ext_resource type="Texture2D" uid="uid://b0nppiv5gutd5" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 4.png" id="5_pfyft"]
+[ext_resource type="Texture2D" uid="uid://dx5hp4nbrl4" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 5.png" id="6_fbm77"]
+[ext_resource type="Texture2D" uid="uid://dcetb7631u1e1" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 6.png" id="7_80rmb"]
+[ext_resource type="Texture2D" uid="uid://ynfjqbqh4ua2" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 7.png" id="8_s3ile"]
+[ext_resource type="Texture2D" uid="uid://d3sdnw1dwq8gu" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 8.png" id="9_sn772"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xa67h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v7cms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7f3ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2g6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pfyft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fbm77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_80rmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s3ile")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sn772")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MoveTutorial" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_q47if")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.008, 0.008, 0.008, 0.7)
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.498828
+anchor_top = 0.316667
+anchor_right = 0.498828
+anchor_bottom = 0.316667
+offset_left = -257.5
+offset_top = -140.0
+offset_right = 257.5
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 46
+text = "Уклоняйся!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(639, 359)
+scale = Vector2(0.820209, 0.820209)
+sprite_frames = SubResource("SpriteFrames_xa67h")
+autoplay = "default"
+frame = 7
+frame_progress = 0.525011
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true

@@ -9,14 +9,15 @@ var right_border_spawn
 var left_border_spawn
 
 var MAX_GARBAGE_CNT  = 5
-
+var speed = 500
 var garbage_list: Array
 var x_spawns_list: Array
 var down_border
 
 var garbage_texture_paths = [
 	"res://assets/img/AvoidTheGarbage/package.png",
-	"res://assets/img/AvoidTheGarbage/screwdriver.png"
+	"res://assets/img/AvoidTheGarbage/screwdriver.png",
+	"res://assets/img/AvoidTheGarbage/fork.png"
 ]
 
 func _ready() -> void:
@@ -45,7 +46,7 @@ func _create_x_spawns():
 		
 func _move_garbages(delta):
 	for garbage in garbage_list:
-		garbage.position.y += 200*delta
+		garbage.position.y += speed*delta
 
 func _check_garbages():
 	for i in range(garbage_list.size()-1,-1,-1):
