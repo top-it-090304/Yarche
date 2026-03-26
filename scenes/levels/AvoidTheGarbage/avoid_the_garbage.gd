@@ -18,4 +18,5 @@ func _win_ending():
 	win.emit()
 
 func _lose_ending():
+	print("бамп")
 	lose.emit()

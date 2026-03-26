@@ -3,7 +3,8 @@ extends CharacterBody2D
 signal fish_hited
 
 func _ready() -> void:
-	area_2d.body_entered.connect(_on_body_entered)
+	area_2d.area_entered.connect(_on_area_entered)
 
-func _on_body_entered():
+
+func _on_area_entered(area):
 	fish_hited.emit()
