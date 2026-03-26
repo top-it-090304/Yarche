@@ -11,6 +11,7 @@ height = 224.0
 size = Vector2(144, 232)
 
 [node name="fish" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_he842")
 
 [node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]

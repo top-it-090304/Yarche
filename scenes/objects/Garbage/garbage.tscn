@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://buokxftqhhh7a"]
+
+[ext_resource type="Script" uid="uid://kkyicu6mtsod" path="res://scenes/objects/Garbage/garbage.gd" id="1_fw1lt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcmvt"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_fw1lt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tcmvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
