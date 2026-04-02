@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp6n5cjxmaxdd"]
 
 [ext_resource type="Script" uid="uid://cvvh4cyohcwaw" path="res://scenes/objects/StormCloud/storm_cloud.gd" id="1_0aisq"]
-[ext_resource type="Texture2D" uid="uid://ck0lrb40hedsq" path="res://assets/img/WiresGame/Plug.png" id="2_0aisq"]
+[ext_resource type="Texture2D" uid="uid://bwixvvus56lhm" path="res://assets/img/FlappyPlaneGame/StormCloud.png" id="2_0aisq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aisq"]
 size = Vector2(82, 195)
