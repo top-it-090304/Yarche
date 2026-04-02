@@ -16,28 +16,51 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ickgj")
 
-[node name="play" type="TextureButton" parent="."]
+[node name="logo" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Control" type="Control" parent="logo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="logo" type="Sprite2D" parent="logo/Control"]
+texture = ExtResource("6_27dav")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.5
+offset_top = -122.5
+offset_right = 227.5
+offset_bottom = 122.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="TextureButton" parent="VBoxContainer"]
 z_index = 1
-layout_mode = 0
-offset_left = 416.0
-offset_top = 312.0
-offset_right = 871.0
-offset_bottom = 457.0
+layout_mode = 2
 texture_normal = ExtResource("1_fgphg")
 texture_pressed = ExtResource("2_ickgj")
 texture_hover = ExtResource("2_ickgj")
 
-[node name="exit" type="TextureButton" parent="."]
+[node name="exit" type="TextureButton" parent="VBoxContainer"]
 z_index = 1
-layout_mode = 0
-offset_left = 416.0
-offset_top = 432.0
-offset_right = 865.0
-offset_bottom = 528.0
+layout_mode = 2
 texture_normal = ExtResource("3_27dav")
 texture_pressed = ExtResource("4_fmtl4")
 texture_hover = ExtResource("4_fmtl4")
-
-[node name="logo" type="Sprite2D" parent="."]
-position = Vector2(640, 224)
-texture = ExtResource("6_27dav")
