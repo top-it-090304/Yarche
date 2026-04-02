@@ -3,7 +3,7 @@ extends Area2D
 var speed = 200.0
 
 func _ready():
-	#add_to_group("clouds")
+	add_to_group("clouds")
 	body_entered.connect(_on_body_entered)
 
 func _process(delta):

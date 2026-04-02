@@ -21,6 +21,7 @@ scale = Vector2(0.115234, 0.115234)
 texture = ExtResource("2_ex487")
 
 [node name="TouchArea" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_n1ytp")
 
