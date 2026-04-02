@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dju4ndtwmw3jw" path="res://scenes/menu/lose_scene/lose_scene.gd" id="1_d5qy3"]
 [ext_resource type="Texture2D" uid="uid://desc1ijco0jbt" path="res://assets/img/static_chracters/game_station/character_body_lose.png" id="2_2jvbi"]
-[ext_resource type="FontFile" uid="uid://8vsptqs5fcc6" path="res://assets/font/videotype.otf" id="3_po7i8"]
+[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_d5qy3"]
 [ext_resource type="Texture2D" uid="uid://3b3vlgd4nwv2" path="res://assets/img/ui/buttons/restart.png" id="4_0r1qj"]
 [ext_resource type="Texture2D" uid="uid://baye8fnhv1i5" path="res://assets/img/ui/buttons/restart_hover_and_pressed.png" id="5_0p342"]
 [ext_resource type="Script" uid="uid://b4nan76xwoj7m" path="res://scenes/menu/lose_scene/restart.gd" id="6_q4bcx"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cqhr2xu45blyh" path="res://assets/img/ui/buttons/back_main_menu_hover_and_pressed.png" id="8_3a2fp"]
 [ext_resource type="Script" uid="uid://dxuirqytst0qs" path="res://scenes/menu/lose_scene/back_to_main_menu.gd" id="9_rmguy"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_xpvla"]
-font = ExtResource("3_po7i8")
-font_size = 61
+[sub_resource type="LabelSettings" id="LabelSettings_2jvbi"]
+font = ExtResource("2_d5qy3")
+font_size = 100
 
 [node name="LoseScene" type="Node2D"]
 process_mode = 3
@@ -22,61 +22,61 @@ script = ExtResource("1_d5qy3")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 modulate = Color(1, 1, 1, 0.5)
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="charactee" type="Node" parent="CanvasLayer/Control"]
-
-[node name="body" type="Sprite2D" parent="CanvasLayer/Control/charactee"]
-position = Vector2(639, 270)
-scale = Vector2(0.595642, 0.595642)
-texture = ExtResource("2_2jvbi")
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = 452.5
-offset_top = 17.0
-offset_right = 787.5
-offset_bottom = 92.0
+anchor_bottom = 0.5
+offset_left = -416.5
+offset_top = -421.5
+offset_right = 416.5
+offset_bottom = 421.5
 grow_horizontal = 2
-text = "YOU LOSE!"
-label_settings = SubResource("LabelSettings_xpvla")
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Проигрыш :("
+label_settings = SubResource("LabelSettings_2jvbi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="CanvasLayer/Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_2jvbi")
+stretch_mode = 2
 
-[node name="Restart" type="TextureButton" parent="CanvasLayer/Control/Control"]
-layout_mode = 0
-offset_left = 264.0
-offset_top = 456.0
-offset_right = 413.0
-offset_bottom = 605.0
+[node name="buttons" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Restart" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer/buttons"]
+layout_mode = 2
 texture_normal = ExtResource("4_0r1qj")
 texture_pressed = ExtResource("5_0p342")
 texture_hover = ExtResource("5_0p342")
 script = ExtResource("6_q4bcx")
 
-[node name="BackToMainMenu" type="TextureButton" parent="CanvasLayer/Control/Control"]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 456.0
-offset_right = 1072.0
-offset_bottom = 605.0
+[node name="BackToMainMenu" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer/buttons"]
+layout_mode = 2
 texture_normal = ExtResource("7_o5jrx")
 texture_pressed = ExtResource("8_3a2fp")
 texture_hover = ExtResource("8_3a2fp")

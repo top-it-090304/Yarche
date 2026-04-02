@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var continue_button: TextureButton = $CanvasLayer/Control/Control/Continue
+@onready var continue_button: TextureButton = $CanvasLayer/Control/VBoxContainer/Continue
 @onready var control: Control = $CanvasLayer/Control
 
 signal continue_game
