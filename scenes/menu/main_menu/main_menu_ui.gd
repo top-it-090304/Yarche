@@ -1,6 +1,6 @@
 extends Control
-@onready var play_btn: TextureButton = $play
-@onready var exit_btn: TextureButton = $exit
+@onready var play_btn: TextureButton = $VBoxContainer/play
+@onready var exit_btn: TextureButton = $VBoxContainer/exit
 signal play_button_pressed
 
 func _ready():
