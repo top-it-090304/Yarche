@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bd0lfjmvbthkx" path="res://assets/img/static_chracters/game_station/hand.png" id="2_5u8p6"]
 [ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_yke5g"]
 [ext_resource type="Script" uid="uid://diy37wfsrmi6d" path="res://scenes/menu/win_scene/hand.gd" id="3_5u8p6"]
-[ext_resource type="Texture2D" uid="uid://dajlrgyxvrlt2" path="res://assets/img/ui/buttons/continue_button.png" id="5_hdaky"]
-[ext_resource type="Texture2D" uid="uid://bc14040giouyd" path="res://assets/img/ui/buttons/continue_button_hover_and_pressed.png" id="6_oxe81"]
+[ext_resource type="Texture2D" uid="uid://cgajuaae10ceg" path="res://assets/img/ui/buttons/continue_button.png" id="5_hdaky"]
+[ext_resource type="Texture2D" uid="uid://b6rf6f5db3aen" path="res://assets/img/ui/buttons/continue_button_hover.png" id="7_yke5g"]
 [ext_resource type="Script" uid="uid://v6qf5rfjkdi4" path="res://scenes/menu/win_scene/continue_button.gd" id="8_h23dw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6emfu"]
@@ -85,6 +85,6 @@ texture = ExtResource("1_cxn42")
 [node name="Continue" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_hdaky")
-texture_pressed = ExtResource("6_oxe81")
-texture_hover = ExtResource("6_oxe81")
+texture_pressed = ExtResource("7_yke5g")
+texture_hover = ExtResource("7_yke5g")
 script = ExtResource("8_h23dw")

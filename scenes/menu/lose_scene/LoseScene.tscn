@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://dju4ndtwmw3jw" path="res://scenes/menu/lose_scene/lose_scene.gd" id="1_d5qy3"]
 [ext_resource type="Texture2D" uid="uid://desc1ijco0jbt" path="res://assets/img/static_chracters/game_station/character_body_lose.png" id="2_2jvbi"]
 [ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_d5qy3"]
-[ext_resource type="Texture2D" uid="uid://3b3vlgd4nwv2" path="res://assets/img/ui/buttons/restart.png" id="4_0r1qj"]
-[ext_resource type="Texture2D" uid="uid://baye8fnhv1i5" path="res://assets/img/ui/buttons/restart_hover_and_pressed.png" id="5_0p342"]
+[ext_resource type="Texture2D" uid="uid://dl6cnftvp5h36" path="res://assets/img/ui/buttons/restart_button.png" id="4_d5qy3"]
+[ext_resource type="Texture2D" uid="uid://cej6k3yeiw5lp" path="res://assets/img/ui/buttons/restart_button_hover.png" id="5_2jvbi"]
 [ext_resource type="Script" uid="uid://b4nan76xwoj7m" path="res://scenes/menu/lose_scene/restart.gd" id="6_q4bcx"]
-[ext_resource type="Texture2D" uid="uid://bnn8npm6h0kef" path="res://assets/img/ui/buttons/back_main_menu.png" id="7_o5jrx"]
-[ext_resource type="Texture2D" uid="uid://cqhr2xu45blyh" path="res://assets/img/ui/buttons/back_main_menu_hover_and_pressed.png" id="8_3a2fp"]
+[ext_resource type="Texture2D" uid="uid://dtytdfx0dabom" path="res://assets/img/ui/buttons/back_to_main_button_menu.png" id="7_po7i8"]
+[ext_resource type="Texture2D" uid="uid://cgp5osi1agd3o" path="res://assets/img/ui/buttons/back_to_main_menu_button_hover.png" id="8_0r1qj"]
 [ext_resource type="Script" uid="uid://dxuirqytst0qs" path="res://scenes/menu/lose_scene/back_to_main_menu.gd" id="9_rmguy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2jvbi"]
@@ -70,14 +70,16 @@ layout_mode = 2
 
 [node name="Restart" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer/buttons"]
 layout_mode = 2
-texture_normal = ExtResource("4_0r1qj")
-texture_pressed = ExtResource("5_0p342")
-texture_hover = ExtResource("5_0p342")
+texture_normal = ExtResource("4_d5qy3")
+texture_pressed = ExtResource("5_2jvbi")
+texture_hover = ExtResource("5_2jvbi")
 script = ExtResource("6_q4bcx")
 
 [node name="BackToMainMenu" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer/buttons"]
 layout_mode = 2
-texture_normal = ExtResource("7_o5jrx")
-texture_pressed = ExtResource("8_3a2fp")
-texture_hover = ExtResource("8_3a2fp")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_po7i8")
+texture_pressed = ExtResource("8_0r1qj")
+texture_hover = ExtResource("8_0r1qj")
 script = ExtResource("9_rmguy")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqhr2xu45blyh"
-path="res://.godot/imported/back_main_menu_hover_and_pressed.png-1f3d85749a5a48e9c75960ec4629f7c4.ctex"
+uid="uid://d3fs0l4esicsr"
+path="res://.godot/imported/exit_button_hover.png-7e494a8ffcefaccc62bffeade102c996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/ui/buttons/back_main_menu_hover_and_pressed.png"
-dest_files=["res://.godot/imported/back_main_menu_hover_and_pressed.png-1f3d85749a5a48e9c75960ec4629f7c4.ctex"]
+source_file="res://assets/img/ui/buttons/exit_button_hover.png"
+dest_files=["res://.godot/imported/exit_button_hover.png-7e494a8ffcefaccc62bffeade102c996.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfqlrfnh3xoix"]
 
-[ext_resource type="Texture2D" uid="uid://xu0uplbms4qx" path="res://assets/img/ui/buttons/level_button.png" id="1_33kdl"]
-[ext_resource type="Texture2D" uid="uid://w6b782rse3gj" path="res://assets/img/ui/buttons/level_button_cover_pressed.png" id="2_6vr5w"]
+[ext_resource type="Texture2D" uid="uid://cjp1qw24tydr4" path="res://assets/img/ui/buttons/level_button.png" id="1_33kdl"]
+[ext_resource type="Texture2D" uid="uid://dm4m8515c73n" path="res://assets/img/ui/buttons/level_button_hover.png" id="2_6vr5w"]
 [ext_resource type="Script" uid="uid://18h12xkxptqh" path="res://scenes/menu/level_menu/level_button.gd" id="2_kptym"]
 [ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="3_kptym"]
 
@@ -9,7 +9,7 @@
 line_spacing = 0.0
 paragraph_spacing = 12.0
 font = ExtResource("3_kptym")
-font_size = 100
+font_size = 150
 shadow_offset = Vector2(0, 0)
 
 [node name="TextureButton" type="TextureButton"]
@@ -29,6 +29,7 @@ size_flags_vertical = 6
 texture_normal = ExtResource("1_33kdl")
 texture_pressed = ExtResource("2_6vr5w")
 texture_hover = ExtResource("2_6vr5w")
+stretch_mode = 0
 script = ExtResource("2_kptym")
 
 [node name="Label" type="Label" parent="."]

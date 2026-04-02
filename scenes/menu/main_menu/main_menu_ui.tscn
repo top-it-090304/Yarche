@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c520wdi4qn8fx"]
 
-[ext_resource type="Texture2D" uid="uid://67hqx543cimr" path="res://assets/img/ui/buttons/play button.png" id="1_fgphg"]
 [ext_resource type="Script" uid="uid://dkey4qni7kv72" path="res://scenes/menu/main_menu/main_menu_ui.gd" id="1_ickgj"]
-[ext_resource type="Texture2D" uid="uid://dwbmdhysl87po" path="res://assets/img/ui/buttons/play button PressedAndHover.png" id="2_ickgj"]
-[ext_resource type="Texture2D" uid="uid://bxijdh0dasing" path="res://assets/img/ui/buttons/exit button.png" id="3_27dav"]
-[ext_resource type="Texture2D" uid="uid://c6mbvwgqwxvhm" path="res://assets/img/ui/buttons/exit button PressedAndHover.png" id="4_fmtl4"]
+[ext_resource type="Texture2D" uid="uid://cui8ulxx7s6yn" path="res://assets/img/ui/buttons/play_button.png" id="3_27dav"]
+[ext_resource type="Texture2D" uid="uid://bews10e3v56lo" path="res://assets/img/ui/buttons/play_button_hover.png" id="4_fmtl4"]
+[ext_resource type="Texture2D" uid="uid://4rn3e711golv" path="res://assets/img/ui/buttons/exit_button.png" id="5_m7q8b"]
 [ext_resource type="Texture2D" uid="uid://blc62ku34dti4" path="res://assets/img/ui/ui_img/main_menu_logo.png" id="6_27dav"]
+[ext_resource type="Texture2D" uid="uid://d3fs0l4esicsr" path="res://assets/img/ui/buttons/exit_button_hover.png" id="6_k73w8"]
 
 [node name="MainMenuUi" type="Control"]
 layout_mode = 3
@@ -54,13 +54,14 @@ grow_vertical = 2
 [node name="play" type="TextureButton" parent="VBoxContainer"]
 z_index = 1
 layout_mode = 2
-texture_normal = ExtResource("1_fgphg")
-texture_pressed = ExtResource("2_ickgj")
-texture_hover = ExtResource("2_ickgj")
+texture_normal = ExtResource("3_27dav")
+texture_pressed = ExtResource("4_fmtl4")
+texture_hover = ExtResource("4_fmtl4")
 
 [node name="exit" type="TextureButton" parent="VBoxContainer"]
 z_index = 1
 layout_mode = 2
-texture_normal = ExtResource("3_27dav")
-texture_pressed = ExtResource("4_fmtl4")
-texture_hover = ExtResource("4_fmtl4")
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_m7q8b")
+texture_pressed = ExtResource("6_k73w8")
+texture_hover = ExtResource("6_k73w8")

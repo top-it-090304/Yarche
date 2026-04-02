@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc14040giouyd"
-path="res://.godot/imported/continue_button_hover_and_pressed.png-968fe08982a621aef991a90d8256fa47.ctex"
+uid="uid://dl6cnftvp5h36"
+path="res://.godot/imported/restart_button.png-8ecb9da4baa4662436fa45c6aeaac8cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/ui/buttons/continue_button_hover_and_pressed.png"
-dest_files=["res://.godot/imported/continue_button_hover_and_pressed.png-968fe08982a621aef991a90d8256fa47.ctex"]
+source_file="res://assets/img/ui/buttons/restart_button.png"
+dest_files=["res://.godot/imported/restart_button.png-8ecb9da4baa4662436fa45c6aeaac8cd.ctex"]
 
 [params]
 
