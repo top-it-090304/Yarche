@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://bhkwrexycl685" path="res://scenes/characters/Plane/plane.gd" id="1_x7wlc"]
 [ext_resource type="Texture2D" uid="uid://cdeu0m3m33dme" path="res://assets/img/FlappyPlaneGame/Plane.png" id="2_x7wlc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7wlc"]
-size = Vector2(113.999, 306)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7wlc"]
+radius = 22.0
+height = 306.0
 
 [node name="Plane" type="CharacterBody2D"]
 collision_mask = 2
@@ -15,6 +16,6 @@ scale = Vector2(0.296509, 0.296509)
 texture = ExtResource("2_x7wlc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.99988, 0.999728)
+position = Vector2(0, 21)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_x7wlc")
+shape = SubResource("CapsuleShape2D_x7wlc")

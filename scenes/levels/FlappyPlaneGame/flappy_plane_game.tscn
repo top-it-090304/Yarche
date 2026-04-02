@@ -18,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+custom_minimum_size = Vector2(1280, 720)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
