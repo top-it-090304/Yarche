@@ -7,6 +7,7 @@
 
 [node name="FlappyPlaneGame" type="Node2D"]
 script = ExtResource("1_ldkdg")
+final_duration = 9.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -26,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.170778, 0.543065, 0.760468, 1)
+color = Color(0.34975, 0.599818, 0.899884, 1)
 
 [node name="Plane" parent="." instance=ExtResource("1_vgxqp")]
 position = Vector2(240, 370)
@@ -34,7 +35,10 @@ position = Vector2(240, 370)
 [node name="CloudSpawner" type="Node" parent="."]
 script = ExtResource("4_wrnle")
 cloud_scene = ExtResource("2_36i2m")
-spawn_interval = 2.5
-middle_row_1 = 300.0
-middle_row_2 = 500.0
-bottom_row = 700.0
+spawn_interval = 3.0
+spawn_x = 1300
+middle_row_1 = 250
+middle_row_2 = 350
+middle_row_3 = 450
+middle_row_4 = 550
+bottom_row = 700

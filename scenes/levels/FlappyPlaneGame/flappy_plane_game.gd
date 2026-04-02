@@ -1,54 +1,41 @@
 extends Node2D
 
-@export var game_duration: float = 20.0  # 20 секунд активного спавна
-@export var final_duration: float = 10.0  # 10 секунд финальной фазы
+@export var timer_time = 25.0
+@export var final_duration = 10.0
 
 @onready var cloud_spawner = $CloudSpawner
 @onready var plane = $Plane
 @onready var background = $Control/Background
 
-var game_state: String = "active"
-
 func _ready():
-	var timer = Timer.new()
-	timer.wait_time = game_duration
-	timer.one_shot = true
-	add_child(timer)
-	timer.timeout.connect(_on_game_timer_timeout)
-	timer.start()
+	var darken_timer = Timer.new()
+	darken_timer.wait_time = 2.0
+	darken_timer.one_shot = true
+	add_child(darken_timer)
+	darken_timer.timeout.connect(func(): 
+		var tween = create_tween()
+		tween.tween_property(background, "color", Color(0.1, 0.3, 0.5), 2.0)
+	)
+	darken_timer.start()
 	
-	print("Игра началась! 20 секунд полета с тучами")
+	var game_timer = Timer.new()
+	game_timer.wait_time = timer_time
+	game_timer.one_shot = true
+	add_child(game_timer)
+	game_timer.timeout.connect(_on_game_timer_timeout)
+	game_timer.start()
 
 func _on_game_timer_timeout():
-	print("20 секунд прошло! Спавн туч остановлен, небо светлеет")
-	
 	cloud_spawner.stop_spawning()
 	
-	start_sky_lightening()
-	
-	var final_timer = Timer.new()
-	final_timer.wait_time = final_duration
-	final_timer.one_shot = true
-	add_child(final_timer)
-	final_timer.timeout.connect(_on_final_timer_timeout)
-	final_timer.start()
-
-func start_sky_lightening():
 	var tween = create_tween()
 	tween.tween_property(background, "color", Color(0.35, 0.6, 0.9), final_duration)
 	
-	var label = Label.new()
-	label.text = "SPACE PHASE"
-	label.position = Vector2(400, 100)
-	add_child(label)
-	var label_tween = create_tween()
-	label_tween.tween_property(label, "modulate:a", 0.0, 10.0)
-
-func _on_final_timer_timeout():
-	print("ПОБЕДА! Игрок продержался 30 секунд")
-	if plane:
+	var win_timer = Timer.new()
+	win_timer.wait_time = final_duration
+	win_timer.one_shot = true
+	add_child(win_timer)
+	win_timer.timeout.connect(func():
 		plane.is_game_active = false
-	var win_label = Label.new()
-	win_label.text = "YOU WIN!"
-	win_label.position = Vector2(400, 300)
-	add_child(win_label)
+	)
+	win_timer.start()

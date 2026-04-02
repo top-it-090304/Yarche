@@ -1,16 +1,19 @@
 extends Node
 
 @export var cloud_scene: PackedScene
-@export var spawn_interval: float = 2.0
-@export var spawn_x: float = 1200
+@export var spawn_interval = 2.0
+@export var spawn_x = 1200
 
-@export var top_row: float = 100
-@export var middle_row_1: float = 200
-@export var middle_row_2: float = 300
-@export var bottom_row: float = 400
+@export var middle_row_1 = 200
+@export var middle_row_2 = 250
+@export var middle_row_3 = 250
+@export var middle_row_4 = 300
 
-var time_since_last_spawn: float = 0.0
-var is_spawning: bool = true
+@export var top_row = 100
+@export var bottom_row = 400
+
+var time_since_last_spawn = 0.0
+var is_spawning = true
 
 func _process(delta):
 	if not is_spawning:
@@ -22,20 +25,12 @@ func _process(delta):
 		spawn_cloud_wave()
 
 func spawn_cloud_wave():
-	# Всегда верх и низ
 	spawn_cloud_at_row(top_row)
 	spawn_cloud_at_row(bottom_row)
 	
-	# Случайно выбираем: 0 или 1 тучу в средних рядах
-	var num_middle_clouds = 1  # 0 или 1
-	
-	if num_middle_clouds == 1:
-		# Выбираем случайный средний ряд (200 или 300)
-		var random_row = middle_row_1 if randi() % 2 == 0 else middle_row_2
-		spawn_cloud_at_row(random_row)
-		print("Туча в среднем ряду: ", random_row)
-	else:
-		print("Средние ряды пустые")
+	var middle_rows = [middle_row_1, middle_row_2, middle_row_3, middle_row_4]
+	var random_row = middle_rows.pick_random()
+	spawn_cloud_at_row(random_row)
 
 func spawn_cloud_at_row(y_position: float):
 	var cloud = cloud_scene.instantiate()
