@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://mxu874h1y6w7"]
+[gd_scene load_steps=13 format=3 uid="uid://mxu874h1y6w7"]
 
 [ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_5yq5q"]
 [ext_resource type="Texture2D" uid="uid://cwtc4ydrr848f" path="res://assets/img/PullGame/TutorialFrames/Frame1.png" id="2_5yq5q"]
+[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_528be"]
 [ext_resource type="Texture2D" uid="uid://dvms2s2c4m7r3" path="res://assets/img/PullGame/TutorialFrames/Frame2.png" id="3_528be"]
 [ext_resource type="Texture2D" uid="uid://dgp6ntpamxgkh" path="res://assets/img/PullGame/TutorialFrames/Frame3.png" id="4_dt3t1"]
 [ext_resource type="Texture2D" uid="uid://dbxjn45uixcv4" path="res://assets/img/PullGame/TutorialFrames/Frame4.png" id="5_1nlvf"]
@@ -9,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c3uwq16epcgxe" path="res://assets/img/PullGame/TutorialFrames/Frame6.png" id="7_1jyct"]
 [ext_resource type="Texture2D" uid="uid://uqwwjclklbyy" path="res://assets/img/PullGame/TutorialFrames/Frame7.png" id="8_nnyrs"]
 [ext_resource type="Texture2D" uid="uid://dccgrgjcy43np" path="res://assets/img/PullGame/TutorialFrames/Frame8.png" id="9_n2m8e"]
+
+[sub_resource type="Theme" id="Theme_dt3t1"]
+default_font = ExtResource("2_528be")
+default_font_size = 100
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tkxk2"]
 animations = [{
@@ -46,51 +51,55 @@ animations = [{
 process_mode = 3
 script = ExtResource("1_5yq5q")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.008, 0.008, 0.008, 0.7)
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.498828
-anchor_top = 0.316667
-anchor_right = 0.498828
-anchor_bottom = 0.316667
-offset_left = -257.5
-offset_top = -140.0
-offset_right = 257.5
-offset_bottom = -85.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 46
-text = "Двигай ручку вниз-вверх"
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(639, 359)
-scale = Vector2(0.820209, 0.820209)
-sprite_frames = SubResource("SpriteFrames_tkxk2")
-autoplay = "default"
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = SubResource("Theme_dt3t1")
+text = "Качай насос!"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tutorial_frames" type="AnimatedSprite2D" parent="Control/Control"]
+sprite_frames = SubResource("SpriteFrames_tkxk2")
+autoplay = "default"

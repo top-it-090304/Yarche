@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var timer = $Timer
-@onready var sprite: AnimatedSprite2D = $Control/Control/AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $Control/Control/tutorial_frames
 
 signal tutorial_finished
 

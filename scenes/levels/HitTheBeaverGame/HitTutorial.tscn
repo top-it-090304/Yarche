@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_ve8m1"]
 [ext_resource type="Texture2D" uid="uid://bt6ca8o6q2fbl" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 1.png" id="2_lr2wx"]
-[ext_resource type="FontFile" uid="uid://8vsptqs5fcc6" path="res://assets/font/videotype.otf" id="2_v68vo"]
+[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_v68vo"]
 [ext_resource type="Texture2D" uid="uid://cruxh6k1cn7yi" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 2.png" id="3_v68vo"]
 [ext_resource type="Texture2D" uid="uid://cjc0vt24rst4i" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 3.png" id="4_48e0g"]
 [ext_resource type="Texture2D" uid="uid://dpvemn3sr15ae" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 4.png" id="5_vv8bo"]
@@ -92,5 +92,5 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Control"]
+[node name="tutorial_frames" type="AnimatedSprite2D" parent="Control/Control"]
 sprite_frames = SubResource("SpriteFrames_vv8bo")
