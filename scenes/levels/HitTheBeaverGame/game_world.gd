@@ -37,18 +37,19 @@ func _spawn_beaver(data: Dictionary):
 			score -= 1
 	)
 	beaver.hited.connect(func():
-		score += 1
+		if not beaver.kicked:
+			score += 1
+			beaver.kicked = true
+			var hummer = hummer_scene.instantiate()
+			hummer.global_position = beaver.global_position
+			add_child(hummer)
 		)
 	beaver.hide_end.connect(func():
 		data.occupied = false
 		beaver.queue_free()
 		score_check()
 		)
-	beaver.hited.connect(func():
-		var hummer = hummer_scene.instantiate()
-		hummer.global_position = beaver.global_position
-		add_child(hummer)
-	)
+	
 	data.mask.add_child(beaver)
 	data.occupied = true
 

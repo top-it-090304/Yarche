@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7n4k7x37dxki" path="res://scenes/levels/HitTheBeaverGame/hit_the_beaver_game.gd" id="1_vrv7t"]
 [ext_resource type="Script" uid="uid://dhcbwsrakwqrp" path="res://scenes/levels/HitTheBeaverGame/game_world.gd" id="2_5r7ub"]
-[ext_resource type="Texture2D" uid="uid://bxjvu8aobpg7t" path="res://assets/img/HitTheBEaverGame/background.png" id="2_8a6jh"]
+[ext_resource type="Texture2D" uid="uid://c7ogkwix7mryf" path="res://assets/img/HitTheBEaverGame/background.png" id="2_8a6jh"]
 
 [node name="HitTheBeaverGame" type="Node2D"]
 script = ExtResource("1_vrv7t")
@@ -11,45 +11,48 @@ script = ExtResource("1_vrv7t")
 script = ExtResource("2_5r7ub")
 
 [node name="Sprite2D" type="Sprite2D" parent="game_world"]
-position = Vector2(640, 360)
+position = Vector2(960, 540)
 texture = ExtResource("2_8a6jh")
 
 [node name="SpawnPoint1Marker" type="Marker2D" parent="game_world"]
-position = Vector2(243, 489)
+position = Vector2(352, 832)
 
 [node name="Mask" type="ColorRect" parent="game_world/SpawnPoint1Marker"]
 clip_contents = true
-offset_left = -131.0
-offset_top = -228.0
-offset_right = 125.0
-offset_bottom = 87.0
+offset_left = -200.0
+offset_top = -584.0
+offset_right = 328.0
+offset_bottom = -48.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="SpawnPoint2Marker" type="Marker2D" parent="game_world"]
-position = Vector2(640, 488)
+position = Vector2(960, 832)
 
 [node name="Mask" type="ColorRect" parent="game_world/SpawnPoint2Marker"]
 clip_contents = true
-offset_left = -128.0
-offset_top = -184.0
-offset_right = 128.0
-offset_bottom = 88.0
+offset_left = -200.0
+offset_top = -576.0
+offset_right = 320.0
+offset_bottom = -48.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="SpawnPoint3Marker" type="Marker2D" parent="game_world"]
-position = Vector2(1042.18, 488)
+position = Vector2(1560, 832)
 
 [node name="Mask" type="ColorRect" parent="game_world/SpawnPoint3Marker"]
 clip_contents = true
-offset_left = -136.0
-offset_top = -208.0
-offset_right = 120.0
-offset_bottom = 88.0
+offset_left = -200.0
+offset_top = -576.0
+offset_right = 312.0
+offset_bottom = -40.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Timer" type="Timer" parent="game_world"]
 
 [node name="GameTimer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(960, 540)

@@ -8,7 +8,7 @@
 script = ExtResource("1_2fw8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(112, 106)
+position = Vector2(112, -56)
 texture = ExtResource("2_dr3t6")
 offset = Vector2(-3, -106)
 

@@ -11,6 +11,9 @@ signal hide_end
 var lower_y_position 
 var upper_y_position
 
+var slide_distance = 300
+
+var kicked = false
 func _ready() -> void:
 	self.input_pickable = true
 	self.input_event.connect(_on_input_event)
@@ -18,7 +21,7 @@ func _ready() -> void:
 	self.global_position.x = x_pos
 	self.global_position.y = y_pos
 	
-	lower_y_position = self.global_position.y + 230
+	lower_y_position = self.global_position.y + slide_distance
 	upper_y_position = self.global_position.y
 	
 	var start_position = Vector2(x_pos,lower_y_position )
