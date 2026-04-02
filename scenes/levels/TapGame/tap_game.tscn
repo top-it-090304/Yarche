@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c13g7jj1q06pu"]
+[gd_scene load_steps=13 format=3 uid="uid://c13g7jj1q06pu"]
 
 [ext_resource type="Script" uid="uid://quwjx4n0fgwe" path="res://scenes/levels/TapGame/tap_game.gd" id="1_tpkqk"]
 [ext_resource type="Texture2D" uid="uid://c170vg30ignmo" path="res://assets/img/bg/futuristic_city/city_0007_1.png" id="2_cpvjp"]
@@ -12,10 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cnlxtar1mv8c2" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.tscn" id="10_otrse"]
 [ext_resource type="PackedScene" uid="uid://c3rrjgyq7n74o" path="res://scenes/characters/green_player/green_player.tscn" id="11_i604k"]
 [ext_resource type="AudioStream" uid="uid://bu1df51xgsdlp" path="res://assets/sounds/music/agressive_theme2.ogg" id="12_eav6w"]
-[ext_resource type="Script" uid="uid://cvqdykemvn8gx" path="res://scenes/levels/TapGame/control.gd" id="13_i3v37"]
-
-[sub_resource type="Theme" id="Theme_d4w6o"]
-default_font_size = 80
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_tpkqk")
@@ -98,38 +94,6 @@ position = Vector2(2, -211)
 
 [node name="AgressiveTheme2" type="AudioStreamPlayer" parent="Gameworld"]
 stream = ExtResource("12_eav6w")
-
-[node name="TapGameControl" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-mouse_filter = 2
-script = ExtResource("13_i3v37")
-
-[node name="ColorRect" type="ColorRect" parent="TapGameControl"]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 0.498039)
-
-[node name="Label" type="Label" parent="TapGameControl"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -84.5
-offset_top = -55.0
-offset_right = 84.5
-offset_bottom = 55.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_d4w6o")
-text = "TAP!"
-horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 
