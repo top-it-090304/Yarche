@@ -1,5 +1,6 @@
-extends Node2D
-@onready var fish: CharacterBody2D = $gameworld/Control/Fish
+extends Control
+
+@onready var fish: CharacterBody2D = $Control/Fish
 @onready var timer: Timer = $Timer
 @export var timer_time: float = 2
 var tutorial_scene = preload("res://scenes/levels/AvoidTheGarbage/move_tutorial.tscn")

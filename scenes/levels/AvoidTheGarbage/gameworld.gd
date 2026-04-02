@@ -3,13 +3,13 @@ extends Node
 var garbage_scene = preload("res://scenes/objects/Garbage/garbage.tscn")
 
 var spawn_margin = 20
-var spawn_offset = 40
+var spawn_offset = 60
 
 var right_border_spawn
 var left_border_spawn
 
 var MAX_GARBAGE_CNT  = 5
-var speed = 500
+var speed = 700
 var garbage_list: Array
 var x_spawns_list: Array
 var down_border
@@ -51,7 +51,7 @@ func _move_garbages(delta):
 func _check_garbages():
 	for i in range(garbage_list.size()-1,-1,-1):
 		var garbage = garbage_list[i]
-		if garbage.position.y > down_border + 200:
+		if garbage.position.y > down_border + 400:
 			garbage.queue_free()
 			garbage_list.pop_at(i)
 

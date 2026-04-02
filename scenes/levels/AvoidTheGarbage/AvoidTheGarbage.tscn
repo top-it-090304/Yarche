@@ -1,31 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://csfxk1wjt1nna"]
+[gd_scene load_steps=7 format=3 uid="uid://csfxk1wjt1nna"]
 
 [ext_resource type="Script" uid="uid://dtctfhe68h8fx" path="res://scenes/levels/AvoidTheGarbage/avoid_the_garbage.gd" id="1_j5wik"]
 [ext_resource type="Script" uid="uid://dejrp42s6eqhx" path="res://scenes/levels/AvoidTheGarbage/fish_control.gd" id="1_v1gfb"]
 [ext_resource type="Script" uid="uid://bwkxshce1rksd" path="res://scenes/levels/AvoidTheGarbage/gameworld.gd" id="2_cn7wi"]
 [ext_resource type="PackedScene" uid="uid://bejxnvjnl7j7o" path="res://scenes/characters/Fish/fish.tscn" id="2_j5wik"]
 
-[node name="AvoidTheGarbage" type="Node2D"]
+[sub_resource type="Gradient" id="Gradient_cn7wi"]
+offsets = PackedFloat32Array(0, 0.295775, 0.764085, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0, 0.588235, 1, 1, 0.255035, 0.429694, 1, 1, 0.352941, 0.239216, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uw37r"]
+gradient = SubResource("Gradient_cn7wi")
+width = 2560
+
+[node name="AvoidTheGarbage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_j5wik")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1gfb")
+
+[node name="Fish" parent="Control" instance=ExtResource("2_j5wik")]
+z_index = 1
+position = Vector2(960, 740)
+
+[node name="Timer" type="Timer" parent="."]
 
 [node name="gameworld" type="Node" parent="."]
 script = ExtResource("2_cn7wi")
 
-[node name="ColorRect" type="ColorRect" parent="gameworld"]
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0.203922, 0.196078, 1, 1)
-
-[node name="Control" type="Control" parent="gameworld"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-script = ExtResource("1_v1gfb")
-
-[node name="Fish" parent="gameworld/Control" instance=ExtResource("2_j5wik")]
-position = Vector2(640, 500)
-
 [node name="spawn_cooldown" type="Timer" parent="gameworld"]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="gameworld"]
+position = Vector2(960, 540)
+scale = Vector2(1, 1072.5)
+texture = SubResource("GradientTexture1D_uw37r")
+
+[node name="Camera2D" type="Camera2D" parent="gameworld"]
+offset = Vector2(960, 540)
