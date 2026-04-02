@@ -1,7 +1,7 @@
 extends Node
 
 @export var cloud_scene: PackedScene
-@export var spawn_interval = 2.0
+@export var spawn_interval = 3.0
 @export var spawn_x = 1200
 
 @export var middle_row_1 = 200

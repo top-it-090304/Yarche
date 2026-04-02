@@ -7,7 +7,11 @@ extends Node2D
 @onready var plane = $Plane
 @onready var background = $Control/Background
 
+signal win
+signal lose
+
 func _ready():
+	get_tree().paused = false
 	var darken_timer = Timer.new()
 	darken_timer.wait_time = 2.0
 	darken_timer.one_shot = true
@@ -37,5 +41,10 @@ func _on_game_timer_timeout():
 	add_child(win_timer)
 	win_timer.timeout.connect(func():
 		plane.is_game_active = false
+		win.emit()
 	)
 	win_timer.start()
+	
+func game_over():
+	get_tree().paused = true
+	lose.emit()
