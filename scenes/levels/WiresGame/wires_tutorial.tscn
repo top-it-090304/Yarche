@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dblcf6rvnpnw0"]
 
-[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scenes/levels/PumpGame/pump_tutorial.gd" id="1_gd67y"]
+[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_gd67y"]
 [ext_resource type="Texture2D" uid="uid://cewjjj68bs1al" path="res://assets/img/WiresGame/TutorialFrames/Frame1.png" id="2_tgb6p"]
 [ext_resource type="Texture2D" uid="uid://bji1t547ogrmo" path="res://assets/img/WiresGame/TutorialFrames/Frame2.png" id="3_fdnmi"]
 [ext_resource type="Texture2D" uid="uid://6f2lljm262w" path="res://assets/img/WiresGame/TutorialFrames/Frame3.png" id="4_kydcu"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cn1enrkwqj1ra" path="res://assets/img/WiresGame/TutorialFrames/Frame8.png" id="9_56u5f"]
 [ext_resource type="Texture2D" uid="uid://dm7pge4e2a7ih" path="res://assets/img/WiresGame/TutorialFrames/Frame9.png" id="10_ks8xw"]
 [ext_resource type="Texture2D" uid="uid://cnxy1dh2bckmd" path="res://assets/img/WiresGame/TutorialFrames/Frame10.png" id="11_5pjma"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wf6j"]
 animations = [{

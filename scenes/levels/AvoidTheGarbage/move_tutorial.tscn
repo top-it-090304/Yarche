@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d3on65l00wlct"]
 
-[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scenes/levels/PumpGame/pump_tutorial.gd" id="1_q47if"]
+[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_q47if"]
 [ext_resource type="Texture2D" uid="uid://cb0xj5jc4aqjd" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 1.png" id="2_v7cms"]
 [ext_resource type="Texture2D" uid="uid://bvb1ypvp26amx" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 2.png" id="3_7f3ch"]
 [ext_resource type="Texture2D" uid="uid://c4f26hmtpid0" path="res://assets/img/AvoidTheGarbage/TutorialFrames/Frame 3.png" id="4_t2g6k"]
