@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bwt1u0twhqyno" path="res://assets/img/static_chracters/game_station/character body.png" id="1_cxn42"]
 [ext_resource type="Script" uid="uid://dns0hq6g1dcoy" path="res://scenes/menu/win_scene/win_scene.gd" id="1_yke5g"]
 [ext_resource type="Texture2D" uid="uid://bd0lfjmvbthkx" path="res://assets/img/static_chracters/game_station/hand.png" id="2_5u8p6"]
+[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_yke5g"]
 [ext_resource type="Script" uid="uid://diy37wfsrmi6d" path="res://scenes/menu/win_scene/hand.gd" id="3_5u8p6"]
-[ext_resource type="FontFile" uid="uid://8vsptqs5fcc6" path="res://assets/font/videotype.otf" id="4_7dncv"]
 [ext_resource type="Texture2D" uid="uid://dajlrgyxvrlt2" path="res://assets/img/ui/buttons/continue_button.png" id="5_hdaky"]
 [ext_resource type="Texture2D" uid="uid://bc14040giouyd" path="res://assets/img/ui/buttons/continue_button_hover_and_pressed.png" id="6_oxe81"]
 [ext_resource type="Script" uid="uid://v6qf5rfjkdi4" path="res://scenes/menu/win_scene/continue_button.gd" id="8_h23dw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6emfu"]
-font = ExtResource("4_7dncv")
-font_size = 61
+font = ExtResource("2_yke5g")
+font_size = 100
 
 [node name="Win-scene" type="Node2D"]
 process_mode = 3
@@ -21,61 +21,69 @@ script = ExtResource("1_yke5g")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 modulate = Color(1, 1, 1, 0.5)
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="charactee" type="Node" parent="CanvasLayer/Control"]
-
-[node name="body" type="Sprite2D" parent="CanvasLayer/Control/charactee"]
-position = Vector2(639, 270)
-scale = Vector2(0.595642, 0.595642)
-texture = ExtResource("1_cxn42")
-
-[node name="hand" type="Sprite2D" parent="CanvasLayer/Control/charactee"]
-position = Vector2(443, 306)
-texture = ExtResource("2_5u8p6")
-script = ExtResource("3_5u8p6")
-
-[node name="DOWN_BORDER" type="Marker2D" parent="CanvasLayer/Control/charactee/hand"]
-position = Vector2(21, -46)
-
-[node name="UPPER_BORDER2" type="Marker2D" parent="CanvasLayer/Control/charactee/hand"]
-position = Vector2(21, 62)
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = 484.0
-offset_top = 16.0
-offset_right = 758.0
-offset_bottom = 91.0
+anchor_bottom = 0.5
+offset_left = -227.5
+offset_top = -130.0
+offset_right = 227.5
+offset_bottom = 130.0
 grow_horizontal = 2
-text = "YOU WIN!"
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Победа!"
 label_settings = SubResource("LabelSettings_6emfu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="CanvasLayer/Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+[node name="character" type="Control" parent="CanvasLayer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(413, 583)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Continue" type="TextureButton" parent="CanvasLayer/Control/Control"]
+[node name="hand" type="Sprite2D" parent="CanvasLayer/Control/VBoxContainer/character"]
+position = Vector2(-107, 419)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5u8p6")
+script = ExtResource("3_5u8p6")
+
+[node name="DOWN_BORDER" type="Marker2D" parent="CanvasLayer/Control/VBoxContainer/character/hand"]
+position = Vector2(21, -46)
+
+[node name="UPPER_BORDER2" type="Marker2D" parent="CanvasLayer/Control/VBoxContainer/character/hand"]
+position = Vector2(21, 62)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/character"]
 layout_mode = 0
-offset_left = 412.0
-offset_top = 512.0
-offset_right = 867.0
-offset_bottom = 657.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_cxn42")
+
+[node name="Continue" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
 texture_normal = ExtResource("5_hdaky")
 texture_pressed = ExtResource("6_oxe81")
 texture_hover = ExtResource("6_oxe81")

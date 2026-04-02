@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var restart_button: TextureButton = $CanvasLayer/Control/Control/Restart
-@onready var back_to_main_menu_button: TextureButton = $CanvasLayer/Control/Control/BackToMainMenu
+@onready var restart_button: TextureButton = $CanvasLayer/Control/VBoxContainer/buttons/Restart
+@onready var back_to_main_menu_button: TextureButton = $CanvasLayer/Control/VBoxContainer/buttons/BackToMainMenu
 @onready var control: Control = $CanvasLayer/Control
 
 signal restart_level
