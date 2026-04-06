@@ -11,7 +11,6 @@ signal win
 signal lose
 
 func _ready():
-	get_tree().paused = false
 	var darken_timer = Timer.new()
 	darken_timer.wait_time = 4.0
 	darken_timer.one_shot = true
@@ -46,5 +45,4 @@ func _on_game_timer_timeout():
 	win_timer.start()
 	
 func game_over():
-	get_tree().paused = true
 	lose.emit()
