@@ -11,8 +11,10 @@ signal win
 signal lose
 
 func _ready():
+	get_tree().paused = true
+	show_tutorial()
 	var darken_timer = Timer.new()
-	darken_timer.wait_time = 4.0
+	darken_timer.wait_time = 1.0
 	darken_timer.one_shot = true
 	add_child(darken_timer)
 	darken_timer.timeout.connect(func(): 
@@ -46,3 +48,11 @@ func _on_game_timer_timeout():
 	
 func game_over():
 	lose.emit()
+
+func show_tutorial():
+	var tutorial = preload("res://scenes/levels/FlappyPlaneGame/flappy_plane_tutorial.tscn").instantiate()
+	add_child(tutorial)
+	tutorial.tutorial_finished.connect(_start_game)
+
+func _start_game():
+	get_tree().paused = false

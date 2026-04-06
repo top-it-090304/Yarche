@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfuwjfri4vs8c"]
+
+[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_88pyn"]
+[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_t1jhf"]
+[ext_resource type="Texture2D" uid="uid://dv2wu60si50qc" path="res://assets/img/FlappyPlaneGame/TutorialFrames/Frame1.png" id="3_qo7jm"]
+[ext_resource type="Texture2D" uid="uid://cyljo043nqbxp" path="res://assets/img/FlappyPlaneGame/TutorialFrames/Frame2.png" id="4_vg3ni"]
+[ext_resource type="Texture2D" uid="uid://ck7nhbo14pjof" path="res://assets/img/FlappyPlaneGame/TutorialFrames/Frame3.png" id="5_og40d"]
+[ext_resource type="Texture2D" uid="uid://cg2yavycstm2c" path="res://assets/img/FlappyPlaneGame/TutorialFrames/Frame4.png" id="6_88pyn"]
+[ext_resource type="Texture2D" uid="uid://84qugkq5go43" path="res://assets/img/FlappyPlaneGame/TutorialFrames/Frame5.png" id="7_t1jhf"]
+
+[sub_resource type="Theme" id="Theme_t2g6k"]
+default_font = ExtResource("2_t1jhf")
+default_font_size = 100
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwy6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qo7jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vg3ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_og40d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_88pyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t1jhf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="FlappyPlaneTutorial" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_88pyn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.294531
+anchor_top = 0.075
+anchor_right = 0.705469
+anchor_bottom = 0.152778
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = SubResource("Theme_t2g6k")
+text = "Жми, чтобы взлетать!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="tutorial_frames" type="AnimatedSprite2D" parent="Control/Control"]
+position = Vector2(24, -45)
+scale = Vector2(0.891602, 0.891602)
+sprite_frames = SubResource("SpriteFrames_rwy6p")
+autoplay = "default"
+frame_progress = 0.280472

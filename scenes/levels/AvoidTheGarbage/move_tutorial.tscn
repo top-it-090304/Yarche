@@ -63,6 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="bg" type="ColorRect" parent="Control"]
 layout_mode = 1
@@ -72,6 +73,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.501961)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
@@ -85,6 +87,7 @@ grow_horizontal = 2
 theme = SubResource("Theme_t2g6k")
 text = "Уворачивайся от мусора!"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="Control"]
 layout_mode = 1
@@ -99,6 +102,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="tutorial_frames" type="AnimatedSprite2D" parent="Control/Control"]
 sprite_frames = SubResource("SpriteFrames_xa67h")
