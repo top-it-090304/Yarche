@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bejxnvjnl7j7o"]
+[gd_scene load_steps=6 format=3 uid="uid://bejxnvjnl7j7o"]
 
 [ext_resource type="Script" uid="uid://dwxen33x2sk4l" path="res://scenes/characters/Fish/fish.gd" id="1_he842"]
 [ext_resource type="Texture2D" uid="uid://0q8ajricgx04" path="res://assets/img/AvoidTheGarbage/tail.png" id="2_kb48t"]
@@ -8,9 +8,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_utjv6"]
 radius = 137.143
 height = 640.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_he842"]
-size = Vector2(274.286, 685.714)
 
 [node name="fish" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
@@ -34,7 +31,3 @@ collision_mask = 2
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 68.5714)
 shape = SubResource("CapsuleShape2D_utjv6")
-
-[node name="ControlShape" type="CollisionShape2D" parent="."]
-position = Vector2(-5.44957e-06, 91.4286)
-shape = SubResource("RectangleShape2D_he842")

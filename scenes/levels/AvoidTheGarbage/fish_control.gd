@@ -1,32 +1,40 @@
 extends Control
 
 @onready var fish: CharacterBody2D = $Fish
+@onready var control_area: CollisionShape2D = $Fish/ControlArea
+
 
 var is_dragging: bool = false
-var drag_offset: Vector2
-var texture_offset = 20
+var drag_offset_x
+var texture_offset = 0
 var fish_size: Vector2
 
+var min_x
+var max_x
+
 func _ready() -> void:
-	print(size)
-	fish_size = fish.get_node("ControlShape").shape.size
+	var fish_capsule_shape = fish.get_node("Area2D/CollisionShape2D2").shape as CapsuleShape2D
+	fish_size = Vector2(fish_capsule_shape.radius*2, fish_capsule_shape.height)
+	
+	min_x = get_viewport().get_visible_rect().position.x + fish_size.x / 2 - texture_offset
+	max_x = get_viewport().get_visible_rect().size.x - fish_size.x / 2 + texture_offset
 
 func _input(event):
+	var finger_position = get_global_mouse_position()
 	if event is InputEventScreenTouch:
 		if event.pressed:
-			var finger_position = get_global_mouse_position()
+			
 			if finger_cover_fish(finger_position):
 				start_drag(finger_position)
 		else:
 			if is_dragging:
-				stop_drag()
+				is_dragging = false
 	elif event is InputEventScreenDrag and is_dragging:
-		update_drag(event.position)
+		update_position(finger_position)
 
-func finger_cover_fish(finger_position: Vector2) -> bool:
-	var collision_shape = fish.get_node("ControlShape")
-	var global_center = collision_shape.global_position  # исправлено!
-	var half_size = collision_shape.shape.size / 2
+func finger_cover_fish(finger_position):
+	var global_center = control_area.global_position
+	var half_size = control_area.shape.size / 2
 	
 	return (finger_position.x >= global_center.x - half_size.x and
 			finger_position.x <= global_center.x + half_size.x and
@@ -35,15 +43,8 @@ func finger_cover_fish(finger_position: Vector2) -> bool:
 
 func start_drag(finger_position):
 	is_dragging = true
-	drag_offset = fish.global_position - finger_position
-
-func update_drag(finger_position):
-	var new_x = finger_position.x + drag_offset.x
+	drag_offset_x = finger_position.x - fish.global_position.x
 	
-	var min_x = fish_size.x / 2 - texture_offset
-	var max_x = get_viewport().get_visible_rect().size.x - fish_size.x / 2 + texture_offset
-	print("Ширина экрана: ", get_viewport().size.x, ", ширина рыбы: ",fish_size.x, ", отступ тексутры: ", texture_offset )
+func update_position(finger_position):
+	var new_x = finger_position.x - drag_offset_x
 	fish.global_position.x = clamp(new_x, min_x, max_x)
-
-func stop_drag():
-	is_dragging = false
