@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 200.0
+var speed = 300.0
 
 func _ready():
 	add_to_group("clouds")

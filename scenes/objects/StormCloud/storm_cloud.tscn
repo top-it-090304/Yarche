@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bwixvvus56lhm" path="res://assets/img/FlappyPlaneGame/StormCloud.png" id="2_0aisq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0aisq"]
-radius = 55.0
-height = 226.0
+radius = 47.0
+height = 198.0
 
 [node name="StormCloud" type="Area2D"]
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 script = ExtResource("1_0aisq")
 

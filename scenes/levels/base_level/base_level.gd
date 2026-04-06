@@ -4,7 +4,7 @@ extends Node2D
 @onready var timer: Timer = $CanvasLayer/TimerBar/Timer
 var win_scene_preload = preload("res://scenes/menu/win_scene/win-scene.tscn")
 var lose_scene_preload = preload("res://scenes/menu/lose_scene/LoseScene.tscn")
-var times = [10, 10, 7, 5, 5,10,12]
+var times = [36, 10, 7, 5, 5,10,12]
 var game_paths = [
 	"res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn",
 	"res://scenes/levels/HitTheBeaverGame/HitTheBeaverGame.tscn",

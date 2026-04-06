@@ -13,7 +13,7 @@ signal lose
 func _ready():
 	get_tree().paused = false
 	var darken_timer = Timer.new()
-	darken_timer.wait_time = 2.0
+	darken_timer.wait_time = 4.0
 	darken_timer.one_shot = true
 	add_child(darken_timer)
 	darken_timer.timeout.connect(func(): 

@@ -25,19 +25,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1181.0
+offset_bottom = 369.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.34975, 0.599818, 0.899884, 1)
 
 [node name="Plane" parent="." instance=ExtResource("1_vgxqp")]
-position = Vector2(240, 370)
+position = Vector2(820, 526)
+scale = Vector2(1.5, 1.5)
 
 [node name="CloudSpawner" type="Node" parent="."]
 script = ExtResource("4_wrnle")
 cloud_scene = ExtResource("2_36i2m")
-spawn_x = 1300
-middle_row_1 = 250
-middle_row_2 = 350
-middle_row_3 = 450
-middle_row_4 = 550
-bottom_row = 700
+spawn_x = 2500
+middle_row_1 = 300
+middle_row_2 = 450
+middle_row_3 = 550
+middle_row_4 = 700
+bottom_row = 900
