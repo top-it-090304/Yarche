@@ -7,7 +7,7 @@ extends Node2D
 signal win
 signal lose
 
-var available_x_cord = [197, 489, 787, 1087]
+var available_x_cord = [240, 720, 1200, 1680]
 var connected_plugs_count = 0
 
 func _ready():

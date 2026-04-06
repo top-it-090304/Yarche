@@ -45,12 +45,12 @@ func _ready():
 func _input(event):
 	if is_connected:
 		return
-	
+	var finger_position = get_global_mouse_position()
 	if event is InputEventScreenTouch:
 		if event.pressed:
-			if _is_point_inside_plug(event.position):
+			if _is_point_inside_plug(finger_position):
 				touch_index = event.index
-				drag_offset = global_position - event.position
+				drag_offset = global_position - finger_position
 				is_dragging = true
 				print("Начало перетаскивания")
 		else:
@@ -62,15 +62,16 @@ func _input(event):
 	
 	if event is InputEventScreenDrag:
 		if event.index == touch_index and is_dragging:
-			global_position = event.position + drag_offset
+			global_position = finger_position + drag_offset
 			_update_line()
 			_try_connect_while_dragging()
 
 func _is_point_inside_plug(point):
-	var local_point = to_local(point)
-	var circle_shape = touch_area.shape as CircleShape2D
-	var distance = local_point.length()
-	return distance <= circle_shape.radius
+	var center = touch_area.global_position
+	var radius = touch_area.shape.radius
+	var distance = point.distance_to(center)
+	return distance <= radius
+	
 
 func _try_connect_while_dragging():
 	var overlapping_areas = get_overlapping_areas()

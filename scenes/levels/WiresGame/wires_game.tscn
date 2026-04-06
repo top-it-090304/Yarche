@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://os06fxuxrrpm"]
+[gd_scene load_steps=7 format=3 uid="uid://os06fxuxrrpm"]
 
 [ext_resource type="PackedScene" uid="uid://cssw1nkimjp7l" path="res://scenes/objects/WiresGame/socket.tscn" id="1_fwg5s"]
 [ext_resource type="Script" uid="uid://t07phkiuvvyi" path="res://scenes/levels/WiresGame/game.gd" id="1_ghg4v"]
 [ext_resource type="PackedScene" uid="uid://cl2njyrwnde0d" path="res://scenes/levels/WiresGame/wire.tscn" id="2_fi330"]
+[ext_resource type="Texture2D" uid="uid://otttdne07hxj" path="res://assets/img/WiresGame/background.png" id="2_hbwa8"]
 [ext_resource type="Texture2D" uid="uid://b4tkcpia42ish" path="res://assets/img/WiresGame/PlugConnected.png" id="4_64svp"]
 [ext_resource type="AudioStream" uid="uid://cyjc2ihthgx7t" path="res://assets/sounds/WiresGameSounds/PlugConnected.mp3" id="5_hvwy0"]
 
@@ -10,20 +11,12 @@
 script = ExtResource("1_ghg4v")
 timer_time = 7.0
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(960, 540)
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 1
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0.416276, 0.299566, 0.166654, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_hbwa8")
 
 [node name="GameTimer" type="Timer" parent="."]
 
@@ -47,21 +40,21 @@ color_type = "yellow"
 [node name="Plugs" type="Node2D" parent="."]
 
 [node name="PlugRed" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(489, 625)
+position = Vector2(240, 625)
 connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugBlue" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(197, 625)
+position = Vector2(720, 625)
 color_type = "blue"
 connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugGreen" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(787, 625)
+position = Vector2(1200, 625)
 color_type = "green"
 connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugYellow" parent="Plugs" groups=["plugs"] instance=ExtResource("2_fi330")]
-position = Vector2(1087, 625)
+position = Vector2(1680, 625)
 color_type = "yellow"
 connected_sprite = ExtResource("4_64svp")
 

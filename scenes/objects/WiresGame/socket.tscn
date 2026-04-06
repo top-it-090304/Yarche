@@ -7,6 +7,7 @@
 radius = 56.0089
 
 [node name="Socket" type="Area2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_udl2o")
 
 [node name="Socket" type="Sprite2D" parent="."]
