@@ -8,7 +8,7 @@ var spawn_offset = 60
 var right_border_spawn
 var left_border_spawn
 
-var MAX_GARBAGE_CNT  = 5
+var MAX_GARBAGE_CNT  = 10
 var speed = 700
 var garbage_list: Array
 var x_spawns_list: Array
@@ -27,11 +27,15 @@ func _ready() -> void:
 	
 	_create_x_spawns()
 	
-	cooldown_timer.wait_time = 1
+	cooldown_timer.wait_time = 0.7
 	cooldown_timer.timeout.connect(_spawn_new_garbage)
 	cooldown_timer.start()
 	
 func _spawn_new_garbage():
+	var new_speed = speed * 1.06
+	
+	var accelerate_tween = create_tween()
+	accelerate_tween.tween_property(self, "speed", new_speed, 0.2)
 	if garbage_list.size() < MAX_GARBAGE_CNT:
 		var garbage = garbage_scene.instantiate()
 		garbage.texture_path = garbage_texture_paths.pick_random()
@@ -51,7 +55,7 @@ func _move_garbages(delta):
 func _check_garbages():
 	for i in range(garbage_list.size()-1,-1,-1):
 		var garbage = garbage_list[i]
-		if garbage.position.y > down_border + 400:
+		if garbage.position.y > down_border + 600:
 			garbage.queue_free()
 			garbage_list.pop_at(i)
 

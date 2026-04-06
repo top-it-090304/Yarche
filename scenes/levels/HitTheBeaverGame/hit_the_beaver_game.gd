@@ -10,6 +10,7 @@ func _ready():
 	timer.wait_time = timer_time
 	game_world.score_overed.connect(_win)
 	timer.timeout.connect(_lose)
+	timer.start()
 	show_tutorial()
 
 func _win():
