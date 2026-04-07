@@ -8,6 +8,7 @@ script = ExtResource("1_rwgnx")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TimerBar" type="ProgressBar" parent="CanvasLayer"]
+z_index = 4
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = -2.0

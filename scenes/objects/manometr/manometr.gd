@@ -25,6 +25,17 @@ func _process(delta):
 func update_strelka(pressure):
 	target_pressure = clamp(pressure, min_pressure, max_pressure)
 
+func encrease_manometr_value(amount: float) -> float:
+	target_pressure = clamp(target_pressure + amount, min_pressure, max_pressure)
+	return target_pressure
+
+func decrease_manometr_value(amount: float) -> float:
+	target_pressure = clamp(target_pressure - amount, min_pressure, max_pressure)
+	return target_pressure
+
+func get_pressure() -> float:
+	return target_pressure
+
 func update_strelka_visual(pressure):
 	var t = (pressure - min_pressure) / (max_pressure - min_pressure)
 	var angle = lerp(min_angle, max_angle, t)

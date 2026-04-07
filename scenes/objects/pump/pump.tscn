@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckoyw13tiflae"]
+[gd_scene load_steps=5 format=3 uid="uid://ckoyw13tiflae"]
 
 [ext_resource type="Script" path="res://scenes/objects/pump/pump.gd" id="1_kdubi"]
 [ext_resource type="Texture2D" uid="uid://bkoe6u3epbslr" path="res://assets/img/PullGame/Handle.png" id="2_qjumx"]
 [ext_resource type="Texture2D" uid="uid://bn37idohrjowt" path="res://assets/img/PullGame/Body.png" id="3_qjumx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjumx"]
+size = Vector2(360, 118)
 
 [node name="Pump" type="Node2D"]
 clip_children = 1
@@ -10,10 +13,15 @@ script = ExtResource("1_kdubi")
 
 [node name="RodHandle" type="Sprite2D" parent="."]
 position = Vector2(0, -40)
-scale = Vector2(0.804248, 0.753685)
 texture = ExtResource("2_qjumx")
+
+[node name="ControlArea" type="Area2D" parent="RodHandle"]
+position = Vector2(0, 40)
+
+[node name="ControlShape" type="CollisionShape2D" parent="RodHandle/ControlArea"]
+position = Vector2(0, -156)
+shape = SubResource("RectangleShape2D_qjumx")
 
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(0, 92)
-scale = Vector2(0.777778, 1)
 texture = ExtResource("3_qjumx")

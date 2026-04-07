@@ -1,21 +1,20 @@
 
-extends Node2D
+extends Control
 
-@onready var pump = $Pump
-@onready var manometr = $Manometr
+@onready var pump = $pump_anchor/inside_anchor/Pump
+@onready var manometr = $manometr_anchor/inside_anchor/Manometr
 @onready var game_timer = $GameTimer
 @onready var pump_sound = $PumpSound
 @onready var music = $Music
 @onready var hiss_sound = $HissSound
-@onready var wheel = $Wheel
+@onready var wheel = $wheel_anchor/inside_anchor/Wheel
 
 var current_pressure
 var game_active = false
-var touching_pump = false
-var pump_touch_index = -1
 var hiss_playing = false
 
-@export var timer_time: float
+@export var timer_time: float = 10
+@export var passive_leak_rate: float = 0.2
 signal win
 signal lose
 
@@ -30,6 +29,7 @@ func _ready():
 
 	current_pressure = 0.0
 	manometr.update_strelka(current_pressure)
+	pump.pump_stroke.connect(_on_pump_stroke)
 	
 	if hiss_sound:
 		hiss_sound.finished.connect(_on_hiss_finished)
@@ -48,47 +48,21 @@ func _on_hiss_finished():
 	if hiss_playing and game_active and current_pressure > 0:
 		hiss_sound.play()
 
-func _process(_delta):
+func _process(delta):
 	if not game_active:
 		return
+	release_pressure(delta * passive_leak_rate)
 
-func _input(event):
+func _on_pump_stroke(amount: float):
 	if not game_active:
 		return
-	
-	if event is InputEventScreenTouch:
-		handle_touch_event(event)
-	
-	elif event is InputEventScreenDrag and touching_pump and event.index == pump_touch_index:
-		handle_drag_event(event)
-
-func handle_touch_event(event):
-	if event.pressed:
-		if is_point_on_pump(event.position):
-			touching_pump = true
-			pump_touch_index = event.index
-			pump.start_touch(event.position)
-	else:
-		if event.index == pump_touch_index:
-			touching_pump = false
-			pump_touch_index = -1
-			pump.end_touch()
-
-func handle_drag_event(event: InputEventScreenDrag):
-	pump.update_touch_position(event.position)
-
-func is_point_on_pump(point):
-	return pump.is_point_on_handle(point)
+	encrease_manometr_value(amount)
 
 func add_pressure(amount):
-	var min_pressure = manometr.min_pressure
-	var max_pressure = manometr.max_pressure
-	
-	current_pressure += amount
-	
-	current_pressure = clamp(current_pressure, min_pressure, max_pressure)
-	
-	manometr.update_strelka(current_pressure)
+	encrease_manometr_value(amount)
+
+func encrease_manometr_value(amount):
+	current_pressure = manometr.encrease_manometr_value(amount)
 	wheel.update_frame(current_pressure)
 	
 	if pump_sound and amount > 0:
@@ -97,18 +71,14 @@ func add_pressure(amount):
 		
 		stop_hiss_sound()
 	
-	if current_pressure >= max_pressure:
+	if current_pressure >= manometr.max_pressure:
 		game_over()
 
 func release_pressure(amount):
 	if not game_active:
 		return
 	
-	current_pressure -= amount
-	
-	current_pressure = max(current_pressure, manometr.min_pressure)
-
-	manometr.update_strelka(current_pressure)
+	current_pressure = manometr.decrease_manometr_value(amount)
 	wheel.update_frame(current_pressure)
 	
 	if current_pressure > 0.1:

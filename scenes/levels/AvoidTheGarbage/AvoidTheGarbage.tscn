@@ -54,5 +54,5 @@ position = Vector2(960, 540)
 scale = Vector2(1, 1072.5)
 texture = SubResource("GradientTexture1D_uw37r")
 
-[node name="Camera2D" type="Camera2D" parent="gameworld"]
-offset = Vector2(960, 540)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
