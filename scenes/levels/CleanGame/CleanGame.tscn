@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dagrp6tekfth3"]
+
+[ext_resource type="PackedScene" uid="uid://duq1i2cdf713q" path="res://scenes/objects/Crane/crane.tscn" id="1_x6oyg"]
+[ext_resource type="PackedScene" uid="uid://llc2b3tndeou" path="res://scenes/objects/banana/banana.tscn" id="2_c651n"]
+
+[node name="CleanGame" type="Node2D"]
+
+[node name="gameworld" type="Node" parent="."]
+
+[node name="Crane" parent="gameworld" instance=ExtResource("1_x6oyg")]
+z_index = 1
+position = Vector2(1571, 646)
+
+[node name="Banana" parent="gameworld" instance=ExtResource("2_c651n")]
+position = Vector2(374, 790)
+
+[node name="Camera2D" type="Camera2D" parent="gameworld"]
+position = Vector2(960, 540)

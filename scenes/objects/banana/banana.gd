@@ -1,6 +1,8 @@
 extends Area2D
 @onready var dirt: Sprite2D = $Dirt
 @onready var collision: CollisionPolygon2D = $Collision
+var is_clean = false
+
 var is_dragging = false
 
 var min_pos: Vector2
@@ -29,6 +31,7 @@ func set_borders():
 	max_pos = min_pos + get_viewport_rect().size - size
 	
 func get_polygon_size(polygon: PackedVector2Array) -> Vector2:
+	
 	if polygon.is_empty():
 		return Vector2.ZERO
 	
@@ -57,3 +60,9 @@ func _input(event):
 		global_position.x = clamp(new_pos.x, min_pos.x, max_pos.x)
 		global_position.y = clamp(new_pos.y, min_pos.y, max_pos.y)
 		 
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("water"):
+		change_skin()
+		is_clean = true

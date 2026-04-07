@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://duq1i2cdf713q"]
+[gd_scene load_steps=5 format=3 uid="uid://duq1i2cdf713q"]
 
+[ext_resource type="Script" uid="uid://bkheoonhbrynq" path="res://scenes/objects/Crane/crane.gd" id="1_dfnog"]
 [ext_resource type="Texture2D" uid="uid://12tlfpcffklx" path="res://assets/img/CleanGame/Crane.png" id="1_xe8fd"]
 
 [sub_resource type="Curve" id="Curve_xe8fd"]
@@ -7,18 +8,25 @@ _data = [Vector2(0, 0.337079), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_dfnog"]
-colors = PackedColorArray(0, 0.886275, 1, 1, 0, 0.568627, 1, 1)
+offsets = PackedFloat32Array(0, 0.973333)
+colors = PackedColorArray(0, 0.886275, 1, 0.627451, 0, 0.568627, 1, 0.501961)
 
 [node name="Crane" type="Node2D"]
-position = Vector2(1646, 739)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-72, -96)
-texture = ExtResource("1_xe8fd")
+script = ExtResource("1_dfnog")
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(-373, -271, -378.979, -189.129, -386, -93, -385.508, 34.1925, -389.639, 135.002, -393.849, 237.725, -393, 335)
-width = 80.0
+position = Vector2(71, 119)
+scale = Vector2(1, 1.04161)
+points = PackedVector2Array(-375, -298, -376.462, -257.994, -377.46, -230.699, -378.979, -189.129, -381.433, -155.537, -383.163, -131.843, -386, -93, -385.874, -60.4138, -385.741, -26.1447, -385.629, 2.91905, -385.508, 34.1925, -386.339, 54.4688, -387.577, 84.6754, -388.523, 107.778, -389.639, 135.002, -390.992, 168.009, -392.147, 196.207, -393.849, 237.725, -393.51, 276.618, -393.276, 303.434, -393, 335)
+width = 150.0
 width_curve = SubResource("Curve_xe8fd")
-default_color = Color(0.352941, 0.764706, 1, 1)
 gradient = SubResource("Gradient_dfnog")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xe8fd")
+
+[node name="Area2D" type="Area2D" parent="." groups=["water"]]
+position = Vector2(72, 92)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-408, -269, -474, 360, -312, 363, -340, -272, -421, -274)
