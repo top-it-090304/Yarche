@@ -40,7 +40,6 @@ position = Vector2(960, 740)
 
 [node name="ControlArea" type="CollisionShape2D" parent="Control/Fish"]
 position = Vector2(0, 85.7141)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cn7wi")
 
 [node name="Timer" type="Timer" parent="."]
