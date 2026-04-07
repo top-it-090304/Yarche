@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://duq1i2cdf713q"]
+
+[ext_resource type="Texture2D" uid="uid://12tlfpcffklx" path="res://assets/img/CleanGame/Crane.png" id="1_xe8fd"]
+
+[sub_resource type="Curve" id="Curve_xe8fd"]
+_data = [Vector2(0, 0.337079), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_dfnog"]
+colors = PackedColorArray(0, 0.886275, 1, 1, 0, 0.568627, 1, 1)
+
+[node name="Crane" type="Node2D"]
+position = Vector2(1646, 739)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-72, -96)
+texture = ExtResource("1_xe8fd")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-373, -271, -378.979, -189.129, -386, -93, -385.508, 34.1925, -389.639, 135.002, -393.849, 237.725, -393, 335)
+width = 80.0
+width_curve = SubResource("Curve_xe8fd")
+default_color = Color(0.352941, 0.764706, 1, 1)
+gradient = SubResource("Gradient_dfnog")

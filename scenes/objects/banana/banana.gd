@@ -7,15 +7,13 @@ var min_pos: Vector2
 var max_pos: Vector2
 
 var drag_offset: Vector2
-
+func _ready():
+	set_borders()
+	
 func change_skin():
 	var tween = create_tween()
 	tween.tween_property(dirt, "modulate", Color(1,1,1,0), 1)
 	tween.set_trans(Tween.TRANS_EXPO)
-	
-func _ready():
-	change_skin()
-	set_borders()
 
 func finger_cover_banana(finger_position):
 	return Geometry2D.is_point_in_polygon(finger_position, collision.polygon)
