@@ -8,23 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://ctv4dk1bd82om" path="res://assets/sounds/PumpGameSounds/PumpGameMusic.ogg" id="6_wkel7"]
 [ext_resource type="PackedScene" uid="uid://cohbcpor8k1vw" path="res://scenes/levels/PumpGame/wheel.tscn" id="6_x4kep"]
 
-[node name="PumpGame" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PumpGame" type="Node2D"]
 script = ExtResource("1_xdxwj")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.313726, 0.356863, 0.572549, 1)
 
 [node name="GameTimer" type="Timer" parent="."]
 
@@ -39,75 +24,26 @@ volume_db = -10.57
 stream = ExtResource("6_wkel7")
 autoplay = true
 
-[node name="pump_anchor" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -500.0
-offset_right = 150.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="gameworld" type="Node" parent="."]
 
-[node name="inside_anchor" type="Control" parent="pump_anchor"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Pump" parent="pump_anchor/inside_anchor" instance=ExtResource("1_iikc0")]
-
-[node name="manometr_anchor" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -256.0
-offset_right = 512.0
-offset_bottom = 256.0
-grow_vertical = 2
-
-[node name="inside_anchor" type="Control" parent="manometr_anchor"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Manometr" parent="manometr_anchor/inside_anchor" instance=ExtResource("2_xdxwj")]
-
-[node name="wheel_anchor" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+[node name="ColorRect" type="ColorRect" parent="gameworld"]
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -693.0
-offset_top = -339.0
-offset_bottom = 339.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="inside_anchor" type="Control" parent="wheel_anchor"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
+offset_left = -1461.0
+offset_right = 1663.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0.466667, 0.584314, 1)
 
-[node name="Wheel" parent="wheel_anchor/inside_anchor" instance=ExtResource("6_x4kep")]
-position = Vector2(-20, -20)
+[node name="Camera2D" type="Camera2D" parent="gameworld"]
+position = Vector2(960, 540)
+
+[node name="Pump" parent="gameworld" instance=ExtResource("1_iikc0")]
+position = Vector2(960, 830)
+
+[node name="Wheel" parent="gameworld" instance=ExtResource("6_x4kep")]
+position = Vector2(1553.5, 520)
+
+[node name="Manometr" parent="gameworld" instance=ExtResource("2_xdxwj")]
+position = Vector2(256, 540)

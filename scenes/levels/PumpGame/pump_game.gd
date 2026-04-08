@@ -1,13 +1,13 @@
 
-extends Control
+extends Node2D
 
-@onready var pump = $pump_anchor/inside_anchor/Pump
-@onready var manometr = $manometr_anchor/inside_anchor/Manometr
+@onready var pump = $gameworld/Pump
+@onready var manometr = $gameworld/Manometr
 @onready var game_timer = $GameTimer
 @onready var pump_sound = $PumpSound
 @onready var music = $Music
 @onready var hiss_sound = $HissSound
-@onready var wheel = $wheel_anchor/inside_anchor/Wheel
+@onready var wheel = $gameworld/Wheel
 
 var current_pressure
 var game_active = false
