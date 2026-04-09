@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cst5d0rkvaldf"]
+[gd_scene format=3 uid="uid://cst5d0rkvaldf"]
 
 [ext_resource type="Script" uid="uid://e1ufls0nb670" path="res://scenes/levels/FlappyPlaneGame/flappy_plane_game.gd" id="1_ldkdg"]
 [ext_resource type="PackedScene" uid="uid://cba7kjatbwvpp" path="res://scenes/characters/Plane/plane.tscn" id="1_vgxqp"]
 [ext_resource type="PackedScene" uid="uid://dp6n5cjxmaxdd" path="res://scenes/objects/StormCloud/storm_cloud.tscn" id="2_36i2m"]
 [ext_resource type="Script" uid="uid://tk5qye7wbrpc" path="res://scenes/levels/FlappyPlaneGame/cloud_spawner.gd" id="4_wrnle"]
 
-[node name="FlappyPlaneGame" type="Node2D"]
+[node name="FlappyPlaneGame" type="Node2D" unique_id=112449789]
 script = ExtResource("1_ldkdg")
 final_duration = 5.0
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1185946426]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +19,7 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="Control"]
+[node name="Background" type="ColorRect" parent="Control" unique_id=1860337348]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 1
 anchors_preset = 15
@@ -31,11 +31,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.34975, 0.599818, 0.899884, 1)
 
-[node name="Plane" parent="." instance=ExtResource("1_vgxqp")]
+[node name="Plane" parent="." unique_id=84143499 instance=ExtResource("1_vgxqp")]
 position = Vector2(820, 526)
 scale = Vector2(1.5, 1.5)
 
-[node name="CloudSpawner" type="Node" parent="."]
+[node name="CloudSpawner" type="Node" parent="." unique_id=1850271439]
 script = ExtResource("4_wrnle")
 cloud_scene = ExtResource("2_36i2m")
 spawn_x = 2500
