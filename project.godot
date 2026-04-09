@@ -14,10 +14,14 @@ auto_generate_dbfactory=true
 
 [application]
 
-config/name="demo"
+config/name="Be Careful!"
 run/main_scene="uid://cuhro4nbykcsd"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://be0cqrfsn3sj5"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
 
 [audio]
 
