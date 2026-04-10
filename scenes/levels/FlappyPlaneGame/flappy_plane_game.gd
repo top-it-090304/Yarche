@@ -6,6 +6,7 @@ extends Node2D
 @onready var cloud_spawner = $CloudSpawner
 @onready var plane = $Plane
 @onready var background = $Control/Background
+@onready var storm_sound = $StormSound
 
 signal win
 signal lose
@@ -20,6 +21,7 @@ func _ready():
 	darken_timer.timeout.connect(func(): 
 		var tween = create_tween()
 		tween.tween_property(background, "color", Color(0.1, 0.3, 0.5), 2.0)
+		storm_sound.play()
 	)
 	darken_timer.start()
 	

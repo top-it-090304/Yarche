@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var flappy_sound = $FlappySound
+
 var gravity = 1200.0
 var flap_force = -400.0
 var is_game_active = true  
@@ -45,6 +47,7 @@ func start_game():
 	flap()
 
 func flap():
+	flappy_sound.play()
 	velocity.y = flap_force
 	rotation = flap_rotation
 
