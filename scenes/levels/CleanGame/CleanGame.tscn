@@ -1,18 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dagrp6tekfth3"]
+[gd_scene load_steps=7 format=3 uid="uid://dagrp6tekfth3"]
 
-[ext_resource type="PackedScene" uid="uid://duq1i2cdf713q" path="res://scenes/objects/Crane/crane.tscn" id="1_x6oyg"]
-[ext_resource type="PackedScene" uid="uid://llc2b3tndeou" path="res://scenes/objects/banana/banana.tscn" id="2_c651n"]
+[ext_resource type="Texture2D" uid="uid://dxe4j760mh1e2" path="res://assets/img/CleanGame/kitchen_bg.png" id="1_gbcrq"]
+[ext_resource type="Script" uid="uid://cq1l7pta8aa3j" path="res://scenes/levels/CleanGame/clean_game.gd" id="1_tsply"]
+[ext_resource type="PackedScene" uid="uid://duq1i2cdf713q" path="res://scenes/objects/CleanGAme/Crane/crane.tscn" id="1_x6oyg"]
+[ext_resource type="PackedScene" uid="uid://llc2b3tndeou" path="res://scenes/objects/CleanGAme/banana/banana.tscn" id="2_c651n"]
+[ext_resource type="Texture2D" uid="uid://cper2tbnt8i7b" path="res://assets/img/CleanGame/table.png" id="4_bbn8d"]
+[ext_resource type="PackedScene" uid="uid://ci5jh8427dtv4" path="res://scenes/objects/CleanGAme/Plate/plate.tscn" id="4_tsply"]
 
 [node name="CleanGame" type="Node2D"]
+script = ExtResource("1_tsply")
 
 [node name="gameworld" type="Node" parent="."]
 
-[node name="Crane" parent="gameworld" instance=ExtResource("1_x6oyg")]
+[node name="STATIC" type="Node2D" parent="gameworld"]
+
+[node name="bg" type="Sprite2D" parent="gameworld/STATIC"]
+z_index = -1
+position = Vector2(960, 540)
+texture = ExtResource("1_gbcrq")
+
+[node name="table" type="Sprite2D" parent="gameworld/STATIC"]
 z_index = 1
-position = Vector2(1571, 646)
+position = Vector2(960, 1028)
+texture = ExtResource("4_bbn8d")
+
+[node name="Camera2D" type="Camera2D" parent="gameworld/STATIC"]
+position = Vector2(960, 540)
+
+[node name="Crane" parent="gameworld/STATIC" instance=ExtResource("1_x6oyg")]
+position = Vector2(1564, 574)
+
+[node name="plate" parent="gameworld/STATIC" instance=ExtResource("4_tsply")]
+position = Vector2(408, 953)
 
 [node name="Banana" parent="gameworld" instance=ExtResource("2_c651n")]
 position = Vector2(374, 790)
 
-[node name="Camera2D" type="Camera2D" parent="gameworld"]
-position = Vector2(960, 540)
+[node name="Timer" type="Timer" parent="."]

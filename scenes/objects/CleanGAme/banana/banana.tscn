@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://llc2b3tndeou"]
 
-[ext_resource type="Script" uid="uid://bugp17yhimcoi" path="res://scenes/objects/banana/banana.gd" id="1_46o1h"]
+[ext_resource type="Script" uid="uid://bugp17yhimcoi" path="res://scenes/objects/CleanGAme/banana/banana.gd" id="1_46o1h"]
 [ext_resource type="Texture2D" uid="uid://b88q6e8lv0qw4" path="res://assets/img/CleanGame/CleanBanana.png" id="2_nxbwj"]
 [ext_resource type="Texture2D" uid="uid://mhy2gr0fgn7t" path="res://assets/img/CleanGame/DirtBanana.png" id="3_ewqxv"]
 

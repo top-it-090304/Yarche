@@ -8,7 +8,7 @@ var times = [10, 10, 26, 8, 5,10,12]
 var game_paths = [
 	"res://scenes/levels/AvoidTheGarbage/AvoidTheGarbage.tscn",
 	"res://scenes/levels/PumpGame/pump_game.tscn",
-	
+	"res://scenes/levels/CleanGame/CleanGame.tscn",
 	"res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn",
 	"res://scenes/levels/HitTheBeaverGame/HitTheBeaverGame.tscn",
 	"res://scenes/levels/WiresGame/wires_game.tscn",

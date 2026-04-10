@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://duq1i2cdf713q"]
 
-[ext_resource type="Script" uid="uid://bkheoonhbrynq" path="res://scenes/objects/Crane/crane.gd" id="1_dfnog"]
+[ext_resource type="Script" uid="uid://bkheoonhbrynq" path="res://scenes/objects/CleanGAme/Crane/crane.gd" id="1_dfnog"]
 [ext_resource type="Texture2D" uid="uid://12tlfpcffklx" path="res://assets/img/CleanGame/Crane.png" id="1_xe8fd"]
+
 
 [sub_resource type="Curve" id="Curve_xe8fd"]
 _data = [Vector2(0, 0.337079), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]

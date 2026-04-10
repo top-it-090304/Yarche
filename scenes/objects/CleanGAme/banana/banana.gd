@@ -1,6 +1,9 @@
 extends Area2D
 @onready var dirt: Sprite2D = $Dirt
 @onready var collision: CollisionPolygon2D = $Collision
+
+signal come_back
+var down_offset = 105+28
 var is_clean = false
 
 var is_dragging = false
@@ -22,13 +25,12 @@ func finger_cover_banana(finger_position):
 	
 func set_borders():
 	var verticies = collision.polygon
-	print(verticies)
 	var size = get_polygon_size(verticies)
-	print(size)
+
 	
-	#Установлены границы с учетом отступа под размеры полигона
-	min_pos = get_viewport().get_visible_rect().position + size/2
-	max_pos = min_pos + get_viewport_rect().size - size
+
+	min_pos = Vector2(0,0) + size/2
+	max_pos = Vector2(1500, 1080-down_offset) - size/2
 	
 func get_polygon_size(polygon: PackedVector2Array) -> Vector2:
 	
@@ -47,6 +49,7 @@ func get_polygon_size(polygon: PackedVector2Array) -> Vector2:
 		max_y = max(max_y, v.y)
 	
 	return Vector2(max_x - min_x, max_y - min_y)
+	
 func _input(event):
 	var finger_position = get_global_mouse_position()
 	if event is InputEventScreenTouch:
@@ -66,3 +69,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("water"):
 		change_skin()
 		is_clean = true
+	if area.is_in_group("plate") and is_clean:
+		print("Чистый вернулся!")
+		come_back.emit()

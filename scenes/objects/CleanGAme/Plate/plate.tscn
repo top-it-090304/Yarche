@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci5jh8427dtv4"]
+
+[ext_resource type="Texture2D" uid="uid://blv37n7iijgch" path="res://assets/img/CleanGame/Plate.png" id="1_2coye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7brt"]
+size = Vector2(354, 40)
+
+[node name="plate" type="Area2D" groups=["plate"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2coye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_m7brt")
