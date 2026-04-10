@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://uqwwjclklbyy" path="res://assets/img/PullGame/TutorialFrames/Frame7.png" id="8_nnyrs"]
 [ext_resource type="Texture2D" uid="uid://dccgrgjcy43np" path="res://assets/img/PullGame/TutorialFrames/Frame8.png" id="9_n2m8e"]
 
-[sub_resource type="Theme" id="Theme_dt3t1"]
+[sub_resource type="Theme" id="Theme_528be"]
 default_font = ExtResource("2_528be")
 default_font_size = 100
 
@@ -75,14 +75,17 @@ color = Color(0, 0, 0, 0.501961)
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.05
 anchor_right = 0.5
-offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 23.0
+anchor_bottom = 0.065
+offset_left = -588.0
+offset_right = 588.0
+offset_bottom = 107.0
 grow_horizontal = 2
-theme = SubResource("Theme_dt3t1")
+grow_vertical = 2
+theme = SubResource("Theme_528be")
 text = "Качай насос!"
 horizontal_alignment = 1
 
@@ -101,5 +104,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="tutorial_frames" type="AnimatedSprite2D" parent="Control/Control"]
+position = Vector2(100, 0)
 sprite_frames = SubResource("SpriteFrames_tkxk2")
 autoplay = "default"

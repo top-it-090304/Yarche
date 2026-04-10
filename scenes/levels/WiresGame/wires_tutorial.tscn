@@ -13,10 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dm7pge4e2a7ih" path="res://assets/img/WiresGame/TutorialFrames/Frame9.png" id="10_ks8xw"]
 [ext_resource type="Texture2D" uid="uid://cnxy1dh2bckmd" path="res://assets/img/WiresGame/TutorialFrames/Frame10.png" id="11_5pjma"]
 
-[sub_resource type="Theme" id="Theme_kydcu"]
-default_font = ExtResource("2_fdnmi")
-default_font_size = 100
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wf6j"]
 animations = [{
 "frames": [{
@@ -55,6 +51,10 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="Theme" id="Theme_fdnmi"]
+default_font = ExtResource("2_fdnmi")
+default_font_size = 100
+
 [node name="WiresTutorial" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_gd67y")
@@ -81,19 +81,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.501961)
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme = SubResource("Theme_kydcu")
-text = "Втыкай вилки в свои розетки!"
-horizontal_alignment = 1
-
 [node name="Control" type="Control" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -113,3 +100,19 @@ position = Vector2(0, 80)
 sprite_frames = SubResource("SpriteFrames_1wf6j")
 autoplay = "default"
 frame_progress = 0.119953
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.065
+offset_left = -588.0
+offset_right = 588.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fdnmi")
+text = "Втыкай вилки в свои розетки!"
+horizontal_alignment = 1

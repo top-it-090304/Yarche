@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://evxlhx4lta2p"]
+
+[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_633h7"]
+[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_fo165"]
+[ext_resource type="Texture2D" uid="uid://cdsv70uwch0p2" path="res://assets/img/CleanGame/TutorialFrames/Frame 1.png" id="3_j3sfk"]
+[ext_resource type="Texture2D" uid="uid://cbfms5wye1x44" path="res://assets/img/CleanGame/TutorialFrames/Frame 2.png" id="4_4ux13"]
+[ext_resource type="Texture2D" uid="uid://v7q3yur6xdke" path="res://assets/img/CleanGame/TutorialFrames/Frame 3.png" id="5_4jtyr"]
+[ext_resource type="Texture2D" uid="uid://o0qrllyen64d" path="res://assets/img/CleanGame/TutorialFrames/Frame 4.png" id="6_7l5b0"]
+[ext_resource type="Texture2D" uid="uid://cu6r1exekhcpb" path="res://assets/img/CleanGame/TutorialFrames/Frame 5.png" id="7_wg522"]
+[ext_resource type="Texture2D" uid="uid://x8cxhr70d8at" path="res://assets/img/CleanGame/TutorialFrames/Frame 6.png" id="8_5aol2"]
+
+[sub_resource type="Theme" id="Theme_t2g6k"]
+default_font = ExtResource("2_fo165")
+default_font_size = 100
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oklwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j3sfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ux13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4jtyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7l5b0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wg522")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5aol2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="clean_tutorial" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_633h7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.065
+offset_left = -588.0
+offset_right = 588.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme = SubResource("Theme_t2g6k")
+text = "Помой банан и верни обратно!"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tutorial_frames" type="AnimatedSprite2D" parent="Control/Control"]
+sprite_frames = SubResource("SpriteFrames_oklwy")
+frame_progress = 0.547656

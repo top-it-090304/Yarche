@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cg2yavycstm2c" path="res://assets/img/FlappyPlaneGame/TutorialFrames/Frame4.png" id="6_88pyn"]
 [ext_resource type="Texture2D" uid="uid://84qugkq5go43" path="res://assets/img/FlappyPlaneGame/TutorialFrames/Frame5.png" id="7_t1jhf"]
 
-[sub_resource type="Theme" id="Theme_t2g6k"]
+[sub_resource type="Theme" id="Theme_qo7jm"]
 default_font = ExtResource("2_t1jhf")
 default_font_size = 100
 
@@ -66,18 +66,18 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.294531
-anchor_top = 0.075
-anchor_right = 0.705469
-anchor_bottom = 0.152778
-offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 23.0
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.065
+offset_left = -588.0
+offset_right = 588.0
+offset_bottom = 107.0
 grow_horizontal = 2
-theme = SubResource("Theme_t2g6k")
-text = "Жми, чтобы взлетать!"
+grow_vertical = 2
+theme = SubResource("Theme_qo7jm")
+text = "Жми, чтобы взлететь!"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="Control"]
 layout_mode = 1

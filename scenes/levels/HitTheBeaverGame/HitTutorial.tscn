@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c4cyn77df4a8h" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 5.png" id="6_dvhbv"]
 [ext_resource type="Texture2D" uid="uid://curggcl6a84wi" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 6.png" id="7_ypg8p"]
 
-[sub_resource type="Theme" id="Theme_48e0g"]
+[sub_resource type="Theme" id="Theme_lr2wx"]
 default_font = ExtResource("2_v68vo")
 default_font_size = 100
 
@@ -67,14 +67,17 @@ color = Color(0, 0, 0, 0.501961)
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.05
 anchor_right = 0.5
-offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 23.0
+anchor_bottom = 0.065
+offset_left = -588.0
+offset_right = 588.0
+offset_bottom = 107.0
 grow_horizontal = 2
-theme = SubResource("Theme_48e0g")
+grow_vertical = 2
+theme = SubResource("Theme_lr2wx")
 text = "Нажми, чтобы ударить!"
 horizontal_alignment = 1
 
