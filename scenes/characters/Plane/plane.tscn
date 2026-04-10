@@ -1,21 +1,26 @@
-[gd_scene format=3 uid="uid://cba7kjatbwvpp"]
+[gd_scene load_steps=5 format=3 uid="uid://cba7kjatbwvpp"]
 
 [ext_resource type="Script" uid="uid://bhkwrexycl685" path="res://scenes/characters/Plane/plane.gd" id="1_x7wlc"]
 [ext_resource type="Texture2D" uid="uid://cdeu0m3m33dme" path="res://assets/img/FlappyPlaneGame/Plane.png" id="2_x7wlc"]
+[ext_resource type="AudioStream" uid="uid://bo8g4h7s5dq4i" path="res://assets/sounds/FlappyPlaneGame/sfx_wing.mp3" id="3_2anew"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7wlc"]
-radius = 19.000008
+radius = 19.0
 height = 216.0
 
-[node name="Plane" type="CharacterBody2D" unique_id=1430286131]
+[node name="Plane" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_x7wlc")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1290667498]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.267395, 0.296509)
 texture = ExtResource("2_x7wlc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975131682]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9, 21)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_x7wlc")
+
+[node name="FlappySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2anew")
+volume_db = -1.981

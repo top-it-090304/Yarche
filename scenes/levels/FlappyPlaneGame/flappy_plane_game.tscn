@@ -1,15 +1,16 @@
-[gd_scene format=3 uid="uid://cst5d0rkvaldf"]
+[gd_scene load_steps=6 format=3 uid="uid://cst5d0rkvaldf"]
 
 [ext_resource type="Script" uid="uid://e1ufls0nb670" path="res://scenes/levels/FlappyPlaneGame/flappy_plane_game.gd" id="1_ldkdg"]
 [ext_resource type="PackedScene" uid="uid://cba7kjatbwvpp" path="res://scenes/characters/Plane/plane.tscn" id="1_vgxqp"]
 [ext_resource type="PackedScene" uid="uid://dp6n5cjxmaxdd" path="res://scenes/objects/StormCloud/storm_cloud.tscn" id="2_36i2m"]
 [ext_resource type="Script" uid="uid://tk5qye7wbrpc" path="res://scenes/levels/FlappyPlaneGame/cloud_spawner.gd" id="4_wrnle"]
+[ext_resource type="AudioStream" uid="uid://cnirdtpyk66yx" path="res://assets/sounds/FlappyPlaneGame/StormSound.mp3" id="5_ukud7"]
 
-[node name="FlappyPlaneGame" type="Node2D" unique_id=112449789]
+[node name="FlappyPlaneGame" type="Node2D"]
 script = ExtResource("1_ldkdg")
 final_duration = 5.0
 
-[node name="Control" type="Control" parent="." unique_id=1185946426]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +20,7 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="Control" unique_id=1860337348]
+[node name="Background" type="ColorRect" parent="Control"]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 1
 anchors_preset = 15
@@ -31,11 +32,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.34975, 0.599818, 0.899884, 1)
 
-[node name="Plane" parent="." unique_id=84143499 instance=ExtResource("1_vgxqp")]
+[node name="Plane" parent="." instance=ExtResource("1_vgxqp")]
 position = Vector2(820, 526)
 scale = Vector2(1.5, 1.5)
 
-[node name="CloudSpawner" type="Node" parent="." unique_id=1850271439]
+[node name="CloudSpawner" type="Node" parent="."]
 script = ExtResource("4_wrnle")
 cloud_scene = ExtResource("2_36i2m")
 spawn_x = 2500
@@ -44,3 +45,7 @@ middle_row_2 = 450
 middle_row_3 = 550
 middle_row_4 = 700
 bottom_row = 900
+
+[node name="StormSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ukud7")
+volume_db = 0.991
