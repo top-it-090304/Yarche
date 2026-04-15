@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bn37idohrjowt" path="res://assets/img/PullGame/Body.png" id="3_qjumx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjumx"]
-size = Vector2(360, 118)
+size = Vector2(630.5, 364)
 
 [node name="Pump" type="Node2D"]
 clip_children = 1
@@ -19,7 +19,7 @@ texture = ExtResource("2_qjumx")
 position = Vector2(0, 40)
 
 [node name="ControlShape" type="CollisionShape2D" parent="RodHandle/ControlArea"]
-position = Vector2(0, -156)
+position = Vector2(0, -202)
 shape = SubResource("RectangleShape2D_qjumx")
 
 [node name="Body" type="Sprite2D" parent="."]

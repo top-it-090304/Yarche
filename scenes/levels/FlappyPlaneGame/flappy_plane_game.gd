@@ -26,7 +26,7 @@ func _ready():
 	darken_timer.start()
 	
 	var game_timer = Timer.new()
-	game_timer.wait_time = timer_time
+	game_timer.wait_time = timer_time - 5
 	game_timer.one_shot = true
 	add_child(game_timer)
 	game_timer.timeout.connect(_on_game_timer_timeout)
