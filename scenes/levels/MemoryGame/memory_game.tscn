@@ -1,11 +1,22 @@
-[gd_scene format=3 uid="uid://cfgrs8wnflq1t"]
+[gd_scene load_steps=4 format=3 uid="uid://cfgrs8wnflq1t"]
+
+[ext_resource type="Texture2D" uid="uid://glsxpnirqggw" path="res://assets/img/MemoryGame/Table.png" id="1_ldwxl"]
+[ext_resource type="PackedScene" uid="uid://b1kpvpbj1od1b" path="res://scenes/objects/MemoryGame/button.tscn" id="2_3qt03"]
+[ext_resource type="Texture2D" uid="uid://bl1is6tqlii5m" path="res://assets/img/MemoryGame/Circle.png" id="3_8t5ac"]
 
 [node name="MemoryGame" type="Node2D"]
 
 [node name="GameWorld" type="Node" parent="."]
 
 [node name="Background" type="Sprite2D" parent="GameWorld"]
+position = Vector2(1097, 540)
+texture = ExtResource("1_ldwxl")
 
 [node name="Buttons" type="Node" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource("2_3qt03")]
+position = Vector2(265, 394)
+button_color = Color(0.766041, 0, 0.196972, 1)
+default_texture = ExtResource("3_8t5ac")
 
 [node name="GameManager" type="Node" parent="."]

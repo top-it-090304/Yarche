@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1kpvpbj1od1b"]
+[gd_scene load_steps=4 format=3 uid="uid://b1kpvpbj1od1b"]
 
 [ext_resource type="Script" uid="uid://c56i87hlq2rhv" path="res://scenes/objects/MemoryGame/button.gd" id="1_lcktk"]
+[ext_resource type="Texture2D" uid="uid://bl1is6tqlii5m" path="res://assets/img/MemoryGame/Circle.png" id="2_31xq3"]
 
-[node name="Button" type="Button"]
-offset_right = 8.0
-offset_bottom = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcktk"]
+size = Vector2(195, 138)
+
+[node name="GameButton" type="Area2D"]
 script = ExtResource("1_lcktk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.376953, 0.376953)
+texture = ExtResource("2_31xq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -25)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lcktk")
