@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cte7gqriu47yn"]
+
+[ext_resource type="Texture2D" uid="uid://o34m1wcqmx" path="res://assets/img/PaperGame/bg.png" id="1_7bch1"]
+[ext_resource type="Script" uid="uid://cea5kp2bxe7hs" path="res://scenes/levels/PapersGame/game_world.gd" id="1_otbnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otbnn"]
+size = Vector2(805, 1083)
+
+[node name="papersGame" type="Node2D"]
+
+[node name="game_world" type="Node" parent="."]
+script = ExtResource("1_otbnn")
+
+[node name="Sprite2D" type="Sprite2D" parent="game_world"]
+position = Vector2(960, 540)
+texture = ExtResource("1_7bch1")
+
+[node name="Camera2D" type="Camera2D" parent="game_world"]
+position = Vector2(960, 540)
+
+[node name="RightArea" type="Area2D" parent="game_world" groups=["check_area", "true_area"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_world/RightArea"]
+position = Vector2(77.5, 539.5)
+shape = SubResource("RectangleShape2D_otbnn")
+
+[node name="WrongArea" type="Area2D" parent="game_world" groups=["check_area", "false_area"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game_world/WrongArea"]
+position = Vector2(1847, 540)
+shape = SubResource("RectangleShape2D_otbnn")

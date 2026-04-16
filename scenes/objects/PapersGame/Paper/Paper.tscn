@@ -7,8 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmcwo"]
 size = Vector2(602, 786)
 
-[node name="Paper" type="Area2D"]
-position = Vector2(1052, 512)
+[node name="Paper" type="Area2D" groups=["papers"]]
 script = ExtResource("1_8ts7p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
