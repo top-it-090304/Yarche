@@ -6,7 +6,6 @@ extends Control
 
 var is_dragging: bool = false
 var drag_offset_x
-var texture_offset = 0
 var fish_size: Vector2
 
 var min_x
@@ -15,9 +14,9 @@ var max_x
 func _ready() -> void:
 	var fish_capsule_shape = fish.get_node("Area2D/CollisionShape2D2").shape as CapsuleShape2D
 	fish_size = Vector2(fish_capsule_shape.radius*2, fish_capsule_shape.height)
-	
-	min_x = get_viewport().get_visible_rect().position.x + fish_size.x / 2 - texture_offset
-	max_x = get_viewport().get_visible_rect().size.x - fish_size.x / 2 + texture_offset
+	var camera = get_viewport().get_camera_2d()
+	min_x =  camera.get_screen_center_position().x - get_viewport().get_visible_rect().size.x * camera.zoom.x / 2 + fish_size.x / 2
+	max_x = min_x + get_viewport().get_visible_rect().size.x -fish_size.x
 
 func _input(event):
 	var finger_position = get_global_mouse_position()
