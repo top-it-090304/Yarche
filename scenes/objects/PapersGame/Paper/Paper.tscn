@@ -1,3 +1,31 @@
-[gd_scene format=3 uid="uid://c1syxj7praghb"]
+[gd_scene load_steps=5 format=3 uid="uid://c1syxj7praghb"]
 
-[node name="Paper" type="Node2D"]
+[ext_resource type="Script" uid="uid://j5oa3326o1iq" path="res://scenes/objects/PapersGame/Paper/paper.gd" id="1_8ts7p"]
+[ext_resource type="Texture2D" uid="uid://fhc4cqcjnr0e" path="res://assets/img/PaperGame/Paper.png" id="2_c5747"]
+[ext_resource type="Theme" uid="uid://bh1fnoiwsc10w" path="res://assets/font/PaperText.tres" id="3_vnqrb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmcwo"]
+size = Vector2(602, 786)
+
+[node name="Paper" type="Area2D"]
+position = Vector2(1052, 512)
+script = ExtResource("1_8ts7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c5747")
+
+[node name="collsion" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-19, -12)
+shape = SubResource("RectangleShape2D_pmcwo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -278.0
+offset_top = -364.0
+offset_right = 243.0
+offset_bottom = 315.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_vnqrb")
+theme_override_colors/default_color = Color(0.898039, 0.172549, 0.243137, 1)
+text = "Большой текст для примера"
