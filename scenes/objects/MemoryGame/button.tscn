@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1kpvpbj1od1b"]
+
+[ext_resource type="Script" uid="uid://c56i87hlq2rhv" path="res://scenes/objects/MemoryGame/button.gd" id="1_lcktk"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_lcktk")
