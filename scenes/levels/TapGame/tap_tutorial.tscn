@@ -1,17 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://ff85073hyakn"]
+[gd_scene load_steps=10 format=3 uid="uid://ff85073hyakn"]
 
 [ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_lde7q"]
-[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_g2in6"]
+[ext_resource type="Theme" uid="uid://bjqimrk7netpe" path="res://assets/font/TutiorialText.tres" id="2_g2in6"]
 [ext_resource type="Texture2D" uid="uid://6js5psqo84j4" path="res://assets/img/TapGame/TutorialFrames/Frame 1.png" id="2_kk6ub"]
 [ext_resource type="Texture2D" uid="uid://dib1fjb37tslr" path="res://assets/img/TapGame/TutorialFrames/Frame 2.png" id="3_n4dl2"]
 [ext_resource type="Texture2D" uid="uid://b67wxck6eikif" path="res://assets/img/TapGame/TutorialFrames/Frame 3.png" id="4_b0r1e"]
 [ext_resource type="Texture2D" uid="uid://cwxn0rjdnwr1s" path="res://assets/img/TapGame/TutorialFrames/Frame 4.png" id="5_77q3r"]
 [ext_resource type="Texture2D" uid="uid://dbwhl366fij07" path="res://assets/img/TapGame/TutorialFrames/Frame 5.png" id="6_55ajt"]
 [ext_resource type="Texture2D" uid="uid://bwbcgg6ipc1od" path="res://assets/img/TapGame/TutorialFrames/Frame 6.png" id="7_wq66w"]
-
-[sub_resource type="Theme" id="Theme_yfl7u"]
-default_font = ExtResource("2_g2in6")
-default_font_size = 100
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wf6j"]
 animations = [{
@@ -74,7 +70,7 @@ offset_left = -96.0
 offset_right = 96.0
 offset_bottom = 23.0
 grow_horizontal = 2
-theme = SubResource("Theme_yfl7u")
+theme = ExtResource("2_g2in6")
 text = "Жми быстрее!"
 horizontal_alignment = 1
 

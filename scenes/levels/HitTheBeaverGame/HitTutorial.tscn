@@ -1,17 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctm28cri6hmgo"]
+[gd_scene load_steps=10 format=3 uid="uid://ctm28cri6hmgo"]
 
 [ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_ve8m1"]
 [ext_resource type="Texture2D" uid="uid://bt6ca8o6q2fbl" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 1.png" id="2_lr2wx"]
-[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_v68vo"]
+[ext_resource type="Theme" uid="uid://bjqimrk7netpe" path="res://assets/font/TutiorialText.tres" id="2_v68vo"]
 [ext_resource type="Texture2D" uid="uid://cruxh6k1cn7yi" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 2.png" id="3_v68vo"]
 [ext_resource type="Texture2D" uid="uid://cjc0vt24rst4i" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 3.png" id="4_48e0g"]
 [ext_resource type="Texture2D" uid="uid://dpvemn3sr15ae" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 4.png" id="5_vv8bo"]
 [ext_resource type="Texture2D" uid="uid://c4cyn77df4a8h" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 5.png" id="6_dvhbv"]
 [ext_resource type="Texture2D" uid="uid://curggcl6a84wi" path="res://assets/img/HitTheBEaverGame/TutorialFrames/TutorialFrame 6.png" id="7_ypg8p"]
-
-[sub_resource type="Theme" id="Theme_lr2wx"]
-default_font = ExtResource("2_v68vo")
-default_font_size = 100
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vv8bo"]
 animations = [{
@@ -77,7 +73,7 @@ offset_right = 588.0
 offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_lr2wx")
+theme = ExtResource("2_v68vo")
 text = "Нажми, чтобы ударить!"
 horizontal_alignment = 1
 

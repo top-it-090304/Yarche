@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dblcf6rvnpnw0"]
+[gd_scene load_steps=14 format=3 uid="uid://dblcf6rvnpnw0"]
 
 [ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_gd67y"]
-[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="2_fdnmi"]
 [ext_resource type="Texture2D" uid="uid://cewjjj68bs1al" path="res://assets/img/WiresGame/TutorialFrames/Frame1.png" id="2_tgb6p"]
 [ext_resource type="Texture2D" uid="uid://bji1t547ogrmo" path="res://assets/img/WiresGame/TutorialFrames/Frame2.png" id="3_fdnmi"]
 [ext_resource type="Texture2D" uid="uid://6f2lljm262w" path="res://assets/img/WiresGame/TutorialFrames/Frame3.png" id="4_kydcu"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cn1enrkwqj1ra" path="res://assets/img/WiresGame/TutorialFrames/Frame8.png" id="9_56u5f"]
 [ext_resource type="Texture2D" uid="uid://dm7pge4e2a7ih" path="res://assets/img/WiresGame/TutorialFrames/Frame9.png" id="10_ks8xw"]
 [ext_resource type="Texture2D" uid="uid://cnxy1dh2bckmd" path="res://assets/img/WiresGame/TutorialFrames/Frame10.png" id="11_5pjma"]
+[ext_resource type="Theme" uid="uid://bjqimrk7netpe" path="res://assets/font/TutiorialText.tres" id="12_fdnmi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wf6j"]
 animations = [{
@@ -50,10 +50,6 @@ animations = [{
 "name": &"default",
 "speed": 11.0
 }]
-
-[sub_resource type="Theme" id="Theme_fdnmi"]
-default_font = ExtResource("2_fdnmi")
-default_font_size = 100
 
 [node name="WiresTutorial" type="CanvasLayer"]
 process_mode = 3
@@ -113,6 +109,6 @@ offset_right = 588.0
 offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_fdnmi")
+theme = ExtResource("12_fdnmi")
 text = "Втыкай вилки в свои розетки!"
 horizontal_alignment = 1

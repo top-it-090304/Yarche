@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bh1fnoiwsc10w"]
+
+[ext_resource type="FontFile" uid="uid://ddr487olbw5eq" path="res://assets/font/Comic Sans MS Pixel.ttf" id="1_ocoom"]
+
+[resource]
+default_font = ExtResource("1_ocoom")
+default_font_size = 100
