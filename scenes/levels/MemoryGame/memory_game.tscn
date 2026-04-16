@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cfgrs8wnflq1t"]
+
+[node name="MemoryGame" type="Node2D"]
+
+[node name="GameWorld" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="GameWorld"]
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="GameManager" type="Node" parent="."]
