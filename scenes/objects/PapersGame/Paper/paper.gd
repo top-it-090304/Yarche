@@ -15,6 +15,7 @@ enum PaperState {
 	WRONG
 }
 var data = [
+	# ПРАВИЛЬНЫЕ (хорошие действия)
 	{
 		"text" : "Снизить налоги",
 		"state": PaperState.RIGHT
@@ -28,6 +29,44 @@ var data = [
 		"state": PaperState.RIGHT
 	},
 	{
+		"text" : "Строить детские сады",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Бесплатная медицина",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Защищать природу",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Кормить бездомных",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Бесплатное образование",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Помогать пенсионерам",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Строить парки",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Спасать животных",
+		"state": PaperState.RIGHT
+	},
+	{
+		"text" : "Чистить реки",
+		"state": PaperState.RIGHT
+	},
+	
+	# НЕПРАВИЛЬНЫЕ (плохие действия)
+	{
 		"text" : "Поддержать терроризм",
 		"state": PaperState.WRONG
 	},
@@ -39,8 +78,57 @@ var data = [
 		"text" : "Власть у котиков",
 		"state": PaperState.WRONG
 	},
+	{
+		"text" : "Вырубить все леса",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Отменить школу",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Запретить мороженое",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Уволить всех врачей",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Сжечь книги",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Кормить детей жуками",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Заставить всех спать на полу",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Красть у стариков",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Отключить интернет",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Купить танк вместо больницы",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Сделать мышей президентами",
+		"state": PaperState.WRONG
+	},
+	{
+		"text" : "Отменить выходные",
+		"state": PaperState.WRONG
+	}
 ]
 func _ready():
+	animated_spawn()
 	set_window_borders()
 	set_random_state()
 	
@@ -124,3 +212,7 @@ func _process(delta):
 		if movable != true and not is_dragging:  # Чтобы не спамить в консоль
 			print("Не в зоне или перетаскивается, movable = true")
 		movable = true
+func animated_spawn():
+	scale = Vector2.ZERO
+	var tween = create_tween().set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(self, "scale", Vector2(1,1), 0.4)
