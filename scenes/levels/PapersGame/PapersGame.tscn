@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cte7gqriu47yn"]
+[gd_scene load_steps=5 format=3 uid="uid://cte7gqriu47yn"]
 
 [ext_resource type="Texture2D" uid="uid://o34m1wcqmx" path="res://assets/img/PaperGame/bg.png" id="1_7bch1"]
 [ext_resource type="Script" uid="uid://cea5kp2bxe7hs" path="res://scenes/levels/PapersGame/game_world.gd" id="1_otbnn"]
+[ext_resource type="Script" uid="uid://b382dglm6n8k6" path="res://scenes/levels/PapersGame/papers_game.gd" id="1_sr2u4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otbnn"]
 size = Vector2(805, 1083)
 
 [node name="papersGame" type="Node2D"]
+script = ExtResource("1_sr2u4")
 
 [node name="game_world" type="Node" parent="."]
 script = ExtResource("1_otbnn")
@@ -29,3 +31,5 @@ shape = SubResource("RectangleShape2D_otbnn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game_world/WrongArea"]
 position = Vector2(1847, 540)
 shape = SubResource("RectangleShape2D_otbnn")
+
+[node name="GameTimer" type="Timer" parent="."]
