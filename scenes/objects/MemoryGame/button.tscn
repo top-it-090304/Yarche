@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bl1is6tqlii5m" path="res://assets/img/MemoryGame/Circle.png" id="2_31xq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcktk"]
-size = Vector2(195, 138)
+size = Vector2(244, 244)
 
 [node name="GameButton" type="Area2D"]
 script = ExtResource("1_lcktk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.376953, 0.376953)
+scale = Vector2(0.487305, 0.487305)
 texture = ExtResource("2_31xq3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -25)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lcktk")
