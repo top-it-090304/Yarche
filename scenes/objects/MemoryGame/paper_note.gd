@@ -22,7 +22,7 @@ func show_combination(buttons: Array[GameButton]):
 		var button = buttons[i]
 		
 		cell.modulate = button.button_color
-		cell.texture = button.icon if button.icon else null
+		cell.texture = button.default_texture
 
 func fly_away():
 	if is_flying:

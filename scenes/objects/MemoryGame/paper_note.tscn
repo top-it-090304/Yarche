@@ -67,16 +67,16 @@ alignment = 1
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 expand_mode = 1
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Cell2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 expand_mode = 1
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Cell3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 expand_mode = 1
-stretch_mode = 3
+stretch_mode = 5

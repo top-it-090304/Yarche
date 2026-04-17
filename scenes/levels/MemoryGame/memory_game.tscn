@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfgrs8wnflq1t"]
+[gd_scene load_steps=8 format=3 uid="uid://cfgrs8wnflq1t"]
 
+[ext_resource type="Script" uid="uid://bk6ej5pc0mu4d" path="res://scenes/levels/MemoryGame/memory_game.gd" id="1_e60wc"]
 [ext_resource type="Texture2D" uid="uid://glsxpnirqggw" path="res://assets/img/MemoryGame/Table.png" id="1_ldwxl"]
 [ext_resource type="PackedScene" uid="uid://b1kpvpbj1od1b" path="res://scenes/objects/MemoryGame/button.tscn" id="2_3qt03"]
 [ext_resource type="PackedScene" uid="uid://cnxdsixgj5sbe" path="res://scenes/objects/MemoryGame/paper_note.tscn" id="2_owmrm"]
@@ -7,17 +8,22 @@
 [ext_resource type="Texture2D" uid="uid://dky0a2pwvmy23" path="res://assets/img/MemoryGame/Rectangle.png" id="4_3qt03"]
 [ext_resource type="Texture2D" uid="uid://b7cfo2q272kd0" path="res://assets/img/MemoryGame/Triangle.png" id="5_8t5ac"]
 
-[node name="MemoryGame" type="Node2D"]
+[node name="MemoryGame" type="Node2D" node_paths=PackedStringArray("game_buttons")]
+script = ExtResource("1_e60wc")
+game_buttons = [NodePath("Buttons/RedCircle"), NodePath("Buttons/RedSquare"), NodePath("Buttons/RedTrinagle"), NodePath("Buttons/BlueSquare"), NodePath("Buttons/BlueCircle"), NodePath("Buttons/BlueTriangle"), NodePath("Buttons/YellowSquare"), NodePath("Buttons/YellowCircle"), NodePath("Buttons/YellowTriangle")]
 
 [node name="GameWorld" type="Node" parent="."]
 
 [node name="Background" type="Sprite2D" parent="GameWorld"]
+z_index = -1
 position = Vector2(1097, 540)
 texture = ExtResource("1_ldwxl")
 
 [node name="PaperNote" parent="GameWorld" instance=ExtResource("2_owmrm")]
-offset_left = 191.0
-offset_right = 191.0
+z_index = 1
+offset_top = -3.0
+offset_right = -126.0
+offset_bottom = 5.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
