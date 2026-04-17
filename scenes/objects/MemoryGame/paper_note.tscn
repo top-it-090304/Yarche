@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnxdsixgj5sbe"]
+[gd_scene load_steps=6 format=3 uid="uid://cnxdsixgj5sbe"]
 
-[ext_resource type="Texture2D" uid="uid://glsxpnirqggw" path="res://assets/img/MemoryGame/Table.png" id="1_1eq0y"]
+[ext_resource type="Texture2D" uid="uid://7080x7p4sd28" path="res://assets/img/MemoryGame/PaperNote.png" id="1_2mkb8"]
+[ext_resource type="Script" uid="uid://clip45x6051vk" path="res://scenes/objects/MemoryGame/paper_note.gd" id="1_amjc0"]
+[ext_resource type="Theme" uid="uid://bh1fnoiwsc10w" path="res://assets/font/PaperText.tres" id="2_amjc0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mkb8"]
 
 [sub_resource type="Theme" id="Theme_2mkb8"]
 
@@ -8,53 +12,70 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2mkb8")
+script = ExtResource("1_amjc0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1500, 1200)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -323.0
-offset_right = -324.0
+offset_left = 220.0
+offset_top = -98.0
+offset_right = -200.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("1_1eq0y")
+texture = ExtResource("1_2mkb8")
 expand_mode = 1
-stretch_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -772.0
-offset_top = -256.0
-offset_right = 772.0
-offset_bottom = 256.0
+offset_left = -571.0
+offset_top = -332.0
+offset_right = 640.0
+offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_amjc0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Запомни"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
 theme = SubResource("Theme_2mkb8")
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Cell1" type="TextureRect" parent="HBoxContainer"]
+[node name="Cell1" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 3
 
-[node name="Cell2" type="TextureRect" parent="HBoxContainer"]
+[node name="Cell2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 3
 
-[node name="Cell3" type="TextureRect" parent="HBoxContainer"]
+[node name="Cell3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 expand_mode = 1
