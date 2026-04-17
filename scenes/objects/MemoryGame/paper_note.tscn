@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnxdsixgj5sbe"]
+
+[ext_resource type="Texture2D" uid="uid://glsxpnirqggw" path="res://assets/img/MemoryGame/Table.png" id="1_1eq0y"]
+
+[sub_resource type="Theme" id="Theme_2mkb8"]
+
+[node name="PaperNote" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -323.0
+offset_right = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_1eq0y")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -772.0
+offset_top = -256.0
+offset_right = 772.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2mkb8")
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Cell1" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Cell2" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Cell3" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 3
