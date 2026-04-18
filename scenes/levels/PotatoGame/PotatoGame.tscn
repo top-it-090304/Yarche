@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhbw254c3ut85"]
+
+[ext_resource type="Script" uid="uid://08nyl55eid2" path="res://scenes/levels/PotatoGame/swipe_analyzer.gd" id="1_krtuy"]
+
+[node name="PotatoGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="swipe_analyzer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_krtuy")

@@ -15,10 +15,12 @@ var drag_offset: Vector2
 func _ready():
 	set_borders()
 	
-func change_skin():
+func clean():
 	var tween = create_tween()
 	tween.tween_property(dirt, "modulate", Color(1,1,1,0), 1)
 	tween.set_trans(Tween.TRANS_EXPO)
+	
+	tween.tween_callback(func(): is_clean = true)
 
 func finger_cover_banana(finger_position):
 	return Geometry2D.is_point_in_polygon(finger_position, collision.polygon)
@@ -67,8 +69,8 @@ func _input(event):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("water"):
-		change_skin()
-		is_clean = true
+		clean()
+		
 	if area.is_in_group("plate") and is_clean:
 		print("Чистый вернулся!")
 		come_back.emit()
