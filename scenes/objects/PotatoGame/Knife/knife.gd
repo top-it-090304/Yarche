@@ -3,7 +3,8 @@ var is_slicing = false
 var pos_offset = Vector2(50,-100)
 var rotation_start = deg_to_rad(60)
 var rotation_end = deg_to_rad(-20)
-	
+@onready var swing: AudioStreamPlayer = $swing
+
 var start_pos
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func slice():
 		is_slicing = true
 		print("начали резать")
 		slice_animation()
+		swing.play()
 		await get_tree().create_timer(1.2).timeout
 		is_slicing = false
 		print("кончили резать")

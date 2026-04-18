@@ -1,6 +1,7 @@
 extends Control
 @onready var knife: Node2D = $Knife
 
+
 var start_swipe_pos
 var end_swipe_pos
 var is_swiping = false

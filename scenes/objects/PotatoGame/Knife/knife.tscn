@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://skjr2ugaukxe"]
+[gd_scene load_steps=4 format=3 uid="uid://skjr2ugaukxe"]
 
 [ext_resource type="Script" uid="uid://dew7yw6e3ml76" path="res://scenes/objects/PotatoGame/Knife/knife.gd" id="1_bij3s"]
 [ext_resource type="Texture2D" uid="uid://0dj483lgugfn" path="res://assets/img/PotatoGame/knife.png" id="2_bij3s"]
+[ext_resource type="AudioStream" uid="uid://ylcy28mo7mv0" path="res://assets/sounds/PotatoGameSounds/swing.ogg" id="3_oa5uy"]
 
 [node name="Knife" type="Node2D"]
 position = Vector2(1110, 684)
@@ -10,3 +11,6 @@ script = ExtResource("1_bij3s")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bij3s")
 offset = Vector2(-119, 1)
+
+[node name="swing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oa5uy")
