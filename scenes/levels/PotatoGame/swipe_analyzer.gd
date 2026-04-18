@@ -1,5 +1,5 @@
 extends Control
-signal vertical_swipe
+@onready var knife: Node2D = $Knife
 
 var start_swipe_pos
 var end_swipe_pos
@@ -19,7 +19,10 @@ func _input(event):
 		end_swipe_pos = event.position
 func analyze_swipe():
 	if start_swipe_pos !=null and end_swipe_pos!= null:
-		var swipe = abs(start_swipe_pos-end_swipe_pos)
-		if swipe.y > swipe.x:
+		var swipe = end_swipe_pos-start_swipe_pos
+		#исключил горизонтальный свайп
+		if (abs(swipe.x) > abs(swipe.y)):
+			return
+		elif swipe.y >0:
 			print("горизонтальный свайп")
-			vertical_swipe.emit()
+			knife.slice()
