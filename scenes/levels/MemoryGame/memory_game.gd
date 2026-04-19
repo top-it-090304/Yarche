@@ -2,19 +2,21 @@ extends Node2D
 
 @export var game_buttons: Array[GameButton] = []
 @onready var paper_note = $GameWorld/PaperNote
+@onready var game_timer = $GameWorld/Timer
 
 @export var show_duration = 4.0
-@export var input_time_limit = 15.0
+@export var timer_time = 25.0
 
 var current_sequence: Array[GameButton] = []
 var player_sequence: Array[GameButton] = []
-var waiting_for_input: bool = false
-var game_timer: Timer
-var game_active: bool = true
+var waiting_for_input = false
+var game_active= true
+
+signal win
+signal lose
 
 func _ready():
-	game_timer = Timer.new()
-	add_child(game_timer)
+	game_timer.wait_time = timer_time
 	game_timer.timeout.connect(_on_timer_timeout)
 	
 	for button in game_buttons:
@@ -27,6 +29,8 @@ func start_game():
 	player_sequence.clear()
 	waiting_for_input = false
 	game_active = true
+	
+	get_tree().paused = true
 	
 	var available_buttons = game_buttons.duplicate()
 	available_buttons.shuffle()
@@ -49,8 +53,9 @@ func show_combination():
 	start_input_phase()
 
 func start_input_phase():
+	get_tree().paused = false
 	waiting_for_input = true
-	game_timer.start(input_time_limit)
+	game_timer.start()
 
 func _on_game_button_pressed(button: GameButton):
 	if not waiting_for_input or not game_active:
@@ -76,11 +81,12 @@ func _on_timer_timeout():
 		end_game(false)
 
 func end_game(is_win):
+	get_tree().paused = false
 	game_active = false
 	waiting_for_input = false
 	game_timer.stop()
 	
 	if is_win:
-		print("Выиграли")
+		win.emit()
 	else:
-		print("Проиграли")
+		lose.emit()

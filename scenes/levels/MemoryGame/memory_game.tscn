@@ -16,69 +16,81 @@ game_buttons = [NodePath("Buttons/RedCircle"), NodePath("Buttons/RedSquare"), No
 
 [node name="Background" type="Sprite2D" parent="GameWorld"]
 z_index = -1
-position = Vector2(1097, 540)
+position = Vector2(928, 540)
 texture = ExtResource("1_ldwxl")
 
 [node name="PaperNote" parent="GameWorld" instance=ExtResource("2_owmrm")]
 z_index = 1
-offset_top = -3.0
-offset_right = -126.0
-offset_bottom = 5.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -4.0
+offset_right = -233.0
+offset_bottom = 4.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="Camera2D" type="Camera2D" parent="GameWorld"]
+position = Vector2(960, 540)
+
+[node name="Timer" type="Timer" parent="GameWorld"]
+one_shot = true
 
 [node name="Buttons" type="Node" parent="."]
 
 [node name="RedCircle" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(1653, 283)
+position = Vector2(1228, 472)
 button_id = "red_circle"
 button_color = Color(0.766041, 0, 0.196972, 1)
 default_texture = ExtResource("3_8t5ac")
 
 [node name="RedSquare" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(1253, 890)
+position = Vector2(838, 242)
 button_id = "red_square"
 button_color = Color(0.766041, 0, 0.196972, 1)
 default_texture = ExtResource("4_3qt03")
 
 [node name="RedTrinagle" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(812, 419)
+position = Vector2(519, 468)
 button_id = "red_triangle"
 button_color = Color(0.766041, 0, 0.196972, 1)
 default_texture = ExtResource("5_8t5ac")
 
 [node name="BlueSquare" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(768, 788)
+position = Vector2(592, 848)
 button_id = "blue_square"
 button_color = Color(0.286082, 0.336642, 0.831448, 1)
 default_texture = ExtResource("4_3qt03")
 
 [node name="BlueCircle" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(281, 253)
+position = Vector2(180, 230)
 button_id = "blue_circle"
 button_color = Color(0.286082, 0.336642, 0.831448, 1)
 default_texture = ExtResource("3_8t5ac")
 
 [node name="BlueTriangle" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(1696, 603)
+position = Vector2(1678, 868)
 button_id = "blue_triangle"
 button_color = Color(0.286082, 0.336642, 0.831448, 1)
 default_texture = ExtResource("5_8t5ac")
 
 [node name="YellowSquare" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(349, 718)
+position = Vector2(183, 713)
 button_id = "yellow_square"
 button_color = Color(0.862147, 0.844254, 0, 1)
 default_texture = ExtResource("4_3qt03")
 
 [node name="YellowCircle" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(1276, 402)
+position = Vector2(1645, 283)
 button_id = "yellow_circle"
 button_color = Color(0.862147, 0.844254, 0, 1)
 default_texture = ExtResource("3_8t5ac")
 
 [node name="YellowTriangle" parent="Buttons" instance=ExtResource("2_3qt03")]
-position = Vector2(2068, 653)
+position = Vector2(1088, 871)
 button_id = "yellow_triangle"
 button_color = Color(0.862147, 0.844254, 0, 1)
 default_texture = ExtResource("5_8t5ac")

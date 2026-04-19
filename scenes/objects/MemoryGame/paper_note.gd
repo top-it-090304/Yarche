@@ -14,7 +14,7 @@ func _ready():
 	original_scale = scale
 	
 	for cell in hbox_container.get_children():
-		cell.custom_minimum_size = Vector2(80, 80)
+		cell.custom_minimum_size = Vector2(250, 250)
 
 func show_combination(buttons: Array[GameButton]):
 	for i in range(3):
@@ -39,4 +39,4 @@ func fly_away():
 	tween.parallel().tween_property(self, "scale", original_scale * 0.9, 0.8)
 	
 	await tween.finished
-	hide()
+	queue_free()
