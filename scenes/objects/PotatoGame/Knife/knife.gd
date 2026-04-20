@@ -2,7 +2,7 @@ extends Node2D
 signal sliced
 
 var is_slicing = false
-var pos_offset = Vector2(30,-370)
+var pos_offset = Vector2(30,-400)
 var rotation_start = deg_to_rad(60)
 var rotation_end = deg_to_rad(-20)
 @onready var swing: AudioStreamPlayer = $swing
@@ -19,7 +19,7 @@ func slice():
 		print("начали резать")
 		slice_animation()
 		swing.play()
-		start_pos.x -= 70
+		start_pos.x -= 80
 		await get_tree().create_timer(1.2).timeout
 		is_slicing = false
 		print("кончили резать")

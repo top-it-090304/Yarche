@@ -11,9 +11,11 @@ func slice():
 		var peel = peels.pop_at(0)
 		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUART)
 		tween.tween_property(peel, "position:y", 1080+500, 1.0)
-	else:
+		tween.tween_callback(check_state)
+		
+func check_state():
+	if peels.size() == 0:
 		is_clean.emit()
-	
 	
 func _ready() -> void:
 	peels = [peel_1, peel_2,peel_3]

@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 @onready var knife: Node2D = $Knife
 @onready var potato: Node2D = $Potato
 
@@ -9,7 +9,6 @@ var is_swiping = false
 func _ready():
 	knife.sliced.connect(func(): potato.slice())
 func _input(event):
-	var finger_position = get_global_mouse_position()
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			is_swiping = true
