@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhbw254c3ut85"]
+[gd_scene load_steps=4 format=3 uid="uid://dhbw254c3ut85"]
 
 [ext_resource type="Script" uid="uid://08nyl55eid2" path="res://scenes/levels/PotatoGame/swipe_analyzer.gd" id="1_krtuy"]
 [ext_resource type="PackedScene" uid="uid://skjr2ugaukxe" path="res://scenes/objects/PotatoGame/Knife/knife.tscn" id="2_g3w6k"]
+[ext_resource type="PackedScene" uid="uid://cj4ymlh0tx1ij" path="res://scenes/objects/PotatoGame/Potato/Potato.tscn" id="3_iqaee"]
 
 [node name="PotatoGame" type="Control"]
 layout_mode = 3
@@ -21,3 +22,8 @@ grow_vertical = 2
 script = ExtResource("1_krtuy")
 
 [node name="Knife" parent="swipe_analyzer" instance=ExtResource("2_g3w6k")]
+z_index = 2
+position = Vector2(1248, 456)
+
+[node name="Potato" parent="swipe_analyzer" instance=ExtResource("3_iqaee")]
+position = Vector2(920, 728)

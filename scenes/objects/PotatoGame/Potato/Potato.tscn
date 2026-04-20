@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj4ymlh0tx1ij"]
+
+[ext_resource type="Texture2D" uid="uid://bna64no5462oy" path="res://assets/img/PotatoGame/CleanPotato.png" id="1_b3tyd"]
+[ext_resource type="Script" uid="uid://bl8hshpwe1tpj" path="res://scenes/objects/PotatoGame/Potato/potato.gd" id="1_ml464"]
+[ext_resource type="Texture2D" uid="uid://d816bbkr3d4r" path="res://assets/img/PotatoGame/FirstPeel.png" id="2_ml464"]
+[ext_resource type="Texture2D" uid="uid://dsm67fabw1lcq" path="res://assets/img/PotatoGame/SecondPeel.png" id="4_ml464"]
+[ext_resource type="Texture2D" uid="uid://dp8urs7qokjh1" path="res://assets/img/PotatoGame/ThIrdPeel.png" id="4_uiegy"]
+
+[node name="Potato" type="Node2D"]
+position = Vector2(976, 568)
+script = ExtResource("1_ml464")
+
+[node name="CleanPotato" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1.48, 0.785)
+texture = ExtResource("1_b3tyd")
+
+[node name="Peel1" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-1.23, 0)
+texture = ExtResource("2_ml464")
+
+[node name="Peel2" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("4_ml464")
+
+[node name="Peel3" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1.595, 0)
+texture = ExtResource("4_uiegy")
