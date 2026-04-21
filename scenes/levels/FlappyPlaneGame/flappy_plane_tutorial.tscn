@@ -74,6 +74,7 @@ grow_vertical = 2
 theme = ExtResource("2_qo7jm")
 text = "Жми, чтобы взлететь!"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="Control"]
 layout_mode = 1

@@ -12,16 +12,27 @@ var player_sequence: Array[GameButton] = []
 var waiting_for_input = false
 var game_active= true
 
+var tutorial_scene = preload("res://scenes/levels/MemoryGame/memory_game_tutorial.tscn")
+
 signal win
 signal lose
 
 func _ready():
+	show_tutorial()
 	game_timer.wait_time = timer_time
 	game_timer.timeout.connect(_on_timer_timeout)
 	
 	for button in game_buttons:
 		button.on_pressed.connect(_on_game_button_pressed)
-	
+
+func show_tutorial():
+	get_tree().paused = true
+	var tutorial = tutorial_scene.instantiate()
+	tutorial.tutorial_finished.connect(start_game)
+	add_child(tutorial)
+
+func _on_tutorial_finished():
+	await get_tree().create_timer(0.1).timeout
 	start_game()
 
 func start_game():
