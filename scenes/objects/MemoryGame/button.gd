@@ -6,8 +6,10 @@ class_name GameButton
 @export var default_texture: Texture2D  
 
 @onready var sprite_2d = $Sprite2D
+@onready var click_sound = $ClickSound
 
 signal on_pressed(button: GameButton)
+signal animation_finished
 
 var is_interactable = true
 var can_press = true 
@@ -39,6 +41,7 @@ func on_touch():
 	
 	can_press = false
 	animate_press()
+	click_sound.play()
 	on_pressed.emit(self)
 	
 	await get_tree().create_timer(0.3).timeout
@@ -54,3 +57,8 @@ func animate_press():
 	
 	tween.tween_property(self, "scale", original_scale * 0.85, 0.08)
 	tween.tween_property(self, "scale", original_scale, 0.12)
+	
+	tween.finished.connect(_on_animation_finished)
+
+func _on_animation_finished():
+	animation_finished.emit()

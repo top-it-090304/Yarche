@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1kpvpbj1od1b"]
+[gd_scene load_steps=5 format=3 uid="uid://b1kpvpbj1od1b"]
 
 [ext_resource type="Script" uid="uid://c56i87hlq2rhv" path="res://scenes/objects/MemoryGame/button.gd" id="1_lcktk"]
 [ext_resource type="Texture2D" uid="uid://bl1is6tqlii5m" path="res://assets/img/MemoryGame/Circle.png" id="2_31xq3"]
+[ext_resource type="AudioStream" uid="uid://pdkwdj748yuf" path="res://assets/sounds/MemoryGame/ButtonClick.ogg" id="3_hewgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcktk"]
 size = Vector2(244, 244)
@@ -15,3 +16,7 @@ texture = ExtResource("2_31xq3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lcktk")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hewgb")
+volume_db = 10.895

@@ -4,8 +4,8 @@ extends Node2D
 @onready var paper_note = $GameWorld/PaperNote
 @onready var game_timer = $GameWorld/Timer
 
-@export var show_duration = 4.0
-@export var timer_time = 25.0
+@export var show_duration = 3.0
+@export var timer_time = 15.0
 
 var current_sequence: Array[GameButton] = []
 var player_sequence: Array[GameButton] = []
@@ -70,10 +70,12 @@ func _on_game_button_pressed(button: GameButton):
 	print("Ожидалась: ", current_sequence[current_index].button_id)
 	
 	if player_sequence[current_index].button_id != current_sequence[current_index].button_id:
+		await button.animation_finished
 		end_game(false)
 		return
 	
 	if player_sequence.size() == 3:
+		await button.animation_finished
 		end_game(true)
 
 func _on_timer_timeout():
