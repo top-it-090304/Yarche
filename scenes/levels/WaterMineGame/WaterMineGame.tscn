@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7onspbeonqlx"]
+[gd_scene load_steps=4 format=3 uid="uid://b7onspbeonqlx"]
 
 [ext_resource type="Script" uid="uid://c6nobv4cbjyhx" path="res://scenes/levels/WaterMineGame/gameworld.gd" id="1_42rk3"]
 [ext_resource type="PackedScene" uid="uid://bhsqmxmi3pyui" path="res://scenes/objects/WaterMineGame/Mine.tscn" id="2_ie6ml"]
+[ext_resource type="PackedScene" uid="uid://dn5xnuwi3hs5t" path="res://scenes/objects/WaterMineGame/turtle.tscn" id="2_lja53"]
 
 [node name="WaterMineGame" type="Node2D"]
 
 [node name="gameworld" type="Node" parent="."]
 script = ExtResource("1_42rk3")
+
+[node name="turtle" parent="gameworld" instance=ExtResource("2_lja53")]
+position = Vector2(288, 176)
 
 [node name="mine1" parent="gameworld" instance=ExtResource("2_ie6ml")]
 position = Vector2(920, 96)
@@ -16,6 +20,3 @@ position = Vector2(448, 768)
 
 [node name="mine3" parent="gameworld" instance=ExtResource("2_ie6ml")]
 position = Vector2(1552, 344)
-
-[node name="Marker2D" type="Marker2D" parent="gameworld"]
-position = Vector2(928, 512)

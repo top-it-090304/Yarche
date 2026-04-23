@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn5xnuwi3hs5t"]
+
+[ext_resource type="Texture2D" uid="uid://b43ahihgs3tp4" path="res://assets/img/WaterMineGame/Leg.png" id="1_7bb73"]
+[ext_resource type="Script" uid="uid://bp85hgnr3hskw" path="res://scenes/objects/WaterMineGame/turtle.gd" id="1_41kan"]
+[ext_resource type="Texture2D" uid="uid://dc1sokawhhhq1" path="res://assets/img/WaterMineGame/Head.png" id="2_41kan"]
+[ext_resource type="Texture2D" uid="uid://b2uve1jkvi7ot" path="res://assets/img/WaterMineGame/body.png" id="3_2gfyo"]
+
+[sub_resource type="Animation" id="Animation_c0jag"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leg1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.349066, -0.349066, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("leg2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.349066, -0.349066, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.174533, 0.174533, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iovsr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leg1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("leg2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxt5a"]
+_data = {
+&"RESET": SubResource("Animation_iovsr"),
+&"walk": SubResource("Animation_c0jag")
+}
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(1008, 568)
+gravity_scale = 0.0
+script = ExtResource("1_41kan")
+
+[node name="leg1" type="CollisionPolygon2D" parent="."]
+position = Vector2(-112, 51)
+polygon = PackedVector2Array(-32, -3, 32, -3, 32, 77, -32, 77)
+
+[node name="leg3" type="Sprite2D" parent="leg1"]
+texture = ExtResource("1_7bb73")
+offset = Vector2(0, 37)
+
+[node name="leg2" type="CollisionPolygon2D" parent="."]
+position = Vector2(112, 48)
+polygon = PackedVector2Array(-32, -3, 32, -3, 32, 77, -32, 77)
+
+[node name="leg3" type="Sprite2D" parent="leg2"]
+texture = ExtResource("1_7bb73")
+offset = Vector2(0, 37)
+
+[node name="head" type="CollisionPolygon2D" parent="."]
+position = Vector2(152, 64)
+polygon = PackedVector2Array(-8, -16, 32, -16, 112, -80, 176, -64, 208, -24, 128, 8, -8, 16)
+
+[node name="head2" type="Sprite2D" parent="head"]
+texture = ExtResource("2_41kan")
+offset = Vector2(96, -32)
+
+[node name="body" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -80, -72, -72, -160, -16, -200, 56, -208, 80, 200, 80, 200, 64, 160, -8, 104, -48, 48, -80)
+
+[node name="body" type="Sprite2D" parent="body"]
+texture = ExtResource("3_2gfyo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wxt5a")
+}

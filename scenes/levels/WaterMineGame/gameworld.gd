@@ -1,12 +1,13 @@
 extends Node
-@onready var marker: Marker2D = $Marker2D
+@onready var turtle: RigidBody2D = $turtle
+
 
 func _ready():
 	set_aim()
 	
 func set_aim():
-	var mines = get_children()
+	var objects = get_children()
 	
-	for mine in mines:
-		if mine is RigidBody2D:
-			mine.set_move_dir(marker)
+	for obj in objects:
+		if obj.is_in_group("mine"):
+			obj.set_move_dir(turtle)
