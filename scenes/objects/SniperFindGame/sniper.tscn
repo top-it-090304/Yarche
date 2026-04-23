@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://imdg7qixicjd"]
+
+[ext_resource type="Texture2D" uid="uid://bhe2wqj6vvqiw" path="res://assets/img/SniperFindGame/Sniper.png" id="1_55uv3"]
+[ext_resource type="Texture2D" uid="uid://cug2insfn67x7" path="res://assets/img/HitTheBEaverGame/beaver.png" id="2_wbdue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wbdue"]
+radius = 85.0235
+
+[node name="Sniper" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.605469, 0.605469)
+texture = ExtResource("1_55uv3")
+
+[node name="Blick" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(4, -77)
+scale = Vector2(0.138828, 0.127973)
+texture = ExtResource("2_wbdue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wbdue")

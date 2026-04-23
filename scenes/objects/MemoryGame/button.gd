@@ -11,7 +11,6 @@ class_name GameButton
 signal on_pressed(button: GameButton)
 signal animation_finished
 
-var is_interactable = true
 var can_press = true 
 var original_scale: Vector2
 var tween: Tween
@@ -27,7 +26,7 @@ func _ready():
 	input_event.connect(_on_input_event)
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
-	if not is_interactable or not can_press:
+	if not can_press:
 		return
 	
 	if event is InputEventScreenTouch and event.pressed:
