@@ -9,6 +9,7 @@ radius = 120.0
 [node name="Mine" type="RigidBody2D" groups=["mine"]]
 input_pickable = true
 gravity_scale = 0.0
+max_contacts_reported = 1
 script = ExtResource("1_0wewc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -22,13 +22,23 @@ func dissolve_sprite():
 	
 func set_sprite_dissolve(value):
 	sprite.material.set_shader_parameter("strength", value)
-	print(value)
+	
+func set_sprite_modulate(color):
+	sprite.material.set_shader_parameter("modulate_color", color)
 	
 func _on_mine_clicked(viewport, event, shape_idx):
 	if event is InputEventScreenTouch and event.pressed and not is_dissolving:
 		dissolve_sprite()
-		is_dissolving = true
+		#explode()
 		
+func explode():
+	if is_dissolving: return
+	var tween = create_tween()
+	tween.tween_method(set_sprite_modulate, Color(1,1,1,1), Color.ORANGE, 1).set_ease(Tween.EASE_IN)
+	tween.tween_method(set_sprite_dissolve, 0.0,0.65,0.5)
+	tween.tween_callback(queue_free)
+	is_dissolving = true
+
 func set_move_dir(target):
 	move_direction = target.global_position - self.global_position
 	move_direction = move_direction.normalized()

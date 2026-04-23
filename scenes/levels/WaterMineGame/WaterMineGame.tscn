@@ -10,7 +10,7 @@
 script = ExtResource("1_42rk3")
 
 [node name="turtle" parent="gameworld" instance=ExtResource("2_lja53")]
-position = Vector2(288, 176)
+position = Vector2(992, 664)
 
 [node name="mine1" parent="gameworld" instance=ExtResource("2_ie6ml")]
 position = Vector2(920, 96)

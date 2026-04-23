@@ -8,3 +8,9 @@ func _ready():
 	
 	# Проигрываем
 	anim_player.play("walk")
+
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("mine"):
+		print("бэм")
+		body.explode()
