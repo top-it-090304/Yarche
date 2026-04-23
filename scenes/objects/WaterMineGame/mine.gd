@@ -1,12 +1,15 @@
 extends RigidBody2D
-@export var moveDirection: Vector2 = Vector2(1,1)
+
+var shader = preload("res://assets/shaders/dissolve_shader.tres")
+
+var move_direction
 var speed = 100
 @onready var sprite: Sprite2D = $Sprite2D
+
 var is_dissolving = false
 
 func _ready() -> void:
-	set_move_dir()
-	linear_velocity = moveDirection * speed
+	sprite.material = shader.duplicate()
 	connect("input_event", _on_mine_clicked)
 
 func _process(delta: float) -> void:
@@ -26,6 +29,8 @@ func _on_mine_clicked(viewport, event, shape_idx):
 		dissolve_sprite()
 		is_dissolving = true
 		
-func set_move_dir():
-	moveDirection = Vector2(1920/2,540) - global_position
-	moveDirection = moveDirection.normalized()
+func set_move_dir(target):
+	move_direction = target.global_position - self.global_position
+	move_direction = move_direction.normalized()
+	
+	linear_velocity = move_direction * speed
