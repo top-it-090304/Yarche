@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nkyp"]
 
 [node name="Crosshair" type="Area2D"]
+z_index = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 10
@@ -17,7 +18,6 @@ shape = SubResource("RectangleShape2D_2nkyp")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 z_index = 5
-scale = Vector2(0.545573, 0.545573)
-blend_mode = 2
+scale = Vector2(0.237142, 0.229602)
 texture = ExtResource("2_jyboo")
-texture_scale = 1.5
+texture_scale = 2.0
