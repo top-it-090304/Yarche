@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhsqmxmi3pyui"]
+
+[ext_resource type="Script" uid="uid://c68n87g52sr2f" path="res://scenes/objects/WaterMineGame/mine.gd" id="1_0wewc"]
+[ext_resource type="Texture2D" uid="uid://dqx5aucjfsidc" path="res://assets/img/WaterMineGame/mine.png" id="1_f02ce"]
+[ext_resource type="Material" uid="uid://chi5fbxkskk2i" path="res://assets/font/shaders/dissolve_shader.tres" id="2_ti48k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wewc"]
+radius = 120.0
+
+[node name="Mine" type="RigidBody2D"]
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_0wewc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0wewc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_ti48k")
+position = Vector2(-8, -8)
+texture = ExtResource("1_f02ce")
+region_enabled = true
+region_rect = Rect2(-141, -141, 564, 564)
+region_filter_clip_enabled = true

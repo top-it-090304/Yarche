@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://chi5fbxkskk2i"]
+
+[ext_resource type="Shader" uid="uid://cwa27uixwb7r5" path="res://assets/font/shaders/dissolve.gdshader" id="1_3x70e"]
+
+[resource]
+shader = ExtResource("1_3x70e")
+shader_parameter/strength = 0.0
+shader_parameter/seed = 1.0
+shader_parameter/direction = Vector2(-0.5, 0)
+shader_parameter/mask_vignette_strength = 0.346
+shader_parameter/mask_vignette_center = Vector2(0.5, 0.3)
