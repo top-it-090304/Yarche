@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1kgeyf7fa8x3"]
+
+[ext_resource type="Texture2D" uid="uid://cs12hpupjlly7" path="res://assets/img/SniperFindGame/Cross.png" id="1_2nkyp"]
+[ext_resource type="Texture2D" uid="uid://bv8uki4ym4he6" path="res://assets/img/SniperFindGame/Light.png" id="2_jyboo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nkyp"]
+
+[node name="Crosshair" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
+scale = Vector2(0.607422, 0.607422)
+texture = ExtResource("1_2nkyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2nkyp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 5
+scale = Vector2(0.545573, 0.545573)
+blend_mode = 2
+texture = ExtResource("2_jyboo")
+texture_scale = 1.5
