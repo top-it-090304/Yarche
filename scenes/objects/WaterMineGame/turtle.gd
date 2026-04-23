@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @onready var anim_player = $AnimationPlayer
-
+signal lose
 func _ready():
 	var animation = anim_player.get_animation("walk")
 	animation.loop_mode = Animation.LOOP_LINEAR
@@ -12,5 +12,6 @@ func _ready():
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("mine"):
-		print("бэм")
 		body.explode()
+		await body.exploded
+		lose.emit()

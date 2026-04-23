@@ -12,11 +12,13 @@ script = ExtResource("1_42rk3")
 [node name="turtle" parent="gameworld" instance=ExtResource("2_lja53")]
 position = Vector2(992, 664)
 
-[node name="mine1" parent="gameworld" instance=ExtResource("2_ie6ml")]
+[node name="mines" type="Node" parent="gameworld"]
+
+[node name="mine1" parent="gameworld/mines" instance=ExtResource("2_ie6ml")]
 position = Vector2(920, 96)
 
-[node name="mine2" parent="gameworld" instance=ExtResource("2_ie6ml")]
+[node name="mine2" parent="gameworld/mines" instance=ExtResource("2_ie6ml")]
 position = Vector2(448, 768)
 
-[node name="mine3" parent="gameworld" instance=ExtResource("2_ie6ml")]
+[node name="mine3" parent="gameworld/mines" instance=ExtResource("2_ie6ml")]
 position = Vector2(1552, 344)
