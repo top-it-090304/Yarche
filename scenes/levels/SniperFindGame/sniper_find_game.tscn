@@ -8,19 +8,15 @@
 [node name="SniperFindGame" type="Node2D"]
 script = ExtResource("1_jmtb6")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Crosshair" parent="." instance=ExtResource("4_00tw7")]
+position = Vector2(1023, 690)
+
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1280, 540)
 texture = ExtResource("1_68p4a")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 2
-offset_right = 2562.0
-offset_bottom = 1069.0
-color = Color(0, 0, 0, 0.835)
-
 [node name="Sniper" parent="." instance=ExtResource("3_nrrm2")]
-z_index = 1
 position = Vector2(621, 487)
-
-[node name="Crosshair" parent="." instance=ExtResource("4_00tw7")]
-position = Vector2(1023, 690)
