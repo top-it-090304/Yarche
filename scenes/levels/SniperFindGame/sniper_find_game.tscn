@@ -1,14 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhmhmpf2kayl3"]
+[gd_scene load_steps=4 format=3 uid="uid://bhmhmpf2kayl3"]
 
 [ext_resource type="Texture2D" uid="uid://c7ogkwix7mryf" path="res://assets/img/HitTheBEaverGame/background.png" id="1_68p4a"]
 [ext_resource type="Script" uid="uid://dgu6j0utqgwrt" path="res://scenes/levels/SniperFindGame/sniper_find_game.gd" id="1_jmtb6"]
-[ext_resource type="PackedScene" uid="uid://imdg7qixicjd" path="res://scenes/objects/SniperFindGame/sniper.tscn" id="3_nrrm2"]
 [ext_resource type="PackedScene" uid="uid://c1kgeyf7fa8x3" path="res://scenes/objects/SniperFindGame/crosshair.tscn" id="4_00tw7"]
 
 [node name="SniperFindGame" type="Node2D"]
 script = ExtResource("1_jmtb6")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="Dark" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
 [node name="Crosshair" parent="." instance=ExtResource("4_00tw7")]
@@ -18,5 +17,23 @@ position = Vector2(1023, 690)
 position = Vector2(1280, 540)
 texture = ExtResource("1_68p4a")
 
-[node name="Sniper" parent="." instance=ExtResource("3_nrrm2")]
-position = Vector2(621, 487)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="SpawnPoint1" type="Marker2D" parent="."]
+position = Vector2(405, 449)
+
+[node name="SpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(857, 232)
+
+[node name="SpawnPoint3" type="Marker2D" parent="."]
+position = Vector2(1623, 261)
+
+[node name="SpawnPoint4" type="Marker2D" parent="."]
+position = Vector2(1460, 760)
+
+[node name="SpawnPoint5" type="Marker2D" parent="."]
+position = Vector2(559, 794)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
