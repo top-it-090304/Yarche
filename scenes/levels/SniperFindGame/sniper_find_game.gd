@@ -1,9 +1,8 @@
 extends Node2D
 
-# Ссылки на ноды
-@onready var timer: Timer = $Timer
-@onready var crosshair: Area2D = $Crosshair  # твой прицел с Area2D
-@onready var sniper_spawns: Array = [
+@onready var timer = $Timer
+@onready var crosshair = $Crosshair
+@onready var sniper_spawns = [
 	$SpawnPoint1,
 	$SpawnPoint2,
 	$SpawnPoint3,
@@ -14,7 +13,20 @@ extends Node2D
 var sniper_scene: PackedScene = preload("res://scenes/objects/SniperFindGame/sniper.tscn")
 var sniper: Node2D
 var time_left: float
-var game_over: bool = false
+var game_over = false
+
+var crosshair_speed: float = 500.0
+
+func _process(delta):
+	if game_over:
+		return
+	
+	var target_pos = crosshair.global_position
+	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		target_pos = get_global_mouse_position()
+	
+	crosshair.global_position = crosshair.global_position.move_toward(target_pos, crosshair_speed * delta)
 
 func _ready():
 	randomize()
@@ -32,20 +44,14 @@ func start_timer():
 	timer.start()
 	time_left = timer.wait_time
 
-func _process(delta):
-	if game_over:
-		return
-	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		crosshair.global_position = get_global_mouse_position()
-
 func _on_sniper_found(area):
 	if area.is_in_group("sniper_hitbox"):
 		sniper_found()
 
 func sniper_found():
 	game_over = true
-	timer.stop()
+	print("Попался гад")
 	
 func _on_timer_timeout():
 	game_over = true
+	print("Не нашли")
