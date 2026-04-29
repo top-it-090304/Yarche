@@ -5,7 +5,7 @@ extends Node2D
 var win_scene_preload = preload("res://scenes/menu/win_scene/win-scene.tscn")
 var lose_scene_preload = preload("res://scenes/menu/lose_scene/LoseScene.tscn")
 
-var level_data = [
+var mini_games = [
 	{"time": 10, "path": "res://scenes/levels/PotatoGame/PotatoGame.tscn"},
 	{"time": 10, "path": "res://scenes/levels/MemoryGame/memory_game.tscn"},
 	{"time": 10, "path": "res://scenes/levels/PapersGame/PapersGame.tscn"},
@@ -17,14 +17,21 @@ var level_data = [
 	{"time": 12, "path": "res://scenes/levels/WiresGame/wires_game.tscn"},
 ]
 
+var level_data = []
+
 var game: Node
 var current_result_scene: Node
 var current_game_id = 0
 
 func _ready():
+	set_level_data()
 	_load_current_game()
 	
-
+func set_level_data():
+	mini_games.shuffle()
+	
+	level_data = mini_games.slice(0,5)
+	
 func _set_timer_bar(time):
 		
 	timer.wait_time = time
