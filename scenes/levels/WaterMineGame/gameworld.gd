@@ -14,6 +14,7 @@ func set_aim():
 		if mine.is_in_group("mine"):
 			mine.set_move_dir(turtle)
 			mine.deleted.connect(check_mines)
+			mine.exploded.connect(func(): lose.emit())
 			
 func check_mines():
 	var mines_list = mines.get_children()

@@ -68,6 +68,11 @@ layout_mode = 2
 theme = ExtResource("2_tyue1")
 text = "Розетки"
 
+[node name="game10" type="MenuButton" parent="completed"]
+layout_mode = 2
+theme = ExtResource("2_tyue1")
+text = "Водные мины"
+
 [node name="develop" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
@@ -82,12 +87,7 @@ grow_horizontal = 0
 grow_vertical = 2
 alignment = 1
 
-[node name="game1" type="MenuButton" parent="develop"]
+[node name="game11" type="MenuButton" parent="develop"]
 layout_mode = 2
 theme = ExtResource("2_tyue1")
 text = "Снайпер"
-
-[node name="game2" type="MenuButton" parent="develop"]
-layout_mode = 2
-theme = ExtResource("2_tyue1")
-text = "Водные мины"

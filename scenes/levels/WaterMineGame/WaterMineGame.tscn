@@ -1,13 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7onspbeonqlx"]
+[gd_scene load_steps=7 format=3 uid="uid://b7onspbeonqlx"]
 
 [ext_resource type="Script" uid="uid://c6nobv4cbjyhx" path="res://scenes/levels/WaterMineGame/gameworld.gd" id="1_42rk3"]
+[ext_resource type="Script" uid="uid://bodjadifae5at" path="res://scenes/levels/WaterMineGame/water_mine_game.gd" id="1_lja53"]
 [ext_resource type="PackedScene" uid="uid://bhsqmxmi3pyui" path="res://scenes/objects/WaterMineGame/Mine.tscn" id="2_ie6ml"]
 [ext_resource type="PackedScene" uid="uid://dn5xnuwi3hs5t" path="res://scenes/objects/WaterMineGame/turtle.tscn" id="2_lja53"]
 
+[sub_resource type="Gradient" id="Gradient_cn7wi"]
+offsets = PackedFloat32Array(0, 0.295775, 0.764085, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0, 0.588235, 1, 1, 0.255035, 0.429694, 1, 1, 0.352941, 0.239216, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w6uqn"]
+gradient = SubResource("Gradient_cn7wi")
+width = 2560
+
 [node name="WaterMineGame" type="Node2D"]
+script = ExtResource("1_lja53")
 
 [node name="gameworld" type="Node" parent="."]
 script = ExtResource("1_42rk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="gameworld"]
+position = Vector2(960, 540)
+scale = Vector2(1.007, 1080)
+texture = SubResource("GradientTexture1D_w6uqn")
 
 [node name="turtle" parent="gameworld" instance=ExtResource("2_lja53")]
 position = Vector2(992, 664)
@@ -15,10 +30,18 @@ position = Vector2(992, 664)
 [node name="mines" type="Node" parent="gameworld"]
 
 [node name="mine1" parent="gameworld/mines" instance=ExtResource("2_ie6ml")]
-position = Vector2(920, 96)
+position = Vector2(640, 200)
 
 [node name="mine2" parent="gameworld/mines" instance=ExtResource("2_ie6ml")]
 position = Vector2(448, 768)
 
 [node name="mine3" parent="gameworld/mines" instance=ExtResource("2_ie6ml")]
 position = Vector2(1552, 344)
+
+[node name="mine4" parent="gameworld/mines" instance=ExtResource("2_ie6ml")]
+position = Vector2(1720, 776)
+
+[node name="Camera2D" type="Camera2D" parent="gameworld"]
+position = Vector2(960, 540)
+
+[node name="Timer" type="Timer" parent="."]

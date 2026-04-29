@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhsqmxmi3pyui"]
+[gd_scene load_steps=7 format=3 uid="uid://bhsqmxmi3pyui"]
 
 [ext_resource type="Script" uid="uid://c68n87g52sr2f" path="res://scenes/objects/WaterMineGame/mine.gd" id="1_0wewc"]
 [ext_resource type="Texture2D" uid="uid://dqx5aucjfsidc" path="res://assets/img/WaterMineGame/mine.png" id="1_f02ce"]
+[ext_resource type="Material" uid="uid://bm48y1s5bmkdw" path="res://assets/shaders/explosion_shader.tres" id="4_2pwna"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0wewc"]
 radius = 120.0
+
+[sub_resource type="Image" id="Image_vqggt"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 1
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_ti48k"]
+image = SubResource("Image_vqggt")
 
 [node name="Mine" type="RigidBody2D" groups=["mine"]]
 input_pickable = true
@@ -21,3 +34,11 @@ texture = ExtResource("1_f02ce")
 region_enabled = true
 region_rect = Rect2(-141, -141, 564, 564)
 region_filter_clip_enabled = true
+
+[node name="explosion_particles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1500
+texture = SubResource("ImageTexture_ti48k")
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("4_2pwna")

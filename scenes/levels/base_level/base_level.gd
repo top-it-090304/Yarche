@@ -15,6 +15,7 @@ var mini_games = [
 	{"time": 10, "path": "res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn"},
 	{"time": 12, "path": "res://scenes/levels/HitTheBeaverGame/HitTheBeaverGame.tscn"},
 	{"time": 12, "path": "res://scenes/levels/WiresGame/wires_game.tscn"},
+	{"time": 12, "path": "res://scenes/levels/WaterMineGame/WaterMineGame.tscn"}
 ]
 
 var level_data = []

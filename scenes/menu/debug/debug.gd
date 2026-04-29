@@ -12,10 +12,10 @@ var completed_levels = [
 	"res://scenes/levels/MemoryGame/memory_game.tscn",
 	"res://scenes/levels/PapersGame/PapersGame.tscn",
 	"res://scenes/levels/WiresGame/wires_game.tscn",
+	"res://scenes/levels/WaterMineGame/WaterMineGame.tscn"
 ]
 var develop_levels = [
 	"res://scenes/levels/SniperFindGame/sniper_find_game.tscn",
-	"res://scenes/levels/WaterMineGame/WaterMineGame.tscn"
 ]
 func _ready() -> void:
 	connect_completed_levels()
