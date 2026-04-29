@@ -50,7 +50,7 @@ func explode():
 			exploded.emit()
 			queue_free()
 	)
-
+	
 func dissolve_end():
 	deleted.emit()
 	print("удалена мина")
