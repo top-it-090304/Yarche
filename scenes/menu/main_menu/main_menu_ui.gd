@@ -1,11 +1,17 @@
 extends Control
 @onready var play_btn: TextureButton = $VBoxContainer/play
 @onready var exit_btn: TextureButton = $VBoxContainer/exit
+@onready var debug: MenuButton = $VBoxContainer/debug
+
 signal play_button_pressed
 
 func _ready():
 	exit_btn.pressed.connect(_on_exit_btn_pressed)
 	play_btn.pressed.connect(_on_play_btn_pressed)
+	debug.pressed.connect(func(): 
+		var menu = load("res://scenes/menu/debug/debug.tscn").instantiate()
+		self.add_sibling(menu)
+		self.queue_free())
 	
 func _on_exit_btn_pressed():
 	get_tree().quit()
