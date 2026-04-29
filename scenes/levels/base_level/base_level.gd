@@ -4,34 +4,30 @@ extends Node2D
 @onready var timer: Timer = $CanvasLayer/TimerBar/Timer
 var win_scene_preload = preload("res://scenes/menu/win_scene/win-scene.tscn")
 var lose_scene_preload = preload("res://scenes/menu/lose_scene/LoseScene.tscn")
-var times = [10, 10, 10, 26, 8, 5,10,12,12,12]
-var game_paths = [
-	"res://scenes/levels/PotatoGame/PotatoGame.tscn",
-	"res://scenes/levels/MemoryGame/memory_game.tscn",
-	"res://scenes/levels/PapersGame/PapersGame.tscn",
-	"res://scenes/levels/AvoidTheGarbage/AvoidTheGarbage.tscn",
-	"res://scenes/levels/PumpGame/pump_game.tscn",
-	"res://scenes/levels/CleanGame/CleanGame.tscn",
-	"res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn",
-	"res://scenes/levels/HitTheBeaverGame/HitTheBeaverGame.tscn",
-	"res://scenes/levels/WiresGame/wires_game.tscn",
+
+var level_data = [
+	{"time": 10, "path": "res://scenes/levels/PotatoGame/PotatoGame.tscn"},
+	{"time": 10, "path": "res://scenes/levels/MemoryGame/memory_game.tscn"},
+	{"time": 10, "path": "res://scenes/levels/PapersGame/PapersGame.tscn"},
+	{"time": 26, "path": "res://scenes/levels/AvoidTheGarbage/AvoidTheGarbage.tscn"},
+	{"time": 8, "path": "res://scenes/levels/PumpGame/pump_game.tscn"},
+	{"time": 5, "path": "res://scenes/levels/CleanGame/CleanGame.tscn"},
+	{"time": 10, "path": "res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn"},
+	{"time": 12, "path": "res://scenes/levels/HitTheBeaverGame/HitTheBeaverGame.tscn"},
+	{"time": 12, "path": "res://scenes/levels/WiresGame/wires_game.tscn"},
 ]
 
 var game: Node
-var current_result_scene: Node 
-var game_path_id = 0
-var time_index = 0
+var current_result_scene: Node
+var current_game_id = 0
 
 func _ready():
 	_load_current_game()
 	
 
-func _set_timer_bar():
-	print("Начали настройку тайм бара")
-	if time_index >= times.size():
-		return
+func _set_timer_bar(time):
 		
-	timer.wait_time = times[time_index]
+	timer.wait_time = time
 	timer.one_shot = true
 	timer_bar.max_value = timer.wait_time
 	timer_bar.value = timer.wait_time
@@ -45,14 +41,15 @@ func _process(delta):
 		timer_bar.value = timer.time_left
 
 func _load_current_game():
-	if game_path_id < game_paths.size() and time_index < times.size():
-		var path = game_paths[game_path_id]
+	if current_game_id < level_data.size():
+		var path = level_data[current_game_id].path
+		var time = level_data[current_game_id].time
 		game = load(path).instantiate()
-		game.timer_time = times[time_index]
+		game.timer_time = time
 		
 		game.win.connect(_win_ending)
 		game.lose.connect(_lose_ending)		
-		_set_timer_bar()
+		_set_timer_bar(time)
 		add_child(game)
 		
 
@@ -85,8 +82,7 @@ func _on_game_continued():
 		game.queue_free()
 		game = null
 	
-	game_path_id += 1
-	time_index += 1
+	current_game_id +=1
 	_load_current_game()
 	
 func _on_level_restarted():
