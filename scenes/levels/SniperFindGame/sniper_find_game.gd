@@ -12,10 +12,13 @@ extends Node2D
 
 var sniper_scene: PackedScene = preload("res://scenes/objects/SniperFindGame/sniper.tscn")
 var sniper: Node2D
-var time_left: float
+@export var timer_time = 10.0
 var game_over = false
 
-var crosshair_speed: float = 500.0
+var crosshair_speed = 500.0
+
+signal win
+signal lose
 
 func _process(delta):
 	if game_over:
@@ -31,7 +34,8 @@ func _process(delta):
 func _ready():
 	randomize()
 	spawn_sniper()
-	start_timer()
+	timer.wait_time = timer_time
+	timer.start()
 	crosshair.area_entered.connect(_on_sniper_found)
 
 func spawn_sniper():
@@ -40,18 +44,16 @@ func spawn_sniper():
 	sniper.position = random_point.position
 	add_child(sniper)
 
-func start_timer():
-	timer.start()
-	time_left = timer.wait_time
-
 func _on_sniper_found(area):
 	if area.is_in_group("sniper_hitbox"):
 		sniper_found()
 
 func sniper_found():
 	game_over = true
+	win.emit()
 	print("Попался гад")
 	
 func _on_timer_timeout():
 	game_over = true
+	lose.emit()
 	print("Не нашли")

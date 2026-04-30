@@ -6,6 +6,7 @@ var win_scene_preload = preload("res://scenes/menu/win_scene/win-scene.tscn")
 var lose_scene_preload = preload("res://scenes/menu/lose_scene/LoseScene.tscn")
 
 var mini_games = [
+	{"time": 15, "path": "res://scenes/levels/SniperFindGame/sniper_find_game.tscn"},
 	{"time": 10, "path": "res://scenes/levels/PotatoGame/PotatoGame.tscn"},
 	{"time": 10, "path": "res://scenes/levels/MemoryGame/memory_game.tscn"},
 	{"time": 10, "path": "res://scenes/levels/PapersGame/PapersGame.tscn"},
