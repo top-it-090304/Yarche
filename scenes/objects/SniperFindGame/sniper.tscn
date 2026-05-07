@@ -2,24 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://bhe2wqj6vvqiw" path="res://assets/img/SniperFindGame/Sniper.png" id="1_55uv3"]
 [ext_resource type="Script" uid="uid://caixguh5204vl" path="res://scenes/objects/SniperFindGame/sniper.gd" id="1_q0pwd"]
-[ext_resource type="Texture2D" uid="uid://cug2insfn67x7" path="res://assets/img/HitTheBEaverGame/beaver.png" id="2_wbdue"]
+[ext_resource type="Texture2D" uid="uid://b0uyjl8ia2k7d" path="res://assets/img/SniperFindGame/Blick.png" id="3_q0pwd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wbdue"]
-radius = 44.3847
+radius = 61.0082
 
 [node name="Sniper" type="Area2D" groups=["sniper_hitbox"]]
 script = ExtResource("1_q0pwd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.605469, 0.605469)
+scale = Vector2(0.799218, 0.799218)
 texture = ExtResource("1_55uv3")
 
 [node name="Blick" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(4, -77)
-scale = Vector2(0.138828, 0.127973)
-texture = ExtResource("2_wbdue")
+position = Vector2(-52, -51)
+scale = Vector2(0.134758, 0.124222)
+texture = ExtResource("3_q0pwd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, -14)
+scale = Vector2(1.32, 1.32)
 shape = SubResource("CircleShape2D_wbdue")
