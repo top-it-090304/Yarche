@@ -13,7 +13,7 @@ var mini_games = [
 	{"time": 26, "path": "res://scenes/levels/AvoidTheGarbage/AvoidTheGarbage.tscn"},
 	{"time": 8, "path": "res://scenes/levels/PumpGame/pump_game.tscn"},
 	{"time": 5, "path": "res://scenes/levels/CleanGame/CleanGame.tscn"},
-	{"time": 10, "path": "res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn"},
+	{"time": 30, "path": "res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn"},
 	{"time": 12, "path": "res://scenes/levels/HitTheBeaverGame/HitTheBeaverGame.tscn"},
 	{"time": 12, "path": "res://scenes/levels/WiresGame/wires_game.tscn"},
 	{"time": 12, "path": "res://scenes/levels/WaterMineGame/WaterMineGame.tscn"}

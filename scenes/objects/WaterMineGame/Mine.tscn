@@ -1,32 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhsqmxmi3pyui"]
+[gd_scene load_steps=3 format=3 uid="uid://bhsqmxmi3pyui"]
 
 [ext_resource type="Script" uid="uid://c68n87g52sr2f" path="res://scenes/objects/WaterMineGame/mine.gd" id="1_0wewc"]
 [ext_resource type="Texture2D" uid="uid://dqx5aucjfsidc" path="res://assets/img/WaterMineGame/mine.png" id="1_f02ce"]
-[ext_resource type="Material" uid="uid://bm48y1s5bmkdw" path="res://assets/shaders/explosion_shader.tres" id="4_2pwna"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0wewc"]
-radius = 120.0
-
-[sub_resource type="Image" id="Image_vqggt"]
-data = {
-"data": PackedByteArray(255, 255, 255, 255),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 1
-}
-
-[sub_resource type="ImageTexture" id="ImageTexture_ti48k"]
-image = SubResource("Image_vqggt")
 
 [node name="Mine" type="RigidBody2D" groups=["mine"]]
 input_pickable = true
+mass = 0.001
 gravity_scale = 0.0
 max_contacts_reported = 1
 script = ExtResource("1_0wewc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_0wewc")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-24, -104, -8, -152, 8, -152, 16, -96, 48, -88, 64, -72, 112, -96, 120, -88, 88, -48, 96, -16, 96, 8, 136, 32, 136, 48, 80, 48, 48, 88, 48, 136, 32, 136, 8, 96, -24, 96, -48, 88, -88, 120, -96, 112, -80, 64, -104, 16, -152, 0, -152, -16, -96, -24, -88, -56, -72, -72, -88, -120, -72, -128)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, -8)
@@ -34,11 +19,3 @@ texture = ExtResource("1_f02ce")
 region_enabled = true
 region_rect = Rect2(-141, -141, 564, 564)
 region_filter_clip_enabled = true
-
-[node name="explosion_particles" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 1500
-texture = SubResource("ImageTexture_ti48k")
-one_shot = true
-explosiveness = 1.0
-process_material = ExtResource("4_2pwna")

@@ -2,27 +2,22 @@ extends RigidBody2D
 signal exploded
 signal deleted
 
-var shader_dissolve = preload("res://assets/shaders/dissolve_shader.tres")
-var shader_explode = preload("res://assets/shaders/explosion.gdshader")
 
 var move_direction
 var speed = 100
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var explosion_particles: GPUParticles2D = $explosion_particles
 
 var is_dissolving = false
-
+var is_exploded = false
 func _ready() -> void:
-	
+	angular_velocity = deg_to_rad(30)
+	angular_damp = 0.0	
 	connect("input_event", _on_mine_clicked)
 
-func _process(delta: float) -> void:
-	sprite.rotate(delta*0.2)
 
 func dissolve_sprite():
-	sprite.material = shader_dissolve.duplicate()
 	var tween = create_tween()
-	tween.tween_method(set_sprite_dissolve, 0.0,0.65,0.5)
+	tween.tween_property(self,"modulate", Color(1,1,1,0),0.5)
 	tween.tween_callback(dissolve_end)
 	
 func set_sprite_dissolve(value):
@@ -34,22 +29,24 @@ func _on_mine_clicked(viewport, event, shape_idx):
 		dissolve_sprite()
 		
 func explode():
-	if is_dissolving: return
+	if is_dissolving or is_exploded: return
 	is_dissolving = true
-	
+	is_exploded = true
 	
 	var tween = create_tween()
-	tween.tween_property(sprite, "modulate", Color.ORANGE, 0.2)
-	tween.tween_property(sprite, "modulate", Color.ORANGE_RED, 0.2)
-	tween.tween_property(sprite, "modulate", Color.RED, 0.2)
-	tween.tween_callback(
-		func():
-			sprite.visible = false
-			explosion_particles.emitting = true
-			await get_tree().create_timer(explosion_particles.lifetime-0.7).timeout
-			exploded.emit()
-			queue_free()
-	)
+	tween.set_parallel(true)
+	tween.tween_property(self, "scale", Vector2(1.5,1.5), 0.9).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	
+	#tween.set_parallel(false)
+	tween.tween_property(sprite, "modulate", Color.ORANGE_RED, 0.3)
+	tween.tween_property(sprite, "modulate", Color.RED, 0.3)
+	tween.tween_property(sprite, "modulate", Color.ORANGE, 0.3)
+	
+	
+	await get_tree().create_timer(0.9).timeout
+	sprite.visible = false
+	exploded.emit()
+	queue_free()
 	
 func dissolve_end():
 	deleted.emit()
