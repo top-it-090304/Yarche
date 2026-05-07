@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhmhmpf2kayl3"]
+[gd_scene load_steps=9 format=3 uid="uid://bhmhmpf2kayl3"]
 
-[ext_resource type="Texture2D" uid="uid://c7ogkwix7mryf" path="res://assets/img/HitTheBEaverGame/background.png" id="1_68p4a"]
 [ext_resource type="Script" uid="uid://dgu6j0utqgwrt" path="res://scenes/levels/SniperFindGame/sniper_find_game.gd" id="1_jmtb6"]
+[ext_resource type="Texture2D" uid="uid://demfus2krh8vr" path="res://assets/img/SniperFindGame/BackGround.png" id="3_b42qf"]
 [ext_resource type="PackedScene" uid="uid://c1kgeyf7fa8x3" path="res://scenes/objects/SniperFindGame/crosshair.tscn" id="4_00tw7"]
+[ext_resource type="Texture2D" uid="uid://cula8w11fvqi6" path="res://assets/img/SniperFindGame/FallTree.png" id="5_04iwl"]
+[ext_resource type="Texture2D" uid="uid://dukx4exd8pym4" path="res://assets/img/SniperFindGame/Kust.png" id="6_oxmlf"]
+[ext_resource type="Texture2D" uid="uid://ihw6g4681ph5" path="res://assets/img/SniperFindGame/Bugor.png" id="7_bmf3h"]
+[ext_resource type="Texture2D" uid="uid://cxh0voh6sqxtj" path="res://assets/img/SniperFindGame/Tree.png" id="8_3wlvi"]
+[ext_resource type="Texture2D" uid="uid://70o5qcw1f2bk" path="res://assets/img/SniperFindGame/Stones.png" id="8_b42qf"]
 
 [node name="SniperFindGame" type="Node2D"]
 script = ExtResource("1_jmtb6")
@@ -15,25 +20,48 @@ position = Vector2(1023, 690)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1280, 540)
-texture = ExtResource("1_68p4a")
+texture = ExtResource("3_b42qf")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 
 [node name="SpawnPoint1" type="Marker2D" parent="."]
-position = Vector2(405, 449)
+position = Vector2(298, 689)
 
 [node name="SpawnPoint2" type="Marker2D" parent="."]
-position = Vector2(857, 232)
+position = Vector2(581, 206)
 
 [node name="SpawnPoint3" type="Marker2D" parent="."]
-position = Vector2(1623, 261)
+position = Vector2(1269, 398)
 
 [node name="SpawnPoint4" type="Marker2D" parent="."]
-position = Vector2(1460, 760)
+position = Vector2(2129, 188)
 
 [node name="SpawnPoint5" type="Marker2D" parent="."]
-position = Vector2(559, 794)
+position = Vector2(1837, 713)
+
+[node name="Shelters" type="Node" parent="."]
+
+[node name="FallTree" type="Sprite2D" parent="Shelters"]
+position = Vector2(607, 744)
+texture = ExtResource("5_04iwl")
+
+[node name="Kust" type="Sprite2D" parent="Shelters"]
+position = Vector2(1909, 845)
+texture = ExtResource("6_oxmlf")
+
+[node name="Bugor" type="Sprite2D" parent="Shelters"]
+position = Vector2(582, 267)
+texture = ExtResource("7_bmf3h")
+
+[node name="Tree" type="Sprite2D" parent="Shelters"]
+position = Vector2(2233, 434)
+scale = Vector2(1.31233, 1.31233)
+texture = ExtResource("8_3wlvi")
+
+[node name="Stones" type="Sprite2D" parent="Shelters"]
+position = Vector2(1263, 439)
+texture = ExtResource("8_b42qf")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

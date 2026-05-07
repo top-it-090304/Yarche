@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b0uyjl8ia2k7d" path="res://assets/img/SniperFindGame/Blick.png" id="3_q0pwd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wbdue"]
-radius = 61.0082
+radius = 53.7932
 
 [node name="Sniper" type="Area2D" groups=["sniper_hitbox"]]
 script = ExtResource("1_q0pwd")
