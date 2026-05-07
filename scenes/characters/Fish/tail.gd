@@ -1,9 +1,10 @@
 extends Sprite2D
 
-var rotation_speed = deg_to_rad(3)
-const MAX_ROTATION = deg_to_rad(60)
+var rotattion_offset = deg_to_rad(60)
+var time = 0.0
 
 func _process(delta: float) -> void:
-	if rotation > MAX_ROTATION or rotation < -MAX_ROTATION:
-		rotation_speed *=-1
-	rotate(rotation_speed)
+	time += delta*3
+	if time > PI*2:
+		time = 0
+	rotation = rotattion_offset*sin(time)

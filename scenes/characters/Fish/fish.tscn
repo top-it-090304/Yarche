@@ -10,6 +10,7 @@ radius = 137.143
 height = 640.0
 
 [node name="fish" type="CharacterBody2D"]
+position = Vector2(976, 464)
 scale = Vector2(0.7, 0.7)
 collision_layer = 2
 collision_mask = 2
