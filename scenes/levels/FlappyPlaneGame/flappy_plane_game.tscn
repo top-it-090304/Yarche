@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://e1ufls0nb670" path="res://scenes/levels/FlappyPlaneGame/flappy_plane_game.gd" id="1_ldkdg"]
 [ext_resource type="PackedScene" uid="uid://cba7kjatbwvpp" path="res://scenes/characters/Plane/plane.tscn" id="1_vgxqp"]
 [ext_resource type="PackedScene" uid="uid://dp6n5cjxmaxdd" path="res://scenes/objects/StormCloud/storm_cloud.tscn" id="2_36i2m"]
-[ext_resource type="Script" uid="uid://tk5qye7wbrpc" path="res://scenes/levels/FlappyPlaneGame/cloud_spawner.gd" id="4_wrnle"]
-[ext_resource type="AudioStream" uid="uid://cnirdtpyk66yx" path="res://assets/sounds/FlappyPlaneGame/StormSound.mp3" id="5_ukud7"]
+[ext_resource type="Script" path="res://scenes/levels/FlappyPlaneGame/cloud_spawner.gd" id="4_wrnle"]
+[ext_resource type="AudioStream" uid="uid://didi2ubq11kra" path="res://assets/sounds/FlappyPlaneGame/StormSound.ogg" id="5_ukud7"]
 
 [node name="FlappyPlaneGame" type="Node2D"]
 script = ExtResource("1_ldkdg")

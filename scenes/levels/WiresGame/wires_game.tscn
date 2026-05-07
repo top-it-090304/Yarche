@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cl2njyrwnde0d" path="res://scenes/levels/WiresGame/wire.tscn" id="2_fi330"]
 [ext_resource type="Texture2D" uid="uid://otttdne07hxj" path="res://assets/img/WiresGame/background.png" id="2_hbwa8"]
 [ext_resource type="Texture2D" uid="uid://b4tkcpia42ish" path="res://assets/img/WiresGame/PlugConnected.png" id="4_64svp"]
-[ext_resource type="AudioStream" uid="uid://cyjc2ihthgx7t" path="res://assets/sounds/WiresGameSounds/PlugConnected.mp3" id="5_hvwy0"]
+[ext_resource type="AudioStream" uid="uid://bvq82bbp53j86" path="res://assets/sounds/WiresGameSounds/PlugConnected.ogg" id="6_hbwa8"]
 
 [node name="WiresGame" type="Node2D"]
 script = ExtResource("1_ghg4v")
@@ -59,4 +59,4 @@ color_type = "yellow"
 connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugConnected" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_hvwy0")
+stream = ExtResource("6_hbwa8")

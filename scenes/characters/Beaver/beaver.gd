@@ -46,7 +46,7 @@ func _on_input_event(viewport, event, shape_idx):
 
 func _hide():
 	var end_position = Vector2(x_pos, lower_y_position)
-	var hide_tween = create_tween()
-	hide_tween.tween_property(self, "global_position", end_position, 0.3)
+	var hide_tween = create_tween().set_ease(Tween.EASE_IN)
+	hide_tween.tween_property(self, "global_position", end_position, 0.2)
 	hide_tween.tween_callback(func(): hide_end.emit())
 	

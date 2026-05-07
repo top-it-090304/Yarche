@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://mnyuaw3x5emr" path="res://scenes/objects/hummer/hummer.gd" id="1_2fw8s"]
 [ext_resource type="Texture2D" uid="uid://kanx8c2mjjfb" path="res://assets/img/HitTheBEaverGame/hummer.png" id="2_dr3t6"]
-[ext_resource type="AudioStream" uid="uid://ci2ubgcn1m5o" path="res://assets/sounds/HitTheBeaverGameSounds/hit_sound.mp3" id="3_dr3t6"]
+[ext_resource type="AudioStream" uid="uid://c7o884dwr6ipc" path="res://assets/sounds/HitTheBeaverGameSounds/hit_sound_1.ogg" id="3_dr3t6"]
 
 [node name="Hummer" type="Node2D"]
+position = Vector2(0, -3)
 script = ExtResource("1_2fw8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(112, -56)
+position = Vector2(112, -162)
 texture = ExtResource("2_dr3t6")
 offset = Vector2(-3, -106)
 

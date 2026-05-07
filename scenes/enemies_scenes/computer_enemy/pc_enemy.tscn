@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnlxtar1mv8c2"]
+[gd_scene load_steps=3 format=3 uid="uid://cnlxtar1mv8c2"]
 
 [ext_resource type="Script" uid="uid://dm12tnjrxm74b" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.gd" id="1_o5pgs"]
-[ext_resource type="DragonBonesFactory" uid="uid://cvmij21paypg6" path="res://assets/animated_char/enemies/angry_pc/robot_ske.dbfactory" id="2_nmqi5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1v3d"]
 size = Vector2(186, 237.5)
@@ -12,15 +11,6 @@ script = ExtResource("1_o5pgs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(31, 0)
 shape = SubResource("RectangleShape2D_w1v3d")
-
-[node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]
-factory = ExtResource("2_nmqi5")
-armature_settings = {
-&"current_animation": "animtion0",
-"sub_armatures": {}
-}
-position = Vector2(9, 20.25)
-scale = Vector2(0.1, 0.1)
 
 [node name="spawn_points" type="Node2D" parent="."]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bjqueqqvfcy0r" path="res://scenes/objects/fire/flame.gd" id="1_ew31w"]
 [ext_resource type="PackedScene" uid="uid://cj7bqqby5w2ws" path="res://scenes/objects/fire/fire_scene.tscn" id="1_sit8m"]
 [ext_resource type="Texture2D" uid="uid://bdupqcn6ro34b" path="res://assets/animated_objects/fire/Untitled.png" id="2_ew31w"]
-[ext_resource type="AudioStream" uid="uid://mrjj1h1n816" path="res://assets/sounds/FireGameSounds/fire_sound.mp3" id="4_pe3jq"]
+[ext_resource type="AudioStream" uid="uid://bix55mg3p4g3y" path="res://assets/sounds/FireGameSounds/fire_sound.ogg" id="4_pe3jq"]
 
 [node name="Flame" type="Node2D"]
 position = Vector2(667, 299)

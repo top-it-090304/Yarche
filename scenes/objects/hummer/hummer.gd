@@ -11,5 +11,5 @@ func _delete_hummer():
 
 func _play_animation():
 	var rotate_tween = create_tween()
-	rotate_tween.tween_property(hummer_sprite, "rotation", -70*3.14/180, 0.2)
+	rotate_tween.tween_property(hummer_sprite, "rotation", -70*3.14/180, 0.2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	rotate_tween.tween_callback(_delete_hummer)

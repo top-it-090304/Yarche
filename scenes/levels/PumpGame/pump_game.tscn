@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://ckoyw13tiflae" path="res://scenes/objects/pump/pump.tscn" id="1_iikc0"]
 [ext_resource type="Script" uid="uid://cyp87noyvm74j" path="res://scenes/levels/PumpGame/pump_game.gd" id="1_xdxwj"]
+[ext_resource type="AudioStream" uid="uid://cegt1vbbg0w3s" path="res://assets/sounds/PumpGameSounds/PumpSound.ogg" id="2_wkel7"]
 [ext_resource type="PackedScene" uid="uid://q4pvir07mj8s" path="res://scenes/objects/manometr/manometr.tscn" id="2_xdxwj"]
-[ext_resource type="AudioStream" uid="uid://b0soeww2gdh2d" path="res://assets/sounds/PumpGameSounds/PumpSound.mp3" id="4_u1ppj"]
-[ext_resource type="AudioStream" uid="uid://c6x8cfueem0iv" path="res://assets/sounds/PumpGameSounds/HissSound.mp3" id="5_u1ppj"]
+[ext_resource type="AudioStream" uid="uid://doq1qbwqq3iqw" path="res://assets/sounds/PumpGameSounds/HissSound.ogg" id="3_oy7x5"]
 [ext_resource type="AudioStream" uid="uid://ctv4dk1bd82om" path="res://assets/sounds/PumpGameSounds/PumpGameMusic.ogg" id="6_wkel7"]
 [ext_resource type="PackedScene" uid="uid://cohbcpor8k1vw" path="res://scenes/levels/PumpGame/wheel.tscn" id="6_x4kep"]
 
@@ -14,10 +14,10 @@ script = ExtResource("1_xdxwj")
 [node name="GameTimer" type="Timer" parent="."]
 
 [node name="PumpSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_u1ppj")
+stream = ExtResource("2_wkel7")
 
 [node name="HissSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_u1ppj")
+stream = ExtResource("3_oy7x5")
 volume_db = -10.57
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]

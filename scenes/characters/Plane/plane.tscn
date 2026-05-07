@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhkwrexycl685" path="res://scenes/characters/Plane/plane.gd" id="1_x7wlc"]
 [ext_resource type="Texture2D" uid="uid://cdeu0m3m33dme" path="res://assets/img/FlappyPlaneGame/Plane.png" id="2_x7wlc"]
-[ext_resource type="AudioStream" uid="uid://bo8g4h7s5dq4i" path="res://assets/sounds/FlappyPlaneGame/sfx_wing.mp3" id="3_2anew"]
+[ext_resource type="AudioStream" uid="uid://dp2lll2t0f1jc" path="res://assets/sounds/FlappyPlaneGame/sfx_wing.ogg" id="3_2anew"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7wlc"]
 radius = 19.0
