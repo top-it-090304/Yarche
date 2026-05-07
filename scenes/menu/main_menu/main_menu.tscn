@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuhro4nbykcsd"]
+[gd_scene load_steps=7 format=3 uid="uid://cuhro4nbykcsd"]
 
 [ext_resource type="AudioStream" uid="uid://su3x58oj8rgl" path="res://assets/sounds/music/main_menu_theme.ogg" id="1_dk276"]
 [ext_resource type="Script" uid="uid://cpttygmh08ow6" path="res://scenes/menu/main_menu/main_menu.gd" id="1_ww8d4"]
 [ext_resource type="PackedScene" uid="uid://c520wdi4qn8fx" path="res://scenes/menu/main_menu/main_menu_ui.tscn" id="2_3tda0"]
 [ext_resource type="Texture2D" uid="uid://drpo6wwnl08mu" path="res://assets/img/bg/main_menu/main_menu_bg.png" id="2_ww8d4"]
+[ext_resource type="Script" uid="uid://dyunvbrxf65y1" path="res://scenes/menu/main_menu/back_world.gd" id="3_wd51l"]
+[ext_resource type="Texture2D" uid="uid://dqcujhrckyng2" path="res://assets/img/ui/ui_img/tablet.png" id="5_ww8d4"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -23,6 +25,7 @@ color = Color(0, 0, 0, 1)
 [node name="MainMenuUi" parent="CanvasLayer" instance=ExtResource("2_3tda0")]
 
 [node name="back_world" type="Node" parent="."]
+script = ExtResource("3_wd51l")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="back_world"]
 stream = ExtResource("1_dk276")
@@ -31,6 +34,10 @@ autoplay = true
 [node name="Sprite2D" type="Sprite2D" parent="back_world"]
 position = Vector2(960, 540)
 texture = ExtResource("2_ww8d4")
+
+[node name="tablet" type="Sprite2D" parent="back_world"]
+position = Vector2(950, 104)
+texture = ExtResource("5_ww8d4")
 
 [node name="Camera2D" type="Camera2D" parent="back_world"]
 offset = Vector2(960, 540)
