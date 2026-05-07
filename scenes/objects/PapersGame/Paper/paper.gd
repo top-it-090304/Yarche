@@ -166,6 +166,7 @@ func start_drag(finger_position):
 	var animate_tween = create_tween().set_parallel(true)
 	animate_tween.tween_property(self, "scale", Vector2(1.05, 1.05), 0.2)
 	animate_tween.tween_property(self, "rotation", deg_to_rad(6), 0.2)
+	$AudioStreamPlayer2D.play()
 	
 func update_drag(finger_position):
 	var new_pos = finger_position - drag_offset

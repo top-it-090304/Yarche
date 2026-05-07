@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp0wnpqsqehnd"]
+[gd_scene load_steps=5 format=3 uid="uid://dp0wnpqsqehnd"]
 
 [ext_resource type="Script" uid="uid://b7n4k7x37dxki" path="res://scenes/levels/HitTheBeaverGame/hit_the_beaver_game.gd" id="1_vrv7t"]
 [ext_resource type="Script" uid="uid://dhcbwsrakwqrp" path="res://scenes/levels/HitTheBeaverGame/game_world.gd" id="2_5r7ub"]
 [ext_resource type="Texture2D" uid="uid://c7ogkwix7mryf" path="res://assets/img/HitTheBEaverGame/background.png" id="2_8a6jh"]
+[ext_resource type="AudioStream" uid="uid://djc7m14rsy21l" path="res://assets/sounds/music/calm_theme.ogg" id="4_123n1"]
 
 [node name="HitTheBeaverGame" type="Node2D"]
 script = ExtResource("1_vrv7t")
@@ -56,3 +57,6 @@ color = Color(1, 1, 1, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(960, 540)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_123n1")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7onspbeonqlx"]
+[gd_scene load_steps=8 format=3 uid="uid://b7onspbeonqlx"]
 
 [ext_resource type="Script" uid="uid://c6nobv4cbjyhx" path="res://scenes/levels/WaterMineGame/gameworld.gd" id="1_42rk3"]
 [ext_resource type="Script" uid="uid://bodjadifae5at" path="res://scenes/levels/WaterMineGame/water_mine_game.gd" id="1_lja53"]
 [ext_resource type="PackedScene" uid="uid://bhsqmxmi3pyui" path="res://scenes/objects/WaterMineGame/Mine.tscn" id="2_ie6ml"]
 [ext_resource type="PackedScene" uid="uid://dn5xnuwi3hs5t" path="res://scenes/objects/WaterMineGame/turtle.tscn" id="2_lja53"]
+[ext_resource type="AudioStream" uid="uid://bani4iouda87i" path="res://assets/sounds/music/agressive_theme.ogg" id="5_w6uqn"]
 
 [sub_resource type="Gradient" id="Gradient_cn7wi"]
 offsets = PackedFloat32Array(0, 0.295775, 0.764085, 1)
@@ -45,3 +46,6 @@ position = Vector2(1720, 776)
 position = Vector2(960, 540)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AgressiveTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_w6uqn")

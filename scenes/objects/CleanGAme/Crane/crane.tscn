@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://duq1i2cdf713q"]
+[gd_scene load_steps=6 format=3 uid="uid://duq1i2cdf713q"]
 
 [ext_resource type="Script" uid="uid://bkheoonhbrynq" path="res://scenes/objects/CleanGAme/Crane/crane.gd" id="1_dfnog"]
 [ext_resource type="Texture2D" uid="uid://12tlfpcffklx" path="res://assets/img/CleanGame/Crane.png" id="1_xe8fd"]
-
+[ext_resource type="AudioStream" uid="uid://bnmu0jshjbxst" path="res://assets/sounds/ObjectsSounds/crane.ogg" id="3_5rl1c"]
 
 [sub_resource type="Curve" id="Curve_xe8fd"]
 _data = [Vector2(0, 0.337079), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
@@ -31,3 +31,7 @@ position = Vector2(72, 92)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-408, -269, -474, 360, -312, 363, -340, -272, -421, -274)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5rl1c")
+autoplay = true
