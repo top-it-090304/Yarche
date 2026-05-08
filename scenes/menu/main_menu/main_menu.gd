@@ -3,12 +3,14 @@ const LEVEL_MENU = preload("res://scenes/menu/level_menu/level_menu.tscn")
 const animation_time = 1
 @onready var overlay: ColorRect = $overlay
 @onready var main_menu_ui: Control = $MainMenuUi
+@onready var back_world: Node = $"../back_world"
 
 func _ready():
 	main_menu_ui.play_button_pressed.connect(start_game)
 	
 func start_game():
 	_close_main_menu()
+	back_world.close_tablet(animation_time)
 	await get_tree().create_timer(animation_time+1).timeout
 	get_tree().change_scene_to_file("res://scenes/levels/base_level/base_level.tscn")
 	

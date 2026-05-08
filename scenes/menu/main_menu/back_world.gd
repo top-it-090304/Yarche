@@ -24,7 +24,11 @@ func show_tablet():
 	
 	tween.tween_property(tablet, "global_position:y", start_pos.y, 2)
 	tween.tween_callback(func(): is_animating = true)
+
+func close_tablet(time):
+	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	
+	tween.tween_property(tablet, "position:y", start_pos.y - tablet.get_rect().size.y, time)
 func animate_tablet():
 	tablet.global_position.x =  start_pos.x + tabl_offset*sin(time)
 	tablet.rotation = -rotation_offset*sin(time)
