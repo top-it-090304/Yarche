@@ -10,16 +10,32 @@
 [ext_resource type="Texture2D" uid="uid://70o5qcw1f2bk" path="res://assets/img/SniperFindGame/Stones.png" id="8_b42qf"]
 
 [node name="SniperFindGame" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_jmtb6")
+
+[node name="Sky" type="ColorRect" parent="."]
+offset_left = -1039.0
+offset_top = -459.0
+offset_right = 3101.0
+offset_bottom = 275.0
+color = Color(0.662745, 0.976471, 1, 1)
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = -1043.0
+offset_top = 267.0
+offset_right = 3105.0
+offset_bottom = 1502.0
+color = Color(0.278431, 0.752941, 0.0588235, 1)
 
 [node name="Dark" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
 [node name="Crosshair" parent="." instance=ExtResource("4_00tw7")]
 position = Vector2(1023, 690)
+scale = Vector2(0.840002, 0.840002)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1280, 540)
+position = Vector2(1005, 540)
 texture = ExtResource("3_b42qf")
 
 [node name="Timer" type="Timer" parent="."]
@@ -27,41 +43,47 @@ wait_time = 10.0
 one_shot = true
 
 [node name="SpawnPoint1" type="Marker2D" parent="."]
-position = Vector2(298, 689)
+position = Vector2(118.249, 789)
 
 [node name="SpawnPoint2" type="Marker2D" parent="."]
-position = Vector2(581, 206)
+position = Vector2(178.5, 198)
 
 [node name="SpawnPoint3" type="Marker2D" parent="."]
-position = Vector2(1269, 398)
+position = Vector2(770.5, 398)
 
 [node name="SpawnPoint4" type="Marker2D" parent="."]
-position = Vector2(2129, 188)
+position = Vector2(1613, 199)
 
 [node name="SpawnPoint5" type="Marker2D" parent="."]
-position = Vector2(1837, 713)
+position = Vector2(1339, 747)
 
 [node name="Shelters" type="Node" parent="."]
 
 [node name="FallTree" type="Sprite2D" parent="Shelters"]
-position = Vector2(607, 744)
+position = Vector2(358.249, 823)
+scale = Vector2(0.721354, 0.721354)
 texture = ExtResource("5_04iwl")
 
 [node name="Kust" type="Sprite2D" parent="Shelters"]
-position = Vector2(1909, 845)
+position = Vector2(1415, 860)
+scale = Vector2(0.72623, 0.726229)
 texture = ExtResource("6_oxmlf")
 
 [node name="Bugor" type="Sprite2D" parent="Shelters"]
-position = Vector2(582, 267)
+position = Vector2(191.289, 258)
+scale = Vector2(0.828125, 0.828125)
 texture = ExtResource("7_bmf3h")
 
 [node name="Tree" type="Sprite2D" parent="Shelters"]
-position = Vector2(2233, 434)
-scale = Vector2(1.31233, 1.31233)
+position = Vector2(1717, 408)
+scale = Vector2(1.08043, 1.08043)
 texture = ExtResource("8_3wlvi")
 
 [node name="Stones" type="Sprite2D" parent="Shelters"]
-position = Vector2(1263, 439)
+position = Vector2(764.5, 439)
 texture = ExtResource("8_b42qf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
