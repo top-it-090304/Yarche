@@ -3,6 +3,9 @@ extends CharacterBody2D
 var direction = Vector2.RIGHT
 var speed = 250.0
 var MAX_SPEED = 500.0
+var MIN_SPEED = 100.0
+var impulse_force = 20
+var is_win = false
 
 @onready var shoot_timer: Timer = $Timer
 @onready var spawn_points: Node2D = $spawn_points
@@ -51,12 +54,18 @@ func _on_bullet_fired():
 	emit_signal("hit")
 	current_bullet.queue_free()
 	
-func accelerate(acceleration = 20):
-	if speed < MAX_SPEED:
-		var current_speed = max(speed, 0.1)
-		speed += acceleration * (1 / (current_speed / MAX_SPEED))
-	
-func _process(delta):
+func accelerate():
+	velocity.x += impulse_force
+
+func _physics_process(delta):
+	if not is_win:	
+		velocity.x = clamp(velocity.x, MIN_SPEED, MAX_SPEED)
+		move_and_slide()
 		
-	velocity = direction*speed
-	move_and_slide()
+
+func stop():
+	is_win = true
+	velocity.x = 0
+	$BodyAnimator.speed_scale = 0.5
+	$AnimationPlayer.speed_scale = 0.0
+	shoot_timer.timeout.disconnect(on_shoot_timer_timeout)

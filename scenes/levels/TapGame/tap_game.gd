@@ -1,11 +1,11 @@
 extends Node2D
 @onready var gameworld: Node = $Gameworld
-@onready var tap_game_control: Control = $TapGameControl
+@onready var tap_game_control: Control = $Gameworld/CanvasLayer/Control
 @onready var computer_enemy: CharacterBody2D = $Gameworld/computer_enemy
 @onready var green_player: CharacterBody2D = $Gameworld/green_player
 @onready var timer: Timer = $Timer
 
-@export var timer_time = 1
+@export var timer_time = 4
 signal lose
 signal win
 
@@ -34,13 +34,16 @@ func _connect_game_logics():
 	timer.wait_time = timer_time
 	timer.one_shot = true
 	
-	timer.timeout.connect(_win_ending)
+	timer.timeout.connect(show_win_animation)
 	timer.start()
 func _accelerate():
 	computer_enemy.accelerate()
 	green_player.accelerate()
-func _win_ending():
-	timer.queue_free()
+func show_win_animation():
+	green_player.stop()
+	computer_enemy.stop()
+	computer_enemy.hit.disconnect(_lose_ending)
+	await get_tree().create_timer(1).timeout
 	win.emit()
 
 func _lose_ending():

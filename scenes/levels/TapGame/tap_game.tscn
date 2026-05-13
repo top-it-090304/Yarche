@@ -1,14 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://c13g7jj1q06pu"]
+[gd_scene load_steps=6 format=3 uid="uid://c13g7jj1q06pu"]
 
 [ext_resource type="Script" uid="uid://quwjx4n0fgwe" path="res://scenes/levels/TapGame/tap_game.gd" id="1_tpkqk"]
-[ext_resource type="Texture2D" uid="uid://c170vg30ignmo" path="res://assets/img/bg/futuristic_city/city_0007_1.png" id="2_cpvjp"]
-[ext_resource type="Texture2D" uid="uid://dbafp3oytl07w" path="res://assets/img/bg/futuristic_city/city_0006_2.png" id="3_tfmx7"]
-[ext_resource type="Texture2D" uid="uid://b21i83gwmwl7d" path="res://assets/img/bg/futuristic_city/city_0005_3.png" id="4_1e5at"]
-[ext_resource type="Texture2D" uid="uid://dn45xrx024j63" path="res://assets/img/bg/futuristic_city/city_0004_4.png" id="5_6l0q0"]
-[ext_resource type="Texture2D" uid="uid://b4ph11macn1x1" path="res://assets/img/bg/futuristic_city/city_0003_5.png" id="6_mmxtc"]
-[ext_resource type="Texture2D" uid="uid://p02qama6p514" path="res://assets/img/bg/futuristic_city/city_0002_6.png" id="7_jimdd"]
-[ext_resource type="Texture2D" uid="uid://bp5kg82p0v4w0" path="res://assets/img/bg/futuristic_city/city_0001_7.png" id="8_olvpy"]
-[ext_resource type="Texture2D" uid="uid://bsumd20rbsh3u" path="res://assets/img/bg/futuristic_city/city_0000_8.png" id="9_0i0cy"]
+[ext_resource type="Script" uid="uid://cvqdykemvn8gx" path="res://scenes/levels/TapGame/control.gd" id="5_uu0og"]
 [ext_resource type="PackedScene" uid="uid://cnlxtar1mv8c2" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.tscn" id="10_otrse"]
 [ext_resource type="PackedScene" uid="uid://c3rrjgyq7n74o" path="res://scenes/characters/green_player/green_player.tscn" id="11_i604k"]
 [ext_resource type="AudioStream" uid="uid://bu1df51xgsdlp" path="res://assets/sounds/music/agressive_theme2.ogg" id="12_eav6w"]
@@ -18,82 +11,29 @@ script = ExtResource("1_tpkqk")
 
 [node name="Gameworld" type="Node" parent="."]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Gameworld"]
-layer = -1
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("2_cpvjp")
-centered = false
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_scale = Vector2(0.1, 1)
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("3_tfmx7")
-centered = false
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_scale = Vector2(0.2, 1)
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("4_1e5at")
-centered = false
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_scale = Vector2(0.3, 1)
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("5_6l0q0")
-centered = false
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_scale = Vector2(0.4, 1)
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("6_mmxtc")
-centered = false
-
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource("7_jimdd")
-centered = false
-
-[node name="ParallaxLayer7" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_scale = Vector2(0.8, 1)
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource("8_olvpy")
-centered = false
-
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer8"]
-texture = ExtResource("9_0i0cy")
-centered = false
-
 [node name="computer_enemy" parent="Gameworld" instance=ExtResource("10_otrse")]
-position = Vector2(141, 599)
+position = Vector2(224, 804)
 
 [node name="green_player" parent="Gameworld" instance=ExtResource("11_i604k")]
-position = Vector2(643, 568)
+position = Vector2(1414, 772)
 
 [node name="Camera2D2" type="Camera2D" parent="Gameworld/green_player"]
 position = Vector2(2, -211)
+zoom = Vector2(0.45, 0.45)
 
 [node name="AgressiveTheme2" type="AudioStreamPlayer" parent="Gameworld"]
 stream = ExtResource("12_eav6w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Gameworld"]
+
+[node name="Control" type="Control" parent="Gameworld/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_uu0og")
 
 [node name="Timer" type="Timer" parent="."]
 

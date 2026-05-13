@@ -15,7 +15,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-240, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -48,7 +48,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-360, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
@@ -59,7 +59,7 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(208, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
@@ -103,7 +103,7 @@ tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-552, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/9/type = "bezier"
@@ -114,7 +114,7 @@ tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(208, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/10/type = "bezier"
@@ -136,7 +136,7 @@ tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-648, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/12/type = "bezier"
@@ -147,7 +147,7 @@ tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-16, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/13/type = "bezier"
@@ -359,12 +359,14 @@ position = Vector2(1024, 568)
 script = ExtResource("1_kgn25")
 
 [node name="right-hand" type="CollisionPolygon2D" parent="."]
+position = Vector2(-240, 0)
 polygon = PackedVector2Array(-32, -96, 32, -96, 32, 96, -32, 96)
 
 [node name="Sprite2D" type="Sprite2D" parent="right-hand"]
 texture = ExtResource("2_kgn25")
 
 [node name="Left-leg" type="CollisionPolygon2D" parent="."]
+position = Vector2(-360, 208)
 polygon = PackedVector2Array(24, 64, 8, 88, -16, 72, -40, -64, -24, -80, 32, -80, 40, -56)
 
 [node name="Sprite2D" type="Sprite2D" parent="Left-leg"]
@@ -387,12 +389,14 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="RIght-leg" type="CollisionPolygon2D" parent="."]
+position = Vector2(-552, 208)
 polygon = PackedVector2Array(24, 64, 8, 88, -16, 72, -40, -64, -24, -80, 32, -80, 40, -56)
 
 [node name="Sprite2D" type="Sprite2D" parent="RIght-leg"]
 texture = ExtResource("3_l2fg8")
 
 [node name="Left-hand" type="CollisionPolygon2D" parent="."]
+position = Vector2(-648, -16)
 polygon = PackedVector2Array(-32, -96, 32, -96, 32, 96, -32, 96)
 
 [node name="Sprite2D" type="Sprite2D" parent="Left-hand"]

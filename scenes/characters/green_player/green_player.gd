@@ -4,7 +4,7 @@ var is_win = false
 var direction = Vector2.RIGHT
 var MIN_SPEED = 150.0
 var MAX_SPEED  = 1000.0
-var friction = 0.95
+var friction = 0.98
 var impulse_force = 400.0
 
 func _ready():
@@ -27,6 +27,7 @@ func accelerate():
 func stop():
 	is_win = true
 	velocity = Vector2.ZERO
+	$AnimationPlayer.speed_scale = 1.0
 	$AnimationPlayer.play("smile")
 
 func set_min_speed(new_min_speed):
