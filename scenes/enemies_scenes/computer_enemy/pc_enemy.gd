@@ -14,11 +14,15 @@ var index = 0
 signal hit
 
 func _ready():
+	$BodyAnimator.play("run")
+	$AnimationPlayer.play("wheels_animation")
+	
 	shoot_timer.wait_time = cooldown
 	shoot_timer.timeout.connect(on_shoot_timer_timeout)
 	shoot_timer.start()
 	
 func on_shoot_timer_timeout():
+	print("shoot")
 	if current_bullet != null:
 		current_bullet.queue_free()
 	var points = spawn_points.get_children()

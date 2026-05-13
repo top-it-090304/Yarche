@@ -1,23 +1,207 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnlxtar1mv8c2"]
+[gd_scene load_steps=14 format=3 uid="uid://cnlxtar1mv8c2"]
 
 [ext_resource type="Script" uid="uid://dm12tnjrxm74b" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.gd" id="1_o5pgs"]
+[ext_resource type="Texture2D" uid="uid://bqrtsfl0ggqs6" path="res://assets/img/TapGame/koleso.png" id="2_eh6u6"]
+[ext_resource type="Texture2D" uid="uid://bawlt8470r3xc" path="res://assets/img/TapGame/body (3).png" id="3_eh6u6"]
+[ext_resource type="Texture2D" uid="uid://casb8nmngnbei" path="res://assets/img/TapGame/head.png" id="4_qkl3n"]
+[ext_resource type="Texture2D" uid="uid://cwyi355fo4mfx" path="res://assets/img/TapGame/koleso-1.png" id="5_xoy6c"]
+[ext_resource type="Texture2D" uid="uid://dth555t1wa800" path="res://assets/img/TapGame/gun.png" id="6_4ulqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1v3d"]
-size = Vector2(186, 237.5)
+size = Vector2(385, 674)
+
+[sub_resource type="Animation" id="Animation_fcocd"]
+resource_name = "run"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.659755, 1),
+"update": 0,
+"values": [-0.523599, 0.523599]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.659, 1),
+"update": 0,
+"values": [Vector2(270, -234), Vector2(429, 111)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.659, 1),
+"update": 0,
+"values": [-0.164061, 0.841249]
+}
+
+[sub_resource type="Animation" id="Animation_nogio"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.164061]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(327, -47)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btfh2"]
+_data = {
+&"RESET": SubResource("Animation_nogio"),
+&"run": SubResource("Animation_fcocd")
+}
+
+[sub_resource type="Animation" id="Animation_ig4bu"]
+resource_name = "wheels_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../wheelbig:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../wheelsmall:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_0h2gs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../wheelsmall:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../wheelbig:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtygc"]
+_data = {
+&"RESET": SubResource("Animation_0h2gs"),
+&"wheels_animation": SubResource("Animation_ig4bu")
+}
 
 [node name="computer_enemy" type="CharacterBody2D"]
 script = ExtResource("1_o5pgs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(31, 0)
+position = Vector2(39.5, -68.0001)
 shape = SubResource("RectangleShape2D_w1v3d")
 
 [node name="spawn_points" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="spawn_points"]
-position = Vector2(155, -29)
+position = Vector2(524, 85.9999)
 
 [node name="Marker2D2" type="Marker2D" parent="spawn_points"]
-position = Vector2(155, 39)
+position = Vector2(536, -280)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="wheelsmall" type="Sprite2D" parent="."]
+position = Vector2(121, 174)
+texture = ExtResource("2_eh6u6")
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(58, 163)
+texture = ExtResource("3_eh6u6")
+offset = Vector2(1.3291, -141.674)
+
+[node name="head" type="Sprite2D" parent="body"]
+position = Vector2(0, -383)
+texture = ExtResource("4_qkl3n")
+
+[node name="wheelbig" type="Sprite2D" parent="."]
+position = Vector2(-22, 191)
+texture = ExtResource("5_xoy6c")
+
+[node name="BodyAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_btfh2")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../BodyAnimator")
+libraries = {
+&"": SubResource("AnimationLibrary_qtygc")
+}
+
+[node name="gun" type="Sprite2D" parent="."]
+position = Vector2(327, -47)
+rotation = -0.164061
+texture = ExtResource("6_4ulqj")

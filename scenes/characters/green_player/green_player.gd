@@ -8,9 +8,6 @@ var friction = 0.95
 var impulse_force = 400.0
 
 func _ready():
-	var timer = get_tree().create_timer(2)
-	timer.timeout.connect(stop)
-	velocity.x = MAX_SPEED
 	$AnimationPlayer.play("run")
 	
 func _physics_process(delta):
