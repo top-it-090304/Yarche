@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c13g7jj1q06pu"]
+[gd_scene load_steps=7 format=3 uid="uid://c13g7jj1q06pu"]
 
 [ext_resource type="Script" uid="uid://quwjx4n0fgwe" path="res://scenes/levels/TapGame/tap_game.gd" id="1_tpkqk"]
 [ext_resource type="Script" uid="uid://cvqdykemvn8gx" path="res://scenes/levels/TapGame/control.gd" id="5_uu0og"]
+[ext_resource type="Texture2D" uid="uid://dr6tugk5arrf5" path="res://assets/img/TapGame/bg.png" id="6_rhn8l"]
 [ext_resource type="PackedScene" uid="uid://cnlxtar1mv8c2" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.tscn" id="10_otrse"]
 [ext_resource type="PackedScene" uid="uid://c3rrjgyq7n74o" path="res://scenes/characters/green_player/green_player.tscn" id="11_i604k"]
 [ext_resource type="AudioStream" uid="uid://bu1df51xgsdlp" path="res://assets/sounds/music/agressive_theme2.ogg" id="12_eav6w"]
@@ -15,11 +16,10 @@ script = ExtResource("1_tpkqk")
 position = Vector2(224, 804)
 
 [node name="green_player" parent="Gameworld" instance=ExtResource("11_i604k")]
-position = Vector2(1414, 772)
+position = Vector2(1935, 743)
 
 [node name="Camera2D2" type="Camera2D" parent="Gameworld/green_player"]
-position = Vector2(2, -211)
-zoom = Vector2(0.45, 0.45)
+position = Vector2(-904, -203)
 
 [node name="AgressiveTheme2" type="AudioStreamPlayer" parent="Gameworld"]
 stream = ExtResource("12_eav6w")
@@ -34,6 +34,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_uu0og")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Gameworld"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
+motion_mirroring = Vector2(3293, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gameworld/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("6_rhn8l")
+offset = Vector2(960, 540)
 
 [node name="Timer" type="Timer" parent="."]
 

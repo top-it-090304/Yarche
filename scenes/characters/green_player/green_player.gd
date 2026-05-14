@@ -5,7 +5,7 @@ var direction = Vector2.RIGHT
 var MIN_SPEED = 150.0
 var MAX_SPEED  = 1000.0
 var friction = 0.98
-var impulse_force = 400.0
+var impulse_force = 200.0
 
 func _ready():
 	$AnimationPlayer.play("run")

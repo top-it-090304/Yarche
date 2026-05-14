@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direction = Vector2.RIGHT
-var speed = 250.0
+
 var MAX_SPEED = 500.0
 var MIN_SPEED = 100.0
 var impulse_force = 20
@@ -11,7 +11,7 @@ var is_win = false
 @onready var spawn_points: Node2D = $spawn_points
 var cooldown = 0.5
 const bullet_scene = preload("res://scenes/objects/shot/shot.tscn")
-var bullet_speed = speed*4
+var bullet_speed = 1000
 var current_bullet = null
 var index = 0
 signal hit
@@ -45,6 +45,7 @@ func spawn_bullet(spawn_point):
 		bullet.global_position = spawn_point.global_position
 		bullet.set_speed(bullet_speed)
 		bullet.set_direction(direction)
+		bullet.scale = Vector2(1.5,1.5)
 		get_tree().current_scene.add_child(bullet)
 		bullet.fired.connect(_on_bullet_fired)
 		return bullet
@@ -66,6 +67,7 @@ func _physics_process(delta):
 func stop():
 	is_win = true
 	velocity.x = 0
+	if current_bullet: current_bullet.queue_free()
 	$BodyAnimator.speed_scale = 0.5
 	$AnimationPlayer.speed_scale = 0.0
 	shoot_timer.timeout.disconnect(on_shoot_timer_timeout)

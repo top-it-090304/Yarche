@@ -5,7 +5,7 @@ extends Node2D
 @onready var green_player: CharacterBody2D = $Gameworld/green_player
 @onready var timer: Timer = $Timer
 
-@export var timer_time = 4
+@export var timer_time = 15
 signal lose
 signal win
 
@@ -39,6 +39,7 @@ func _connect_game_logics():
 func _accelerate():
 	computer_enemy.accelerate()
 	green_player.accelerate()
+
 func show_win_animation():
 	green_player.stop()
 	computer_enemy.stop()
