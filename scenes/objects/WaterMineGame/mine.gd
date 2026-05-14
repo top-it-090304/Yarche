@@ -1,7 +1,7 @@
 extends RigidBody2D
 signal exploded
 signal deleted
-
+@onready var particles: GPUParticles2D = $GPUParticles2D
 
 var move_direction
 var speed = 100
@@ -10,6 +10,7 @@ var speed = 100
 var is_dissolving = false
 var is_exploded = false
 func _ready() -> void:
+	
 	angular_velocity = deg_to_rad(30)
 	angular_damp = 0.0	
 	connect("input_event", _on_mine_clicked)
@@ -37,14 +38,15 @@ func explode():
 	tween.set_parallel(true)
 	tween.tween_property(self, "scale", Vector2(1.5,1.5), 0.9).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	
-	#tween.set_parallel(false)
 	tween.tween_property(sprite, "modulate", Color.ORANGE_RED, 0.3)
 	tween.tween_property(sprite, "modulate", Color.RED, 0.3)
 	tween.tween_property(sprite, "modulate", Color.ORANGE, 0.3)
 	
-	
 	await get_tree().create_timer(0.9).timeout
 	sprite.visible = false
+	particles.emitting = true
+	
+	await get_tree().create_timer(0.5).timeout
 	exploded.emit()
 	queue_free()
 	
