@@ -1,0 +1,1249 @@
+Commit: 7a863258bac99d1f4270542d31677f949ac01249
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-14 09:21:46 +0600
+Subject: Фон для игры-тапалки
+Body: 
+---
+Commit: be52ca3d3074d53093dffc9e7088768b601694cb
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-14 00:19:29 +0600
+Subject: Физическвя обработка движения робота, анимация улыбки при выигрыше
+Body: 
+---
+Commit: 3b9d566ab279a371bc03a07917bdf8ed9f48e6c6
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-13 23:46:42 +0600
+Subject: Анимация компьютера
+Body: 
+---
+Commit: c35bf7bea582d7da0c430b275dc6eb02d6fc7d8a
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-12 23:59:59 +0600
+Subject: Переход на скелетную анимацию через animation player, анимация зеленого персонажа, прописание методов ускоререния, остановки.
+Body: 
+---
+Commit: 99a23f463b342302ff059fd501c40236ec941d00
+Author: zhivushko <pasiforg@gmail.com>
+Date: 2026-05-10 14:16:58 +0600
+Subject: Экспорт двух rpm для 32 и 64 бита
+Body: 
+---
+Commit: f3684bf5bfb378c4e28510d0f33e22860c3a7018
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-05-09 21:30:16 +0600
+Subject: Анимация победы в игре про снайпера
+Body: В игре про поиск снайпера добавлена анимация победы: камера наезжает на противника
+
+---
+Commit: 08ab32df2678ab11546b56b53e5ff01866c59980
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-08 13:10:57 +0600
+Subject: Анимация ухода таблички в главном меню
+Body: 
+---
+Commit: 6863c00cf511c98aa73b1c2660c10f052963d81d
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-05-08 00:44:17 +0600
+Subject: Спрайты для игры про снайпера
+Body: Для игры про снайпера добавлены собственные спрайты: укрытия (куст, бугор, поваленное дерево, дерево, камни) и фон
+
+---
+Commit: 6fb32f53965303d8c4ec82f51ffc95b1196d4283
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-08 00:30:59 +0600
+Subject: Анимация хвоста рыбы изменена с линейной на синосуидальную
+Body: 
+---
+Commit: 3e689ba00be5f483771b205b0ef69792b9e90dd5
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-08 00:19:04 +0600
+Subject: Добавление некоторых звуков
+Body: 
+---
+Commit: 67e83907f2a443dff95f109c2aeccf002f5854ee
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-07 23:42:05 +0600
+Subject: В  главное меню добавлена табличка
+Body: 
+---
+Commit: 761c11f1be2e9dfd01c2d5d3a5f2a36cd0713420
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-07 22:57:08 +0600
+Subject: Переход на формат ogg для экспорта, в игре про бобров изменена анимация молотка
+Body: 
+---
+Commit: 8146b830162bc45416d41f77129b3111f2e695f8
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-05-07 22:27:57 +0600
+Subject: Переходт на анимации с помощью твинов, т.к. экспорт под авррору не поддерживает шейдеры
+Body: 
+---
+Commit: 22a5098286952d3153df0417a4f9b3431ca1106f
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-05-07 14:09:59 +0600
+Subject: Спрайт снайпера и блик
+Body: Изменен спрайт снайпера и добавлен блик от прицела
+
+---
+Commit: c3856afc1c463654b79bb18fabf5711deb381948
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-05-01 01:58:12 +0600
+Subject: Заменен спрайт снайпера
+Body: Улучшен спрайт снайпера
+
+---
+Commit: 1bfdecdec45fe86f522b5926648896f2b4f5a6b9
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-05-01 00:53:05 +0600
+Subject: Включение игры про поиск снайпера
+Body: Игра про поиск снайпера подключена к последовательности игр
+TODO: добавить обучение, улучшить спрайты, добавить анимации победы и поражения
+
+---
+Commit: 895e1f7a1bbf1e8c713c7cf18c6426260554a787
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-29 23:18:55 +0600
+Subject: Туториал игры с минами.
+Body: 
+---
+Commit: 887fbf8b9f6fde9d526d39ea186e588609b29102
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-29 23:00:57 +0600
+Subject: Анимация взрыва с использованием шейдера частиц, фон, добавление мини-игры с минами в главный уровень
+Body: 
+---
+Commit: aa88f6c24c19ec4b54841eac9fcaaec57eff7b0b
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-29 19:09:06 +0600
+Subject: При запуске игры производится перемшка мини игр и выбираются первые пять
+Body: 
+---
+Commit: b0c52cf73757a2ec2e41c51bea91e198a89a6167
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-29 19:02:33 +0600
+Subject: Исключен выбор уровня
+Body: 
+---
+Commit: 73237344fe09f57ea1722f4a28e276e0ca5fb236
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-29 18:38:19 +0600
+Subject: Данные об уровнях переведеный в массив словарей
+Body: 
+---
+Commit: 32a13667e691cd4a12711cf75f3b7c0c88bfcc44
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-29 18:23:37 +0600
+Subject: Отладочное меню для запуска мини игры на выбор
+Body: 
+---
+Commit: 801b324ed7f38275038bc93ba0de0eb0edc22482
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-24 21:09:29 +0600
+Subject: Плавное движение прицела
+Body: В игре про поиск снайпера добавлено плавное движение прицела к цели
+
+---
+Commit: 9e1b8ede9d825f56a07b7afb008ad340b5a72fce
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-24 20:53:21 +0600
+Subject: Скрипт игры
+Body: В игре про поиск снайпера добавлена основная игровая логика
+
+---
+Commit: 102ab517ae33d3374538cf444b3c0658e1b6cedc
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-24 16:29:03 +0600
+Subject: Черная пелена
+Body: В игре про нахождение снайпера добавлен CanvasModulate, который закрывает весь экран черным и прорезается светом от прицела
+
+---
+Commit: ec0ec1db91177c9f993becebc3c2fb36bafbbad2
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-24 02:33:33 +0600
+Subject: Добавлена логика ожиданий конца взрывов и исчезновений. Добавлена логика выигрыша когда все мины удалены, проигрша при взрыве
+Body: 
+---
+Commit: 7b0f85bdfc98b2fcd04ac0dd77ec08c705a47557
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-24 02:08:09 +0600
+Subject: Анимация взрыва бомбы,  обработка столкновений
+Body: 
+---
+Commit: 84980b816ac044302a4f3a080e15be10fb120a03
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-24 01:29:35 +0600
+Subject: Сцена основной игры
+Body: Добавлена сцена с фоном и объектами
+TODO: решить проблему подсветки окружения в прицеле
+
+---
+Commit: dff7113e956c322cac880c148af00754ad139307
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-24 01:18:04 +0600
+Subject: Добавлена анимированная черепаха с физикой столкновений
+Body: 
+---
+Commit: ec5fc31821d1e5453f6bc490cae9789a03638d3f
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-24 00:51:32 +0600
+Subject: Сцена прицела
+Body: Для игры про поиск снайпера добавлена сцена прицела
+
+---
+Commit: 2f1b9d461316ae664c9c9b576b096bbf5540f2ec
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-24 00:45:40 +0600
+Subject: Сцена снайпера и спрайты
+Body: Для игры про обнаружение снайпера добавлена сцена врага и простые спрайты
+
+---
+Commit: 5751519e22a828d6acc1fec677fd31fa037d3aab
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-23 23:42:04 +0600
+Subject: Логика стремления каждой мины к выбранной цели в мини-игре
+Body: 
+---
+Commit: aeb4681a02dfc84139a932a2e551443672a89d3d
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-23 23:22:22 +0600
+Subject: Сцена мины, которая исчезает с анимированныс шейдером по нажатии. Начало работы на над новой мини-игрой
+Body: 
+---
+Commit: 1f9119d3ce4b65d59155dbc71b7e81cca3da6961
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-22 00:26:39 +0600
+Subject: Обучение к игре про запоминание
+Body: В игру про запоминание добавлено обучение перед началом
+
+---
+Commit: a429d34c3e3b923997232e6e705a0cce9c524bc1
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-21 23:52:12 +0600
+Subject: Звук нажатия на кнопку
+Body: Добавлен звук нажатия на кнопку в игре про запоминание + добавлено ожидание окончания анимации кнопки перед завершением игры
+
+---
+Commit: 722ae4ba8cbe29ed20260e24df217dcffd8a9d88
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-20 21:46:41 +0600
+Subject: Анимация падения очистка сделана красивее
+Body: 
+---
+Commit: afe1066448b0b92fade38bacf934a521b6433f55
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-20 21:35:02 +0600
+Subject: Установлен задний фон игы с чисткой картошки, доработана логика игры, добавлена в базовый уровень
+Body: 
+---
+Commit: 6ef2b28bc1d5eec3bcacdfd7b6ad688e96f5cdde
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-20 21:12:00 +0600
+Subject: Ассет картошки, анимация снятия кожуры, установление связи снятия кожуры и взмаха ножа
+Body: 
+---
+Commit: 0ab30fc0553368f9f0c25904837149d59237474a
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-20 00:59:21 +0600
+Subject: Подключение игры на запоминание
+Body: Игра про запоминание добавлена в общую последовательность. Также увеличен размер кнопок в листе бумаги. Добавлена тень кнопкам
+
+---
+Commit: ffb1408d29681f1330155671cd949414e1bdb1e1
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-04-18 23:11:33 +0600
+Subject: Звук взмаха ножа.
+Body: 
+---
+Commit: 0d98bcae0137b8dd691409f206cf1af959503fc7
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-04-18 23:02:47 +0600
+Subject: Спрайт ножа, анимация ножа, привязка анимации ко свайпу вниз.
+Body: 
+---
+Commit: f7d798f4f3985fe0ff06685acce1ab69555cea49
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-04-18 21:31:40 +0600
+Subject: cleangame upd: статус *чистый* теперь устанавливается только после смены текстуры, начало работы над новой мини игрой: создан узел, определяющий направление свайпа
+Body: 
+---
+Commit: ad29a3721bdc4255850d9ec87e27d152c1d28682
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 21:29:41 +0600
+Subject: Скрипт игры с запоминанием
+Body: Добавлена игровая логика
+TODO: добавить таймер, увеличить размер кнопок в листе, добавить обучение
+
+---
+Commit: 0f40e4f325eba00b73b12e81c62c790820b376ba
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 21:06:17 +0600
+Subject: Спрайт и скрипт листка
+Body: Для листка с комбинацией добавлен скрипт и спрайт
+
+---
+Commit: 96fb2ebedb7cc97d303e61c7228d13b98416399a
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 11:47:40 +0600
+Subject: Листок с комбинацией
+Body: Добавлена сцена листка, на котором будет показываться комбинация кнопок перед началом игры
+
+---
+Commit: fce9e859fe6ec19b8d70aed38fbbac900217dae5
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 02:24:12 +0600
+Subject: Расположение кнопок
+Body: В игре про запоминание кнопки расставлены по столу, прописаны их id
+
+---
+Commit: 6d6c7040feb1430b9d3dea968cd2a83155af89fc
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 02:08:35 +0600
+Subject: Исправление кнопки
+Body: Кнопки переделаны под sprite2d с collision shape, вместо button. У спрайтов сильнее затемнена нижняя область
+
+---
+Commit: 598d90890df3d673d04ce7aa0ab7d0e8d5e5cf85
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 01:47:28 +0600
+Subject: Спрайты для игры про запоминание
+Body: В игру про запоминание добавлены спрайты кнопок и стола
+
+---
+Commit: 0e7a7253eabed874e2c60a2cf0ff9444470e7a5e
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-17 01:01:37 +0600
+Subject: Устранен баг с неправильными границами экрана в игре про рыбу
+Body: 
+---
+Commit: f3938eca318cdec49ea1a2f435f862d6e5a025ac
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 00:55:17 +0600
+Subject: Сцена игры про запоминание
+Body: Создан макет сцены, осталось разместить кнопки, добавить спрайты
+
+---
+Commit: 1f34f07da3e66f393760870bd1cab442b38f8a65
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-17 00:44:30 +0600
+Subject: Туториал обучения новой мини-игры
+Body: 
+---
+Commit: 5fe5ea202b698f33d23d9ebdfb4d3e636fe50b62
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 00:34:39 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: 14bd8628a5c6593227f1aa5d7e5cca108eeb5af0
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-17 00:33:23 +0600
+Subject: Сцена кнопки
+Body: Добавлена сцена кнопки со скриптом для игры про запоминание
+
+---
+Commit: 1b54934fbcbb122d23b0e60d60f1dd6bf70c2c5f
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-17 00:18:06 +0600
+Subject: Доработка игры в бумагами: увеличен список событий, дописана логика, игра вставлена в базовый уровень
+Body: 
+---
+Commit: 4a9d5dab2f80436944e845d93a5c824576e02c40
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-16 23:42:47 +0600
+Subject: Добавлена базовая игровая логика: спавн новой бумаги, обездвиживание, если бумага в своей зоне
+Body: 
+---
+Commit: daf26510c25e939805613f6f4662068419544906
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-16 21:58:47 +0600
+Subject: Написана логика выбора случайного текста бумаги, добавлена анимация легкого увеличения и наклона, когда берем бумагу
+Body: 
+---
+Commit: 68010112d9579297ea17f34c8872e02e5d55044f
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-16 21:04:07 +0600
+Subject: Создан общий файл темы для текста туториалов с целью экономии памяти и дальнейшего ускорения эффективности работ. Начало работы на мини игрой  с разбором бумаг. Создан фронт сцены деловой бумаги.
+Body: 
+---
+Commit: 493522607d102031d5e22103e562aefe411c085d
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-15 19:31:45 +0600
+Subject: Фиксы в играх про самолет и насос
+Body: В игре про насос увеличена коллизия ручки, заменен спрайт манометра
+В игре про самолет исправлен таймер, теперь он точно обозначает конец игры, а не прекращение спавна туч
+
+---
+Commit: 970709ad8ed277a3ed68ba70c6f472c9fe546fa1
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-04-10 16:43:16 +0600
+Subject: ТУториал новой мини-игры, увеличен оттуп текста от верхней границы во всх туториалах.
+Body: 
+---
+Commit: 690a0b5244cbfcbf8794f631ee725771c24aebcf
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-04-10 12:12:57 +0600
+Subject: Доработка игры с мытьем банана.
+Body: 
+---
+Commit: 36aca8635b05c99b2c7a6e94b9c4131d32528f7d
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-10 11:16:44 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: ff45965abd83cd6749fdafefaf3b033bad90ffc7
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-10 11:15:46 +0600
+Subject: APK файл
+Body: Добавлен APK файл, обновлен exe
+
+---
+Commit: 272c7c86fb817fbc11f85af6adb87320e19237d2
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-10 10:52:14 +0600
+Subject: Звуки для для игры про самолет
+Body: В игру про самолет добавлены звуки грома при подлете к тучам и звук взлета самолета
+
+---
+Commit: 3a08e0e444eca51ec58f3b352478a000869134bc
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-10 00:43:21 +0600
+Subject: Порт на windows
+Body: Игра портирована на windows, увеличено время игры для самолёта
+
+---
+Commit: e8b7e209b726a776585f68181e8db1de766b84bb
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-04-09 18:05:21 +0600
+Subject: Лого загрузочного экрана, пак иконок
+Body: 
+---
+Commit: 6ab7b88ca697dd1392bfefefddc57741d0bca0d5
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-08 11:36:55 +0600
+Subject: Адаптив игры с насосм переделан переделан для возможности инстанцирования в base_level
+Body: 
+---
+Commit: 22c14730a15ac185ebdc8df159e53af89bbedd1b
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-07 20:50:09 +0600
+Subject: Адаптив игры с насосом
+Body: 
+---
+Commit: f3d543974e178d011072d0b4ebdc0fa8e70ba584
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-07 18:14:12 +0600
+Subject: Добавлена анимация струи воды по синусоидальному закону, логика изменения текстуры банан при прикосновении к зоне течения воды
+Body: 
+---
+Commit: 095b4d9604f81fb58a3b8b80900c4a00c4a8c9fa
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-07 11:06:02 +0600
+Subject: Добавлена сцена крана со струей
+Body: 
+---
+Commit: df28a9c523f4a2c4b2258fc163e4d8d504eac15d
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-07 10:49:37 +0600
+Subject: Создан объект (сцена) банана, с методом смены текстуры на чистую, добавлена логика управления с помощью зажатия и установление границ экрана перед стартом мини игры
+Body: 
+---
+Commit: deb2a4dfd12986f973e71969ecc50930f05c5b66
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-07 00:53:50 +0600
+Subject: Адаптирована под большой экран игра с розетками: логика следования за пальцем теперь относительно не позиции события касания, а глобального положения курсора
+Body: 
+---
+Commit: 7f045f846e1df6438bb5f00e7e8a81be14f3e44a
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-06 23:34:17 +0600
+Subject: Исправлен баг с таймером в игре про бобров, усложнен уровень с избеганим мусора
+Body: 
+---
+Commit: 8c59ddd607b5875bd74552a7d34ccd26b82c2e58
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-06 23:05:07 +0600
+Subject: Исправлен баг управления в игре уворачивайся от мусора
+Body: 
+---
+Commit: a5e1796434464032e0bbdf83b8361f7497af46b3
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-06 14:26:35 +0600
+Subject: Обучение в игре про самолет
+Body: В игру про самолет добавлено обучение перед игрой
+
+---
+Commit: dac15e92810500ba57feb6430e36657c3be4c385
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-06 14:08:48 +0600
+Subject: Исправление бага с остановкой игры
+Body: FIX: в игре про самолет исправлен баг, когда после проигрыша игрок выходит в меню и не может ничего сделать, потому что игра поставлена на паузу
+
+---
+Commit: 5050d9ffed793cdcc30ecb0ba2116d9c74d8dde7
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-06 14:03:14 +0600
+Subject: Адаптив игры про самолет
+Body: Адаптированы размеры фона и объектов под новые экраны
+
+---
+Commit: 3db70aabfbdce4ff5a0eb488858bacaca0cb9b4f
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-03 02:14:47 +0600
+Subject: Адаптив игры с рыбкой, замена текстур на варианты с лучшим разрешением
+Body: 
+---
+Commit: 4b61a3354b07a22c80f44195d02795e44f27b194
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-03 00:42:55 +0600
+Subject: Подключение игры про самолет
+Body: Игра про самолет подключена к базовому уровню (подключены сигналы, настройка таймера). Также добавлено зависание самолета в воздухе до первого тапа игрока
+
+---
+Commit: 6889ec0373ee3317ef9f803f49b1876837a74c5a
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-03 00:30:33 +0600
+Subject: Переработка UI: перевод на русский, во всей игре используется единый шрифт
+Body: 
+---
+Commit: e35fa146fdb40e7468ce87661f842afbc5139c41
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-03 00:14:30 +0600
+Subject: Доработка спавна туч
+Body: Добавлены два средних ряда для спавна, добавлена анимация затемнения неба
+
+---
+Commit: 81aadca29ab6fa871236154493d68034955fedab
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-02 23:38:30 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: ee9ec0adfc78b29c826d7acf5475d23dff86befb
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-02 23:38:17 +0600
+Subject: Спавн туч
+Body: Добавлен спавн туч, которые предстоит облетать
+
+---
+Commit: c6e184c29566b47cb9674b79134dfcfd4bac7122
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-02 23:35:19 +0600
+Subject: Улучшение разрешения кнопок уровней, их стилизация, улучшение анимации появления меню уровней, адаптив менню уровней под все экраны
+Body: 
+---
+Commit: 2041d255e0d10e1dc9d9ca9ecab6bcdacb462f62
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-02 23:09:19 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: 695cc53909bd25ab1b1a23fb47639eecea1c82cf
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-02 23:04:53 +0600
+Subject: Коллизии самолета и туч
+Body: Изменены коллизии самолета и туч, теперь проверка столкновения приходится конкретно на корпус самолета
+
+---
+Commit: 73d7bee5a19fb65670d7c68d6319fd64f580ddc3
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-02 23:02:25 +0600
+Subject: Адаптив главного меню
+Body: 
+---
+Commit: 26f86b59e05d45bbed7980f14eced3c10a7e9529
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-02 22:55:28 +0600
+Subject: Спрайт грозовой тучи
+Body: Спрайт грозовой тучи изменен на добавленный ассет
+
+---
+Commit: f440e616abd41e7008733c2996d8b3f0122a9471
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-02 22:45:17 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: a24ed6ec87e771444e98d048ab46a62e103b89ff
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-04-02 22:45:13 +0600
+Subject: Добавлен ассет грозовой тучи
+Body: Для игры про самолет добавлен ассет грозовой тучи
+
+---
+Commit: 84f5c7b9466fdb37844bcd08656844ec164fc36c
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-02 22:39:50 +0600
+Subject: Адаптив меню проигрыша/выигрыша
+Body: 
+---
+Commit: fc2f450387031a8a2c7e39ea9db833ffc901b1b8
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-02 21:40:34 +0600
+Subject: Добавлен адаптив всех обучений
+Body: 
+---
+Commit: cf35b351be3fa915fb8b2e8dd00b3b524745f1d7
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-02 21:21:10 +0600
+Subject: Добавлена адаптив туториала игры про бобров
+Body: 
+---
+Commit: 429b56deaaa827d28c1ec60dbb1f5bfe5ff40e5d
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-02 20:34:48 +0600
+Subject: Удален аддон на скелетную анимацию, мини-игры, которые его использовали временно недоступны (вырезаны из уровня, но файлы сцен остались). p.s. Экспорт под аврору не поддерживает использование GD Extensions, ввиду этой причины упрощаем внешний вид
+Body: 
+---
+Commit: f5d83e46aeca0c541eb5d3304886e00862e44118
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-02 20:04:30 +0600
+Subject: Добавлен адаптив под экраны игры ударь бобра, исправлен баг: теперь одного бобра можно ударить только один раз
+Body: 
+---
+Commit: 65a9a94ccf6b3bc230f6ff1efbe7fb02b0553d32
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-04-01 19:57:41 +0600
+Subject: Ассет для игры, где надо мыть фрукт
+Body: 
+---
+Commit: 063fa18297826a25966916260f3b9084068761cb
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-27 17:38:54 +0600
+Subject: Скрипт самолета
+Body: В скрипт самолета добавлен наклон при падении и при взлете. Спрайт заменен на новый
+
+---
+Commit: ddd49187a1b681e4d1b872005a4bc4209d59bd17
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-27 17:08:18 +0600
+Subject: Спрайт самолета
+Body: Добавлен спрайт самолета для игры про него
+
+---
+Commit: b32128d51a760dcc9bad786391687b8606012537
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-27 00:59:13 +0600
+Subject: Логика столкновений
+Body: В игре про самолет добавлена простая логика столкновений (самолет входит в зону тучи - игра окончена)
+
+---
+Commit: 8b8409e6d3a7efd8a826ac175eddad1f63f8d7c5
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-27 00:53:06 +0600
+Subject: Добавлена сцена тучи
+Body: Сцена тучи, в которую может врезаться самолет, пока что с чужим спрайтом
+
+---
+Commit: 9ef892e95b361cd4deeb60ea1399b35466351996
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-27 00:24:04 +0600
+Subject: Сцена самолета
+Body: Добавлена сцена самолета, пока на чужом спрайте и простом скрипте
+
+---
+Commit: ad8c12feedeebbfba649078440f17a28a487b792
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-27 00:10:25 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: b46b648652162d3fca9e94e88c472a74cdd63322
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-27 00:10:02 +0600
+Subject: Сцена для игры про самолет
+Body: Добавлена базовая сцена, где будут размещаться объекты для игры про самолет (тучи и сам летательный аппарат)
+
+---
+Commit: 69354363846792708cf3faf6810fd94f1b06eed0
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-27 00:06:04 +0600
+Subject: Добавлен туториал на управление в игру, перенесена в базоый уровень
+Body: 
+---
+Commit: 309c8849142d164e2d3a6c72a79e536ea1813cd2
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-26 22:45:58 +0600
+Subject: Добавлена генерация мусорных объектов, реализована логика передвижения каждого, исправлен баг с путаницей коллизий мусорных объектов
+Body: 
+---
+Commit: 9ce1abdbb691ad55c3615cb56e92716c648d206e
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-26 21:43:17 +0600
+Subject: Добавлена сцена мусорного объекта (инициалищация коллизий и спрайта через код), в ассеты добавлены текстуры пакета с мусором, отвертки
+Body: 
+---
+Commit: 7d94ca42dfc44c4ce1ac5fd031e3c16a285a6718
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-26 00:34:15 +0600
+Subject: AvoidTheGarbage upd: рыба больше не может переместиться за пределы экрана
+Body: 
+---
+Commit: 23de9b814d113c51c2d847a506be0419e0bcef4d
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-26 00:18:37 +0600
+Subject: Начало работы над новой мини-игрой: реализованы анимированный спрайт рыбы, задний фон и управление рыбой свайпом
+Body: 
+---
+Commit: 93c25dcc6d5cfbe27c5597bbded1afbc9b1f2ee8
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-25 20:30:50 +0600
+Subject: TapGame upd: теперь враг не так быстро пропадает с экрана, ускоряется вместе с персонажем
+Body: 
+---
+Commit: 66b2e9e2a4cbe1f334807309255095aecc036b8f
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-03-22 12:05:09 +0600
+Subject: Добавлено обучение к игре ударь бобра, пофикшен звук в Tapgame, первый игровой кадр, появляющийся перед туториалом теперь не включает музыку.
+Body: 
+---
+Commit: 8cb64a92559fa9184d9fa47043de5c8852b84e20
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-03-22 11:10:39 +0600
+Subject: HitTheBeaverGame upd: добавлен молоток, логика его появления и звук.
+Body: 
+---
+Commit: e8212006a44c58bab5cc5ba152e110914ad6c246
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-20 20:57:23 +0600
+Subject: Рандом розеток в игре про провода
+Body: Добавлено случайное расположение розеток при запуске нового уровня. Разработка игры про провода фактически завершена
+
+---
+Commit: f887a9736157dfd5792ffdf922e3d615c3c080b1
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-20 20:14:47 +0600
+Subject: Скрипт для звука подключения
+Body: В скрипте уровня про провода добавлено проигрывание звука подключения вилки к розетке
+
+---
+Commit: 886e04a78fde2aee92a106f3549ddb8e386e29dd
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-20 18:41:01 +0600
+Subject: Звук подключения розетки
+Body: Добавлен звук подключения розетки
+TODO: включать его в скрипте при подключении
+
+---
+Commit: d613112306998942593356aebb6df66ae33d1fe7
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-20 11:46:55 +0600
+Subject: Исправлено обучение в игре про насос
+Body: FIX: Обучение игры про насос копировало обучение игры про провода
+
+---
+Commit: 40ac555a0b29b60adc028668e96f567b97adaeba
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-20 01:48:09 +0600
+Subject: Доработана игра ударь бобра: логика начисления очков, сигналы выигрыша/проигрыша, удаление и повяление бобров, жизненный цикл бобра.
+Body: 
+---
+Commit: 9e82f6b100fb53d6e36949e4c11dc845d558547c
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-20 01:04:03 +0600
+Subject: Создана функция спавна бобров в случайных точках.
+Body: 
+---
+Commit: bff251f50fd57a9fe6fa495968efcacac335f42e
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-20 00:34:13 +0600
+Subject: Добавлена анимация появления бобра, реализована функция спавна бобрас учетом маски (вылазит ровно из лунки)
+Body: 
+---
+Commit: b46b6614ee3e9c464eeaa60cc1adbce4e68eec95
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-19 23:14:04 +0600
+Subject: Добавлено обучение в игру про провода
+Body: Перед началом игры показывается обучение
+
+---
+Commit: c7edc3cb7f32ea79264cb9d0ae3ec2255fc03d93
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-19 23:06:06 +0600
+Subject: Добавлены кадры для обучения к игре про провода
+Body: Добавлены кадры, которые будут использованы в сцене обучения
+
+---
+Commit: f4fad5b0a462936ab3217825a43f70c4af3c36ca
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-19 22:14:44 +0600
+Subject: Подключение игры про провода
+Body: В игре про провода изменены цвета розеток и вилок, игра подключена в общую последовательность игр
+
+---
+Commit: 24b3080b752c919d5c317943291717203d51a7ca
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-19 21:57:24 +0600
+Subject: Fix PumpGame: возврат фона; Structure upd: переименована игры-тапалки для соблюдения единообразия в именовании. Начало работы над игрой ударь-бобра: ассеты, сцена бобра, расставление точек спавна и установление базовой логики, общей для каждой мини-игры.
+Body: 
+---
+Commit: ecaf0726422d0469b1d266f877a3a6fc9627f950
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-19 21:49:58 +0600
+Subject: Обучение в игре про провода
+Body: В игру про провода добавлен показ обучения (пока со старой анимацией)
+
+---
+Commit: 404e808ed5a4132c6eca6ec074983aa347b05c08
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-19 21:47:04 +0600
+Subject: Стандартизация игры про провода
+Body: Игра с проводами приведена к новой концепции, добавлено экспортное время и сигналы победы/поражения
+
+---
+Commit: 723738ac230182200a6d4a5b723da3d8a9d62d4e
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-19 21:29:49 +0600
+Subject: Revert "Таймер в игре про насос"
+Body: This reverts commit 3f5884286bffcf224a34ead9a17690e31a0ee98c.
+
+---
+Commit: 3f5884286bffcf224a34ead9a17690e31a0ee98c
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-19 21:17:19 +0600
+Subject: Таймер в игре про насос
+Body: FIX: время оставлено как экспортная переменная, был возвращен показатель оставшегося времени
+
+---
+Commit: f6d7c6ee8d45e512e906c2f8dfefd00d23bce83c
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-18 23:05:57 +0600
+Subject: Таймер бар вынесен на иерархический уровень с базовым уровнем.Архитектура игры про насос теперь подходит для использования в уровне, игра добавлена в экспериментальный уровень.
+Body: 
+---
+Commit: 7d918faff575ea35d5a05b2f5a267902a128904c
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-18 21:07:14 +0600
+Subject: Ассет для подключенной вилки
+Body: Добавлен ассет для подключенного состояния вилки
+
+---
+Commit: 8a975410440715b6f97e5005bb32385795b40350
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-13 17:07:34 +0600
+Subject: Ассет вилки
+Body: Изменен ассет вилки, область сверху сделана темнее для большего выделения при покраске, изменена форма
+
+---
+Commit: ec84fc411ee3514dca4826ddcfda2aa55ce6fa3c
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-13 16:57:20 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: 7f3267d895771ca3b10bdcb76a3e9f33b5a43b97
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-13 16:57:17 +0600
+Subject: Скрипт игры
+Body: Добавлена механика тянущегося за вилкой провода и возможность подключать вилку сразу при соприкосновении с розеткой
+
+---
+Commit: d28c10e3cb897cfc37cbcba2898a53583afda856
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-13 15:47:37 +0600
+Subject: Доработана игра с огнем: звук с микрофона не транслируется в сцену, добавлен звук огня, затихающий при задувании
+Body: 
+---
+Commit: 573286bbb17cd95c7c9b773d4085ab14ed503350
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-13 00:28:36 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: 12757d4112180afb9b8e6e208c9731bcea4dee8c
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-13 00:28:32 +0600
+Subject: Скрипт игры
+Body: Добавлен скрипт для игры, можно перетаскивать вилки и подключать их
+TODO: 1. Сделать, чтобы тянулись провода; 2. Добавить спрайт для подключенной вилки и переключать его в коде
+
+---
+Commit: 9dffc71871a215e9fe115bb98357309aeef8f47f
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-13 00:13:36 +0600
+Subject: FIREGAME upd: в процессе показа туториала будет браться на анализ средний уровень тишины, затем порог звука для задуввния будет создаваться относительно него
+Body: 
+---
+Commit: 61e6b16db700e03898d8996e8e9d468d42881734
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-12 23:46:08 +0600
+Subject: Преобразована сцена игры про провода
+Body: Добавлены 4 вилки и 4 розетки, определены их цвета
+
+---
+Commit: a73c88f655bd9fafcd5d38db2fd392a75445ffab
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-12 23:17:39 +0600
+Subject: Изменения в скрипте розетки
+Body: В скрипте розетки добавлено окрашивание спрайта в зависимости от указанного цвета
+
+---
+Commit: a33f0d5c3fd0c3585427ac9154c4de439ae9974d
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-12 22:51:20 +0600
+Subject: Скрипт розетки
+Body: Добавлен скрипт розетки
+
+---
+Commit: ef91cddad43ece4d63a0f46472a4619a0a80fd21
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-12 22:42:57 +0600
+Subject: Скрипт и сцена для вилки
+Body: Изменена сцена для вилки, корневым узлом стала area для обнаружения пересечений. Добавлен скрипт для вилки
+
+---
+Commit: fb04f9d0e1f827bb854a3b5aaaca9ea47b2eb40c
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-12 20:28:30 +0600
+Subject: Сцена розетки
+Body: Добавлена сцена розетки
+
+---
+Commit: 11d5bfa71acb559ade71d4d5e7133245bd4e6e49
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-12 20:05:10 +0600
+Subject: Ассет для розетки
+Body: Добавлен ассет для пустой розетки
+
+---
+Commit: 920417120b8cf60df93141006e1912142ec98456
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-12 15:51:19 +0600
+Subject: Переработана структура для мини игр: игра посылает сигнал выигрыш/проигрыш, вызов сцены с меню проигрыша/выигрыша происходит из скрипта уровня.
+Body: 
+---
+Commit: 0fd100ddf95af30ac5a8ce56ccc255e8392d72db
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-12 15:25:29 +0600
+Subject: Добавлена анимация появления меню проигрыша/выигрыша
+Body: 
+---
+Commit: c661dc40b2ad8dccfe6648bb100c9f3973eb1ef6
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-11 23:42:37 +0600
+Subject: Установлена связь между меню уровня и уровнем, окончание уровня так же ведет теперь в главное меню
+Body: 
+---
+Commit: f80cfbf4771c9770d7baae9780c8964caf408aa4
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-11 23:19:40 +0600
+Subject: Улучшена структура, реализована логика перехода из меню проигрыша в главное меню или перезагрузка уровня в при проигрыше
+Body: 
+---
+Commit: 2cc481299606102f579294b886c5ad9941d52fd2
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-11 22:22:51 +0600
+Subject: Добавлена сцена меню проигрыша
+Body: 
+---
+Commit: 06e0ac773d041bae65a2845132d5f203b0561280
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-11 21:10:59 +0600
+Subject: Update README.md
+Body: 
+---
+Commit: 91ebb6918e88ee12167284f2d4eef141b1cbed07
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-03-09 13:54:22 +0600
+Subject: Переделан код игры-тапалки. Теперь она пригодна для включения в уровень, прикреплено обучение и меню выигрыша.
+Body: 
+---
+Commit: a2c9b20975c614e6a315056e8ff14b1c7dbfa97a
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-03-09 12:47:55 +0600
+Subject: upd fire-game: теперь сигнал окончания мини игры привязан к нажатию кнопки продолжить в промежуточном меню
+Body: 
+---
+Commit: d136461fa4daf547487b92624e12477ba398b3c9
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-06 23:27:23 +0600
+Subject: Добавлена сцена базового уровня (пока что с записанной последовательностью мини игр. Сформировано комплексное понимание единообразия для структур мини-игр.
+Body: 
+---
+Commit: c10891c98091d74e5dfb1fe4fbff8e905d2685e1
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-06 20:13:01 +0600
+Subject: Сцена провода
+Body: Добавлена сцена для провода с вилкой
+
+---
+Commit: fb62a4569133dcbd3095cf47084eb57fc92db964
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-06 19:32:07 +0600
+Subject: Сцена игры про провода
+Body: Добавлена база для игры про соединение проводов
+
+---
+Commit: 92aa8ac335df30e203dc35142f2dfc09257eaff0
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-05 23:24:54 +0600
+Subject: Добавлен выигрыш в игре про насос
+Body: В игре про насос в случае победы показывается сцена
+
+---
+Commit: 3155e8af4bc13f47eae4030da774b05b0ca70a69
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-05 23:20:14 +0600
+Subject: Музыка в игре про насос
+Body: В игру про насос добавлена музыка
+
+---
+Commit: 4a0de18f5fe2f89ed3c7ae2375263b0646912f90
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-05 23:07:34 +0600
+Subject: Колесо
+Body: Добавлено колесо для отслеживания прогресса в игре про насос
+
+---
+Commit: 9ef47ce8e653816af3f7e3e3f4bc52e31cfcc34e
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-05 22:32:22 +0600
+Subject: Анимация колеса
+Body: Добавлены кадры для колеса в игру про насос
+
+---
+Commit: dd26d756d0b3f2a1b37646a36cd32a94abfb0bac
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-04 23:51:08 +0600
+Subject: Добавлена сцена успешного прохождения с прописанной логикой обработки нажатия кнопки продолжить
+Body: 
+---
+Commit: 391dd677ab8b983e35eeafed10c014bb545b3744
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-04 00:01:11 +0600
+Subject: Улучшена логика игры с огнем: теперь огонь имитирует сигнал выигрыша при достижении довольно малый размеров. С сигналов выигрыша удаляется объект для записи с микрофона
+Body: 
+---
+Commit: 2fe4f95c8d03611a9d84858205607206c57f6014
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-03 23:30:21 +0600
+Subject: Написана музыка для игры с насосом, добавленая анимация туториала игры с задуванием.
+Body: 
+---
+Commit: 583d04a4c347fc14fd7d5fb8d79cc6f37d55e870
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-03-03 21:08:01 +0600
+Subject: Сцена обучения
+Body: Переделана сцена обучения. Убран текст сверху, оставлено только пояснение, что делать
+
+---
+Commit: 5366c3cc5e5fe7083586a8fc8970318ed84d8876
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-03-01 19:00:26 +0600
+Subject: Улучшены анимации в главном меню, доработана анимация уменьшения огня в миним игре: теперь она плавная
+Body: 
+---
+Commit: cd21cdd149f6b8303997b6099f721e67bd5c3f56
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-03-01 00:12:31 +0600
+Subject: Улучшен фронтенд главного меню, добавлено меню уровней и анимация его появления
+Body: 
+---
+Commit: 0680702717dfc33fedf3d2e82041fa41ee088a74
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-02-28 20:28:35 +0600
+Subject: Добавлен звук огня и сцена с анимированным обучением для игры-тапалки
+Body: 
+---
+Commit: 1b160f371b152fa6c17aea9e327151ae81c57714
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-27 20:59:58 +0600
+Subject: Добавлено обучение
+Body: Сцена обучения подключена к игре
+
+---
+Commit: 3d75ee33bafcc75a945407a6cc63655e13a013b7
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-27 20:40:02 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: 43f49bda544170463aa5af8018d03ef3bc552ae7
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-27 20:39:16 +0600
+Subject: Сцена обучения
+Body: Добавлена сцена обучения для игры про насос
+
+---
+Commit: 5549004f90133463b36a1972bb2879abd002d5e6
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-02-27 18:18:10 +0600
+Subject: Добавлен фронтенд главного меню, изменена логика зеленого персонажа (отсутсвтие ввода вне контекста уровня), во избежание конфликтов добавлен .godot в gitignore
+Body: 
+---
+Commit: b6f1aedc98c3130a5de750b6b9502af8408b526c
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-02-27 18:11:27 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: 1d2e77ff1fdb8ad1afb2b933ef2394921a843d0a
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-02-27 18:08:43 +0600
+Subject: Создан фронтенд главного меню, переделана логика для зеленого персонажа, теперь вне контекста уровня не считывает тапы
+Body: 
+---
+Commit: 029ad2a5287e0871d8f4b416ccecd8340e50b988
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-27 11:41:43 +0600
+Subject: Звук шипения
+Body: В игре про насос добавлен звук шипения при спуске колеса и в коде добавлена логика этого
+
+---
+Commit: 869e5264a146d095574c5ab49e896afa0b396ce2
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-02-27 00:39:19 +0600
+Subject: Почти доработана логика игры с огнем. Теперь при дуве в микрофон - огонь уменьшается.
+Body: 
+---
+Commit: 8a37a96771b59a4f65b3518f3ac00ad42939e4cf
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-26 23:15:08 +0600
+Subject: Update editor_layout.cfg
+Body: 
+---
+Commit: 6d780b9184bfd5439e44c25be292435c1027a96b
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-26 23:14:51 +0600
+Subject: Звук качки
+Body: Добавлен звук при движении ручки насоса
+
+---
+Commit: 6d70ea72fe9afb2e57620d537321fe8fe72ae6b4
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-26 22:41:47 +0600
+Subject: Доработка кода
+Body: Доработан код, добавлено стравливание давления, исправлены ошибки в коде
+
+---
+Commit: 2258dd46fc97265e4969e8f9f6147e5693bb20a7
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-26 22:11:51 +0600
+Subject: Изменение ассетов для игры про насос
+Body: Ассеты заменены на более приятные
+
+---
+Commit: fae06a2d5c4438b7e05a335ff5cc8bbda180ee52
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-26 17:57:29 +0600
+Subject: Добавлен фон и создана сцена мини игры с задуванием.
+Body: 
+---
+Commit: 7ce4e5aa331b104491b2ba31f47be4d5489d4f1e
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-26 17:32:00 +0600
+Subject: Обновление огня, добавлен  спрайт бревен костра.
+Body: 
+---
+Commit: 52c67b5ef3f144a867f87466670886d619198437
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-26 14:01:37 +0600
+Subject: Фон для игры про насос
+Body: Добавлен фон для игры про насос. В коде убрана возможность сломать насос при неправильном свайпе
+
+---
+Commit: 9b78202392f2d9e40b4f562f081d656e4b14dde0
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-26 00:39:41 +0600
+Subject: Добавлена анимация огня, реализована логика приявязки нижней части огня к своему началюному положении, при изменении scale. Теперь касания мушью эмулируют нажатия на экран телефона
+Body: 
+---
+Commit: 093a036ef9cfec1732a29353b661dabcfd076688
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-20 16:52:37 +0600
+Subject: Переработана структура
+Body: 
+---
+Commit: 2272e69d3eae12975a51c01b6290ff2a26c8f343
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-20 16:08:39 +0600
+Subject: Скрипт для мини-игры про насос
+Body: 
+---
+Commit: 0e11a63d5695e4bdd3baf17b7d12a984c7af308c
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-20 14:42:42 +0600
+Subject: Merge branch 'dev_branch' of https://github.com/top-it-090304/Yarche into dev_branch
+Body: 
+---
+Commit: aa4f5efaeec572d7134f10059cc637aca0450e37
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-20 14:41:52 +0600
+Subject: Изменен ассет корпуса насоса
+Body: Градиент изменен на простую заливку
+
+---
+Commit: 03b3939df923cee344a45a16663dbfdc62d78e62
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-20 13:41:04 +0600
+Subject: Добавлена информация о технологическом стеке и процессе разработки
+Body: 
+---
+Commit: 86ddae1406d945f62f093c2de7bb547398f1700a
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-20 00:52:09 +0600
+Subject: Завершение первого уровня
+Body: 
+---
+Commit: 17153d1156fbb57171308d9b269fdc04331627d5
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-20 00:42:47 +0600
+Subject: Закончен первый уровень
+Body: 
+---
+Commit: 3b0060860db56d68cae7e2fcb0b7343ca573c042
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-19 23:15:39 +0600
+Subject: Спрайты для насоса
+Body: Добавлены спрайты для сборки насоса: ручка, корпус, маска
+
+---
+Commit: 4aa7e7d6c0a3b7b02d165751ac8950354b7fd26c
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-19 21:16:06 +0600
+Subject: Добавлена физика движение персонажа с учетом инерции
+Body: 
+---
+Commit: 8b0c51bbcda261b2c8bc86f4e126785e93246180
+Author: Artyom Abramov <geroshold@hotmail.com>
+Date: 2026-02-19 21:02:36 +0600
+Subject: Спрайт манометра
+Body: Добавлен спрайт манометра для игры про насос
+
+---
+Commit: e727536463478050709401fec734159457b70642
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-19 19:55:57 +0600
+Subject: Внесены изменения в первый игровой уровень: добавлена логика генерации пуль относительно врага, переработан минималистичный UI с пояснением управления (добавлено плавное визуальное затухание)
+Body: 
+---
+Commit: d1968a60b2f291604e30c7823f2e34178e62f575
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-18 19:28:32 +0600
+Subject: Добавлена авторская музыка, авторская скелетная анимация, созданы игровые персонажи,которые будут использованы.
+Body: 
+---
+Commit: cb4ffae6efd7c46d7949c68ed848d424708d1815
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-02-13 15:32:03 +0600
+Subject: Add enemy +  music
+Body: 
+---
+Commit: 19591d5ca60d5cf37bb90e32f4ca86a05e206ca3
+Author: Pavel Zhivushko <pasiforg@gmail.com>
+Date: 2026-02-12 22:57:13 +0600
+Subject: First demo-versin. We added a simple player, who walks with acceleration
+Body: 
+---
+Commit: 22b37acb2b863c5543163158832e99a654354e6f
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-06 18:18:51 +0600
+Subject: Update README.md
+Body: 
+---
+Commit: 245c691edcce5e4ad91ca19ada79c44fc813362b
+Author: Pavel <pasiforg@gmail.com>
+Date: 2026-02-06 18:16:38 +0600
+Subject: Initial commit
+Body: 
+---
