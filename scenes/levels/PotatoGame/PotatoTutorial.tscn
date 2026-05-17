@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfclvpkoilsdk"]
+
+[ext_resource type="Script" uid="uid://4m3071ht3qcj" path="res://scripts/tutorial.gd" id="1_c2yl7"]
+[ext_resource type="Theme" uid="uid://bjqimrk7netpe" path="res://assets/font/TutiorialText.tres" id="2_3tldy"]
+[ext_resource type="Texture2D" uid="uid://c5ydn88cy3a4o" path="res://assets/img/PotatoGame/utorialFrames/SwipeTutorial 1.png" id="3_mm8ov"]
+[ext_resource type="Texture2D" uid="uid://dup6bseejowyk" path="res://assets/img/PotatoGame/utorialFrames/SwipeTutorial 2.png" id="4_c2yl7"]
+[ext_resource type="Texture2D" uid="uid://bik7387xrygf6" path="res://assets/img/PotatoGame/utorialFrames/SwipeTutorial 3.png" id="5_3tldy"]
+[ext_resource type="Texture2D" uid="uid://c3kuitwcte7o" path="res://assets/img/PotatoGame/utorialFrames/SwipeTutorial 4.png" id="6_rgduj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yj1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mm8ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c2yl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3tldy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rgduj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="PotatoGameTutoria;" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_c2yl7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.065
+offset_left = -588.0
+offset_right = 588.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3tldy")
+text = "Свайпай, чтобы резать картошку!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="tutorial_frames" type="AnimatedSprite2D" parent="Control/Control"]
+position = Vector2(24, 26)
+scale = Vector2(0.891602, 0.891602)
+sprite_frames = SubResource("SpriteFrames_4yj1t")
+autoplay = "default"
+frame_progress = 0.180362
