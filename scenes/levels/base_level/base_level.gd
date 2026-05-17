@@ -30,6 +30,7 @@ var current_result_scene: Node
 var current_game_id = 0
 
 func _ready():
+	#dissolve()
 	set_level_data()
 	_load_current_game()
 	
@@ -123,6 +124,11 @@ func _reset_camera():
 		# Форсируем обновление камеры
 		viewport.canvas_transform = Transform2D.IDENTITY
 		viewport.global_canvas_transform = Transform2D.IDENTITY
-		
+
+func dissolve():
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/ColorRect, "modulate", Color(0,0,0,0),0.5)
+	tween.tween_callback(func(): $CanvasLayer/ColorRect.visible = false)
 func _back_to_menu():
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu/main_menu.tscn")
+	

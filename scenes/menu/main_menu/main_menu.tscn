@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuhro4nbykcsd"]
+[gd_scene load_steps=9 format=3 uid="uid://cuhro4nbykcsd"]
 
 [ext_resource type="AudioStream" uid="uid://su3x58oj8rgl" path="res://assets/sounds/music/main_menu_theme.ogg" id="1_dk276"]
 [ext_resource type="Script" uid="uid://cpttygmh08ow6" path="res://scenes/menu/main_menu/main_menu.gd" id="1_ww8d4"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://drpo6wwnl08mu" path="res://assets/img/bg/main_menu/main_menu_bg.png" id="2_ww8d4"]
 [ext_resource type="Script" uid="uid://dyunvbrxf65y1" path="res://scenes/menu/main_menu/back_world.gd" id="3_wd51l"]
 [ext_resource type="Texture2D" uid="uid://dqcujhrckyng2" path="res://assets/img/ui/ui_img/tablet.png" id="5_ww8d4"]
+[ext_resource type="PackedScene" uid="uid://c3rrjgyq7n74o" path="res://scenes/characters/green_player/green_player.tscn" id="7_pqpva"]
+[ext_resource type="PackedScene" uid="uid://cnlxtar1mv8c2" path="res://scenes/enemies_scenes/computer_enemy/pc_enemy.tscn" id="8_rek8k"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -41,3 +43,9 @@ texture = ExtResource("5_ww8d4")
 
 [node name="Camera2D" type="Camera2D" parent="back_world"]
 offset = Vector2(960, 540)
+
+[node name="CharacterBody2D" parent="back_world" instance=ExtResource("7_pqpva")]
+position = Vector2(1728, 632)
+
+[node name="computer_enemy" parent="back_world" instance=ExtResource("8_rek8k")]
+position = Vector2(72, 664)

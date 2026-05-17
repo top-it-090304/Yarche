@@ -355,7 +355,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["green_player"]]
-position = Vector2(1024, 568)
+position = Vector2(5.18982, 8.629)
 script = ExtResource("1_kgn25")
 
 [node name="right-hand" type="CollisionPolygon2D" parent="."]

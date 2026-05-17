@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+@export var tutorial_skipable = true
 @onready var timer = $Timer
 @onready var sprite: AnimatedSprite2D = $Control/Control/tutorial_frames
 
@@ -22,5 +22,5 @@ func skip_tutorial():
 	_on_tutorial_timeout()
 
 func _input(event):
-	if event is InputEventScreenTouch and event.pressed:
+	if event is InputEventScreenTouch and event.pressed and tutorial_skipable:
 		skip_tutorial()

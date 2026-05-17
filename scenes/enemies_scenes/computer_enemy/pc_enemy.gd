@@ -37,7 +37,8 @@ func on_shoot_timer_timeout():
 			
 func set_max_speed(new_max_speed):
 	MAX_SPEED = new_max_speed
-
+func set_min_speed(new_min_speed):
+	MIN_SPEED = new_min_speed
 func spawn_bullet(spawn_point):
 	if bullet_scene:
 		var bullet = bullet_scene.instantiate()

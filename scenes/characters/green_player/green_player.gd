@@ -15,7 +15,7 @@ func _physics_process(delta):
 		velocity.x *= friction
 		velocity.x = clamp(velocity.x, MIN_SPEED, MAX_SPEED)
 		print(velocity.x)
-		$AnimationPlayer.speed_scale = velocity.x/MIN_SPEED * 0.3
+		$AnimationPlayer.speed_scale = 1 + (sqrt(velocity.x/MAX_SPEED) * 3)
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO

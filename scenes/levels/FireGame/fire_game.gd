@@ -24,6 +24,7 @@ func _connect_game_logics():
 
 func show_tutorial():
 	var tutorial = preload("res://scenes/levels/FireGame/breath_tutorial.tscn").instantiate()
+	tutorial.tutorial_skipable = false
 	tutorial.tutorial_finished.connect(_start_game)
 	add_child(tutorial)
 

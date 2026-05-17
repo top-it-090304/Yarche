@@ -8,11 +8,17 @@ var rotation_offset = deg_to_rad(10)
 var is_animating = false
 
 func _ready() -> void:
+	$computer_enemy.set_min_speed(500)
+	$CharacterBody2D.set_min_speed(500)
 	start_pos = tablet.global_position
 	tablet.global_position.y = start_pos.y - tablet.get_rect().size.y
 	show_tablet()
 	
 func _process(delta):
+	if $CharacterBody2D.global_position.x > 3000:
+		$CharacterBody2D.global_position.x = -300
+	if $computer_enemy.global_position.x > 2500:
+		$computer_enemy.global_position.x = -900
 	if is_animating:
 		animate_tablet()
 		time += delta

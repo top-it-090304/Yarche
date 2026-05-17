@@ -5,7 +5,6 @@ var silent_rms_level
 
 @onready var timer: Timer = $buffer_timer
 @onready var flame: Node2D = $"../Flame"
-@onready var info: Label = $"../info"
 
 signal over_threshold
 var sensitivity = 1.0
@@ -26,16 +25,12 @@ func _ready():
 	timer.start()
 	is_recording_active = true
 	
-	# Запускаем обновление информации в UI
-	update_info_display()
 	
 func get_silent_level():
-	info.text = "Калибровка микрофона...\nНе шумите!"
 	await get_tree().create_timer(0.5).timeout  # Даём время прочитать сообщение
 	
 	var total = 0.0
 	for i in range(5):
-		info.text = "Калибровка: %d/5\nИзмерение фонового шума..." % (i + 1)
 		await get_tree().create_timer(0.2).timeout
 		effect.set_recording_active(true)
 		await get_tree().create_timer(0.1).timeout
@@ -51,8 +46,6 @@ func get_silent_level():
 	sensitivity = adjust_sensitivity(silent_rms_level)
 	
 	var noise_percent = silent_rms_level * 100
-	info.text = "Калибровка завершена!\nФоновый шум: %.1f%%\nЧувствительность: %.2f" % [noise_percent, sensitivity]
-	await get_tree().create_timer(1.5).timeout  # Показываем результат 1.5 секунды
 	
 	print("Фоновый шум: ", silent_rms_level)
 	print("Чувствительность: ", sensitivity)
@@ -66,10 +59,8 @@ func setup_microphone():
 	effect = AudioServer.get_bus_effect(idx, 0)
 	if effect and idx:
 		print("Микрофон настроен")
-		info.text = "Микрофон готов"
 	else:
-		info.text = "ОШИБКА: Микрофон не найден!"
-
+		print("микрофон не найден")
 func adjust_sensitivity(background_noise: float) -> float:
 	# background_noise - уровень фонового шума (0.0 - 1.0)
 	var noise_percent = background_noise * 100
@@ -131,63 +122,5 @@ func get_avg_rms_volume(recording):
 	return sqrt(sum_squares / max(samples_taken, 1))
 
 func _end_of_recording():
-	info.text = "Запись завершена!"
 	is_recording_active = false
 	queue_free()
-
-# НОВАЯ ФУНКЦИЯ: Обновление информации на экране
-func update_info_display():
-	while is_recording_active:
-		# Определяем формат записи
-		var format_text = ""
-		if recording and recording.format != null:
-			match recording.format:
-				AudioStreamWAV.FORMAT_8_BITS:
-					format_text = "8-bit"
-				AudioStreamWAV.FORMAT_16_BITS:
-					format_text = "16-bit"
-				AudioStreamWAV.FORMAT_IMA_ADPCM:
-					format_text = "ADPCM"
-			# Также показываем частоту дискретизации
-			var sample_rate = recording.mix_rate if recording.mix_rate > 0 else 44100
-			format_text += " | %dHz" % sample_rate
-		else:
-			format_text = "16-bit | 44100Hz (стандарт)"
-		
-		# Создаём визуальную полоску уровня громкости
-		var rms_percent = current_rms_level * 100
-		var bar_length = 15
-		var filled = int(current_rms_level * bar_length)
-		var bar = "[" + "█".repeat(filled) + "░".repeat(bar_length - filled) + "]"
-		
-		# Определяем цветовую индикацию
-		var status_emoji = "🎤"
-		if current_rms_level > silent_rms_level * sensitivity:
-			status_emoji = "🔥🔥🔥"  # Задуваем!
-		elif current_rms_level > silent_rms_level:
-			status_emoji = "⚠️"  # Выше фона
-		else:
-			status_emoji = "💤"  # Тихо
-		
-		# Формируем текст для отображения
-		var display_text = ""
-		display_text += "=== НАСТРОЙКИ ===\n"
-		display_text += "Формат: %s\n" % format_text
-		display_text += "Фоновый шум: %.1f%%\n" % (silent_rms_level * 100)
-		display_text += "Чувствительность: %.2f\n" % sensitivity
-		display_text += "\n=== ТЕКУЩИЙ УРОВЕНЬ ===\n"
-		display_text += "%s %.1f%%\n" % [status_emoji, rms_percent]
-		display_text += "%s\n" % bar
-		display_text += "Порог: %.1f%%\n" % (current_threshold * 100)
-		
-		# Добавляем подсказку
-		if current_rms_level > silent_rms_level * sensitivity:
-			display_text += "\n▶️ ДУЕМ! Сигнал послан!"
-		else:
-			display_text += "\n💨 Дуйте в микрофон..."
-		
-		# Обновляем лейбл
-		info.text = display_text
-		
-		# Ждём 0.2 секунды до следующего обновления
-		await get_tree().create_timer(0.2).timeout

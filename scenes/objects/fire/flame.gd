@@ -12,7 +12,7 @@ func decrease_scale():
 		if animated_sprite_2d.scale.y < 0.3:
 			scaling = 0
 		
-		var tween = create_tween().set_parallel(true)
+		var tween = create_tween()
 		tween.tween_property(animated_sprite_2d, "scale", Vector2(animated_sprite_2d.scale.x*scaling, animated_sprite_2d.scale.y*scaling), 0.5)
 		if scaling ==0:
 			tween.tween_callback(_win)

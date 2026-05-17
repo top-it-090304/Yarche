@@ -119,6 +119,7 @@ var data = [
 	}
 ]
 func _ready():
+	
 	data.shuffle()
 	data_queue = data.slice(0,6)
 	spawn_paper()
