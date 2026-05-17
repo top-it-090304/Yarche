@@ -36,7 +36,7 @@ func _ready():
 func set_level_data():
 	mini_games.shuffle()
 	
-	level_data = [{"time": 1, "path":"res://scenes/levels/TapGame/tap_game.tscn"}] + mini_games.slice(0,5)
+	level_data = mini_games.slice(0,5)
 	
 func _set_timer_bar(time):
 		

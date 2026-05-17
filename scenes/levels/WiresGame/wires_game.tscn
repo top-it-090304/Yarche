@@ -12,7 +12,7 @@ script = ExtResource("1_ghg4v")
 timer_time = 7.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(960, 540)
+position = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
