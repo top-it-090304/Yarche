@@ -25,6 +25,7 @@ position = Vector2(-904, -203)
 stream = ExtResource("12_eav6w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Gameworld"]
+layer = 0
 
 [node name="Control" type="Control" parent="Gameworld/CanvasLayer"]
 layout_mode = 3
@@ -36,6 +37,8 @@ grow_vertical = 2
 script = ExtResource("5_uu0og")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Gameworld"]
+layer = -1
+scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Gameworld/ParallaxBackground"]
 motion_mirroring = Vector2(3293, 0)
