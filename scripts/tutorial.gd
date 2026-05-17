@@ -8,7 +8,7 @@ signal tutorial_finished
 func _ready():
 	sprite.play()
 	
-	timer.wait_time = 3.0
+	timer.wait_time = 6.0
 	timer.one_shot = true
 	timer.timeout.connect(_on_tutorial_timeout)
 	timer.start()

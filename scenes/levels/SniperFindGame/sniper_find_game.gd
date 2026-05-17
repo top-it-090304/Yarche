@@ -19,6 +19,8 @@ var game_over = false
 
 var crosshair_speed = 500.0
 
+var tutorial_scene = preload("res://scenes/levels/SniperFindGame/sniper_tutorial.tscn")
+
 signal win
 signal lose
 
@@ -34,11 +36,22 @@ func _process(delta):
 	crosshair.global_position = crosshair.global_position.move_toward(target_pos, crosshair_speed * delta)
 
 func _ready():
+	show_tutorial()
 	randomize()
 	spawn_sniper()
 	timer.wait_time = timer_time
 	timer.start()
 	crosshair.area_entered.connect(_on_sniper_found)
+
+func show_tutorial():
+	get_tree().paused = true
+	var tutorial = tutorial_scene.instantiate()
+	tutorial.tutorial_finished.connect(_start_game)
+	add_child(tutorial)
+	
+func _start_game():
+	get_tree().paused = false
+	#$AudioStreamPlayer.play()
 
 func spawn_sniper():
 	var random_point = sniper_spawns[randi() % sniper_spawns.size()]
@@ -70,7 +83,6 @@ func show_sniper_reveal():
 	await zoom_tween.finished
 	get_tree().paused = false
 	win.emit()
-	#sniper.play_hit_animation()
 	
 func _on_timer_timeout():
 	game_over = true

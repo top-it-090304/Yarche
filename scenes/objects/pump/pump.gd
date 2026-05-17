@@ -18,7 +18,7 @@ var handle_tween: Tween
 var total_movement = 0.0
 var last_position_y = 0.0
 var pump_cooldown = false
-var pump_efficiency = 0.04
+var pump_efficiency = 0.1
 
 # Переменные для стравливания
 var was_going_down = false
