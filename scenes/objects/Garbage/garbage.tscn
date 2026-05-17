@@ -1,15 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://buokxftqhhh7a"]
+[gd_scene load_steps=7 format=3 uid="uid://buokxftqhhh7a"]
 
 [ext_resource type="Script" uid="uid://kkyicu6mtsod" path="res://scenes/objects/Garbage/garbage.gd" id="1_fw1lt"]
+[ext_resource type="Texture2D" uid="uid://34nrr0dbtgw6" path="res://assets/img/AvoidTheGarbage/fork.png" id="2_g2g68"]
+[ext_resource type="Texture2D" uid="uid://mgrhicp3hg60" path="res://assets/img/AvoidTheGarbage/package.png" id="3_bdh7l"]
+[ext_resource type="Texture2D" uid="uid://dbyex7h2ctxm" path="res://assets/img/AvoidTheGarbage/screwdriver.png" id="4_21f7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcmvt"]
+size = Vector2(86, 401)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3u8t"]
+size = Vector2(117, 367)
 
 [node name="Area2D" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_fw1lt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tcmvt")
+[node name="fork" type="Sprite2D" parent="." groups=["fork"]]
+visible = false
+texture = ExtResource("2_g2g68")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="package" type="Sprite2D" parent="." groups=["package"]]
+visible = false
+texture = ExtResource("3_bdh7l")
+
+[node name="screwdriver" type="Sprite2D" parent="." groups=["screwdriver"]]
+visible = false
+texture = ExtResource("4_21f7e")
+
+[node name="screwdriver_collision" type="CollisionShape2D" parent="." groups=["screwdriver"]]
+visible = false
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_tcmvt")
+disabled = true
+
+[node name="fork_collision" type="CollisionShape2D" parent="." groups=["fork"]]
+visible = false
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_h3u8t")
+disabled = true
+
+[node name="package_collision" type="CollisionPolygon2D" parent="." groups=["package"]]
+visible = false
+polygon = PackedVector2Array(-64, -112, 21, -86, 110, 4, 170, 108, 153, 186, 60, 230, -76, 236, -152, 175, -167, -41, -117, -102, -176, -197, -132, -241, -70, -230)
+disabled = true

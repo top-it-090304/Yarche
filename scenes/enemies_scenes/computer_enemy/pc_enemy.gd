@@ -2,16 +2,16 @@ extends CharacterBody2D
 
 var direction = Vector2.RIGHT
 
-var MAX_SPEED = 500.0
+var MAX_SPEED = 1500.0
 var MIN_SPEED = 100.0
-var impulse_force = 20
+var impulse_force = 200
 var is_win = false
 
 @onready var shoot_timer: Timer = $Timer
 @onready var spawn_points: Node2D = $spawn_points
 var cooldown = 0.5
 const bullet_scene = preload("res://scenes/objects/shot/shot.tscn")
-var bullet_speed = 1000
+
 var current_bullet = null
 var index = 0
 signal hit
@@ -43,7 +43,7 @@ func spawn_bullet(spawn_point):
 		var bullet = bullet_scene.instantiate()
 		
 		bullet.global_position = spawn_point.global_position
-		bullet.set_speed(bullet_speed)
+		bullet.set_speed(velocity.x + 500)
 		bullet.set_direction(direction)
 		bullet.scale = Vector2(1.5,1.5)
 		get_tree().current_scene.add_child(bullet)

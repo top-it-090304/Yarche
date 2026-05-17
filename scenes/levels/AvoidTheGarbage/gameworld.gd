@@ -14,11 +14,6 @@ var garbage_list: Array
 var x_spawns_list: Array
 var down_border
 
-var garbage_texture_paths = [
-	"res://assets/img/AvoidTheGarbage/package.png",
-	"res://assets/img/AvoidTheGarbage/screwdriver.png",
-	"res://assets/img/AvoidTheGarbage/fork.png"
-]
 
 func _ready() -> void:
 	right_border_spawn = get_viewport().size.x - spawn_margin
@@ -38,7 +33,6 @@ func _spawn_new_garbage():
 	accelerate_tween.tween_property(self, "speed", new_speed, 0.2)
 	if garbage_list.size() < MAX_GARBAGE_CNT:
 		var garbage = garbage_scene.instantiate()
-		garbage.texture_path = garbage_texture_paths.pick_random()
 		var x_spawn_position = x_spawns_list.pick_random()
 		garbage.global_position = Vector2(x_spawn_position, -200)
 		garbage_list.append(garbage)

@@ -10,14 +10,15 @@ var mini_games = [
 	{"time": 10, "path": "res://scenes/levels/PotatoGame/PotatoGame.tscn"},
 	{"time": 10, "path": "res://scenes/levels/MemoryGame/memory_game.tscn"},
 	{"time": 10, "path": "res://scenes/levels/PapersGame/PapersGame.tscn"},
-	{"time": 26, "path": "res://scenes/levels/AvoidTheGarbage/AvoidTheGarbage.tscn"},
+	{"time": 10, "path": "res://scenes/levels/AvoidTheGarbage/AvoidTheGarbage.tscn"},
 	{"time": 8,  "path": "res://scenes/levels/PumpGame/pump_game.tscn"},
 	{"time": 5,  "path": "res://scenes/levels/CleanGame/CleanGame.tscn"},
 	{"time": 30, "path": "res://scenes/levels/FlappyPlaneGame/flappy_plane_game.tscn"},
 	{"time": 12, "path": "res://scenes/levels/HitTheBeaverGame/HitTheBeaverGame.tscn"},
 	{"time": 12, "path": "res://scenes/levels/WiresGame/wires_game.tscn"},
 	{"time": 12, "path": "res://scenes/levels/WaterMineGame/WaterMineGame.tscn"},
-	{"time": 10, "path": "res://scenes/levels/FireGame/FireGame.tscn"}
+	{"time": 10, "path": "res://scenes/levels/FireGame/FireGame.tscn"},
+	{"time": 10, "path":"res://scenes/levels/TapGame/tap_game.tscn"}
 ]
 
 var level_data = []
@@ -33,7 +34,7 @@ func _ready():
 func set_level_data():
 	mini_games.shuffle()
 	
-	level_data = [{"time": 10, "path": "res://scenes/levels/FireGame/FireGame.tscn"}] + mini_games.slice(0,5)
+	level_data = [{"time": 10, "path": "res://scenes/levels/AvoidTheGarbage/AvoidTheGarbage.tscn"}] + mini_games.slice(0,5)
 	
 func _set_timer_bar(time):
 		

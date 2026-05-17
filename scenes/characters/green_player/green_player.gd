@@ -3,9 +3,9 @@ var is_win = false
 
 var direction = Vector2.RIGHT
 var MIN_SPEED = 150.0
-var MAX_SPEED  = 1000.0
+var MAX_SPEED  = 2000.0
 var friction = 0.98
-var impulse_force = 200.0
+var impulse_force = 300.0
 
 func _ready():
 	$AnimationPlayer.play("run")
@@ -15,7 +15,7 @@ func _physics_process(delta):
 		velocity.x *= friction
 		velocity.x = clamp(velocity.x, MIN_SPEED, MAX_SPEED)
 		print(velocity.x)
-		$AnimationPlayer.speed_scale = velocity.x/MIN_SPEED
+		$AnimationPlayer.speed_scale = velocity.x/MIN_SPEED * 0.3
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO

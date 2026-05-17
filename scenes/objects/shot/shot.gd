@@ -11,9 +11,11 @@ func set_speed(new_speed: int):
 	speed = new_speed
 func _ready():
 	body_entered.connect(_on_body_entered)
+	
 func _process(delta: float) -> void:
-	global_position += direction*speed*delta
+	global_position.x += speed*delta
 	animated_sprite.play("default")
 	
 func _on_body_entered(body):
-	fired.emit()
+	if body.is_in_group("green_player"):
+		fired.emit()

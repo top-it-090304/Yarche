@@ -27,8 +27,8 @@ func _start_game():
 func _connect_game_logics():
 	computer_enemy.hit.connect(_lose_ending)
 	
-	green_player.set_max_speed(1000)
-	computer_enemy.set_max_speed(800)
+	green_player.set_max_speed(2000)
+	computer_enemy.set_max_speed(1500)
 	
 	tap_game_control.tapped.connect(_accelerate)
 	timer.wait_time = timer_time

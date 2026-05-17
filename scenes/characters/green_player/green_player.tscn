@@ -354,7 +354,7 @@ _data = {
 &"smile": SubResource("Animation_l2fg8")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["green_player"]]
 position = Vector2(1024, 568)
 script = ExtResource("1_kgn25")
 
