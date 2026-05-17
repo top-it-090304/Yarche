@@ -23,6 +23,7 @@ func show_tutorial():
 
 func _start_game():
 	get_tree().paused = false
+	$PotatoMusic.play()
 
 func _win():
 	win.emit()

@@ -19,6 +19,7 @@ func _ready():
 	
 func _start_game():
 	get_tree().paused = false
+	$Ghosts.play()
 	
 func _win_ending():
 	win.emit()

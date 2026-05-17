@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://os06fxuxrrpm"]
+[gd_scene load_steps=8 format=3 uid="uid://os06fxuxrrpm"]
 
 [ext_resource type="PackedScene" uid="uid://cssw1nkimjp7l" path="res://scenes/objects/WiresGame/socket.tscn" id="1_fwg5s"]
 [ext_resource type="Script" uid="uid://t07phkiuvvyi" path="res://scenes/levels/WiresGame/game.gd" id="1_ghg4v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://otttdne07hxj" path="res://assets/img/WiresGame/background.png" id="2_hbwa8"]
 [ext_resource type="Texture2D" uid="uid://b4tkcpia42ish" path="res://assets/img/WiresGame/PlugConnected.png" id="4_64svp"]
 [ext_resource type="AudioStream" uid="uid://bvq82bbp53j86" path="res://assets/sounds/WiresGameSounds/PlugConnected.ogg" id="6_hbwa8"]
+[ext_resource type="AudioStream" uid="uid://5fhl7hbwjt5r" path="res://assets/sounds/WiresGameSounds/wires_music.ogg" id="7_0pfws"]
 
 [node name="WiresGame" type="Node2D"]
 script = ExtResource("1_ghg4v")
@@ -60,3 +61,8 @@ connected_sprite = ExtResource("4_64svp")
 
 [node name="PlugConnected" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_hbwa8")
+volume_db = 24.0
+
+[node name="WiresMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0pfws")
+volume_db = -3.0

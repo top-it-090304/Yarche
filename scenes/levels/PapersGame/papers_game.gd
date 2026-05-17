@@ -27,3 +27,4 @@ func _lose():
 
 func _start_game():
 	get_tree().paused = false
+	$AudioStreamPlayer.play()

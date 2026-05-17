@@ -42,6 +42,7 @@ func show_tutorial():
 
 func _start_game():
 	get_tree().paused = false
+	$WiresMusic.play()
 
 func _process(_delta):
 	pass

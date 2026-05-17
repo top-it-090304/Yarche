@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://csfxk1wjt1nna"]
+[gd_scene load_steps=9 format=3 uid="uid://csfxk1wjt1nna"]
 
 [ext_resource type="Script" uid="uid://dtctfhe68h8fx" path="res://scenes/levels/AvoidTheGarbage/avoid_the_garbage.gd" id="1_j5wik"]
 [ext_resource type="Script" uid="uid://dejrp42s6eqhx" path="res://scenes/levels/AvoidTheGarbage/fish_control.gd" id="1_v1gfb"]
 [ext_resource type="Script" uid="uid://bwkxshce1rksd" path="res://scenes/levels/AvoidTheGarbage/gameworld.gd" id="2_cn7wi"]
 [ext_resource type="PackedScene" uid="uid://bejxnvjnl7j7o" path="res://scenes/characters/Fish/fish.tscn" id="2_j5wik"]
+[ext_resource type="AudioStream" uid="uid://cbt1xx5jokhao" path="res://assets/sounds/music/ghosts.ogg" id="5_uw37r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cn7wi"]
 size = Vector2(388.572, 674.286)
@@ -56,3 +57,6 @@ texture = SubResource("GradientTexture1D_uw37r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
+
+[node name="Ghosts" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uw37r")

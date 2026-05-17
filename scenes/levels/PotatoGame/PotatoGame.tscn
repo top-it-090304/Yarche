@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhbw254c3ut85"]
+[gd_scene load_steps=9 format=3 uid="uid://dhbw254c3ut85"]
 
 [ext_resource type="Script" uid="uid://dw5kulyry8edp" path="res://scenes/levels/PotatoGame/potato_game.gd" id="1_5teor"]
 [ext_resource type="Script" uid="uid://08nyl55eid2" path="res://scenes/levels/PotatoGame/swipe_analyzer.gd" id="1_krtuy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxe4j760mh1e2" path="res://assets/img/CleanGame/kitchen_bg.png" id="4_2j5wg"]
 [ext_resource type="Texture2D" uid="uid://cper2tbnt8i7b" path="res://assets/img/CleanGame/table.png" id="5_5teor"]
 [ext_resource type="PackedScene" uid="uid://duq1i2cdf713q" path="res://scenes/objects/CleanGAme/Crane/crane.tscn" id="6_d4kro"]
+[ext_resource type="AudioStream" uid="uid://hc225lu21f1d" path="res://assets/sounds/PotatoGameSounds/potato_music.ogg" id="8_d4kro"]
 
 [node name="PotatoGame" type="Node2D"]
 script = ExtResource("1_5teor")
@@ -41,3 +42,6 @@ texture = ExtResource("5_5teor")
 position = Vector2(1564, 574)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="PotatoMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_d4kro")

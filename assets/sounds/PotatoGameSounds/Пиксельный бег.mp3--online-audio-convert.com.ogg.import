@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://4hdihx3hdcb7"
+path="res://.godot/imported/Пиксельный бег.mp3--online-audio-convert.com.ogg-ce7a1ade4858b5967218c5df8183735c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/PotatoGameSounds/Пиксельный бег.mp3--online-audio-convert.com.ogg"
+dest_files=["res://.godot/imported/Пиксельный бег.mp3--online-audio-convert.com.ogg-ce7a1ade4858b5967218c5df8183735c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

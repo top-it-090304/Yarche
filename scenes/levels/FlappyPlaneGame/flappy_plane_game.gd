@@ -58,3 +58,4 @@ func show_tutorial():
 
 func _start_game():
 	get_tree().paused = false
+	$FlappyPlane.play()

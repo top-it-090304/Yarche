@@ -36,7 +36,7 @@ func _ready():
 func set_level_data():
 	mini_games.shuffle()
 	
-	level_data = mini_games
+	level_data = mini_games.slice(0,6)
 	
 func _set_timer_bar(time):
 		

@@ -1,6 +1,9 @@
+class_name Paper
 extends Area2D
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var collision: CollisionShape2D = $collsion
+
+@export var info: Dictionary = {"text": "Test", "state": PaperState.RIGHT}
 
 var min_pos
 var max_pos
@@ -14,126 +17,13 @@ enum PaperState {
 	RIGHT,
 	WRONG
 }
-var data = [
-	# ПРАВИЛЬНЫЕ (хорошие действия)
-	{
-		"text" : "Снизить налоги",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Помогать бедным",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Повышение прожиточного минимума",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Строить детские сады",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Бесплатная медицина",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Защищать природу",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Кормить бездомных",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Бесплатное образование",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Помогать пенсионерам",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Строить парки",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Спасать животных",
-		"state": PaperState.RIGHT
-	},
-	{
-		"text" : "Чистить реки",
-		"state": PaperState.RIGHT
-	},
-	
-	# НЕПРАВИЛЬНЫЕ (плохие действия)
-	{
-		"text" : "Поддержать терроризм",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "15% зарплаты в казино",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Власть у котиков",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Вырубить все леса",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Отменить школу",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Запретить мороженое",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Уволить всех врачей",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Сжечь книги",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Кормить детей жуками",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Заставить всех спать на полу",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Красть у стариков",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Отключить интернет",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Купить танк вместо больницы",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Сделать мышей президентами",
-		"state": PaperState.WRONG
-	},
-	{
-		"text" : "Отменить выходные",
-		"state": PaperState.WRONG
-	}
-]
+
 func _ready():
 	animated_spawn()
 	set_window_borders()
-	set_random_state()
+	set_state()
 	
-func set_random_state():
-	var info = data.pick_random()
+func set_state():
 	label.text = info.text
 	state = info.state
 
@@ -150,8 +40,6 @@ func _input(event):
 	elif event is InputEventScreenDrag and is_dragging:
 		update_drag(finger_position)
 		
-	elif Input.is_action_just_pressed("ui_accept"):
-		set_random_state()
 
 func is_finger_cover_paper(pos):
 	var size = collision.shape.size
